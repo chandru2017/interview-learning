@@ -88,19 +88,13 @@ export const SearchBar = ({ className, onNavigate }: ISearchBarProps) => {
                     className="absolute top-full z-50 mt-1 max-h-72 w-full overflow-auto rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-950"
                 >
                     {results.length === 0 ? (
-                        <p className="px-3 py-2.5 text-[15px] text-slate-500">
-                            No matches found.
-                        </p>
+                        <p className="px-3 py-2.5 text-[15px] text-slate-500">No matches found.</p>
                     ) : (
                         <ul className="py-1">
                             {results.map((question) => {
                                 const topic = getTopicById(question.topicId);
                                 return (
-                                    <li
-                                        key={question.id}
-                                        role="option"
-                                        aria-selected={false}
-                                    >
+                                    <li key={question.id} role="option" aria-selected={false}>
                                         <Link
                                             href={`/${question.topicId}/${question.id}`}
                                             className="block px-3 py-2.5 text-[15px] hover:bg-blue-50 focus-visible:bg-blue-50 focus-visible:outline-none dark:hover:bg-blue-950/40 dark:focus-visible:bg-blue-950/40"
