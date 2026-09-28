@@ -1,17 +1,28 @@
 'use client';
 
 import Link from 'next/link';
+import { RotateCcw } from 'lucide-react';
 
 import { TopicIcon } from '@/components/topic-icon';
 import { useProgress } from '@/components/providers/progress-provider';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { getTopicsWithCounts } from '@/lib/data';
 
 export const HomeDashboard = () => {
-    const { enrichTopic, getGlobalProgress } = useProgress();
+    const { enrichTopic, getGlobalProgress, resetAllProgress } = useProgress();
     const topics = getTopicsWithCounts().map(enrichTopic);
     const global = getGlobalProgress();
+
+    const handleResetAll = () => {
+        const confirmed = window.confirm(
+            'Reset progress for all questions? Completed and In Progress status will be cleared.',
+        );
+        if (confirmed) {
+            resetAllProgress();
+        }
+    };
 
     return (
         <div className="mx-auto w-full max-w-5xl">
@@ -24,11 +35,24 @@ export const HomeDashboard = () => {
                     everything, and prepare with structured answers.
                 </p>
                 <div className="mt-5 flex max-w-md flex-col gap-2.5">
-                    <div className="flex items-center justify-between text-[15px]">
+                    <div className="flex items-center justify-between gap-3 text-[15px]">
                         <span className="text-slate-600 dark:text-slate-400">Overall progress</span>
-                        <span className="font-medium text-slate-900 dark:text-slate-100">
-                            {global.completed}/{global.total} ({global.percent}%)
-                        </span>
+                        <div className="flex items-center gap-2.5">
+                            <span className="font-medium text-slate-900 dark:text-slate-100">
+                                {global.completed}/{global.total} ({global.percent}%)
+                            </span>
+                            <Button
+                                type="button"
+                                variant="outline"
+                                size="sm"
+                                className="h-8 text-[13px]"
+                                onClick={handleResetAll}
+                                aria-label="Reset all question progress"
+                            >
+                                <RotateCcw className="size-3.5" aria-hidden="true" />
+                                Reset
+                            </Button>
+                        </div>
                     </div>
                     <Progress value={global.percent} aria-label="Overall progress" />
                 </div>

@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Circle, CircleCheck } from 'lucide-react';
+import { ArrowRight, Circle, CircleCheck, RotateCcw } from 'lucide-react';
 
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { useProgress } from '@/components/providers/progress-provider';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getQuestionsByTopic } from '@/lib/data';
 import { cn } from '@/lib/utils';
@@ -24,21 +25,43 @@ interface IQuestionListProps {
 }
 
 export const QuestionList = ({ topic }: IQuestionListProps) => {
-    const { getQuestion, getTopicProgress } = useProgress();
+    const { getQuestion, getTopicProgress, resetTopicProgress } = useProgress();
     const questions = getQuestionsByTopic(topic.id).map(getQuestion);
     const progress = getTopicProgress(topic.id);
+
+    const handleResetTopic = () => {
+        const confirmed = window.confirm(
+            `Reset progress for ${topic.name}? Completed and In Progress status in this topic will be cleared.`,
+        );
+        if (confirmed) {
+            resetTopicProgress(topic.id);
+        }
+    };
 
     return (
         <div className="mx-auto w-full max-w-3xl">
             <Breadcrumb items={[{ label: topic.name }]} />
 
-            <header className="mb-8">
-                <h1 className="text-[1.75rem] leading-snug font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-50">
-                    {topic.name} Questions
-                </h1>
-                <p className="mt-2.5 text-[15px] text-slate-600 dark:text-slate-400">
-                    {progress.total} Questions · {progress.completed} Completed · {progress.remaining} Remaining
-                </p>
+            <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0">
+                    <h1 className="text-[1.75rem] leading-snug font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-50">
+                        {topic.name} Questions
+                    </h1>
+                    <p className="mt-2.5 text-[15px] text-slate-600 dark:text-slate-400">
+                        {progress.total} Questions · {progress.completed} Completed · {progress.remaining} Remaining
+                    </p>
+                </div>
+                <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="shrink-0 text-[13px]"
+                    onClick={handleResetTopic}
+                    aria-label={`Reset progress for ${topic.name}`}
+                >
+                    <RotateCcw className="size-3.5" aria-hidden="true" />
+                    Reset
+                </Button>
             </header>
 
             <ul className="flex flex-col gap-2.5">

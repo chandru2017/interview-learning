@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Moon, Rocket, Sun, User } from 'lucide-react';
+import { Menu, Moon, Rocket, RotateCcw, Sun, User } from 'lucide-react';
 
 import { SearchBar } from '@/components/SearchBar';
 import { useProgress } from '@/components/providers/progress-provider';
@@ -13,8 +13,17 @@ import { Progress } from '@/components/ui/progress';
 export const Header = () => {
     const { theme, toggleTheme } = useTheme();
     const { openMobile } = useSidebar();
-    const { getGlobalProgress } = useProgress();
+    const { getGlobalProgress, resetAllProgress } = useProgress();
     const { percent, completed, total } = getGlobalProgress();
+
+    const handleResetAll = () => {
+        const confirmed = window.confirm(
+            'Reset progress for all questions? Completed and In Progress status will be cleared.',
+        );
+        if (confirmed) {
+            resetAllProgress();
+        }
+    };
 
     return (
         <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 border-b border-slate-200 bg-white/95 px-4 backdrop-blur supports-backdrop-filter:bg-white/80 sm:px-5 dark:border-slate-800 dark:bg-slate-950/95 dark:supports-backdrop-filter:bg-slate-950/80">
@@ -61,6 +70,29 @@ export const Header = () => {
                         </span>
                     </span>
                 </div>
+
+                <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="hidden text-[13px] sm:inline-flex"
+                    onClick={handleResetAll}
+                    aria-label="Reset all question progress"
+                >
+                    <RotateCcw className="size-3.5" aria-hidden="true" />
+                    Reset
+                </Button>
+
+                <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="sm:hidden"
+                    onClick={handleResetAll}
+                    aria-label="Reset all question progress"
+                >
+                    <RotateCcw className="size-5" aria-hidden="true" />
+                </Button>
 
                 <Button
                     type="button"

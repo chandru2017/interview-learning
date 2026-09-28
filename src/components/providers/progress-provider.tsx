@@ -15,6 +15,8 @@ interface IProgressContextValue {
     setStatus: (questionId: string, status: QuestionStatus) => void;
     markCompleted: (questionId: string) => void;
     markInProgress: (questionId: string) => void;
+    resetAllProgress: () => void;
+    resetTopicProgress: (topicId: string) => void;
     getQuestion: (question: IQuestion) => IQuestion;
     getTopicProgress: (topicId: string) => {
         total: number;
@@ -111,6 +113,24 @@ export const ProgressProvider = ({ children }: { children: ReactNode }) => {
 
     const markInProgress = useCallback((questionId: string) => setStatus(questionId, 'in-progress'), [setStatus]);
 
+    const resetAllProgress = useCallback(() => {
+        const next: StatusMap = {};
+        for (const question of QUESTIONS) {
+            next[question.id] = 'not-started';
+        }
+        writeStatuses(next);
+    }, []);
+
+    const resetTopicProgress = useCallback((topicId: string) => {
+        const next = { ...clientSnapshot };
+        for (const question of QUESTIONS) {
+            if (question.topicId === topicId) {
+                next[question.id] = 'not-started';
+            }
+        }
+        writeStatuses(next);
+    }, []);
+
     const getQuestion = useCallback(
         (question: IQuestion): IQuestion => ({
             ...question,
@@ -164,6 +184,8 @@ export const ProgressProvider = ({ children }: { children: ReactNode }) => {
             setStatus,
             markCompleted,
             markInProgress,
+            resetAllProgress,
+            resetTopicProgress,
             getQuestion,
             getTopicProgress,
             getGlobalProgress,
@@ -174,6 +196,8 @@ export const ProgressProvider = ({ children }: { children: ReactNode }) => {
             setStatus,
             markCompleted,
             markInProgress,
+            resetAllProgress,
+            resetTopicProgress,
             getQuestion,
             getTopicProgress,
             getGlobalProgress,
