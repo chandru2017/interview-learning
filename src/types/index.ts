@@ -5,17 +5,31 @@ export type QuestionStatus = 'not-started' | 'in-progress' | 'completed';
 export type TopicSection =
     'ABOUT' | 'CORE' | 'FRAMEWORKS' | 'WEB PLATFORM' | 'QUALITY' | 'ARCHITECTURE' | 'ENGINEERING' | 'FINAL REVISION';
 
+export type ContentBlock =
+    | { type: 'paragraph'; text: string }
+    | { type: 'heading'; text: string }
+    | { type: 'bullets'; items: string[] }
+    | { type: 'code'; text: string };
+
+export interface IAnswerPoint {
+    /** Optional letter label such as "a", "b", "c". */
+    label?: string;
+    blocks: ContentBlock[];
+}
+
+export type AnswerContent = IAnswerPoint[];
+
 export interface IQuestion {
     id: string;
     topicId: string;
     title: string;
     difficulty: QuestionDifficulty;
     status: QuestionStatus;
-    simpleExplanation: string;
-    seniorExplanation: string;
-    simpleExample: string;
-    realProjectExample: string;
-    interviewAnswer: string;
+    simpleExplanation: AnswerContent;
+    seniorExplanation: AnswerContent;
+    simpleExample: AnswerContent;
+    realProjectExample: AnswerContent;
+    interviewAnswer: AnswerContent;
 }
 
 export interface ITopic {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Nunito, Nunito_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import { AppShell } from '@/components/AppShell';
@@ -13,6 +13,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
     variable: '--font-geist-mono',
+    subsets: ['latin'],
+});
+
+const nunito = Nunito({
+    variable: '--font-nunito',
+    subsets: ['latin'],
+});
+
+const nunitoSans = Nunito_Sans({
+    variable: '--font-nunito-sans',
     subsets: ['latin'],
 });
 
@@ -33,7 +43,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
         <html
             lang="en"
             suppressHydrationWarning
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${nunitoSans.variable} h-full antialiased`}
         >
             <body className="min-h-full">
                 <AppShell>{children}</AppShell>

@@ -39,7 +39,7 @@ export const QuestionList = ({ topic }: IQuestionListProps) => {
     };
 
     return (
-        <div className="mx-auto w-full max-w-3xl">
+        <div className="mx-auto w-full max-w-4xl">
             <Breadcrumb items={[{ label: topic.name }]} />
 
             <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

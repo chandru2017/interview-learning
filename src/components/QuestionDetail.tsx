@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Check, ChevronDown } from 'lucide-react';
 
+import { AnswerContent } from '@/components/AnswerContent';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { useProgress } from '@/components/providers/progress-provider';
 import { Badge } from '@/components/ui/badge';
@@ -23,6 +24,29 @@ const DIFFICULTY_CLASS: Record<string, string> = {
 
 type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview';
 
+const SECTION_ORDER: {
+    id: SectionId;
+    key: keyof Pick<
+        IQuestion,
+        'simpleExplanation' | 'seniorExplanation' | 'simpleExample' | 'realProjectExample' | 'interviewAnswer'
+    >;
+}[] = [
+    { id: 'simple', key: 'simpleExplanation' },
+    { id: 'senior', key: 'seniorExplanation' },
+    { id: 'example', key: 'simpleExample' },
+    { id: 'project', key: 'realProjectExample' },
+    { id: 'interview', key: 'interviewAnswer' },
+];
+
+const getAvailableSections = (question: IQuestion): SectionId[] => {
+    return SECTION_ORDER.filter(({ key }) => question[key].length > 0).map(({ id }) => id);
+};
+
+/** Opens the first available section by default (also covers the single-section case). */
+const getDefaultOpenSection = (question: IQuestion): SectionId | null => {
+    return getAvailableSections(question)[0] ?? null;
+};
+
 interface IQuestionDetailProps {
     topic: ITopic;
     question: IQuestion;
@@ -33,12 +57,12 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
     const question = getQuestion(baseQuestion);
     const markedRef = useRef(false);
     const { previousId, nextId } = getAdjacentQuestionIds(topic.id, question.id);
-    const [openSection, setOpenSection] = useState<SectionId | null>(null);
+    const [openSection, setOpenSection] = useState<SectionId | null>(() => getDefaultOpenSection(question));
     const [sectionQuestionId, setSectionQuestionId] = useState(question.id);
 
     if (question.id !== sectionQuestionId) {
         setSectionQuestionId(question.id);
-        setOpenSection(null);
+        setOpenSection(getDefaultOpenSection(question));
     }
 
     useEffect(() => {
@@ -63,7 +87,7 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
     };
 
     return (
-        <div className="mx-auto w-full max-w-3xl">
+        <div className="mx-auto w-full max-w-4xl">
             <Breadcrumb items={[{ label: topic.name, href: `/${topic.id}` }, { label: question.title }]} />
 
             <div className="mb-5">
@@ -104,57 +128,65 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
             </header>
 
             <div className="flex flex-col gap-5">
-                <Section
-                    id="simple"
-                    title="1. Simple Explanation"
-                    description="Beginner-friendly overview"
-                    open={openSection === 'simple'}
-                    onToggle={toggleSection}
-                >
-                    <p>{question.simpleExplanation}</p>
-                </Section>
+                {question.simpleExplanation.length > 0 && (
+                    <Section
+                        id="simple"
+                        title="Simple Explanation"
+                        description="Beginner-friendly overview"
+                        open={openSection === 'simple'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.simpleExplanation} />
+                    </Section>
+                )}
 
-                <Section
-                    id="senior"
-                    title="2. Senior-Level Explanation"
-                    description="Nuanced, interview-depth perspective"
-                    open={openSection === 'senior'}
-                    onToggle={toggleSection}
-                >
-                    <p>{question.seniorExplanation}</p>
-                </Section>
+                {question.seniorExplanation.length > 0 && (
+                    <Section
+                        id="senior"
+                        title="Senior-Level Explanation"
+                        description="Nuanced, interview-depth perspective"
+                        open={openSection === 'senior'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.seniorExplanation} />
+                    </Section>
+                )}
 
-                <Section
-                    id="example"
-                    title="3. Simple Example"
-                    description="Minimal code snippet"
-                    open={openSection === 'example'}
-                    onToggle={toggleSection}
-                >
-                    <pre className="overflow-x-auto rounded-xl bg-slate-950 p-5 text-[14px] leading-relaxed text-slate-100">
-                        <code>{question.simpleExample}</code>
-                    </pre>
-                </Section>
+                {question.simpleExample.length > 0 && (
+                    <Section
+                        id="example"
+                        title="Simple Example"
+                        description="Minimal code snippet"
+                        open={openSection === 'example'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.simpleExample} />
+                    </Section>
+                )}
 
-                <Section
-                    id="project"
-                    title="4. Real Project Example"
-                    description="How this shows up in production"
-                    open={openSection === 'project'}
-                    onToggle={toggleSection}
-                >
-                    <p>{question.realProjectExample}</p>
-                </Section>
+                {question.realProjectExample.length > 0 && (
+                    <Section
+                        id="project"
+                        title="Real Project Example"
+                        description="How this shows up in production"
+                        open={openSection === 'project'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.realProjectExample} />
+                    </Section>
+                )}
 
-                <Section
-                    id="interview"
-                    title="5. Interview Answer"
-                    description="Polished, interview-ready response"
-                    open={openSection === 'interview'}
-                    onToggle={toggleSection}
-                >
-                    <p>{question.interviewAnswer}</p>
-                </Section>
+                {question.interviewAnswer.length > 0 && (
+                    <Section
+                        id="interview"
+                        title="Interview Answer"
+                        description="Polished, interview-ready response"
+                        open={openSection === 'interview'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.interviewAnswer} />
+                    </Section>
+                )}
             </div>
 
             <nav
@@ -200,7 +232,7 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
     const headerId = useId();
 
     return (
-        <Card className="shadow-none hover:bg-slate-200/50 transition-colors duration-200 ring-1 ring-slate-200/80 dark:ring-slate-800">
+        <Card className="shadow-none transition-colors duration-200 ring-1 ring-slate-200/80 dark:ring-slate-800">
             <CardHeader className="gap-0 p-0">
                 <button
                     type="button"
@@ -216,7 +248,9 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
                                 {title}
                             </h2>
                         </CardTitle>
-                        <CardDescription className="mt-1.5 text-[14px] leading-relaxed">{description}</CardDescription>
+                        <CardDescription className="mt-1.5 text-[14px] leading-relaxed hidden">
+                            {description}
+                        </CardDescription>
                     </div>
                     <ChevronDown
                         className={cn(
