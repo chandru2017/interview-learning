@@ -2,7 +2,7 @@
 
 import { parseInlineMarkup } from '@/lib/parse-inline-markup';
 
-/** Renders `**bold**` and `` `code` `` (green) inside question copy. */
+/** Renders `**bold**` and `` `code` `` inside question copy. */
 export const InlineMarkup = ({ text }: { text: string }) => {
     const tokens = parseInlineMarkup(text);
 
@@ -11,7 +11,7 @@ export const InlineMarkup = ({ text }: { text: string }) => {
             {tokens.map((token, index) => {
                 if (token.type === 'bold') {
                     return (
-                        <strong key={index} className="font-bold text-slate-950 dark:text-white">
+                        <strong key={index} className="font-semibold text-foreground">
                             {token.value}
                         </strong>
                     );
@@ -19,7 +19,10 @@ export const InlineMarkup = ({ text }: { text: string }) => {
 
                 if (token.type === 'code') {
                     return (
-                        <code key={index} className="font-mono font-semibold text-emerald-600 dark:text-emerald-400">
+                        <code
+                            key={index}
+                            className="rounded-md border border-primary/15 bg-primary/10 px-1.5 py-0.5 font-mono text-[0.92em] font-medium text-primary"
+                        >
                             {token.value}
                         </code>
                     );

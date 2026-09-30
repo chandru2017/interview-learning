@@ -1,8 +1,8 @@
 'use client';
 
 import { InlineMarkup } from '@/components/InlineMarkup';
-import type { AnswerContent as AnswerContentType, ContentBlock, IAnswerPoint } from '@/types';
 import { stripIndent } from '@/components/StripIndent';
+import type { AnswerContent as AnswerContentType, ContentBlock, IAnswerPoint } from '@/types';
 
 interface IAnswerContentProps {
     content: AnswerContentType;
@@ -32,17 +32,19 @@ const AnswerPoint = ({
     arrayLength: number;
 }) => {
     return (
-        <ul className="flex flex-col gap-2 px-2 font-nunito-sans font-semibold">
+        <ul className="flex flex-col gap-2 px-1 font-nunito-sans font-medium">
             {point.blocks.map((block, index) => {
                 const isFirst = index === 0;
 
                 if (block.type === 'paragraph' && isFirst && point.label) {
                     return (
-                        <li key={`${block.type}-${index}`} className="flex gap-2">
+                        <li key={`${block.type}-${index}`} className="flex gap-2.5">
                             {arrayLength > 1 ? (
-                                <div className="font-bold text-black dark:text-slate-100">{keyIndex + 1}. </div>
+                                <div className="mt-0.5 shrink-0 text-[13px] font-semibold tracking-wide text-primary/80">
+                                    {keyIndex + 1}.
+                                </div>
                             ) : null}
-                            <div>
+                            <div className="min-w-0 leading-7 text-foreground/90">
                                 <InlineMarkup text={block.text} />
                             </div>
                         </li>
@@ -50,10 +52,12 @@ const AnswerPoint = ({
                 }
 
                 return (
-                    <li key={`${block.type}-${index}`} className="flex flex-col gap-2 ml-4">
+                    <li key={`${block.type}-${index}`} className="ml-4 flex flex-col gap-2">
                         {isFirst && point.label ? (
                             <p>
-                                <span className="font-medium text-black dark:text-slate-100">{keyIndex + 1}.</span>
+                                <span className="text-[13px] font-semibold tracking-wide text-primary/80">
+                                    {keyIndex + 1}.
+                                </span>
                             </p>
                         ) : null}
                         <ContentBlockView block={block} contentLength={arrayLength} />
@@ -67,7 +71,7 @@ const AnswerPoint = ({
 const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; contentLength: number }) => {
     if (block.type === 'paragraph') {
         return (
-            <p>
+            <p className="leading-7 text-foreground/90">
                 <InlineMarkup text={block.text} />
             </p>
         );
@@ -75,7 +79,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
 
     if (block.type === 'heading') {
         return (
-            <p className="font-bold text-slate-900 dark:text-slate-100">
+            <p className="font-semibold text-foreground">
                 <InlineMarkup text={block.text} />
             </p>
         );
@@ -83,7 +87,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
 
     if (block.type === 'code') {
         return (
-            <pre className="overflow-x-auto rounded-xl bg-slate-950 p-5 text-[14px] leading-relaxed text-slate-100 font-medium">
+            <pre className="overflow-x-auto rounded-xl border border-border/70 bg-surface-elevated p-5 font-mono text-[13.5px] leading-relaxed text-foreground shadow-inner dark:bg-black/35 dark:text-slate-100">
                 <code>{stripIndent(block.text)}</code>
             </pre>
         );
@@ -91,7 +95,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
 
     if (block.type === 'highlight') {
         return (
-            <p className="bg-yellow-100 text-black rounded-sm p-3 border-l-6 border-orange-500/80 italic">
+            <p className="rounded-xl border border-amber-500/20 border-l-[3px] border-l-amber-500/70 bg-amber-500/10 px-4 py-3 text-foreground italic dark:bg-amber-400/10">
                 <InlineMarkup text={block.text} />
             </p>
         );
@@ -101,7 +105,10 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
         return (
             <ul className="flex flex-wrap gap-2">
                 {block.items.map((item) => (
-                    <li key={item} className="bg-amber-100 rounded-2xl px-3 text-black">
+                    <li
+                        key={item}
+                        className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-[13px] font-medium text-primary"
+                    >
                         {item}
                     </li>
                 ))}
@@ -110,9 +117,9 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
     }
 
     return (
-        <ul className={`list-disc space-y-1.5 marker:text-slate-500 ${contentLength > 1 ? 'pl-4 ml-5' : 'pl-3'}`}>
+        <ul className={`list-disc space-y-1.5 marker:text-primary/50 ${contentLength > 1 ? 'ml-5 pl-4' : 'pl-3'}`}>
             {block.items.map((item) => (
-                <li key={item}>
+                <li key={item} className="text-foreground/90">
                     <InlineMarkup text={item} />
                 </li>
             ))}

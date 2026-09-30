@@ -27,7 +27,7 @@ const SidebarNav = ({ onNavigate }: { onNavigate?: () => void }) => {
                     {sections.map((group) => (
                         <div key={group.section}>
                             {!collapsed && (
-                                <p className="mb-2 px-2.5 text-xs font-semibold tracking-wider text-slate-400 uppercase">
+                                <p className="mb-2 px-2.5 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
                                     {group.section}
                                 </p>
                             )}
@@ -49,28 +49,30 @@ const SidebarNav = ({ onNavigate }: { onNavigate?: () => void }) => {
                                                 aria-current={active ? 'page' : undefined}
                                                 onClick={onNavigate}
                                                 className={cn(
-                                                    'group flex items-center gap-2.5 rounded-lg px-2.5 py-2.5 text-[15px] transition-colors',
-                                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600',
+                                                    'group flex items-center gap-2.5 rounded-xl px-2.5 py-2.5 text-[15px] transition-all duration-200',
+                                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                                                     active
-                                                        ? 'bg-blue-100 font-medium text-blue-700 dark:bg-blue-950 dark:text-blue-300'
-                                                        : 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800',
+                                                        ? 'bg-sidebar-accent font-medium text-sidebar-accent-foreground shadow-sm'
+                                                        : 'text-sidebar-foreground/85 hover:bg-muted/70 hover:text-foreground',
                                                     collapsed && 'justify-center px-0',
                                                     active &&
                                                         !collapsed &&
-                                                        'relative before:absolute before:top-1/2 before:left-0 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-full before:bg-blue-600',
+                                                        'relative before:absolute before:top-1/2 before:left-0 before:h-5 before:w-0.5 before:-translate-y-1/2 before:rounded-full before:bg-primary',
                                                 )}
                                             >
                                                 <TopicIcon
                                                     name={topic.icon}
                                                     className={cn(
-                                                        'size-[18px] shrink-0',
-                                                        active ? 'text-blue-700 dark:text-blue-300' : 'text-slate-500',
+                                                        'size-[18px] shrink-0 transition-colors',
+                                                        active
+                                                            ? 'text-primary'
+                                                            : 'text-muted-foreground group-hover:text-foreground',
                                                     )}
                                                 />
                                                 {!collapsed && (
                                                     <span className="min-w-0 flex-1 truncate leading-snug">
                                                         {topic.name}
-                                                        <span className="mt-0.5 block text-xs font-normal text-slate-500 dark:text-slate-400">
+                                                        <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
                                                             {topic.completedCount}/{topic.questionCount}
                                                         </span>
                                                     </span>
@@ -101,12 +103,12 @@ export const Sidebar = () => {
         <>
             <aside
                 className={cn(
-                    'relative hidden min-h-0 shrink-0 self-stretch border-r border-slate-200 bg-white transition-[width] duration-300 ease-in-out lg:flex lg:flex-col dark:border-slate-800 dark:bg-slate-950',
+                    'relative hidden min-h-0 shrink-0 self-stretch border-r border-border/70 bg-sidebar/80 backdrop-blur-xl transition-[width] duration-300 ease-in-out lg:flex lg:flex-col',
                     collapsed ? 'w-16' : 'w-[280px]',
                 )}
                 aria-label="Sidebar"
             >
-                <div className="flex shrink-0 items-center justify-end border-b border-slate-200 p-2 dark:border-slate-800">
+                <div className="flex shrink-0 items-center justify-end border-b border-border/70 p-2">
                     <Button
                         type="button"
                         variant="ghost"
@@ -123,10 +125,10 @@ export const Sidebar = () => {
 
             <Sheet open={mobileOpen} onOpenChange={(open) => !open && closeMobile()}>
                 <SheetContent side="left" className="w-[300px] p-0 sm:max-w-[300px]" aria-describedby={undefined}>
-                    <SheetHeader className="border-b border-slate-200 px-4 py-3 dark:border-slate-800">
+                    <SheetHeader className="border-b border-border/70 px-4 py-3">
                         <SheetTitle className="text-base">Topics</SheetTitle>
                     </SheetHeader>
-                    <div className="border-b border-slate-200 p-3 dark:border-slate-800">
+                    <div className="border-b border-border/70 p-3">
                         <SearchBar onNavigate={closeMobile} />
                     </div>
                     <div className="h-[calc(100vh-8rem)]">

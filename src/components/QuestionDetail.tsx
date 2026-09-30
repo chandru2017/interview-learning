@@ -15,11 +15,9 @@ import { cn } from '@/lib/utils';
 import type { IQuestion, ITopic } from '@/types';
 
 const DIFFICULTY_CLASS: Record<string, string> = {
-    Beginner:
-        'border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300',
-    Intermediate:
-        'border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-300',
-    Advanced: 'border-rose-200 bg-rose-50 text-rose-800 dark:border-rose-900 dark:bg-rose-950 dark:text-rose-300',
+    Beginner: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300',
+    Intermediate: 'border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-300',
+    Advanced: 'border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-300',
 };
 
 type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview' | 'speaking' | 'story';
@@ -109,7 +107,7 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
 
             <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="min-w-0">
-                    <h1 className="text-[1.75rem] leading-snug font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-50">
+                    <h1 className="text-[1.75rem] leading-snug font-semibold tracking-tight text-foreground sm:text-3xl">
                         {question.title}
                     </h1>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -223,7 +221,7 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
 
             <nav
                 aria-label="Question pagination"
-                className="mt-10 flex items-center justify-between gap-3 border-t border-slate-200 pt-6 dark:border-slate-800"
+                className="mt-10 flex items-center justify-between gap-3 border-t border-border/70 pt-6"
             >
                 {previousId ? (
                     <Button variant="outline" asChild className="text-[15px]">
@@ -264,7 +262,12 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
     const headerId = useId();
 
     return (
-        <Card className="shadow-none transition-colors duration-200 ring-1 ring-slate-200/80 dark:ring-slate-800">
+        <Card
+            className={cn(
+                'card-premium overflow-hidden rounded-2xl ring-0 transition-all duration-300',
+                open && 'border-primary/20 shadow-md',
+            )}
+        >
             <CardHeader className="gap-0 p-0">
                 <button
                     type="button"
@@ -272,22 +275,22 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
                     aria-expanded={open}
                     aria-controls={panelId}
                     onClick={() => onToggle(id)}
-                    className="flex cursor-pointer w-full items-start justify-between gap-4 rounded-xl px-6 text-left transition-colors focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:outline-none"
+                    className={cn(
+                        'flex w-full cursor-pointer items-start justify-between gap-4 px-6 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                    )}
                 >
-                    <div className="min-w-0 ">
+                    <div className="min-w-0">
                         <CardTitle>
-                            <h2 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-50">
-                                {title}
-                            </h2>
+                            <h2 className="text-lg font-medium tracking-tight text-foreground">{title}</h2>
                         </CardTitle>
-                        <CardDescription className="mt-1.5 text-[14px] leading-relaxed hidden">
+                        <CardDescription className="mt-1.5 hidden text-[14px] leading-relaxed">
                             {description}
                         </CardDescription>
                     </div>
                     <ChevronDown
                         className={cn(
-                            'mt-1 size-5 shrink-0 text-slate-500 transition-transform duration-200',
-                            open && 'rotate-180',
+                            'mt-1 size-5 shrink-0 text-muted-foreground transition-transform duration-200',
+                            open && 'rotate-180 text-primary',
                         )}
                         aria-hidden="true"
                     />
@@ -298,7 +301,7 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
                     id={panelId}
                     role="region"
                     aria-labelledby={headerId}
-                    className="pt-0 text-[15.5px] leading-7 text-slate-700 dark:text-slate-300"
+                    className="animate-in fade-in-0 slide-in-from-top-1 border-t border-border/60 pt-5 pb-6 text-[15.5px] leading-7 text-foreground/90 duration-200"
                 >
                     {children}
                 </CardContent>

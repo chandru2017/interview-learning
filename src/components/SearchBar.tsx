@@ -51,7 +51,7 @@ export const SearchBar = ({ className, onNavigate }: ISearchBarProps) => {
                 Search questions
             </label>
             <SearchIcon
-                className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400"
+                className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
                 aria-hidden="true"
             />
             <Input
@@ -60,7 +60,7 @@ export const SearchBar = ({ className, onNavigate }: ISearchBarProps) => {
                 value={query}
                 autoComplete="off"
                 placeholder="Search questions across all topics..."
-                className="h-10 border-slate-200 bg-slate-50 pl-9 text-[15px] dark:border-slate-700 dark:bg-slate-900"
+                className="h-10 border-border/70 bg-muted/50 pl-9 text-[15px] shadow-none focus-visible:border-primary/40 focus-visible:bg-background focus-visible:ring-primary/20"
                 aria-controls={listId}
                 aria-expanded={open && results.length > 0}
                 aria-autocomplete="list"
@@ -85,10 +85,10 @@ export const SearchBar = ({ className, onNavigate }: ISearchBarProps) => {
                     id={listId}
                     role="listbox"
                     aria-label="Search results"
-                    className="absolute top-full z-50 mt-1 max-h-72 w-full overflow-auto rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-950"
+                    className="absolute top-full z-50 mt-1.5 max-h-72 w-full overflow-auto rounded-xl border border-border/70 bg-popover/95 shadow-lg backdrop-blur-xl"
                 >
                     {results.length === 0 ? (
-                        <p className="px-3 py-2.5 text-[15px] text-slate-500">No matches found.</p>
+                        <p className="px-3 py-2.5 text-[15px] text-muted-foreground">No matches found.</p>
                     ) : (
                         <ul className="py-1">
                             {results.map((question) => {
@@ -97,17 +97,15 @@ export const SearchBar = ({ className, onNavigate }: ISearchBarProps) => {
                                     <li key={question.id} role="option" aria-selected={false}>
                                         <Link
                                             href={`/${question.topicId}/${question.id}`}
-                                            className="block px-3 py-2.5 text-[15px] hover:bg-blue-50 focus-visible:bg-blue-50 focus-visible:outline-none dark:hover:bg-blue-950/40 dark:focus-visible:bg-blue-950/40"
+                                            className="block px-3 py-2.5 text-[15px] transition-colors hover:bg-accent focus-visible:bg-accent focus-visible:outline-none"
                                             onClick={() => {
                                                 setQuery('');
                                                 setOpen(false);
                                                 onNavigate?.();
                                             }}
                                         >
-                                            <span className="font-medium text-slate-900 dark:text-slate-50">
-                                                {question.title}
-                                            </span>
-                                            <span className="mt-0.5 block text-xs text-slate-500">
+                                            <span className="font-medium text-foreground">{question.title}</span>
+                                            <span className="mt-0.5 block text-xs text-muted-foreground">
                                                 {topic?.name} · {question.difficulty}
                                             </span>
                                         </Link>

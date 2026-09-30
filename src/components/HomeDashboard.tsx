@@ -27,25 +27,26 @@ export const HomeDashboard = () => {
     return (
         <div className="mx-auto w-full max-w-5xl">
             <header className="mb-10">
-                <h1 className="text-[1.75rem] leading-snug font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-50">
+                <p className="mb-2 text-xs font-semibold tracking-[0.16em] text-primary uppercase">Interview Prep</p>
+                <h1 className="text-[2rem] leading-tight font-semibold tracking-tight text-foreground sm:text-4xl">
                     Frontend Interview Prep
                 </h1>
-                <p className="mt-3 max-w-2xl text-[15.5px] leading-7 text-slate-600 dark:text-slate-400">
+                <p className="mt-3 max-w-2xl text-[15.5px] leading-7 text-muted-foreground">
                     Practice senior frontend and architecture interview questions by topic. Track progress, search
                     everything, and prepare with structured answers.
                 </p>
-                <div className="mt-5 flex max-w-md flex-col gap-2.5">
-                    <div className="flex items-center justify-between gap-3 text-[15px]">
-                        <span className="text-slate-600 dark:text-slate-400">Overall progress</span>
+                <div className="card-premium mt-6 max-w-md rounded-2xl p-4">
+                    <div className="mb-2.5 flex items-center justify-between gap-3 text-[15px]">
+                        <span className="text-muted-foreground">Overall progress</span>
                         <div className="flex items-center gap-2.5">
-                            <span className="font-medium text-slate-900 dark:text-slate-100">
+                            <span className="font-medium text-foreground">
                                 {global.completed}/{global.total} ({global.percent}%)
                             </span>
                             <Button
                                 type="button"
-                                variant="outline"
+                                variant="ghost"
                                 size="sm"
-                                className="h-8 text-[13px]"
+                                className="h-8 text-[13px] text-muted-foreground"
                                 onClick={handleResetAll}
                                 aria-label="Reset all question progress"
                             >
@@ -54,7 +55,7 @@ export const HomeDashboard = () => {
                             </Button>
                         </div>
                     </div>
-                    <Progress value={global.percent} aria-label="Overall progress" />
+                    <Progress value={global.percent} className="h-1.5" aria-label="Overall progress" />
                 </div>
             </header>
 
@@ -67,22 +68,24 @@ export const HomeDashboard = () => {
                         <li key={topic.id}>
                             <Link
                                 href={`/${topic.id}`}
-                                className="block h-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                                className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             >
-                                <Card className="h-full shadow-none ring-1 ring-slate-200/80 transition-colors hover:bg-slate-50 dark:ring-slate-800 dark:hover:bg-slate-900">
-                                    <CardHeader className="flex flex-row items-center gap-2.5">
-                                        <TopicIcon name={topic.icon} className="size-5 text-blue-600" />
+                                <Card className="card-premium h-full rounded-2xl ring-0 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/25 group-hover:shadow-md">
+                                    <CardHeader className="flex flex-row items-center gap-3">
+                                        <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15 transition-colors group-hover:bg-primary/15">
+                                            <TopicIcon name={topic.icon} className="size-4" />
+                                        </span>
                                         <CardTitle>
-                                            <h2 className="text-[15.5px] font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+                                            <h2 className="text-[15.5px] font-semibold tracking-tight text-foreground">
                                                 {topic.name}
                                             </h2>
                                         </CardTitle>
                                     </CardHeader>
                                     <CardContent className="space-y-2.5">
-                                        <p className="text-[13px] text-slate-500 dark:text-slate-400">
+                                        <p className="text-[13px] text-muted-foreground">
                                             {topic.completedCount}/{topic.questionCount} completed
                                         </p>
-                                        <Progress value={percent} aria-hidden="true" />
+                                        <Progress value={percent} className="h-1.5" aria-hidden="true" />
                                     </CardContent>
                                 </Card>
                             </Link>

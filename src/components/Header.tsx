@@ -26,7 +26,7 @@ export const Header = () => {
     };
 
     return (
-        <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 border-b border-slate-200 bg-white/95 px-4 backdrop-blur supports-backdrop-filter:bg-white/80 sm:px-5 dark:border-slate-800 dark:bg-slate-950/95 dark:supports-backdrop-filter:bg-slate-950/80">
+        <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 border-b border-border/70 bg-background/70 px-4 backdrop-blur-xl supports-backdrop-filter:bg-background/55 sm:px-5">
             <div className="flex min-w-0 flex-1 items-center gap-2 lg:gap-4">
                 <Button
                     type="button"
@@ -41,15 +41,15 @@ export const Header = () => {
 
                 <Link
                     href="/"
-                    className="flex shrink-0 items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                    className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                    <Rocket className="size-5 text-blue-600" aria-hidden="true" />
-                    <span className="hidden text-[15px] font-semibold tracking-tight text-slate-900 sm:inline dark:text-slate-50">
+                    <span className="flex size-8 items-center justify-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/15">
+                        <Rocket className="size-4" aria-hidden="true" />
+                    </span>
+                    <span className="hidden text-[15px] font-semibold tracking-tight text-foreground sm:inline">
                         Frontend Interview Prep
                     </span>
-                    <span className="text-[15px] font-semibold tracking-tight text-slate-900 sm:hidden dark:text-slate-50">
-                        FIP
-                    </span>
+                    <span className="text-[15px] font-semibold tracking-tight text-foreground sm:hidden">FIP</span>
                 </Link>
 
                 <div className="mx-auto hidden w-full max-w-xl flex-1 md:block">
@@ -60,9 +60,9 @@ export const Header = () => {
             <div className="flex items-center gap-2 sm:gap-3">
                 <div className="hidden items-center gap-2.5 sm:flex" aria-live="polite">
                     <div className="w-28">
-                        <Progress value={percent} aria-label={`Overall progress ${percent}%`} />
+                        <Progress value={percent} className="h-1.5" aria-label={`Overall progress ${percent}%`} />
                     </div>
-                    <span className="text-sm font-medium whitespace-nowrap text-slate-600 dark:text-slate-300">
+                    <span className="text-sm font-medium whitespace-nowrap text-muted-foreground">
                         {percent}%
                         <span className="sr-only">
                             {' '}
@@ -73,9 +73,9 @@ export const Header = () => {
 
                 <Button
                     type="button"
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
-                    className="hidden text-[13px] sm:inline-flex"
+                    className="hidden text-[13px] text-muted-foreground hover:text-foreground sm:inline-flex"
                     onClick={handleResetAll}
                     aria-label="Reset all question progress"
                 >
@@ -101,7 +101,11 @@ export const Header = () => {
                     aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                     onClick={toggleTheme}
                 >
-                    {theme === 'dark' ? <Sun className="size-5" /> : <Moon className="size-5" />}
+                    {theme === 'dark' ? (
+                        <Sun className="size-5 transition-transform duration-200" />
+                    ) : (
+                        <Moon className="size-5 transition-transform duration-200" />
+                    )}
                 </Button>
 
                 <Button
