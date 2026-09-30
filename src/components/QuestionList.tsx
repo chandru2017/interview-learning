@@ -63,7 +63,7 @@ export const QuestionList = ({ topic }: IQuestionListProps) => {
             </header>
 
             <ul className="flex flex-col gap-2.5">
-                {questions.map((question) => {
+                {questions.map((question, index) => {
                     const StatusIcon =
                         question.status === 'completed'
                             ? CircleCheck
@@ -79,12 +79,13 @@ export const QuestionList = ({ topic }: IQuestionListProps) => {
                               : 'Not Started';
 
                     return (
-                        <li key={question.id}>
+                        <li key={question.id} className="flex items-center gap-2.5">
+                            <div className="text-lg font-semibold">{`${index + 1} )`}</div>
                             <Link
                                 href={`/${topic.id}/${question.id}`}
-                                className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                className="group block rounded-xl flex-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             >
-                                <Card className="card-premium rounded-2xl ring-0 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/25">
+                                <Card className="card-premium rounded-xl ring-0 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/25">
                                     <CardContent className="flex items-start gap-3.5 py-1">
                                         <StatusIcon
                                             className={cn(

@@ -264,7 +264,7 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
     return (
         <Card
             className={cn(
-                'card-premium overflow-hidden rounded-2xl ring-0 transition-all duration-300',
+                'card-premium overflow-hidden rounded-xl ring-0 transition-all duration-300',
                 open && 'border-primary/20 shadow-md',
             )}
         >

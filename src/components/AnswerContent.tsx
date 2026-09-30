@@ -40,7 +40,7 @@ const AnswerPoint = ({
                     return (
                         <li key={`${block.type}-${index}`} className="flex gap-2.5">
                             {arrayLength > 1 ? (
-                                <div className="mt-0.5 shrink-0 text-[13px] font-semibold tracking-wide text-primary/80">
+                                <div className="shrink-0 text-[14px] font-bold tracking-wide text-primary/80">
                                     {keyIndex + 1}.
                                 </div>
                             ) : null}
@@ -79,7 +79,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
 
     if (block.type === 'heading') {
         return (
-            <p className="font-semibold text-foreground">
+            <p className="font-semibold text-foreground px-1">
                 <InlineMarkup text={block.text} />
             </p>
         );
@@ -95,7 +95,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
 
     if (block.type === 'highlight') {
         return (
-            <p className="rounded-xl border border-amber-500/20 border-l-[3px] border-l-amber-500/70 bg-amber-500/10 px-4 py-3 text-foreground italic dark:bg-amber-400/10">
+            <p className="rounded-xl border border-amber-500/20 border-l-[3px] text-sm border-l-amber-500/70 bg-amber-500/10 px-4 py-3 text-foreground dark:bg-amber-400/10">
                 <InlineMarkup text={block.text} />
             </p>
         );

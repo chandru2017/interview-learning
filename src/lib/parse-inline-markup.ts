@@ -1,5 +1,5 @@
 export type InlineMarkupToken = {
-    type: 'text' | 'bold' | 'code';
+    type: 'text' | 'bold' | 'code' | 'active';
     value: string;
 };
 
@@ -35,7 +35,7 @@ export const parseInlineMarkup = (text: string): InlineMarkupToken[] => {
             const end = text.indexOf('`', i + 1);
             if (end !== -1) {
                 flushText();
-                tokens.push({ type: 'code', value: text.slice(i + 1, end) });
+                tokens.push({ type: 'active', value: text.slice(i + 1, end) });
                 i = end + 1;
                 continue;
             }

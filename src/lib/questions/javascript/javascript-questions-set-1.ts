@@ -120,210 +120,6 @@ export const javascriptQuestionsSet1: IQuestion[] = [
     createQuestion({
         id: 'js-2',
         topicId: 'javascript',
-        title: 'What is hoisting?',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        simpleExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Hoisting is JavaScript moving variable and function declarations to the top of their scope before code runs.',
-                            'var and function declarations are hoisted.',
-                            "let and const are hoisted but not initialized, so you can't use them until declared.",
-                        ],
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Hoisting is where var declarations and function declarations are moved to the top of their scope during the creation phase.',
-                            'var is hoisted and initialized with undefined.',
-                            'let and const are hoisted but enter a Temporal Dead Zone (TDZ) - not initialized until declared.',
-                            'Function declarations are fully hoisted with their body. Function expressions are not hoisted.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `console.log(x); // undefined\nvar x = 5;\n\nconsole.log(y); // ReferenceError\nlet y = 10;\n\nconsole.log(add(2, 3)); // 5\nfunction add(a, b) { return a + b; }`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: `var x is hoisted as undefined. let y is in Temporal Dead Zone. The function declaration is completely hoisted.`,
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: `In Archer Review, we encountered hoisting bugs with var. We learned to use const and let exclusively. We discovered that function declarations were hoisted but arrow functions were not.`,
-                    },
-                ],
-            },
-        ],
-        conceptAsStory: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'The teacher (JavaScript) checks your homework before the semester starts.',
-                            'For var, the teacher puts "undefined" next to questions.',
-                            'For let/const, the teacher puts "Don\'t look yet" until you define it.',
-                            'For functions, the teacher already knows the answer before the semester starts.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Hoisting is JavaScript moving declarations to the top before executing code.',
-                            'var is hoisted and initialized with undefined.',
-                            'let and const are hoisted but in Temporal Dead Zone.',
-                            'Function declarations are fully hoisted.',
-                            'This is why you can call a function before declaring it, but not let/const.',
-                        ],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 'js-3',
-        topicId: 'javascript',
-        title: 'What are closures? Give a real-world example.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        simpleExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'A closure is when a function remembers and can access variables from the scope where it was created, even after that scope is finished.',
-                            'Inner functions are closures.',
-                            'They can access variables from their parent function even after the parent returns.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'A closure is a function that retains access to variables from its lexical scope, even after that scope finishes executing.',
-                            'Created every time a function is created.',
-                            '**Used for:** data privacy (creating private variables), function factories, callbacks, event handlers.',
-                            'Closures can cause memory issues if not managed - if you hold references to closures that reference large objects, those objects stay in memory.',
-                            'Essential for React hooks (useState, useCallback use closures).',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `function counter() {
-                                let count = 0;
-                                return function increment() {
-                                    count++;
-                                    return count;
-                                };
-                            }
-                            const myCounter = counter();
-                            console.log(myCounter()); // 1
-                            console.log(myCounter()); // 2`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: `increment is a closure - it remembers count from counter's scope. Each call increments the same count variable.`,
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: `In Archer Review, we used closures in form handling where functions remembered the form ID. In callbacks, closures closed over the request ID to match responses. In React, useCallback hooks use closures to maintain stable function references.`,
-                    },
-                ],
-            },
-        ],
-        conceptAsStory: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'A bakery owner (outer function) creates a secret recipe with ingredient count (variable). ',
-                            'The owner hires a baker (inner function/closure). ',
-                            'The owner goes home, but the baker remembers the recipe. ',
-                            "The baker is the closure - it remembers even though the owner isn't there.",
-                        ],
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'A closure is a function that remembers variables from where it was created. ',
-                            'Inner functions are closures. ',
-                            "They can access outer function's variables even after the outer function finishes. ",
-                            'Very important in JavaScript - we use them in callbacks, event handlers, and React hooks. ',
-                            'They allow us to create private variables.',
-                        ],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 'js-4',
-        topicId: 'javascript',
         title: 'Explain JavaScript execution context.',
         difficulty: 'Advanced',
         status: 'in-progress',
@@ -427,7 +223,7 @@ export const javascriptQuestionsSet1: IQuestion[] = [
         ],
     }),
     createQuestion({
-        id: 'js-5',
+        id: 'js-3',
         topicId: 'javascript',
         title: 'What is the scope chain?',
         difficulty: 'Intermediate',
@@ -526,6 +322,210 @@ export const javascriptQuestionsSet1: IQuestion[] = [
                             "Starting from the current scope, then parent scope, then parent's parent, up to the global scope. ",
                             "This is determined by where functions are written, not where they're called. ",
                             'Understanding scope chain is important for closures.',
+                        ],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 'js-4',
+        topicId: 'javascript',
+        title: 'What is hoisting?',
+        difficulty: 'Advanced',
+        status: 'in-progress',
+        simpleExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hoisting is JavaScript moving variable and function declarations to the top of their scope before code runs.',
+                            'var and function declarations are hoisted.',
+                            "let and const are hoisted but not initialized, so you can't use them until declared.",
+                        ],
+                    },
+                ],
+            },
+        ],
+        seniorExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hoisting is where var declarations and function declarations are moved to the top of their scope during the creation phase.',
+                            'var is hoisted and initialized with undefined.',
+                            'let and const are hoisted but enter a Temporal Dead Zone (TDZ) - not initialized until declared.',
+                            'Function declarations are fully hoisted with their body. Function expressions are not hoisted.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `console.log(x); // undefined\nvar x = 5;\n\nconsole.log(y); // ReferenceError\nlet y = 10;\n\nconsole.log(add(2, 3)); // 5\nfunction add(a, b) { return a + b; }`,
+                    },
+                    {
+                        type: 'highlight',
+                        text: `var x is hoisted as undefined. let y is in Temporal Dead Zone. The function declaration is completely hoisted.`,
+                    },
+                ],
+            },
+        ],
+        realProjectExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: `In Archer Review, we encountered hoisting bugs with var. We learned to use const and let exclusively. We discovered that function declarations were hoisted but arrow functions were not.`,
+                    },
+                ],
+            },
+        ],
+        conceptAsStory: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'The teacher (JavaScript) checks your homework before the semester starts.',
+                            'For var, the teacher puts "undefined" next to questions.',
+                            'For let/const, the teacher puts "Don\'t look yet" until you define it.',
+                            'For functions, the teacher already knows the answer before the semester starts.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hoisting is JavaScript moving declarations to the top before executing code.',
+                            'var is hoisted and initialized with undefined.',
+                            'let and const are hoisted but in Temporal Dead Zone.',
+                            'Function declarations are fully hoisted.',
+                            'This is why you can call a function before declaring it, but not let/const.',
+                        ],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 'js-5',
+        topicId: 'javascript',
+        title: 'What are closures? Give a real-world example.',
+        difficulty: 'Advanced',
+        status: 'in-progress',
+        simpleExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'A closure is when a function remembers and can access variables from the scope where it was created, even after that scope is finished.',
+                            'Inner functions are closures.',
+                            'They can access variables from their parent function even after the parent returns.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        seniorExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'A closure is a function that retains access to variables from its lexical scope, even after that scope finishes executing.',
+                            'Created every time a function is created.',
+                            '**Used for:** data privacy (creating private variables), function factories, callbacks, event handlers.',
+                            'Closures can cause memory issues if not managed - if you hold references to closures that reference large objects, those objects stay in memory.',
+                            'Essential for React hooks (useState, useCallback use closures).',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `function counter() {
+                                let count = 0;
+                                return function increment() {
+                                    count++;
+                                    return count;
+                                };
+                            }
+                            const myCounter = counter();
+                            console.log(myCounter()); // 1
+                            console.log(myCounter()); // 2`,
+                    },
+                    {
+                        type: 'highlight',
+                        text: `increment is a closure - it remembers count from counter's scope. Each call increments the same count variable.`,
+                    },
+                ],
+            },
+        ],
+        realProjectExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: `In Archer Review, we used closures in form handling where functions remembered the form ID. In callbacks, closures closed over the request ID to match responses. In React, useCallback hooks use closures to maintain stable function references.`,
+                    },
+                ],
+            },
+        ],
+        conceptAsStory: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'A bakery owner (outer function) creates a secret recipe with ingredient count (variable). ',
+                            'The owner hires a baker (inner function/closure). ',
+                            'The owner goes home, but the baker remembers the recipe. ',
+                            "The baker is the closure - it remembers even though the owner isn't there.",
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'A closure is a function that remembers variables from where it was created. ',
+                            'Inner functions are closures. ',
+                            "They can access outer function's variables even after the outer function finishes. ",
+                            'Very important in JavaScript - we use them in callbacks, event handlers, and React hooks. ',
+                            'They allow us to create private variables.',
                         ],
                     },
                 ],
