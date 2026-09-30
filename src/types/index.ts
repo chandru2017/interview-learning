@@ -9,7 +9,9 @@ export type ContentBlock =
     | { type: 'paragraph'; text: string }
     | { type: 'heading'; text: string }
     | { type: 'bullets'; items: string[] }
-    | { type: 'code'; text: string };
+    | { type: 'code'; text: string }
+    | { type: 'highlight'; text: string }
+    | { type: 'keywords'; items: string[] };
 
 export interface IAnswerPoint {
     /** Optional letter label such as "a", "b", "c". */
@@ -30,6 +32,8 @@ export interface IQuestion {
     simpleExample: AnswerContent;
     realProjectExample: AnswerContent;
     interviewAnswer: AnswerContent;
+    conceptAsStory?: AnswerContent;
+    speakingPractice?: AnswerContent;
 }
 
 export interface ITopic {

@@ -22,13 +22,19 @@ const DIFFICULTY_CLASS: Record<string, string> = {
     Advanced: 'border-rose-200 bg-rose-50 text-rose-800 dark:border-rose-900 dark:bg-rose-950 dark:text-rose-300',
 };
 
-type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview';
+type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview' | 'speaking' | 'story';
 
 const SECTION_ORDER: {
     id: SectionId;
     key: keyof Pick<
         IQuestion,
-        'simpleExplanation' | 'seniorExplanation' | 'simpleExample' | 'realProjectExample' | 'interviewAnswer'
+        | 'simpleExplanation'
+        | 'seniorExplanation'
+        | 'simpleExample'
+        | 'realProjectExample'
+        | 'interviewAnswer'
+        | 'speakingPractice'
+        | 'conceptAsStory'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
@@ -36,10 +42,12 @@ const SECTION_ORDER: {
     { id: 'example', key: 'simpleExample' },
     { id: 'project', key: 'realProjectExample' },
     { id: 'interview', key: 'interviewAnswer' },
+    { id: 'speaking', key: 'speakingPractice' },
+    { id: 'story', key: 'conceptAsStory' },
 ];
 
 const getAvailableSections = (question: IQuestion): SectionId[] => {
-    return SECTION_ORDER.filter(({ key }) => question[key].length > 0).map(({ id }) => id);
+    return SECTION_ORDER.filter(({ key }) => (question[key]?.length ?? 0) > 0).map(({ id }) => id);
 };
 
 /** Opens the first available section by default (also covers the single-section case). */
@@ -176,6 +184,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                     </Section>
                 )}
 
+                {question?.conceptAsStory?.length && question.conceptAsStory.length > 0 && (
+                    <Section
+                        id="story"
+                        title="Concept as Story"
+                        description="How this shows up in production"
+                        open={openSection === 'story'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.conceptAsStory} />
+                    </Section>
+                )}
+
                 {question.interviewAnswer.length > 0 && (
                     <Section
                         id="interview"
@@ -185,6 +205,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.interviewAnswer} />
+                    </Section>
+                )}
+
+                {question?.speakingPractice?.length && question.speakingPractice.length > 0 && (
+                    <Section
+                        id="speaking"
+                        title="Speaking Practice"
+                        description="How this shows up in production"
+                        open={openSection === 'speaking'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.speakingPractice} />
                     </Section>
                 )}
             </div>
