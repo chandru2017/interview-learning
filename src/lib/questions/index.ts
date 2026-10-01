@@ -14,7 +14,7 @@ import { frontendArchitectureQuestions } from './frontend-architecture';
 import { securityQuestions } from './security';
 import { gitCicdQuestions } from './git-cicd';
 import { leadershipQuestions } from './leadership';
-import { highestPriorityQuestions } from './highest-priority.ts';
+import { top30Questions } from './top-30';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
@@ -31,7 +31,7 @@ export const QUESTIONS: IQuestion[] = [
     ...securityQuestions,
     ...gitCicdQuestions,
     ...leadershipQuestions,
-    ...highestPriorityQuestions,
+    ...top30Questions,
 ];
 
 export {
@@ -49,5 +49,5 @@ export {
     securityQuestions,
     gitCicdQuestions,
     leadershipQuestions,
-    highestPriorityQuestions,
+    top30Questions,
 };

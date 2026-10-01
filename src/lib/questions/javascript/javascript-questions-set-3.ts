@@ -8,7 +8,7 @@ export const javascriptQuestionsSet3: IQuestion[] = [
         topicId: 'javascript',
         title: 'Explain the JavaScript Event Loop.',
         difficulty: 'Intermediate',
-        status: 'completed',
+        status: 'in-progress',
         simpleExplanation: [
             {
                 label: '1',
@@ -182,7 +182,7 @@ export const javascriptQuestionsSet3: IQuestion[] = [
         topicId: 'javascript',
         title: 'What is the difference between the Call Stack, Task Queue, and Microtask Queue?',
         difficulty: 'Intermediate',
-        status: 'completed',
+        status: 'in-progress',
         simpleExplanation: [
             {
                 label: '',

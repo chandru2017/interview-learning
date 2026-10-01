@@ -27,6 +27,7 @@ export interface IQuestion {
     title: string;
     difficulty: QuestionDifficulty;
     status: QuestionStatus;
+    priority?: string;
     simpleExplanation: AnswerContent;
     seniorExplanation: AnswerContent;
     simpleExample: AnswerContent;
