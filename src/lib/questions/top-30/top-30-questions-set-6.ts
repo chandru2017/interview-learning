@@ -2,21 +2,21 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '../create-question';
 
-export const top30QuestionsSet3: IQuestion[] = [
+export const top30QuestionsSet6: IQuestion[] = [
     createQuestion({
-        id: 't30-11',
+        id: 't30-26',
         topicId: 'top-30',
-        title: 'How do you optimize a React application?',
+        title: 'How would you build a Design System?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'First I measure the problem. Then I find the slow part and optimize that specific area.',
+                        text: 'A Design System is a collection of reusable UI components and design rules.',
                     },
                 ],
             },
@@ -28,11 +28,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Measure before optimizing.',
-                            'Check unnecessary renders.',
-                            'Check bundle size and JavaScript execution.',
-                            'Use lazy loading and code splitting.',
-                            'Use caching and virtualization when appropriate.',
+                            'Build reusable components.',
+                            'Define design tokens.',
+                            'Follow accessibility standards.',
+                            'Provide documentation.',
+                            'Add visual and functional testing.',
                         ],
                     },
                 ],
@@ -44,11 +44,13 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: 'const Chart = lazy(() => import("./Chart"));',
+                        text: `<Button variant="primary">
+                                Save
+                            </Button>`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The Chart code can be loaded only when it is needed.',
+                        text: 'The same Button component can be reused across the application.',
                     },
                 ],
             },
@@ -59,7 +61,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For an Archer Review video library, lazy loading and pagination can prevent every video component from loading at the same time.`,
+                        text: `For Archer Review, buttons, inputs, dropdowns, cards, modals, and icons can be standardized using Tailwind and shared UI components.`,
                     },
                 ],
             },
@@ -71,9 +73,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I first measure the performance problem instead of optimizing blindly. ',
-                            'I check rendering, bundle size, API calls, and browser performance. ',
-                            'Then I apply techniques like code splitting, lazy loading, caching, and render optimization based on the actual bottleneck.',
+                            'I would build a Design System around reusable components, design tokens, accessibility, documentation, and testing.',
+                            'The goal is consistency and faster development.',
+                            'I would also keep component APIs simple and flexible.',
                         ],
                     },
                 ],
@@ -85,26 +87,33 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Measure', 'Renders', 'Bundle Size', 'Lazy Loading'],
+                        items: [
+                            'Design System',
+                            'Reusable Components',
+                            'Design Tokens',
+                            'Accessibility',
+                            'Documentation',
+                            'Testing',
+                        ],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-12',
+        id: 't30-27',
         topicId: 'top-30',
-        title: 'How would you structure a large React application?',
+        title: 'When would you use micro-frontends?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'I organize the application by business features instead of putting everything in one large folder.',
+                        text: 'Micro-frontends split a large frontend into smaller applications that can be owned by different teams.',
                     },
                 ],
             },
@@ -116,10 +125,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Use feature-based architecture.',
-                            'Keep feature-specific components, hooks, APIs, and types together.',
-                            'Keep truly shared code in shared layers.',
-                            'Define clear ownership between features.',
+                            'Useful when team boundaries are strong.',
+                            'Can provide independent deployment.',
+                            'Can improve team ownership.',
+                            'Adds complexity around routing, dependencies, communication, and performance.',
+                            'A modular monolith may be simpler.',
                         ],
                     },
                 ],
@@ -131,14 +141,14 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `features/
-                                videos/
-                                    VideoList.tsx
-                                    useVideos.ts`,
+                        text: `Shell
+                                ├── Student
+                                ├── Courses
+                                └── Payments`,
                     },
                     {
                         type: 'highlight',
-                        text: 'Video-related code stays inside the video feature.',
+                        text: 'Different teams can own different application areas.',
                     },
                 ],
             },
@@ -149,7 +159,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For Archer Review, areas such as Students, Courses, Videos, Calendar, and Payments can be separated into clear feature domains.`,
+                        text: `If Archer Review became a very large platform with independently owned Student, Commerce, and Learning applications, micro-frontends could be considered.`,
                     },
                 ],
             },
@@ -161,9 +171,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'For a large React application, I prefer feature-based architecture.',
-                            'Each business feature owns its components, hooks, API logic, and types.',
-                            'Shared components and utilities stay separate. This improves maintainability, scalability, and team ownership.',
+                            'I use micro-frontends mainly when team and deployment boundaries justify the added complexity.',
+                            'They can provide independent ownership and deployment.',
+                            'But I first consider a well-structured modular monolith because it is usually simpler.',
                         ],
                     },
                 ],
@@ -175,26 +185,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Feature-Based', 'Shared', 'Scalable', 'Maintainable'],
+                        items: ['Teams', 'Deployment', 'Boundaries', 'Complexity'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-13',
+        id: 't30-28',
         topicId: 'top-30',
-        title: 'Context vs Redux vs React Query.',
+        title: 'Design a large-scale e-commerce frontend.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Context shares values. Redux manages complex client state. React Query manages server data.',
+                        text: 'I would divide the application into business areas such as Product, Search, Cart, Checkout, Account, and Payment.',
                     },
                 ],
             },
@@ -206,10 +216,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Context is good for simple shared state.',
-                            'Redux is useful for complex client-side state.',
-                            'React Query is designed for server state.',
-                            'Server-state tools handle caching and refetching.',
+                            'Define clear domain boundaries.',
+                            'Use reusable UI components.',
+                            'Create clear API contracts.',
+                            'Use caching and appropriate rendering.',
+                            'Plan for errors, analytics, security, and observability.',
                         ],
                     },
                 ],
@@ -221,11 +232,12 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const UserContext = createContext(null);`,
+                        text: `const ProductCard = ({ product }) =>
+                            <article>{product.name}</article>;`,
                     },
                     {
                         type: 'highlight',
-                        text: 'Context can share user information without passing props through many components.',
+                        text: 'ProductCard can be reused across product listing pages.',
                     },
                 ],
             },
@@ -236,7 +248,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `In Archer Review, UI preferences can use Context, complex client state can use Redux, and course or video API data can use a server-state library.`,
+                        text: `The same architecture can apply to Archer Review: Courses can act as products, with pricing, course details, checkout, student accounts, and learning content separated into domains.`,
                     },
                 ],
             },
@@ -248,10 +260,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            `I don't choose these tools only by popularity. I first identify the state type.`,
-                            '`Context` is good for simple shared state.',
-                            '`Redux` is useful for complex client state.',
-                            '`React Query` is designed for server state, including caching and refetching.',
+                            'For a large e-commerce frontend, I would define clear domains such as product, search, cart, checkout, and account.',
+                            'I would use reusable components and strong API boundaries.',
+                            'For performance, I would use caching, code splitting, optimized images, and the right rendering strategy.',
                         ],
                     },
                 ],
@@ -263,26 +274,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Context', 'Redux', 'Server State', 'Caching'],
+                        items: ['Domains', 'Checkout', 'API', 'Caching'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-14',
+        id: 't30-29',
         topicId: 'top-30',
-        title: 'Explain Server Components.',
+        title: 'Tell me about your most challenging technical problem.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Server Components run on the server. They can reduce the amount of JavaScript sent to the browser.',
+                        text: 'Use this structure: Problem → Investigation → Solution → Result.',
                     },
                 ],
             },
@@ -294,10 +305,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Server Components execute on the server.',
-                            'They are useful for server-side data fetching.',
-                            'They can reduce client-side JavaScript.',
-                            'Interactive features need Client Components.',
+                            'Show technical ownership.',
+                            'Explain how you investigated the problem.',
+                            'Explain the trade-offs.',
+                            'Show collaboration.',
+                            'Mention the final result.',
                         ],
                     },
                 ],
@@ -309,14 +321,13 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const Course = async () => {
-                            const data = await getCourse();
-                            return <h1>{data.name}</h1>;
-                        };`,
+                        text: `Problem → Accessibility issues
+                            Action  → Audit and fix
+                            Result  → Better accessibility`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The component can fetch the course data on the server.',
+                        text: 'Keep the story focused on your decision-making and impact.',
                     },
                 ],
             },
@@ -327,7 +338,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `In Archer Review with Next.js, a course information section can be a Server Component when it only displays server data and does not need browser interaction.`,
+                        text: `A strong Archer Review example is the large VPAT accessibility effort. You can discuss identifying issues, categorizing them by severity, fixing them systematically, and validating the fixes using automated and manual testing.`,
                     },
                 ],
             },
@@ -339,9 +350,10 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Server Components run on the server and help reduce client-side JavaScript.',
-                            'They are useful for data fetching and static UI.',
-                            'If a component needs state, effects, or browser events, I use a Client Component.',
+                            'One challenging problem I worked on was a large accessibility and VPAT effort.',
+                            'There were many issues across the application, so I first categorized them by severity and type.',
+                            'Then I worked through the issues systematically with the team and validated the fixes using automated and manual testing.',
+                            'This improved accessibility and gave us a more maintainable UI.',
                         ],
                     },
                 ],
@@ -353,26 +365,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['server', 'Client', 'JavaScript', 'Data Fetching'],
+                        items: ['Problem', 'Ownership', 'Accessibility', 'Teamwork'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-15',
+        id: 't30-30',
         topicId: 'top-30',
-        title: 'SSR vs SSG vs ISR vs CSR.',
+        title: 'Why should we hire you as a Senior Frontend Engineer / Frontend Architect?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'SSR renders on each request. SSG generates pages ahead of time. ISR updates static pages after a period. CSR renders mainly in the browser.',
+                        text: 'Talk about Experience + Technical Skills + Problem Solving. Do not only list technologies.',
                     },
                 ],
             },
@@ -384,10 +396,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'SSR is useful for request-specific dynamic data.',
-                            'SSG is useful for mostly static content.',
-                            'ISR is useful for static content that changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
+                            '10+ years of software development experience.',
+                            'Around 6 years of hands-on React experience.',
+                            'Strong frontend architecture knowledge.',
+                            'Experience with performance, accessibility, SEO, and maintainability.',
+                            'Ability to solve complex technical problems.',
                         ],
                     },
                 ],
@@ -399,11 +412,13 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const page = await fetch("/api/course");`,
+                        text: `Problem → Technical challenge
+                            Decision → Architecture
+                            Result   → Better scalability`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The final rendering strategy depends on how the data is fetched and handled.',
+                        text: 'The important point is how you use your experience to solve business problems.',
                     },
                 ],
             },
@@ -414,7 +429,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `Archer Review marketing pages can use static or revalidated rendering, while highly interactive student screens can use Client Components where appropriate.`,
+                        text: `Your Archer Review experience covers React, Next.js, TypeScript, Tailwind, SEO, accessibility/VPAT, performance, and component architecture.`,
                     },
                 ],
             },
@@ -426,11 +441,10 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I choose rendering based on data and user experience.',
-                            'SSR is good for dynamic request-based data.',
-                            'SSG is good for static pages.',
-                            'ISR is good when content changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
+                            'I have over 10 years of software development experience and around 6 years of hands-on React experience.',
+                            'I have worked on large frontend applications using React, Next.js, and TypeScript.',
+                            'I focus not only on building features, but also on architecture, performance, accessibility, SEO, and maintainability.',
+                            'I believe I can bring both strong technical skills and senior-level problem solving to the team.',
                         ],
                     },
                 ],
@@ -442,7 +456,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['SSR', 'SSG', 'ISR', 'CSR'],
+                        items: ['10+ Years', 'React', 'Architecture', 'Problem Solving'],
                     },
                 ],
             },

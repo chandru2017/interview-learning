@@ -2,21 +2,21 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '../create-question';
 
-export const top30QuestionsSet3: IQuestion[] = [
+export const top30QuestionsSet5: IQuestion[] = [
     createQuestion({
-        id: 't30-11',
+        id: 't30-21',
         topicId: 'top-30',
-        title: 'How do you optimize a React application?',
+        title: 'Explain semantic HTML.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'First I measure the problem. Then I find the slow part and optimize that specific area.',
+                        text: 'Semantic HTML means using HTML elements based on their meaning.',
                     },
                 ],
             },
@@ -28,11 +28,10 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Measure before optimizing.',
-                            'Check unnecessary renders.',
-                            'Check bundle size and JavaScript execution.',
-                            'Use lazy loading and code splitting.',
-                            'Use caching and virtualization when appropriate.',
+                            'It improves accessibility.',
+                            'It helps SEO.',
+                            'It improves maintainability.',
+                            'Native elements should be preferred over custom behavior.',
                         ],
                     },
                 ],
@@ -44,11 +43,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: 'const Chart = lazy(() => import("./Chart"));',
+                        text: `<button type="button">Save</button>`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The Chart code can be loaded only when it is needed.',
+                        text: 'A real button already provides keyboard and accessibility behavior.',
                     },
                 ],
             },
@@ -59,7 +58,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For an Archer Review video library, lazy loading and pagination can prevent every video component from loading at the same time.`,
+                        text: `For Archer Review, semantic headings, navigation, buttons, and forms help student portal users and assistive technologies.`,
                     },
                 ],
             },
@@ -71,9 +70,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I first measure the performance problem instead of optimizing blindly. ',
-                            'I check rendering, bundle size, API calls, and browser performance. ',
-                            'Then I apply techniques like code splitting, lazy loading, caching, and render optimization based on the actual bottleneck.',
+                            'Semantic HTML means using HTML elements according to their purpose.',
+                            'It improves accessibility, SEO, and maintainability.',
+                            'I always prefer native semantic elements before adding custom ARIA.',
                         ],
                     },
                 ],
@@ -85,26 +84,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Measure', 'Renders', 'Bundle Size', 'Lazy Loading'],
+                        items: ['Semantic', 'Accessibility', 'SEO', 'Native HTML'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-12',
+        id: 't30-22',
         topicId: 'top-30',
-        title: 'How would you structure a large React application?',
+        title: 'Explain WCAG and ARIA.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'I organize the application by business features instead of putting everything in one large folder.',
+                        text: 'WCAG is a set of accessibility guidelines. ARIA provides extra information to assistive technologies when normal HTML is not enough.',
                     },
                 ],
             },
@@ -116,10 +115,279 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Use feature-based architecture.',
-                            'Keep feature-specific components, hooks, APIs, and types together.',
-                            'Keep truly shared code in shared layers.',
-                            'Define clear ownership between features.',
+                            'WCAG defines accessibility guidelines and success criteria.',
+                            'ARIA provides roles, states, and properties.',
+                            'ARIA should not replace semantic HTML.',
+                            'Accessibility should be tested automatically and manually.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `<button aria-label="Close">×</button>`,
+                    },
+                    {
+                        type: 'highlight',
+                        text: 'The label gives a screen reader a meaningful name.',
+                    },
+                ],
+            },
+        ],
+        realProjectExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: `For Archer Review VPAT work, I would check keyboard navigation, focus, contrast, semantic structure, and screen-reader support.`,
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'WCAG provides guidelines for making websites accessible.',
+                            'ARIA provides additional information for assistive technologies.',
+                            'I prefer semantic HTML first, then use ARIA when needed.',
+                            'I also use automated tools and manual keyboard testing.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        speakingPractice: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'keywords',
+                        items: ['WCAG', 'ARIA', 'Accessibility', 'Semantic HTML', 'Keyboard Testing', 'Screen Readers'],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 't30-23',
+        topicId: 'top-30',
+        title: 'How would you make a modal accessible?',
+        difficulty: 'Advanced',
+        status: 'in-progress',
+        priority: 'medium',
+        simpleExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'An accessible modal needs a clear name, correct focus handling, keyboard support, and proper closing behavior.',
+                    },
+                ],
+            },
+        ],
+        seniorExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Use dialog semantics.',
+                            'Move focus into the modal.',
+                            'Keep keyboard focus within the modal when required.',
+                            'Support Escape.',
+                            'Return focus to the trigger when closed.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `<div
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledBy="modal-title"
+                        >`,
+                    },
+                    {
+                        type: 'highlight',
+                        text: 'This provides dialog semantics to assistive technologies.',
+                    },
+                ],
+            },
+        ],
+        realProjectExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: `In Archer Review, a course confirmation modal should allow keyboard and screen-reader users to complete the action without losing context.`,
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'For an accessible modal, I provide proper dialog semantics and an accessible name.',
+                            'I move focus into the modal, manage keyboard focus, support Escape, and return focus to the trigger when the modal closes.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        speakingPractice: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'keywords',
+                        items: ['Dialog', 'Focus', 'Escape', 'Return Focus', 'Modal'],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 't30-24',
+        topicId: 'top-30',
+        title: 'How would you implement SEO in Next.js?',
+        difficulty: 'Advanced',
+        status: 'in-progress',
+        priority: 'medium',
+        simpleExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'SEO helps search engines understand the page. I manage metadata, semantic HTML, canonical URLs, structured data, sitemap, and robots configuration.',
+                    },
+                ],
+            },
+        ],
+        seniorExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Use Next.js Metadata APIs.',
+                            'Use canonical URLs.',
+                            'Add JSON-LD structured data where appropriate.',
+                            'Use semantic HTML.',
+                            'Choose rendering strategies that make important content available.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `export const metadata = {
+                                title: "NCLEX Course | Archer Review"
+                            };`,
+                    },
+                    {
+                        type: 'highlight',
+                        text: 'Next.js can generate page metadata from this configuration.',
+                    },
+                ],
+            },
+        ],
+        realProjectExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: `For Archer Review, SEO work can include metadata and JSON-LD such as Course and Organization schema.`,
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'For SEO in Next.js, I use the Metadata API, semantic HTML, canonical URLs, structured data, sitemap, and robots configuration.',
+                            'I also choose SSR, SSG, or ISR when search engines need the content available in the initial response.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        speakingPractice: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'keywords',
+                        items: ['SEO', 'Canonical URLs', 'Structured Data', 'Sitemap'],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 't30-25',
+        topicId: 'top-30',
+        title: 'How would you design a scalable frontend architecture?',
+        difficulty: 'Advanced',
+        status: 'in-progress',
+        priority: 'medium',
+        simpleExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'A scalable architecture should be easy to add features, change features, test, maintain, and scale across teams.',
+                    },
+                ],
+            },
+        ],
+        seniorExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Define clear boundaries.',
+                            'Use feature-based organization.',
+                            'Separate UI, business logic, and API concerns.',
+                            'Define standards for state, testing, accessibility, security, and performance.',
+                            'Keep coupling low.',
                         ],
                     },
                 ],
@@ -132,13 +400,13 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'code',
                         text: `features/
-                                videos/
-                                    VideoList.tsx
-                                    useVideos.ts`,
+                                shared/
+                                services/
+                                types/`,
                     },
                     {
                         type: 'highlight',
-                        text: 'Video-related code stays inside the video feature.',
+                        text: 'Each area has a clear responsibility.',
                     },
                 ],
             },
@@ -149,7 +417,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For Archer Review, areas such as Students, Courses, Videos, Calendar, and Payments can be separated into clear feature domains.`,
+                        text: `For Archer Review, Student Portal, Video Library, Courses, and Calendar can be separate feature domains with shared UI and infrastructure.`,
                     },
                 ],
             },
@@ -161,9 +429,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'For a large React application, I prefer feature-based architecture.',
-                            'Each business feature owns its components, hooks, API logic, and types.',
-                            'Shared components and utilities stay separate. This improves maintainability, scalability, and team ownership.',
+                            'For scalable frontend architecture, I focus on clear boundaries and low coupling.',
+                            'I organize code by business features, define shared standards, and separate UI, business logic, and API concerns.',
+                            'I also consider performance, accessibility, testing, security, and team scalability.',
                         ],
                     },
                 ],
@@ -175,274 +443,12 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Feature-Based', 'Shared', 'Scalable', 'Maintainable'],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 't30-13',
-        topicId: 'top-30',
-        title: 'Context vs Redux vs React Query.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'low',
-        simpleExplanation: [
-            {
-                label: '1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Context shares values. Redux manages complex client state. React Query manages server data.',
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
                         items: [
-                            'Context is good for simple shared state.',
-                            'Redux is useful for complex client-side state.',
-                            'React Query is designed for server state.',
-                            'Server-state tools handle caching and refetching.',
+                            'Scalable Architecture',
+                            'Clear Boundaries',
+                            'Feature Organization',
+                            'Shared Standards',
                         ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `const UserContext = createContext(null);`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: 'Context can share user information without passing props through many components.',
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: `In Archer Review, UI preferences can use Context, complex client state can use Redux, and course or video API data can use a server-state library.`,
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            `I don't choose these tools only by popularity. I first identify the state type.`,
-                            '`Context` is good for simple shared state.',
-                            '`Redux` is useful for complex client state.',
-                            '`React Query` is designed for server state, including caching and refetching.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        speakingPractice: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'keywords',
-                        items: ['Context', 'Redux', 'Server State', 'Caching'],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 't30-14',
-        topicId: 'top-30',
-        title: 'Explain Server Components.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'low',
-        simpleExplanation: [
-            {
-                label: '1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Server Components run on the server. They can reduce the amount of JavaScript sent to the browser.',
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Server Components execute on the server.',
-                            'They are useful for server-side data fetching.',
-                            'They can reduce client-side JavaScript.',
-                            'Interactive features need Client Components.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `const Course = async () => {
-                            const data = await getCourse();
-                            return <h1>{data.name}</h1>;
-                        };`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: 'The component can fetch the course data on the server.',
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: `In Archer Review with Next.js, a course information section can be a Server Component when it only displays server data and does not need browser interaction.`,
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Server Components run on the server and help reduce client-side JavaScript.',
-                            'They are useful for data fetching and static UI.',
-                            'If a component needs state, effects, or browser events, I use a Client Component.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        speakingPractice: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'keywords',
-                        items: ['server', 'Client', 'JavaScript', 'Data Fetching'],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 't30-15',
-        topicId: 'top-30',
-        title: 'SSR vs SSG vs ISR vs CSR.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'low',
-        simpleExplanation: [
-            {
-                label: '1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'SSR renders on each request. SSG generates pages ahead of time. ISR updates static pages after a period. CSR renders mainly in the browser.',
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'SSR is useful for request-specific dynamic data.',
-                            'SSG is useful for mostly static content.',
-                            'ISR is useful for static content that changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `const page = await fetch("/api/course");`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: 'The final rendering strategy depends on how the data is fetched and handled.',
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: `Archer Review marketing pages can use static or revalidated rendering, while highly interactive student screens can use Client Components where appropriate.`,
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'I choose rendering based on data and user experience.',
-                            'SSR is good for dynamic request-based data.',
-                            'SSG is good for static pages.',
-                            'ISR is good when content changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        speakingPractice: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'keywords',
-                        items: ['SSR', 'SSG', 'ISR', 'CSR'],
                     },
                 ],
             },

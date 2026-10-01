@@ -2,21 +2,21 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '../create-question';
 
-export const top30QuestionsSet3: IQuestion[] = [
+export const top30QuestionsSet4: IQuestion[] = [
     createQuestion({
-        id: 't30-11',
+        id: 't30-16',
         topicId: 'top-30',
-        title: 'How do you optimize a React application?',
+        title: 'How does Next.js caching work?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'First I measure the problem. Then I find the slow part and optimize that specific area.',
+                        text: 'Next.js can cache data and rendered results to avoid repeating the same work.',
                     },
                 ],
             },
@@ -28,11 +28,10 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Measure before optimizing.',
-                            'Check unnecessary renders.',
-                            'Check bundle size and JavaScript execution.',
-                            'Use lazy loading and code splitting.',
-                            'Use caching and virtualization when appropriate.',
+                            'Understand what is being cached.',
+                            'Understand cache lifetime.',
+                            'Understand invalidation.',
+                            'Choose caching based on data freshness.',
                         ],
                     },
                 ],
@@ -44,11 +43,13 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: 'const Chart = lazy(() => import("./Chart"));',
+                        text: `fetch(url, {
+                            next: { revalidate: 60 }
+                        });`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The Chart code can be loaded only when it is needed.',
+                        text: 'The data can be revalidated after the configured period.',
                     },
                 ],
             },
@@ -59,7 +60,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For an Archer Review video library, lazy loading and pagination can prevent every video component from loading at the same time.`,
+                        text: `For Archer Review course information that does not change every second, caching and revalidation can reduce repeated API requests.`,
                     },
                 ],
             },
@@ -71,9 +72,8 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I first measure the performance problem instead of optimizing blindly. ',
-                            'I check rendering, bundle size, API calls, and browser performance. ',
-                            'Then I apply techniques like code splitting, lazy loading, caching, and render optimization based on the actual bottleneck.',
+                            'Next.js provides caching to avoid unnecessary work and improve performance.',
+                            'As a senior engineer, I focus on what should be cached, how long it should stay cached, and how it should be invalidated.',
                         ],
                     },
                 ],
@@ -85,26 +85,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Measure', 'Renders', 'Bundle Size', 'Lazy Loading'],
+                        items: ['Cache', 'Revalidation', 'Data Freshness', 'Invalidation'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-12',
+        id: 't30-17',
         topicId: 'top-30',
-        title: 'How would you structure a large React application?',
+        title: 'How do you optimize a Next.js application?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'I organize the application by business features instead of putting everything in one large folder.',
+                        text: 'I look at JavaScript, images, fonts, rendering, API calls, caching, and Server/Client Components.',
                     },
                 ],
             },
@@ -116,10 +116,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Use feature-based architecture.',
-                            'Keep feature-specific components, hooks, APIs, and types together.',
-                            'Keep truly shared code in shared layers.',
-                            'Define clear ownership between features.',
+                            'Reduce unnecessary Client Components.',
+                            'Optimize images and fonts.',
+                            'Use appropriate caching.',
+                            'Choose the right rendering strategy.',
+                            'Monitor Core Web Vitals.',
                         ],
                     },
                 ],
@@ -131,14 +132,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `features/
-                                videos/
-                                    VideoList.tsx
-                                    useVideos.ts`,
+                        text: `import Image from "next/image";`,
                     },
                     {
                         type: 'highlight',
-                        text: 'Video-related code stays inside the video feature.',
+                        text: 'Next.js Image helps optimize image loading and sizing.',
                     },
                 ],
             },
@@ -149,7 +147,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `For Archer Review, areas such as Students, Courses, Videos, Calendar, and Payments can be separated into clear feature domains.`,
+                        text: `For Archer Review pages, I would optimize course images, reduce unnecessary client JavaScript, and use appropriate caching.`,
                     },
                 ],
             },
@@ -161,9 +159,8 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'For a large React application, I prefer feature-based architecture.',
-                            'Each business feature owns its components, hooks, API logic, and types.',
-                            'Shared components and utilities stay separate. This improves maintainability, scalability, and team ownership.',
+                            'For Next.js optimization, I look at both server and client performance.',
+                            'I reduce unnecessary Client Components, optimize images and fonts, use caching correctly, and choose SSR, SSG, or ISR based on the page.',
                         ],
                     },
                 ],
@@ -175,26 +172,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Feature-Based', 'Shared', 'Scalable', 'Maintainable'],
+                        items: ['Bundle', 'Server Components', 'Images', 'Caching'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-13',
+        id: 't30-18',
         topicId: 'top-30',
-        title: 'Context vs Redux vs React Query.',
+        title: 'Explain the browser rendering pipeline.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Context shares values. Redux manages complex client state. React Query manages server data.',
+                        text: 'The browser converts HTML, CSS, and JavaScript into pixels on the screen.',
                     },
                 ],
             },
@@ -206,10 +203,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Context is good for simple shared state.',
-                            'Redux is useful for complex client-side state.',
-                            'React Query is designed for server state.',
-                            'Server-state tools handle caching and refetching.',
+                            'HTML becomes the DOM.',
+                            'CSS becomes the CSSOM.',
+                            'The browser creates the render tree.',
+                            'It calculates layout.',
+                            'It paints and composites the result.',
                         ],
                     },
                 ],
@@ -221,11 +219,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const UserContext = createContext(null);`,
+                        text: `element.style.width = "500px";`,
                     },
                     {
                         type: 'highlight',
-                        text: 'Context can share user information without passing props through many components.',
+                        text: 'Changing layout-related properties can cause the browser to recalculate layout.',
                     },
                 ],
             },
@@ -236,7 +234,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `In Archer Review, UI preferences can use Context, complex client state can use Redux, and course or video API data can use a server-state library.`,
+                        text: `For an Archer Review dashboard, I avoid unnecessary DOM changes during scrolling and animations to reduce layout and paint work.`,
                     },
                 ],
             },
@@ -248,10 +246,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            `I don't choose these tools only by popularity. I first identify the state type.`,
-                            '`Context` is good for simple shared state.',
-                            '`Redux` is useful for complex client state.',
-                            '`React Query` is designed for server state, including caching and refetching.',
+                            'The browser first creates the DOM and CSSOM.',
+                            'It builds the render tree, calculates layout, paints the page, and finally composites the layers.',
+                            'For performance, I reduce unnecessary layout and paint work.',
                         ],
                     },
                 ],
@@ -263,26 +260,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Context', 'Redux', 'Server State', 'Caching'],
+                        items: ['DOM', 'CSSOM', 'Render Tree', 'Layout', 'Paint', 'Compositing'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-14',
+        id: 't30-19',
         topicId: 'top-30',
-        title: 'Explain Server Components.',
+        title: 'Explain Core Web Vitals.',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Server Components run on the server. They can reduce the amount of JavaScript sent to the browser.',
+                        text: 'Core Web Vitals measure important parts of the user experience.',
                     },
                 ],
             },
@@ -294,10 +291,10 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Server Components execute on the server.',
-                            'They are useful for server-side data fetching.',
-                            'They can reduce client-side JavaScript.',
-                            'Interactive features need Client Components.',
+                            'LCP measures loading performance.',
+                            'INP measures interaction responsiveness.',
+                            'CLS measures visual stability.',
+                            'They help identify real user experience problems.',
                         ],
                     },
                 ],
@@ -309,14 +306,15 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const Course = async () => {
-                            const data = await getCourse();
-                            return <h1>{data.name}</h1>;
-                        };`,
+                        text: `<img
+                            width="800"
+                            height="400"
+                            src="/course.jpg"
+                        />`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The component can fetch the course data on the server.',
+                        text: 'Providing dimensions helps reduce unexpected layout shifts.',
                     },
                 ],
             },
@@ -327,7 +325,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `In Archer Review with Next.js, a course information section can be a Server Component when it only displays server data and does not need browser interaction.`,
+                        text: `For Archer Review, I would monitor LCP on course pages, INP on interactive screens, and CLS for images and dynamic UI.`,
                     },
                 ],
             },
@@ -339,9 +337,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Server Components run on the server and help reduce client-side JavaScript.',
-                            'They are useful for data fetching and static UI.',
-                            'If a component needs state, effects, or browser events, I use a Client Component.',
+                            'Core Web Vitals measure real user experience.',
+                            'LCP measures loading, INP measures interaction responsiveness, and CLS measures visual stability.',
+                            'I use these metrics to identify performance issues.',
                         ],
                     },
                 ],
@@ -353,26 +351,26 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['server', 'Client', 'JavaScript', 'Data Fetching'],
+                        items: ['LCP', 'INP', 'CLS', 'User Experience'],
                     },
                 ],
             },
         ],
     }),
     createQuestion({
-        id: 't30-15',
+        id: 't30-20',
         topicId: 'top-30',
-        title: 'SSR vs SSG vs ISR vs CSR.',
+        title: 'How would you improve a slow webpage?',
         difficulty: 'Advanced',
         status: 'in-progress',
-        priority: 'low',
+        priority: 'medium',
         simpleExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'SSR renders on each request. SSG generates pages ahead of time. ISR updates static pages after a period. CSR renders mainly in the browser.',
+                        text: 'First I measure the page. Then I find the biggest bottleneck and fix it.',
                     },
                 ],
             },
@@ -384,10 +382,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'SSR is useful for request-specific dynamic data.',
-                            'SSG is useful for mostly static content.',
-                            'ISR is useful for static content that changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
+                            'Use Lighthouse and DevTools.',
+                            'Check Core Web Vitals.',
+                            'Check network and bundle size.',
+                            'Check JavaScript execution.',
+                            'Fix the biggest bottleneck first.',
                         ],
                     },
                 ],
@@ -399,11 +398,11 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `const page = await fetch("/api/course");`,
+                        text: `const Page = lazy(() => import("./Page"));`,
                     },
                     {
                         type: 'highlight',
-                        text: 'The final rendering strategy depends on how the data is fetched and handled.',
+                        text: 'Lazy loading can reduce the initial JavaScript bundle.',
                     },
                 ],
             },
@@ -414,7 +413,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: `Archer Review marketing pages can use static or revalidated rendering, while highly interactive student screens can use Client Components where appropriate.`,
+                        text: `For a slow Archer Review page, I would check images, third-party scripts, API response time, JavaScript bundle size, and unnecessary Client Components.`,
                     },
                 ],
             },
@@ -426,11 +425,9 @@ export const top30QuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I choose rendering based on data and user experience.',
-                            'SSR is good for dynamic request-based data.',
-                            'SSG is good for static pages.',
-                            'ISR is good when content changes sometimes.',
-                            'CSR is useful for highly interactive screens.',
+                            `I don't optimize based on assumptions. I first measure the page using Lighthouse and DevTools.`,
+                            'Then I identify the biggest bottleneck, such as images, JavaScript, API calls, or rendering.',
+                            'I fix that issue and measure again.',
                         ],
                     },
                 ],
@@ -442,7 +439,7 @@ export const top30QuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['SSR', 'SSG', 'ISR', 'CSR'],
+                        items: ['Measure', 'Lighthouse', 'Bottleneck', 'Bundle'],
                     },
                 ],
             },
