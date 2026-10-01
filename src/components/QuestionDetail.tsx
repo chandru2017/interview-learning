@@ -95,7 +95,6 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
     return (
         <div className="mx-auto w-full max-w-4xl">
             <Breadcrumb items={[{ label: topic.name, href: `/${topic.id}` }, { label: question.title }]} />
-
             <div className="mb-5">
                 <Button variant="ghost" size="sm" asChild className="-ml-2 text-[15px]">
                     <Link href={`/${topic.id}`}>
