@@ -54,7 +54,7 @@ export const TOPICS: ITopic[] = [
         completedCount: 0,
     },
     {
-        id: 'browser-web-apis',
+        id: 'browser-web-api',
         name: 'Browser & Web APIs',
         section: 'WEB PLATFORM',
         icon: 'Globe',

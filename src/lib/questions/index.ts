@@ -6,7 +6,7 @@ import { javascriptQuestions } from './javascript';
 import { typescriptQuestions } from './typescript';
 import { reactQuestions } from './react';
 import { nextQuestions } from './next';
-import { browserWebApisQuestions } from './browser-web-apis';
+import { browserWebApisQuestions } from './browser-web-api';
 import { frontendPerformanceQuestions } from './frontend-performance';
 import { accessibilityQuestions } from './accessibility';
 import { seoQuestions } from './seo';
