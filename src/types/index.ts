@@ -35,6 +35,7 @@ export interface IQuestion {
     interviewAnswer: AnswerContent;
     conceptAsStory?: AnswerContent;
     speakingPractice?: AnswerContent;
+    scenarioQuestions?: AnswerContent;
 }
 
 export interface ITopic {

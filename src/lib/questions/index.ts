@@ -5,7 +5,7 @@ import { htmlCssUiQuestions } from './html-css-ui';
 import { javascriptQuestions } from './javascript';
 import { typescriptQuestions } from './typescript';
 import { reactQuestions } from './react';
-import { nextjsQuestions } from './nextjs';
+import { nextQuestions } from './next';
 import { browserWebApisQuestions } from './browser-web-apis';
 import { frontendPerformanceQuestions } from './frontend-performance';
 import { accessibilityQuestions } from './accessibility';
@@ -22,7 +22,7 @@ export const QUESTIONS: IQuestion[] = [
     ...javascriptQuestions,
     ...typescriptQuestions,
     ...reactQuestions,
-    ...nextjsQuestions,
+    ...nextQuestions,
     ...browserWebApisQuestions,
     ...frontendPerformanceQuestions,
     ...accessibilityQuestions,
@@ -40,7 +40,7 @@ export {
     javascriptQuestions,
     typescriptQuestions,
     reactQuestions,
-    nextjsQuestions,
+    nextQuestions,
     browserWebApisQuestions,
     frontendPerformanceQuestions,
     accessibilityQuestions,

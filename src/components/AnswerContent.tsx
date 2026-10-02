@@ -1,7 +1,7 @@
 'use client';
 
 import { InlineMarkup } from '@/components/InlineMarkup';
-import { stripIndent } from '@/components/StripIndent';
+import { formatCode } from '@/components/FormatCode';
 import type { AnswerContent as AnswerContentType, ContentBlock, IAnswerPoint } from '@/types';
 
 interface IAnswerContentProps {
@@ -88,7 +88,7 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
     if (block.type === 'code') {
         return (
             <pre className="overflow-x-auto rounded-xl border border-border/70 bg-surface-elevated p-5 font-mono text-[13.5px] leading-relaxed text-foreground shadow-inner dark:bg-black/35 dark:text-slate-100">
-                <code>{stripIndent(block.text)}</code>
+                <code>{formatCode(block.text)}</code>
             </pre>
         );
     }

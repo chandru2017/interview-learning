@@ -20,7 +20,7 @@ const DIFFICULTY_CLASS: Record<string, string> = {
     Advanced: 'border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-300',
 };
 
-type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview' | 'speaking' | 'story';
+type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview' | 'speaking' | 'story' | 'scenario';
 
 const SECTION_ORDER: {
     id: SectionId;
@@ -33,6 +33,7 @@ const SECTION_ORDER: {
         | 'interviewAnswer'
         | 'speakingPractice'
         | 'conceptAsStory'
+        | 'scenarioQuestions'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
@@ -42,6 +43,7 @@ const SECTION_ORDER: {
     { id: 'interview', key: 'interviewAnswer' },
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
+    { id: 'scenario', key: 'scenarioQuestions' },
 ];
 
 const getAvailableSections = (question: IQuestion): SectionId[] => {
@@ -202,6 +204,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.interviewAnswer} />
+                    </Section>
+                )}
+
+                {question?.scenarioQuestions && question.scenarioQuestions.length > 0 && (
+                    <Section
+                        id="scenario"
+                        title="Scenario Questions"
+                        description="Scenario questions"
+                        open={openSection === 'scenario'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.scenarioQuestions} />
                     </Section>
                 )}
 

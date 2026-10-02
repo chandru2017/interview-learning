@@ -81,7 +81,7 @@ export const QuestionList = ({ topic }: IQuestionListProps) => {
 
                         return (
                             <li key={question.id} className="flex items-center gap-2.5">
-                                <div className="text-lg font-semibold">{`${index + 1} )`}</div>
+                                <div className="text-lg font-semibold hidden lg:block">{`${index + 1} )`}</div>
                                 <Link
                                     href={`/${topic.id}/${question.id}`}
                                     className="group block rounded-xl flex-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -131,9 +131,9 @@ export const QuestionList = ({ topic }: IQuestionListProps) => {
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="1.5"
                                     d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm0 5.25h.007v.008H3.75V12zm0 5.25h.007v.008H3.75v-.008z"
                                 ></path>
                             </svg>
