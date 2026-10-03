@@ -12,7 +12,7 @@ import { accessibilityQuestions } from './accessibility';
 import { seoQuestions } from './seo';
 import { frontendArchitectureQuestions } from './frontend-architecture';
 import { securityQuestions } from './security';
-import { gitCicdQuestions } from './git-cicd';
+import { gitCiCdQuestions } from './git-cicd';
 import { leadershipQuestions } from './leadership';
 import { top30Questions } from './top-30';
 
@@ -29,7 +29,7 @@ export const QUESTIONS: IQuestion[] = [
     ...seoQuestions,
     ...frontendArchitectureQuestions,
     ...securityQuestions,
-    ...gitCicdQuestions,
+    ...gitCiCdQuestions,
     ...leadershipQuestions,
     ...top30Questions,
 ];
@@ -47,7 +47,7 @@ export {
     seoQuestions,
     frontendArchitectureQuestions,
     securityQuestions,
-    gitCicdQuestions,
+    gitCiCdQuestions,
     leadershipQuestions,
     top30Questions,
 };
