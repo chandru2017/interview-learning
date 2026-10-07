@@ -288,15 +288,24 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'code',
-                        text: `function debounce(func, delay) {
-                            let timeoutId;
-                            return function(...args) {
-                                clearTimeout(timeoutId);
-                                timeoutId = setTimeout(() => {
-                                func.apply(this, args);
-                                }, delay);
-                            };
-                            }
+                        text: `const debounceFunc = ((fn, delay) => {
+                                let timer;
+
+                                return (...args) => {
+                                    clearTimeout(timer);
+                                    timer = setTimeout(() =>{
+                                    fn(...args)
+                                    }, delay);
+                                };
+                            })
+
+                            const handleSearch = ((e) => {
+                                const value = e.target.value;
+                                setSearch(value);
+                                debounceFunc((value) => {
+                                console.log("API Response", value) 
+                                },500)
+                            });
                             const debouncedSearch = debounce((query) => {
                             console.log('Searching:', query);
                             }, 500);

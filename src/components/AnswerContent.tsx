@@ -101,6 +101,17 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
         );
     }
 
+    if (block.type === 'link') {
+        return (
+            <div className="text-foreground/90 flex items-center gap-2">
+                <h2 className="text-sm font-bold">Refer this link:</h2>
+                <a href={block.text} target="_blank" rel="noopener noreferrer" className="text-primary text-base">
+                    {block.text}
+                </a>
+            </div>
+        );
+    }
+
     if (block.type === 'keywords') {
         return (
             <ul className="flex flex-wrap gap-2">

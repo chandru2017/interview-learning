@@ -14,6 +14,7 @@ import { frontendArchitectureQuestions } from './frontend-architecture';
 import { securityQuestions } from './security';
 import { gitCiCdQuestions } from './git-cicd';
 import { leadershipQuestions } from './leadership';
+import { codingTaskQuestions } from './coding-tasks';
 import { top30Questions } from './top-30';
 
 export const QUESTIONS: IQuestion[] = [
@@ -31,6 +32,7 @@ export const QUESTIONS: IQuestion[] = [
     ...securityQuestions,
     ...gitCiCdQuestions,
     ...leadershipQuestions,
+    ...codingTaskQuestions,
     ...top30Questions,
 ];
 
@@ -49,5 +51,6 @@ export {
     securityQuestions,
     gitCiCdQuestions,
     leadershipQuestions,
+    codingTaskQuestions,
     top30Questions,
 };

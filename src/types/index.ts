@@ -3,7 +3,15 @@ export type QuestionDifficulty = 'Beginner' | 'Intermediate' | 'Advanced';
 export type QuestionStatus = 'not-started' | 'in-progress' | 'completed';
 
 export type TopicSection =
-    'ABOUT' | 'CORE' | 'FRAMEWORKS' | 'WEB PLATFORM' | 'QUALITY' | 'ARCHITECTURE' | 'ENGINEERING' | 'FINAL REVISION';
+    | 'ABOUT'
+    | 'CORE'
+    | 'FRAMEWORKS'
+    | 'WEB PLATFORM'
+    | 'QUALITY'
+    | 'ARCHITECTURE'
+    | 'ENGINEERING'
+    | 'CODING'
+    | 'FINAL REVISION';
 
 export type ContentBlock =
     | { type: 'paragraph'; text: string }
@@ -11,7 +19,8 @@ export type ContentBlock =
     | { type: 'bullets'; items: string[] }
     | { type: 'code'; text: string }
     | { type: 'highlight'; text: string }
-    | { type: 'keywords'; items: string[] };
+    | { type: 'keywords'; items: string[] }
+    | { type: 'link'; text: string };
 
 export interface IAnswerPoint {
     /** Optional letter label such as "a", "b", "c". */

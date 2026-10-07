@@ -118,6 +118,14 @@ export const TOPICS: ITopic[] = [
         completedCount: 0,
     },
     {
+        id: 'coding-task',
+        name: 'Coding Tasks',
+        section: 'CODING',
+        icon: 'Code',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
         id: 'top-30',
         name: 'Top 30 Questions',
         section: 'FINAL REVISION',
@@ -135,6 +143,7 @@ const SECTION_ORDER: TopicSection[] = [
     'QUALITY',
     'ARCHITECTURE',
     'ENGINEERING',
+    'CODING',
     'FINAL REVISION',
 ];
 
