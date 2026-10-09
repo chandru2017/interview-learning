@@ -20,7 +20,8 @@ const DIFFICULTY_CLASS: Record<string, string> = {
     Advanced: 'border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-300',
 };
 
-type SectionId = 'simple' | 'senior' | 'example' | 'project' | 'interview' | 'speaking' | 'story' | 'scenario';
+type SectionId =
+    'simple' | 'senior' | 'example' | 'project' | 'interview' | 'tamil' | 'speaking' | 'story' | 'scenario';
 
 const SECTION_ORDER: {
     id: SectionId;
@@ -31,6 +32,7 @@ const SECTION_ORDER: {
         | 'simpleExample'
         | 'realProjectExample'
         | 'interviewAnswer'
+        | 'interviewAnswerTamil'
         | 'speakingPractice'
         | 'conceptAsStory'
         | 'scenarioQuestions'
@@ -41,6 +43,7 @@ const SECTION_ORDER: {
     { id: 'example', key: 'simpleExample' },
     { id: 'project', key: 'realProjectExample' },
     { id: 'interview', key: 'interviewAnswer' },
+    { id: 'tamil', key: 'interviewAnswerTamil' },
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
@@ -204,6 +207,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.interviewAnswer} />
+                    </Section>
+                )}
+
+                {question?.interviewAnswerTamil && question.interviewAnswerTamil.length > 0 && (
+                    <Section
+                        id="tamil"
+                        title="Interview Answer in Tamil"
+                        description="Polished, interview-ready response"
+                        open={openSection === 'tamil'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.interviewAnswerTamil} />
                     </Section>
                 )}
 

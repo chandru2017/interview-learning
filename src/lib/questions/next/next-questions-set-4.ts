@@ -248,6 +248,48 @@ export const nextQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'English',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'For authentication, I prefer a maintained solution like Auth.js or Clerk.',
+                            'I store sessions in secure HttpOnly cookies.',
+                            `I can use middleware for early redirects, but I don't depend on middleware alone.`,
+                            'I always verify the session again on the server before accessing protected data.',
+                            'I also treat Server Actions and Route Handlers like public APIs and validate authentication and authorization there.',
+                            'For security, I use rate limiting, proper password hashing, and OAuth or MFA when required.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Easy Tamil meaning',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Login security-க்கு trusted authentication library use செய்வேன்.',
+                            'Session-ஐ secure HttpOnly cookie-ல் வைப்பேன்.',
+                            'Middleware மூலம் ஆரம்பத்திலேயே redirect செய்வேன்.',
+                            'ஆனால் middleware-ஐ மட்டும் நம்பாமல் server-ல் session-ஐ மீண்டும் verify செய்வேன்.',
+                            'Server Actions மற்றும் API endpoints-ஐ public endpoints போல நினைத்து authentication check செய்வேன்.',
+                            'மேலும் rate limiting, password hashing, OAuth/MFA போன்ற security measures use செய்வேன்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',

@@ -23,7 +23,7 @@ export const top30QuestionsSet2: IQuestion[] = [
         ],
         seniorExplanation: [
             {
-                label: '1',
+                label: '',
                 blocks: [
                     {
                         type: 'bullets',
@@ -110,7 +110,7 @@ export const top30QuestionsSet2: IQuestion[] = [
         ],
         seniorExplanation: [
             {
-                label: '1',
+                label: '',
                 blocks: [
                     {
                         type: 'bullets',
@@ -199,7 +199,7 @@ export const top30QuestionsSet2: IQuestion[] = [
         ],
         seniorExplanation: [
             {
-                label: '1',
+                label: '',
                 blocks: [
                     {
                         type: 'bullets',

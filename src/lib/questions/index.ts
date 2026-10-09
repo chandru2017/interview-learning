@@ -16,6 +16,7 @@ import { gitCiCdQuestions } from './git-cicd';
 import { leadershipQuestions } from './leadership';
 import { codingTaskQuestions } from './coding-tasks';
 import { top30Questions } from './top-30';
+import { srmInfoTechQuestions } from './srm-info-tech';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
@@ -34,6 +35,7 @@ export const QUESTIONS: IQuestion[] = [
     ...leadershipQuestions,
     ...codingTaskQuestions,
     ...top30Questions,
+    ...srmInfoTechQuestions,
 ];
 
 export {
@@ -53,4 +55,5 @@ export {
     leadershipQuestions,
     codingTaskQuestions,
     top30Questions,
+    srmInfoTechQuestions,
 };

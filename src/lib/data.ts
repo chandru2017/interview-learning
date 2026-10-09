@@ -133,6 +133,14 @@ export const TOPICS: ITopic[] = [
         questionCount: 0,
         completedCount: 0,
     },
+    {
+        id: 'srm-info-tech',
+        name: 'SRM InfoTech',
+        section: 'COMPANY SPECIFIC',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
 ];
 
 const SECTION_ORDER: TopicSection[] = [
@@ -145,6 +153,7 @@ const SECTION_ORDER: TopicSection[] = [
     'ENGINEERING',
     'CODING',
     'FINAL REVISION',
+    'COMPANY SPECIFIC',
 ];
 
 export const getTopicById = (topicId: string): ITopic | undefined => {

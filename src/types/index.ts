@@ -11,7 +11,8 @@ export type TopicSection =
     | 'ARCHITECTURE'
     | 'ENGINEERING'
     | 'CODING'
-    | 'FINAL REVISION';
+    | 'FINAL REVISION'
+    | 'COMPANY SPECIFIC';
 
 export type ContentBlock =
     | { type: 'paragraph'; text: string }
@@ -42,6 +43,7 @@ export interface IQuestion {
     simpleExample: AnswerContent;
     realProjectExample: AnswerContent;
     interviewAnswer: AnswerContent;
+    interviewAnswerTamil?: AnswerContent;
     conceptAsStory?: AnswerContent;
     speakingPractice?: AnswerContent;
     scenarioQuestions?: AnswerContent;
