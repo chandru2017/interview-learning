@@ -112,6 +112,37 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**ESLint Configuration:** TypeScript, React Hooks மற்றும் Accessibility plugins ஆகியவற்றைப் பயன்படுத்தி, எல்லா developers-ம் ஒரே coding standards-ஐப் பின்பற்றும் வகையில் Shared ESLint Configuration அமைப்பேன்.',
+                    },
+                    {
+                        type: 'heading',
+                        text: 'ESLint எங்கு இயங்கும்?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Editor:** Code எழுதும்போதே errors மற்றும் warnings-ஐக் கண்டறிய உதவும்.',
+                            '**Pre-commit:** Husky மற்றும் lint-staged மூலம் commit செய்வதற்கு முன்பு தேவையான lint checks-ஐ இயக்குவேன்.',
+                            '**CI Pipeline:** CI-ல் --max-warnings 0 பயன்படுத்துவேன். இதனால் warnings இருந்தாலும் check fail ஆகும். இது கட்டாயமான check-ஆக இருக்க வேண்டும். ஏனெனில், Local Git Hooks-ஐ bypass செய்ய முடியும்; ஆனால் CI check-ஐ merge செய்வதற்கு முன்பு கட்டாயமாக்கலாம்.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: '**Legacy Code:** ஏற்கனவே உள்ள பழைய codebase-ல் எல்லா rules-ஐயும் ஒரே நேரத்தில் அமல்படுத்தாமல், படிப்படியாக அறிமுகப்படுத்துவேன்.',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: '**eslint-disable Comments:** ESLint rule-ஐ disable செய்ய வேண்டிய அவசியம் இருந்தால், அதற்கான சரியான காரணத்தைக் குறிப்பிட வேண்டும் என்று team-ல் வலியுறுத்துவேன். இதனால் தேவையில்லாமல் coding standards-ஐத் தவிர்ப்பதைத் தடுக்கலாம்.',
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',

@@ -103,6 +103,23 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Merge:** Merge என்பது இரண்டு branches-ஐ ஒன்றாக இணைக்கும் முறையாகும். இது பொதுவாக merge commit-ஐ உருவாக்கி, இரண்டு branches-ன் history-யையும் அப்படியே வைத்திருக்கும்.',
+                            '**Rebase:** Rebase என்பது என்னுடைய commits-ஐ மற்றொரு branch-ன் latest commits-க்கு மேலே மீண்டும் அமைக்கும் முறையாகும். இதனால் Git history நேர்த்தியாகவும் (Linear History) தொடர்ச்சியாகவும் இருக்கும்.',
+                            '**எப்போது Rebase பயன்படுத்துவேன்?** என்னுடைய Local Feature Branch-ஐ latest code-க்கு ஏற்ப புதுப்பிக்க Rebase பயன்படுத்துவேன். ஆனால் மற்ற developers பயன்படுத்தும் Shared Branch-களில் Rebase செய்வதைத் தவிர்ப்பேன். ஏனெனில், அது ஏற்கனவே பகிரப்பட்ட commit history-ஐ மாற்றக்கூடும்.',
+                            '**Rebase செய்த பிறகு Push செய்வது:** ஏற்கனவே Remote-க்கு Push செய்த branch-ஐ Rebase செய்திருந்தால், --force-with-lease பயன்படுத்துவேன். இது Remote Branch-ல் மற்றவர்கள் செய்த புதிய மாற்றங்களைத் தவறுதலாக overwrite செய்வதைத் தடுக்க உதவும்.',
+                            '**Main Branch-ல் என்ன செய்வேன்?** Team-ன் Git policy-ஐப் பின்பற்றுவேன். பொதுவாக, Feature Branch-ஐ Main Branch-ல் இணைக்கும்போது Squash Merge பயன்படுத்தலாம். இது பல commits-ஐ ஒரே commit-ஆக மாற்றி, Git History-ஐச் சுத்தமாக வைத்திருக்க உதவும்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',

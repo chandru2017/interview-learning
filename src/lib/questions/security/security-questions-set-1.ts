@@ -99,6 +99,71 @@ export const securityQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'XSS (Cross-Site Scripting) என்பது ஒரு தாக்குதல் செய்பவர் (Attacker), உங்களுடைய website-க்குள் அவருடைய JavaScript code-ஐ இயக்க வைப்பதாகும்.',
+                            'Website-ல் நம்பகமற்ற தகவல்களை (Untrusted Input) சரியாகச் சரிபார்க்காமல் அல்லது பாதுகாப்பாக மாற்றாமல் காட்டும்போது XSS தாக்குதல் ஏற்படலாம்.',
+                            'இந்த JavaScript code மூலம் பயனருடைய தகவல்களைத் திருடலாம், பயனரைப் போலவே செயல்படலாம் அல்லது website-ன் பக்கத்தை மாற்றலாம்.',
+                            'XSS என்பது இணையதளங்களில் ஏற்படக்கூடிய பொதுவான பாதுகாப்புப் பிரச்சினைகளில் (Web Security Problems) ஒன்றாகும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview Answer**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'XSS என்பது நம்பகமற்ற தகவல்களை (Untrusted Input) சரியாகப் பாதுகாக்காமல் website-ல் காட்டும்போது, அது பயனரின் browser-ல் JavaScript code-ஆக இயங்குவதைக் குறிக்கும். இதனால், தாக்குதல் செய்பவர் (Attacker) நம்முடைய website-ன் அனுமதிகளைப் பயன்படுத்தி செயல்பட முடியும்.',
+                        ],
+                    },
+                    {
+                        type: 'heading',
+                        text: 'XSS-ல் மூன்று வகைகள் உள்ளன:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Stored XSS** – தீங்கிழைக்கும் (Harmful) code website-ன் database-ல் சேமிக்கப்படும்.',
+                            '**Reflected XSS** – தீங்கிழைக்கும் (Harmful) input, server response மூலம் உடனடியாகத் திருப்பிக் காட்டப்படும்.',
+                            '**DOM-based XSS** – browser-ல் JavaScript இயங்கும்போது DOM-ஐ தவறாகக் கையாளுவதால் ஏற்படும்.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: '**இதனால் ஏற்படும் பாதிப்புகள்**: பயனரின் tokens-ஐத் திருடுவது, பயனரைப் போலச் செயல்படுவது, website-ன் உள்ளடக்கத்தை மாற்றுவது போன்றவை.',
+                    },
+                    {
+                        type: 'heading',
+                        text: 'XSS-ஐத் தடுக்கும் வழிகள்:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Output Encoding** – பயனர் கொடுக்கும் தகவல்களை code-ஆக இயங்காமல், சாதாரண text-ஆகக் காட்டுவது.',
+                            '**Avoiding Unsafe Sinks** – innerHTML போன்ற பாதுகாப்பற்ற முறைகளைத் தவிர்த்து, textContent போன்ற பாதுகாப்பான முறைகளைப் பயன்படுத்துவது.',
+                            '**Sanitization** – அனுமதிக்கப்படாத அல்லது ஆபத்தான HTML-ஐ நீக்குவது.',
+                            '**CSP (Content Security Policy)** – எந்த scripts இயங்கலாம் என்பதைக் கட்டுப்படுத்துவது.',
+                            '**HttpOnly Cookies** – JavaScript மூலம் cookies-ஐ நேரடியாகப் படிப்பதைத் தடுப்பது.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -257,6 +322,26 @@ export const securityQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'பயனர் கொடுக்கும் தகவல்களை நேரடியாக HTML-ஆகச் சேர்க்கக் கூடாது. (Never insert user input directly as HTML.)',
+                            'React போன்ற output-ஐத் தானாகவே பாதுகாப்பாகக் காட்டும் frameworks-ஐப் பயன்படுத்த வேண்டும். (Use frameworks that escape output, like React.)',
+                            'HTML-ஐ அனுமதிக்க வேண்டிய சூழலில், அதைச் சரியாகச் சுத்தப்படுத்த வேண்டும். (Sanitize HTML if you must allow it.)',
+                            'Content Security Policy (CSP)-ஐ அமைத்து, HttpOnly cookies-ஐப் பயன்படுத்த வேண்டும். (Add a Content Security Policy and use HttpOnly cookies.)',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -407,6 +492,56 @@ export const securityQuestionsSet1: IQuestion[] = [
                             'It targets state-changing actions and the attacker cannot read the response.',
                             'It is different from XSS because it does not run code in my site.',
                             'I protect with SameSite cookies, CSRF tokens, Origin checks and no state changes via GET.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**CSRF (Cross-Site Request Forgery)** என்பது ஒரு பயனர் ஏற்கனவே website-ல் Login செய்திருக்கும்போது, அவருக்குத் தெரியாமலேயே அவர் செய்ய விரும்பாத ஒரு request-ஐ அவருடைய browser மூலம் அனுப்ப வைப்பதாகும்.',
+                            '**இது எப்படி வேலை செய்கிறது?** Browser தானாகவே அந்த website-க்கான cookies-ஐ request-உடன் அனுப்புவதால் இந்தத் தாக்குதல் நடக்கலாம்.',
+                            '**உதாரணம்:** நீங்கள் உங்கள் வங்கிக் கணக்கில் Login செய்திருக்கிறீர்கள் என்று வைத்துக்கொள்வோம். நீங்கள் ஒரு தீங்கிழைக்கும் website-ஐத் திறக்கும்போது, அதில் மறைத்து வைக்கப்பட்டுள்ள form மூலம் உங்கள் வங்கிக் கணக்கிலிருந்து பணம் அனுப்புவதற்கான request அனுப்பப்படலாம்.',
+                            '**முக்கியமான விஷயம்:** தாக்குதல் செய்பவரால் அந்த request-ன் response-ஐப் படிக்க முடியாமல் இருக்கலாம். ஆனால், அந்த request வெற்றிகரமாகச் செயல்படுத்தப்பட்டால், பணம் அனுப்புவது போன்ற செயல் நடந்துவிடலாம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interviewer Answer**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSRF (Cross-Site Request Forgery) என்பது ஒரு பயனர் ஏற்கனவே website-ல் Login செய்திருக்கும்போது, அவருக்குத் தெரியாமல் அவருடைய browser மூலம் தேவையில்லாத request-ஐ அனுப்ப வைக்கும் தாக்குதலாகும். ஏனென்றால், browser தானாகவே cookies-ஐ request-உடன் சேர்த்து அனுப்பும்.',
+                            'இது எந்தச் செயல்களைப் பாதிக்கும்? பணம் அனுப்புவது, password மாற்றுவது அல்லது account விவரங்களை மாற்றுவது போன்ற முக்கியமான செயல்களைப் பாதிக்கலாம். தாக்குதல் செய்பவரால் அந்த request-ன் response-ஐப் படிக்க முடியாமல் இருக்கலாம். ஆனால், அந்தச் செயல் நடந்துவிடலாம்.',
+                            'CSRF மற்றும் XSS இடையிலான வேறுபாடு: XSS-ல் தாக்குதல் செய்பவரின் JavaScript code நம்முடைய website-ல் இயங்கும். ஆனால் CSRF-ல் நம்முடைய website-ல் code-ஐ இயக்க வேண்டிய அவசியமில்லை; பயனரின் browser மூலம் request அனுப்பப்படுகிறது.',
+                        ],
+                    },
+                    {
+                        type: 'heading',
+                        text: 'CSRF-ஐத் தடுக்கும் வழிகள்:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**SameSite Cookies** – வேறு website-களிலிருந்து வரும் request-களில் cookies அனுப்பப்படுவதைக் கட்டுப்படுத்த உதவும்.',
+                            '**CSRF Tokens** – ஒவ்வொரு முக்கியமான request-க்கும் சரியான token இருக்கிறதா என்று சரிபார்க்கும்.',
+                            '**Origin Checks** – request நம்பகமான website-லிருந்து வருகிறதா என்று சரிபார்க்கும்.',
+                            '**GET மூலம் State Change செய்யக்கூடாது** – GET request-ஐப் பயன்படுத்தி பணம் அனுப்புவது, password மாற்றுவது போன்ற முக்கியமான செயல்களைச் செய்ய அனுமதிக்கக் கூடாது.',
                         ],
                     },
                 ],

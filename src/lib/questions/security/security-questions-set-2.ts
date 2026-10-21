@@ -557,6 +557,60 @@ export const securityQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Session Authentication:** Server-ல் பயனரின் Session தகவல்கள் சேமிக்கப்படும். Browser-க்கு ஒரு Session ID Cookie வழங்கப்படும். இந்த ID-ஐ வைத்து Server பயனரை அடையாளம் காணும்.',
+                            '**JWT Authentication:** Server, பயனரின் தகவல்களைக் கொண்ட Signed Token-ஐ வழங்கும். Client ஒவ்வொரு Request அனுப்பும்போதும் அந்த Token-ஐயும் சேர்த்து அனுப்பும்.',
+                            '**முக்கிய வேறுபாடு:** Session-ஐ ரத்து செய்வது எளிது. JWT-ஐ பல Services-ல் பயன்படுத்துவதும் Scale செய்வதும் எளிது. ஆனால் JWT-ஐ உடனடியாக ரத்து செய்வது கடினம்.',
+                            '**பாதுகாப்பு:** Session மற்றும் JWT ஆகிய இரண்டையும் சரியான முறையில் Implement செய்தால் பாதுகாப்பாகப் பயன்படுத்தலாம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**Sessions (Session-based Authentication):** இது Stateful முறையாகும். அதாவது, பயனருடைய தகவல்களை Server-ல் சேமித்து வைத்திருப்போம். Client-ல் ஒரு ID மட்டும் இருக்கும். இந்த ID மூலம் Server பயனரை அடையாளம் காணும். ஒரு Session-ஐ ரத்து (Revoke) செய்தால், உடனடியாக அந்த Session-ஐ செயலிழக்கச் செய்ய முடியும்.',
+                            '**JWT (JSON Web Token):** இது Stateless முறையாகும். இதில் Server ஒவ்வொரு Request-க்கும் Session தகவல்களைச் சேமித்து வைத்திருக்க வேண்டிய அவசியமில்லை. JWT என்பது கையொப்பமிடப்பட்ட (Signed) Token ஆகும். பல Services கொண்ட Application-களில் இதைப் பயன்படுத்துவது எளிது. ஆனால், JWT-ஐ உடனடியாக ரத்து செய்வது கடினம். அதனால், குறுகிய காலம் மட்டுமே செல்லுபடியாகும் JWT-ஐப் பயன்படுத்தி, புதிய Token பெற Refresh Token-ஐப் பயன்படுத்துவேன்.',
+                        ],
+                    },
+                    {
+                        type: 'heading',
+                        text: 'JWT பயன்படுத்தும்போது கவனிக்க வேண்டியவை:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'பலவீனமான Secret Key-ஐப் பயன்படுத்துவது.',
+                            'தவறான Algorithm-ஐ ஏற்றுக்கொள்வது.',
+                            'Token-க்கு Expiry Time அமைக்காமல் இருப்பது.',
+                            'முக்கியமான அல்லது ரகசியமான தகவல்களை JWT Payload-ல் சேமிப்பது.',
+                            'JWT-ஐ localStorage-ல் பாதுகாப்பற்ற முறையில் சேமிப்பது.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: '**எப்போது எதைப் பயன்படுத்துவேன்?** பொதுவான Web Application-களுக்கு Session-based Authentication-ஐத் தேர்வு செய்வேன். API-கள் மற்றும் Service-to-Service Authentication-க்கு JWT-ஐத் தேர்வு செய்வேன். தேவைக்கேற்ப இரண்டு முறைகளையும் இணைத்துப் பயன்படுத்துவேன்.',
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -717,6 +771,28 @@ export const securityQuestionsSet2: IQuestion[] = [
                             'I use Authorization Code flow with PKCE, with state, exact redirect URIs and short-lived access tokens with refresh rotation.',
                             'OpenID Connect builds on OAuth to provide authentication through an ID token.',
                             'I avoid the implicit flow and never put client secrets in frontend code.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**OAuth** என்பது, உங்களுடைய Password-ஐத் தெரிந்துகொள்ளாமலேயே, வேறொரு Application உங்களுடைய மற்றொரு சேவையில் உள்ள தகவல்களைப் பயன்படுத்த அனுமதிக்கும் ஒரு முறையாகும்.',
+                            '**உதாரணம்:** `Login with Google` என்பதைப் பயன்படுத்துவது அல்லது ஒரு Application உங்களுடைய GitHub Repositories-ஐப் படிக்க அனுமதி வழங்குவது.',
+                            '**இது எப்படி வேலை செய்கிறது?** நீங்கள் அந்த Application-க்கு என்னென்ன அனுமதிகள் வழங்க வேண்டும் என்பதைத் தேர்வு செய்து ஒப்புதல் அளிப்பீர்கள். அதன் பிறகு, அந்த Application குறிப்பிட்ட அனுமதிகளுடன் கூடிய Access Token-ஐப் பெறும்.',
+                            '**OAuth மற்றும் OpenID Connect இடையிலான வேறுபாடு:**',
+                            'OAuth என்பது ஒரு Application உங்களுடைய தகவல்களை அணுக என்னென்ன அனுமதிகள் உள்ளன என்பதைக் கட்டுப்படுத்துகிறது (Authorization).',
+                            'OpenID Connect (OIDC) என்பது பயனர் யார் என்பதைச் சரிபார்த்து Login செய்ய உதவுகிறது (Authentication). இது OAuth 2.0-ன் மேல் உருவாக்கப்பட்ட ஒரு அடுக்கு ஆகும்.',
                         ],
                     },
                 ],

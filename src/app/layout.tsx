@@ -45,7 +45,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
             suppressHydrationWarning
             className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${nunitoSans.variable} h-full antialiased`}
         >
-            <body className="min-h-full">
+            <body className="min-h-full" suppressHydrationWarning>
                 <AppShell>{children}</AppShell>
             </body>
         </html>
