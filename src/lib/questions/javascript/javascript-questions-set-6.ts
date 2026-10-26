@@ -112,6 +112,64 @@ export const javascriptQuestionsSet6: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer in Tamil',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'WeakMap மற்றும் WeakSet ஆகியவை, JavaScript-ல் objects-ஐச் சேமிக்கும்போது அவை Garbage Collection மூலம் நீக்கப்படுவதைத் தடுக்காத வகையில் செயல்படுகின்றன.',
+                            'WeakMap-ல் உள்ள ஒரு key-ஐ வேறு எந்த இடத்திலிருந்தும் reference செய்யவில்லை என்றால், அந்த object-ஐ Garbage Collector நீக்கலாம். அப்போது அந்த key-யுடன் தொடர்புடைய entry-யும் தானாகவே நீக்கப்படும்.',
+                            'Caches மற்றும் Metadata போன்றவற்றைச் சேமிக்க WeakMap பயனுள்ளதாக இருக்கும். WeakMap-ல் keys ஆக objects மட்டுமே பயன்படுத்த முடியும்.',
+                            'WeakMap மற்றும் WeakSet-ல் size property மற்றும் iteration methods (forEach(), keys() போன்றவை) கிடையாது.',
+                            'ஒரு object-உடன் தொடர்புடைய கூடுதல் தகவல்களைச் சேமிக்கவும், அதனால் அந்த object Garbage Collection மூலம் நீக்கப்படுவதைத் தடுக்காமல் இருக்கவும் இவற்றைப் பயன்படுத்தலாம்.',
+                            'Regular Map, அதன் keys-ஐ strong references மூலம் வைத்திருக்கும். அதனால், Map-ல் மட்டும் reference இருக்கும் ஒரு object-ஐ Garbage Collector நீக்க முடியாது. Map-லிருந்து அந்த entry-ஐ நீக்கினால் அல்லது reference நீங்கினால், அந்த object-ஐ நீக்க முடியும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understanding in Tamil',
+                    },
+                    {
+                        type: 'code',
+                        text: `let user = { name: "Chandra" };
+
+                        const weakMap = new WeakMap();
+                        weakMap.set(user, "User Metadata");
+
+                        user = null;`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**இங்கே என்ன நடக்கிறது?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'முதலில் user என்ற object உருவாக்கப்படுகிறது.',
+                            'அந்த object-ஐ WeakMap-ல் key ஆகச் சேமிக்கிறோம்.',
+                            'பின்னர் user = null என்று மாற்றுவதால், அந்த object-க்கான வெளிப்புற reference நீங்குகிறது.',
+                            'வேறு எந்த இடத்திலும் அந்த object-க்கு reference இல்லையென்றால், Garbage Collector அதை நீக்கலாம். அதனுடன் தொடர்புடைய WeakMap entry-யும் நீக்கப்படும்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -348,6 +406,70 @@ export const javascriptQuestionsSet6: IQuestion[] = [
                             '**Implementation:** return functions until all arguments are collected, then execute. ',
                             'In React, this is useful for creating handler factories or middleware. ',
                         ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer in Tamil',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Currying என்பது பல arguments-ஐ ஏற்றுக்கொள்ளும் ஒரு function-ஐ, ஒவ்வொரு function-மும் ஒரு argument மட்டும் ஏற்றுக்கொள்ளும் தொடர்ச்சியான பல functions-ஆகப் பிரிக்கும் முறையாகும்.',
+                            'உதாரணமாக, add(1, 2, 3) என்று அழைப்பதற்குப் பதிலாக, add(1)(2)(3) என்று அழைக்கலாம். ஒவ்வொரு function-மும் அடுத்த function-ஐ return செய்யும். தேவையான அனைத்து arguments-ம் கிடைத்ததும், இறுதியாக கணக்கீடு செய்து முடிவைத் தரும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'எளிமையான உதாரணம்',
+                    },
+                    {
+                        type: 'code',
+                        text: `const add = (a) => (b) => (c) => a + b + c;
+
+                        console.log(add(1)(2)(3)); // 6`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'இங்கே என்ன நடக்கிறது?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'add(1) → a = 1 என்ற மதிப்பை வைத்துக்கொண்டு அடுத்த function-ஐ return செய்கிறது.',
+                            '(2) → b = 2 என்ற மதிப்பைப் பெறுகிறது.',
+                            '(3) → c = 3 என்ற மதிப்பைப் பெறுகிறது.',
+                            'இறுதியாக 1 + 2 + 3 கணக்கிடப்பட்டு 6 கிடைக்கிறது.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'நினைவில் வைத்துக்கொள்ளுங்கள்:',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Currying என்பது பல arguments-ஐ ஒரே நேரத்தில் கொடுப்பதற்குப் பதிலாக, ஒவ்வொன்றாகக் கொடுத்து தொடர்ச்சியான functions மூலம் முடிவைப் பெறும் முறை',
                     },
                 ],
             },

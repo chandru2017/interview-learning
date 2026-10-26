@@ -682,6 +682,44 @@ export const bwaQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Same-Origin Policy (SOP) என்பது ஒரு website, மற்றொரு website-ன் data-வை நேரடியாகப் படிப்பதைத் தடுக்கும் browser security விதியாகும்.',
+                            'இரண்டு URLs ஒரே origin-ஐச் சேர்ந்ததாக இருக்க வேண்டுமென்றால், அவற்றின் protocol, domain மற்றும் port ஆகிய மூன்றும் ஒரே மாதிரியாக இருக்க வேண்டும்.',
+                            'இந்த security விதி, தீங்கிழைக்கும் websites உங்கள் login தகவல்கள் மற்றும் பிற தனிப்பட்ட data-களைத் திருடுவதைத் தடுக்க உதவுகிறது.',
+                            '- CORS (Cross-Origin Resource Sharing) என்பது வேறு origin-ல் உள்ள resources-ஐ அணுகுவதற்கு, server அனுமதியுடன் பாதுகாப்பாக வழிவகுக்கும் ஒரு முறையாகும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Understanding**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'உதாரணமாக, நீங்கள் bank.com website-ல் login செய்திருக்கிறீர்கள் என்று வைத்துக்கொள்ளுங்கள்.',
+                            'அதே browser-ல் malicious.com என்ற website-ஐத் திறக்கிறீர்கள்.',
+                            'அந்த website, Same-Origin Policy காரணமாக bank.com-ன் data-வை நேரடியாகப் படிக்க முடியாது.',
+                            'இதனால் உங்கள் வங்கிக் கணக்குத் தகவல்களை மற்ற websites அணுகுவதிலிருந்து பாதுகாக்க உதவுகிறது.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',

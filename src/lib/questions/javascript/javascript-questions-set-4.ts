@@ -104,6 +104,80 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event Delegation என்பது ஒவ்வொரு child element-க்கும் தனித்தனியாக event listener வைப்பதற்குப் பதிலாக, ஒரு parent element-ல் மட்டும் event listener வைக்கும் முறையாகும். அந்த listener மூலம் child elements-ல் ஏற்படும் events-ஐ கையாளலாம்.',
+                            'ஒரு child element-ஐ click செய்யும்போது, அந்த event Event Bubbling மூலம் parent element-க்கும் செல்லும்.',
+                            'Parent element-ல் உள்ள event listener, event.target-ஐப் பயன்படுத்தி எந்த child element-ல் event ஏற்பட்டது என்பதைக் கண்டறியும்.',
+                            'ஒவ்வொரு child element-க்கும் தனித்தனியாக event listeners வைப்பதைவிட இந்த முறை திறமையானது. மேலும், புதிதாக child elements சேர்க்கப்பட்டாலும் இது வேலை செய்யும்.',
+                            'ஆனால், எல்லா events-ம் bubble ஆகாது.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understanding',
+                    },
+                    {
+                        type: 'code',
+                        text: `document.querySelector("#parent").addEventListener("click", (event) => {
+                            if (event.target.tagName === "BUTTON") {
+                                console.log(event.target.textContent);
+                            }
+                            });`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'இங்கே என்ன நடக்கிறது?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'parent element-ல் ஒரே ஒரு click listener வைத்துள்ளோம்.',
+                            'அந்த parent-க்குள் இருக்கும் button-ஐ click செய்தால், event parent-க்கு வரும்.',
+                            'event.target மூலம் எந்த button click செய்யப்பட்டது என்பதைக் கண்டறிகிறோம்.',
+                            'அந்த button-ல் உள்ள text-ஐ console-ல் காட்டுகிறோம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'நினைவில் வைத்துக்கொள்ளுங்கள்',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event Delegation → Parent-ல் ஒரே listener வைத்து child events-ஐ கையாள்வது.',
+                            'Event Bubbling → Child-ல் ஏற்பட்ட event, parent-ஐ நோக்கிச் செல்வது.',
+                            'event.target → உண்மையில் event ஏற்பட்ட element-ஐக் கண்டறிய உதவும்.',
+                            'நன்மை → குறைவான event listeners; புதிதாகச் சேர்க்கப்படும் child elements-க்கும் ஆதரவு.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -230,6 +304,78 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event Propagation என்பது ஒரு element-ல் ஏற்படும் event, மற்ற element-களுக்கு எவ்வாறு பரவுகிறது என்பதைக் குறிக்கிறது. இதில் மூன்று நிலைகள் உள்ளன.',
+                            'Capturing: Event, மேலே உள்ள parent element-லிருந்து கீழே உள்ள target element-ஐ நோக்கிப் பயணிக்கும்.',
+                            'Target: Event ஏற்படுத்தப்பட்ட element-ஐ event அடையும் நிலை.',
+                            'Bubbling: Target element-லிருந்து மேலே உள்ள parent elements வழியாக event பயணிக்கும்.',
+                            'பெரும்பாலான events Bubbling முறையில் செயல்படுகின்றன. Event Delegation இந்த Bubbling முறையைப் பயன்படுத்துகிறது.',
+                            'stopPropagation() என்பது event மேலும் மற்ற elements-க்குப் பரவுவதைத் தடுக்கிறது.',
+                            'எல்லா events-ம் bubble ஆகாது. உதாரணமாக, focus, load மற்றும் scroll events பொதுவாக bubble ஆகாது.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understanding',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'ஒரு button element, div-க்குள் இருந்து, அந்த div ஒரு body-க்குள் இருப்பதாக நினைத்துக்கொள்ளுங்கள்.',
+                    },
+                    {
+                        type: 'code',
+                        text: `1. Capturing
+
+                            body → div → button
+
+                            மேலிருந்து கீழே
+
+                            2. Target
+
+                            button-ல் event ஏற்படுகிறது
+
+                            3. Bubbling
+
+                            button → div → body
+
+                            கீழிருந்து மேலே`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'நினைவில் வைத்துக்கொள்ளுங்கள்',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Capturing → மேலிருந்து கீழே.',
+                            'Target → Event ஏற்படும் element.',
+                            'Bubbling → கீழிருந்து மேலே.',
+                            'stopPropagation() → Event பரவுவதைத் தடுக்கும்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -344,10 +490,6 @@ export const javascriptQuestionsSet4: IQuestion[] = [
             {
                 label: '',
                 blocks: [
-                    {
-                        type: 'heading',
-                        text: 'Event propagation has three phases:',
-                    },
                     {
                         type: 'bullets',
                         items: [
@@ -468,10 +610,6 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 label: '',
                 blocks: [
                     {
-                        type: 'heading',
-                        text: 'Event propagation has three phases:',
-                    },
-                    {
                         type: 'bullets',
                         items: [
                             'Throttling limits how often a function runs - at most once every X milliseconds. ',
@@ -479,6 +617,46 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                             'We track the last execution time and only run if enough time has passed. ',
                             'Throttling keeps the function running at regular intervals, unlike debouncing which waits for quiet. ',
                             'Use throttle for scroll, mouse move, resize. ',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Throttling என்பது ஒரு function எவ்வளவு அடிக்கடி செயல்பட வேண்டும் என்பதைக் கட்டுப்படுத்தும் முறை. அதாவது, குறிப்பிட்ட X milliseconds-க்கு ஒருமுறை மட்டுமே function செயல்படும்.',
+                            'Scrolling போன்ற events அடிக்கடி நிகழும்போது, Throttling பயன்படுத்துவதால் application-ன் performance சீராக இருக்கும்.',
+                            'கடைசியாக function செயல்பட்ட நேரத்தை நாம் கண்காணிப்போம். குறிப்பிட்ட நேர இடைவெளி முடிந்திருந்தால் மட்டுமே function-ஐ மீண்டும் செயல்படுத்துவோம்.',
+                            'Throttling, function-ஐ குறிப்பிட்ட நேர இடைவெளியில் தொடர்ந்து செயல்பட அனுமதிக்கிறது. ஆனால் Debouncing, event ஏற்படுவது நின்று அமைதியான பிறகுதான் function-ஐ செயல்படுத்தும்.',
+                            'Scroll, mouse move, resize போன்ற events-க்கு Throttling பயன்படுத்தலாம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understanding',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'நீங்கள் ஒரு webpage-ஐ வேகமாக scroll செய்கிறீர்கள் என்று வைத்துக்கொள்ளுங்கள்.',
+                            'Throttling இல்லையென்றால், ஒவ்வொரு scroll event-க்கும் function செயல்படலாம். இதனால் performance பாதிக்கப்படலாம்.',
+                            'Throttling பயன்படுத்தினால், உதாரணமாக ஒவ்வொரு 200 milliseconds-க்கும் ஒருமுறை மட்டுமே function செயல்படும். இதனால் தேவையற்ற function calls குறையும்.',
+                            '`Throttling →` குறிப்பிட்ட நேர இடைவெளியில் function செயல்படும்.',
+                            '`Debouncing →` Event ஏற்படுவது நின்ற பிறகு, குறிப்பிட்ட நேரம் கழித்து function செயல்படும்.',
                         ],
                     },
                 ],
@@ -596,10 +774,6 @@ export const javascriptQuestionsSet4: IQuestion[] = [
             {
                 label: '',
                 blocks: [
-                    {
-                        type: 'heading',
-                        text: 'Event propagation has three phases:',
-                    },
                     {
                         type: 'bullets',
                         items: [

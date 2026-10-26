@@ -112,6 +112,93 @@ export const javascriptQuestionsSet7: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer in Tamil',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Immutability என்பது ஒரு data உருவாக்கப்பட்ட பிறகு, அதில் நேரடியாக மாற்றங்களைச் செய்யாமல் இருப்பதாகும்.',
+                            'ஏற்கனவே உள்ள data-வை மாற்றுவதற்குப் பதிலாக, தேவையான மாற்றங்களுடன் ஒரு புதிய object-ஐ உருவாக்க வேண்டும்.',
+                            'React-ல், மாற்றங்களைக் கண்டறிய Immutability முக்கியமானது. React, state மாறியுள்ளதா என்பதைக் கண்டறிய object references-ஐ ஒப்பிட்டுப் பார்க்கிறது.',
+                            'Immutable data பயன்படுத்துவதால் performance-ஐ மேம்படுத்த முடியும். மேலும், code-ல் ஏற்படும் பிழைகளைக் கண்டறிவதும் எளிதாகிறது.',
+                            'Data-வை மாற்றாமல் புதிய objects உருவாக்க spread operator (...), Object.assign() அல்லது Immer போன்ற libraries-ஐப் பயன்படுத்தலாம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'எளிமையாகப் புரிந்துகொள்ள',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'தவறான முறை — ஏற்கனவே உள்ள object-ஐ நேரடியாக மாற்றுவது:',
+                    },
+                    {
+                        type: 'code',
+                        text: `const user = { name: "Chandra", age: 35 };
+
+                            user.age = 36; // நேரடியாக மாற்றுகிறோம்`,
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'சரியான முறை — புதிய object-ஐ உருவாக்குவது:',
+                    },
+                    {
+                        type: 'code',
+                        text: `const user = { name: "Chandra", age: 35 };
+
+                        const updatedUser = { ...user, age: 36 };
+
+                        console.log(updatedUser);
+                        // { name: "Chandra", age: 36 }`,
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'இங்கே user object மாறாமல் இருக்கும். updatedUser என்ற புதிய object உருவாக்கப்பட்டு, அதில் வயது மட்டும் மாற்றப்பட்டுள்ளது.',
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'React-ல் ஏன் முக்கியம்?',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'React state-ஐ நேரடியாக மாற்றினால், சில சூழ்நிலைகளில் React மாற்றத்தைக் கண்டறியாமல் போகலாம். புதிய object அல்லது array உருவாக்கி state-ஐ update செய்தால், மாற்றத்தைக் கண்டறிந்து தேவையான re-render-ஐச் செய்ய React-க்கு உதவுகிறது.',
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'நினைவில் வைத்துக்கொள்ளுங்கள்:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Immutability → பழைய data-வை நேரடியாக மாற்ற வேண்டாம்.',
+                            'New Reference → மாற்றங்களுடன் புதிய object அல்லது array உருவாக்குங்கள்.',
+                            'React Benefit → Change detection, performance optimization மற்றும் எளிதான debugging.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -374,6 +461,72 @@ export const javascriptQuestionsSet7: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['code splitting', 'lazy loading', 'memoization', 'profiling', 'web workers'],
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 'js-34',
+        topicId: 'javascript',
+        title: 'What is the difference between ==, ===, null and undefined?',
+        difficulty: 'Intermediate',
+        status: 'in-progress',
+        simpleExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '== (loose equality) compares values after converting types if they differ.',
+                            '=== (strict equality) compares value and type, with no conversion.',
+                            'undefined means "a variable exists but has no value yet."',
+                            'null means "there is intentionally no value here."',
+                        ],
+                    },
+                ],
+            },
+        ],
+        simpleExample: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'code',
+                        text: `console.log(5 == "5");        // true
+                            console.log(5 === "5");       // false
+
+                            let a = null;
+                            let b;
+
+                            console.log(a);               // null
+                            console.log(b);               // undefined`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '5 == "5" → true, ஏனெனில் JavaScript "5" என்ற string-ஐ number-ஆக மாற்றி ஒப்பிடுகிறது.',
+                            '5 === "5" → false, ஏனெனில் ஒன்று number, மற்றொன்று string.',
+                            'null → மதிப்பு இல்லை என்று வேண்டுமென்றே குறிப்பிடுகிறோம்.',
+                            'undefined → மதிப்பு இன்னும் assign செய்யப்படவில்லை.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '== (Loose Equality): Compares two values after performing type conversion if necessary.',
+                            '=== (Strict Equality): Compares both value and data type without type conversion.',
+                            'null: Represents an intentional absence of a value.',
+                            'undefined: Means a variable has been declared but has not been assigned a value.',
+                        ],
                     },
                 ],
             },

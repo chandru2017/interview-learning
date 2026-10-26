@@ -260,7 +260,7 @@ export const aboutExperienceQuestions: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Review Jira tasks and plan my work.',
+                            'Review Zoho (or Jira) tasks and plan my work.',
                             'Develop new frontend features.',
                             'Review pull requests from team members.',
                             'Participate in technical discussions and architecture planning.',
@@ -281,6 +281,28 @@ export const aboutExperienceQuestions: IQuestion[] = [
                     {
                         type: 'paragraph',
                         text: `At the end of the day, I update task progress and prepare for the next sprint activities`,
+                    },
+                ],
+            },
+        ],
+    }),
+    createQuestion({
+        id: 'ae-7',
+        topicId: 'about-experience',
+        title: 'Introduce yourself to the interviewer.',
+        difficulty: 'Intermediate',
+        interviewAnswer: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'My name is Chandrasekaran. I have over 10 years of experience in frontend development.',
+                            'For last 6 years, I have been working with React.js and Next.js, TypeScript, Tailwind CSS, State Management, Material UI, SSR, SSG, ISR, Reuseable Components, Technical SEO, Web Accessibility, Core Web Vitals, Performance Optimization, and API Integration.',
+                            'Currently, I focus on converting figma designs to UI. I am also responsible for PR review, checking code quality, and mentoring junior developers.',
+                            'Additionally, I collaborate with UI/UX designers and managers on tasks.',
+                        ],
                     },
                 ],
             },

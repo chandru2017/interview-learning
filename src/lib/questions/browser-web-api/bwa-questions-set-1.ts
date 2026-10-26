@@ -99,6 +99,22 @@ export const bwaQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Browser முதலில் URL-ஐ parse செய்கிறது. பின்னர் cache-ல் தேவையான தகவல்கள் உள்ளனவா என்று சரிபார்க்கிறது. அதன் பிறகு DNS மூலம் domain name-ஐ IP address-ஆக மாற்றி, TCP connection மற்றும் TLS handshake-ஐ ஏற்படுத்துகிறது. இறுதியாக, server-க்கு HTTP request அனுப்புகிறது.',
+                            'Server, HTML-ஐ திருப்பி அனுப்புகிறது. Browser அந்த HTML-ஐப் பயன்படுத்தி DOM-ஐயும், CSS-ஐப் பயன்படுத்தி CSSOM-ஐயும் உருவாக்குகிறது. பின்னர் Render Tree உருவாக்கப்பட்டு, Layout, Paint மற்றும் Composite ஆகிய செயல்முறைகள் மூலம் webpage திரையில் காட்டப்படுகிறது.',
+                            'CSS, JavaScript மற்றும் images போன்ற கூடுதல் resources ஒரே நேரத்தில் load ஆகலாம். ஆனால் சில JavaScript files, browser-ன் HTML parsing அல்லது rendering செயல்முறையைத் தாமதப்படுத்தலாம்.',
+                            'ஒவ்வொரு கட்டத்திலும் performance-ஐ மேம்படுத்த CDN, caching, preconnect, compression மற்றும் critical CSS போன்ற நுட்பங்களைப் பயன்படுத்துவேன்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -240,6 +256,44 @@ export const bwaQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'DNS (Domain Name System) என்பது example.com போன்ற domain name-ஐ IP address-ஆக மாற்றுகிறது.',
+                            'Browser, server-உடன் இணைவதற்கு அந்த server-ன் IP address தேவைப்படுகிறது.',
+                            'DNS மூலம் கிடைக்கும் முடிவு cache-ல் சேமிக்கப்படும். இதனால் அடுத்த முறை அதே domain-ஐத் தேடும்போது விரைவாக IP address கிடைக்கும்.',
+                            'DNS என்பது இணையத்தின் Phone Book போன்றது. நாம் ஒருவரின் பெயரைப் பயன்படுத்தி அவருடைய தொலைபேசி எண்ணைக் கண்டுபிடிப்பது போல, DNS மூலம் domain name-ஐப் பயன்படுத்தி IP address-ஐக் கண்டுபிடிக்கிறோம்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Understanding**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'நீங்கள் browser-ல் google.com என்று type செய்கிறீர்கள்.',
+                            'Browser, DNS மூலம் google.com-ன் IP address-ஐக் கண்டறியும்.',
+                            'அந்த IP address-ஐப் பயன்படுத்தி server-உடன் இணையும்.',
+                            'தேவையான webpage-ஐப் பெற்று திரையில் காட்டும்.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -376,6 +430,44 @@ export const bwaQuestionsSet1: IQuestion[] = [
                             'TLS sits on top, authenticating the server with a certificate and encrypting data using a negotiated session key.',
                             'A new connection costs round trips, so I rely on keep-alive, HTTP/2 and TLS 1.3 to reduce latency.',
                             'HTTP/3 uses QUIC to combine transport and encryption.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Explanation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'TCP (Transmission Control Protocol) என்பது Browser மற்றும் Server இடையே நம்பகமான connection-ஐ உருவாக்குகிறது.',
+                            'Data முழுமையாகவும் சரியான வரிசையிலும் சென்றடைவதை TCP உறுதி செய்கிறது.',
+                            'TLS (Transport Layer Security) என்பது TCP connection-க்கு மேலாக data encryption-ஐ வழங்குகிறது. இதனால், அனுப்பப்படும் தகவல்களை மற்றவர்கள் எளிதாகப் படிக்கவோ அல்லது மாற்றவோ முடியாது.',
+                            'இதுவே HTTPS பாதுகாப்பாகச் செயல்படுவதற்கான முக்கிய காரணங்களில் ஒன்றாகும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Understanding**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'நீங்கள் ஒரு website-ல் login செய்கிறீர்கள் என்று வைத்துக்கொள்ளுங்கள்.',
+                            'TCP → உங்கள் தகவல்கள் சரியாகவும் முழுமையாகவும் server-ஐச் சென்றடைய உதவுகிறது.',
+                            'TLS → உங்கள் password போன்ற தகவல்களை encrypt செய்து பாதுகாக்கிறது.',
+                            'HTTPS → HTTP communication-ஐ TLS மூலம் பாதுகாக்கிறது.',
                         ],
                     },
                 ],

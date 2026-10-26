@@ -424,6 +424,23 @@ export const javascriptQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hoisting என்பது JavaScript code-ஐ இயக்குவதற்கு முன்பு, variable மற்றும் function declarations-ஐ மேலே கொண்டு சென்றது போன்ற முறையில் JavaScript கையாள்வதாகும்.',
+                            'var என்பது hoisting செய்யப்படும். அதற்கு ஆரம்பத்தில் undefined என்ற மதிப்பு கிடைக்கும்.',
+                            'let மற்றும் const ஆகியவையும் hoisting செய்யப்படும். ஆனால், அவற்றை declaration செய்வதற்கு முன்பு பயன்படுத்த முடியாது. இந்த இடைப்பட்ட நிலைதான் Temporal Dead Zone (TDZ) எனப்படும்.',
+                            'Function declarations முழுமையாக hoisting செய்யப்படும். அதனால், function-ஐ declare செய்வதற்கு முன்பே call செய்ய முடியும்.',
+                            'இதனால்தான், ஒரு function-ஐ declaration செய்வதற்கு முன்பு call செய்ய முடிகிறது. ஆனால், let மற்றும் const variables-ஐ declaration செய்வதற்கு முன்பு பயன்படுத்த முடியாது.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
     createQuestion({
         id: 'js-5',

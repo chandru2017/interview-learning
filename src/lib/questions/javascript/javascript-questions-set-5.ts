@@ -241,6 +241,87 @@ export const javascriptQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Interview Answer in Tamil',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shallow Copy என்பது ஒரு object-ன் மேல்நிலை properties-ஐ மட்டும் copy செய்யும் முறையாகும்.',
+                            'அதற்குள் இருக்கும் nested objects மற்றும் arrays தனியாக copy செய்யப்படாது. அவை ஏற்கனவே உள்ள அதே objects-ஐ reference செய்யும்.',
+                            'Shallow copy செய்ய spread operator (...) அல்லது Object.assign() பயன்படுத்தலாம்.',
+                            'Deep Copy என்பது ஒரு object-ன் அனைத்து properties-ஐயும், அதற்குள் இருக்கும் nested objects மற்றும் arrays உட்பட, தனியாக copy செய்யும் முறையாகும்.',
+                            'Deep copy செய்ய JSON.parse(JSON.stringify()) அல்லது recursive functions பயன்படுத்தலாம்.',
+                            'React-ல் nested state-ஐ மாற்றும்போது, தேவையான அளவில் புதிய object references உருவாக்க வேண்டும். இதனால் React மாற்றத்தைக் கண்டறிந்து re-render செய்ய முடியும்.',
+                            'Deep copy செய்வதற்கு அதிக நேரமும் memory-யும் தேவைப்படலாம். ஆனால் nested data முழுவதையும் தனியாக copy செய்ய வேண்டிய சூழ்நிலைகளில் இது உதவும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understanding in Tamil',
+                    },
+                    {
+                        type: 'code',
+                        text: `const user = {
+                            name: "Chandra",
+                                address: {
+                                    city: "Coimbatore"
+                                }
+                            };
+
+                            // Shallow Copy
+                            const shallowCopy = { ...user };
+
+                            // Deep Copy
+                            const deepCopy = JSON.parse(JSON.stringify(user));`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shallow Copy-ல் என்ன நடக்கும்?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'user மற்றும் shallowCopy இரண்டு தனித்தனி objects.',
+                            'ஆனால், இரண்டிலும் உள்ள address ஒரே nested object-ஐ reference செய்கிறது.',
+                            'எனவே, shallowCopy.address.city-ஐ மாற்றினால், user.address.city-யிலும் மாற்றம் தெரியும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Deep Copy-ல் என்ன நடக்கும்?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'user மற்றும் deepCopy தனித்தனி objects.',
+                            'அவற்றின் nested address objects-ம் தனித்தனியாக இருக்கும்.',
+                            'எனவே, deepCopy.address.city-ஐ மாற்றினால், user.address.city மாறாது.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',

@@ -226,6 +226,66 @@ export const javascriptQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Answer',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'this என்பது ஒரு object-ஐக் குறிக்கும் சிறப்பான keyword ஆகும்.',
+                            'this எந்த object-ஐக் குறிக்கிறது என்பது, அந்த function எப்படி call செய்யப்படுகிறது என்பதைப் பொறுத்தது.',
+                            'ஒரு object-ன் method ஆக function call செய்யப்பட்டால், this அந்த object-ஐக் குறிக்கும்.',
+                            'ஒரு சாதாரண function ஆக call செய்யப்பட்டால், this global object-ஐக் குறிக்கும். ஆனால், strict mode-ல் this என்பது undefined ஆக இருக்கும்.',
+                            'Arrow function-ல் this, அதைச் சுற்றியுள்ள outer scope-லிருந்து பெறப்படுகிறது.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Simple Understand',
+                    },
+                    {
+                        type: 'code',
+                        text: `const user = {
+                            name: "Chandra",
+
+                            sayName() {
+                                console.log(this.name);
+                            }
+                            };
+
+                            user.sayName(); // Chandra`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'இங்கே என்ன நடக்கிறது?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'user என்பது ஒரு object.',
+                            'sayName() என்பது அந்த object-ன் method.',
+                            'user.sayName() என்று call செய்வதால், this என்பது user object-ஐக் குறிக்கிறது.',
+                            'அதனால் this.name என்பது "Chandra" என்ற மதிப்பைக் கொடுக்கிறது.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
     createQuestion({
         id: 'js-8',
@@ -552,6 +612,66 @@ export const javascriptQuestionsSet2: IQuestion[] = [
                             'If a property is not on the object, JavaScript searches the prototype chain. ',
                             'Modern JavaScript uses class syntax which is based on prototypal inheritance. ',
                             'Understanding prototypes helps us understand method inheritance. ',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswerTamil: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview Answer**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Prototypal Inheritance என்பது prototype chain மூலம் objects தங்களுக்கிடையே properties மற்றும் methods-ஐப் பகிர்ந்துகொள்ளும் முறையாகும்.',
+                            'ஒவ்வொரு object-க்கும் ஒரு prototype இருக்கும். அது மற்றொரு object ஆகும். அதன் மூலம் அந்த object-ல் உள்ள properties மற்றும் methods-ஐப் பெற முடியும்.',
+                            'ஒரு property, தற்போதைய object-ல் இல்லையென்றால், JavaScript prototype chain வழியாக அந்த property-ஐத் தேடும்.',
+                            'நவீன JavaScript-ல் பயன்படுத்தப்படும் class syntax, prototypal inheritance-ஐ அடிப்படையாகக் கொண்டது.',
+                            'Prototypes பற்றி புரிந்துகொள்வது, ஒரு object மற்றொரு object-லிருந்து methods-ஐ எவ்வாறு பெறுகிறது என்பதைப் புரிந்துகொள்ள உதவும்.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple Understand**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const parent = {
+                            greet() {
+                                console.log("Hello");
+                            }
+                        };
+
+                        const child = Object.create(parent);
+
+                        child.greet(); // Hello`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'இங்கே என்ன நடக்கிறது?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'parent object-ல் greet() method உள்ளது.',
+                            'child object-ஐ உருவாக்கும்போது, parent-ஐ அதன் prototype ஆக அமைத்துள்ளோம்.',
+                            'child object-ல் நேரடியாக greet() method இல்லை.',
+                            'அதனால் JavaScript, prototype chain வழியாக parent object-ல் greet() method-ஐத் தேடிக் கண்டுபிடித்து இயக்குகிறது.',
                         ],
                     },
                 ],
