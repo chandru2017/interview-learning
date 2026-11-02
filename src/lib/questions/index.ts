@@ -17,6 +17,7 @@ import { leadershipQuestions } from './leadership';
 import { codingTaskQuestions } from './coding-tasks';
 import { top30Questions } from './top-30';
 import { srmInfoTechQuestions } from './srm-info-tech';
+import { tanStackQueryQuestions } from './tanstack/tanstack-query';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
@@ -36,6 +37,7 @@ export const QUESTIONS: IQuestion[] = [
     ...codingTaskQuestions,
     ...top30Questions,
     ...srmInfoTechQuestions,
+    ...tanStackQueryQuestions,
 ];
 
 export {
@@ -56,4 +58,5 @@ export {
     codingTaskQuestions,
     top30Questions,
     srmInfoTechQuestions,
+    tanStackQueryQuestions,
 };

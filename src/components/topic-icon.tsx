@@ -16,6 +16,7 @@ import {
     Star,
     Users,
     Zap,
+    ShipWheel,
     type LucideIcon,
 } from 'lucide-react';
 
@@ -35,6 +36,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
     GitBranch,
     Users,
     Star,
+    ShipWheel,
 };
 
 export const TopicIcon = ({ name, className }: { name: string; className?: string }) => {

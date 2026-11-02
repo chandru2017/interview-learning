@@ -6,6 +6,7 @@ export type TopicSection =
     | 'ABOUT'
     | 'CORE'
     | 'FRAMEWORKS'
+    | 'TANSTACk'
     | 'WEB PLATFORM'
     | 'QUALITY'
     | 'ARCHITECTURE'
