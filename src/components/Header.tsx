@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Moon, Rocket, RotateCcw, Sun, User } from 'lucide-react';
+import { LogOut, Menu, Moon, Rocket, RotateCcw, Sun } from 'lucide-react';
 
+import { signOut } from '@/app/auth/actions';
 import { SearchBar } from '@/components/SearchBar';
 import { useProgress } from '@/components/providers/progress-provider';
 import { useSidebar } from '@/components/providers/sidebar-provider';
@@ -108,15 +109,12 @@ export const Header = () => {
                     )}
                 </Button>
 
-                <Button
-                    type="button"
-                    variant="ghost"
-                    size="icon"
-                    aria-label="Profile"
-                    className="hidden sm:inline-flex"
-                >
-                    <User className="size-5" />
-                </Button>
+                <form action={signOut}>
+                    <Button type="submit" variant="ghost" size="sm" className="gap-2">
+                        <LogOut className="size-4" aria-hidden="true" />
+                        <span className="hidden sm:inline">Sign out</span>
+                    </Button>
+                </form>
             </div>
         </header>
     );

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Nunito, Nunito_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
 
-import { AppShell } from '@/components/AppShell';
+import { AppProviders } from '@/components/providers/app-providers';
 
 import './globals.css';
 
@@ -46,7 +46,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
             className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${nunitoSans.variable} h-full antialiased`}
         >
             <body className="min-h-full" suppressHydrationWarning>
-                <AppShell>{children}</AppShell>
+                <AppProviders>{children}</AppProviders>
             </body>
         </html>
     );
