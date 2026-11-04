@@ -18,6 +18,7 @@ import { codingTaskQuestions } from './coding-tasks';
 import { top30Questions } from './top-30';
 import { srmInfoTechQuestions } from './srm-info-tech';
 import { tanStackQueryQuestions } from './tanstack/tanstack-query';
+import { oneIndiaQuestions } from './one-data';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
@@ -38,6 +39,7 @@ export const QUESTIONS: IQuestion[] = [
     ...top30Questions,
     ...srmInfoTechQuestions,
     ...tanStackQueryQuestions,
+    ...oneIndiaQuestions,
 ];
 
 export {
@@ -59,4 +61,5 @@ export {
     top30Questions,
     srmInfoTechQuestions,
     tanStackQueryQuestions,
+    oneIndiaQuestions,
 };

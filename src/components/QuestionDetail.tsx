@@ -21,7 +21,16 @@ const DIFFICULTY_CLASS: Record<string, string> = {
 };
 
 type SectionId =
-    'simple' | 'senior' | 'example' | 'project' | 'interview' | 'tamil' | 'speaking' | 'story' | 'scenario';
+    | 'simple'
+    | 'senior'
+    | 'example'
+    | 'project'
+    | 'interview'
+    | 'tamil'
+    | 'speaking'
+    | 'story'
+    | 'scenario'
+    | 'thanglish';
 
 const SECTION_ORDER: {
     id: SectionId;
@@ -36,6 +45,7 @@ const SECTION_ORDER: {
         | 'speakingPractice'
         | 'conceptAsStory'
         | 'scenarioQuestions'
+        | 'thanglishExplanation'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
@@ -47,6 +57,7 @@ const SECTION_ORDER: {
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
+    { id: 'thanglish', key: 'thanglishExplanation' },
 ];
 
 const getAvailableSections = (question: IQuestion): SectionId[] => {
@@ -147,6 +158,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.simpleExplanation} />
+                    </Section>
+                )}
+
+                {question.thanglishExplanation && question.thanglishExplanation.length > 0 && (
+                    <Section
+                        id="thanglish"
+                        title="Thanglish Explanation"
+                        description="Tamil-English hybrid explanation"
+                        open={openSection === 'thanglish'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.thanglishExplanation} />
                     </Section>
                 )}
 

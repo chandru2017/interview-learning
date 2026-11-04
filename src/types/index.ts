@@ -39,6 +39,7 @@ export interface IQuestion {
     difficulty: QuestionDifficulty;
     status: QuestionStatus;
     priority?: string;
+    keyTopic?: string;
     simpleExplanation: AnswerContent;
     seniorExplanation: AnswerContent;
     simpleExample: AnswerContent;
@@ -48,6 +49,7 @@ export interface IQuestion {
     conceptAsStory?: AnswerContent;
     speakingPractice?: AnswerContent;
     scenarioQuestions?: AnswerContent;
+    thanglishExplanation?: AnswerContent;
 }
 
 export interface ITopic {

@@ -157,6 +157,14 @@ export const TOPICS: ITopic[] = [
         questionCount: 0,
         completedCount: 0,
     },
+    {
+        id: 'one-india',
+        name: 'One India',
+        section: 'COMPANY SPECIFIC',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
 ];
 
 const SECTION_ORDER: TopicSection[] = [
