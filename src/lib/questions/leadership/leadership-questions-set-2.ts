@@ -26,6 +26,23 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Archer Review project-la oru feature implement pannumbodhu, enakkum another developer-kum different opinions irundhuchu.',
+                            'Avanga existing approach use pannalam nu suggest pannanga. But naan reusable component approach use panna suggest pannen.',
+                            'Naan en approach yen better nu technical reasons explain pannen. Avaroda suggestion-um listen pannen.',
+                            'Finally, rendu perum discuss panni, project-ku suitable-ah irukkura solution decide panni implement pannom.',
+                            'Idhanala teamwork and communication importance purinjukitten.',
+                        ],
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -88,10 +105,11 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'On [project], a teammate and I disagreed on [approach].',
-                            'I first made sure I understood their reasoning, then we agreed to evaluate both options with a prototype or clear criteria instead of opinions.',
-                            'We decided on [outcome], and I fully supported it, even though [if it was their idea].',
-                            'It strengthened our collaboration and we documented the decision.',
+                            'In the Archer Review project, I once had a different opinion from another developer about implementing a feature.',
+                            'I suggested using reusable components, while the other developer preferred the existing approach.',
+                            'I explained the benefits of my approach and also listened to their concerns.',
+                            'After discussing both options, we agreed on a solution that improved code reusability and maintainability.',
+                            'I believe technical disagreements should be handled through open communication and teamwork.',
                         ],
                     },
                 ],
@@ -138,12 +156,10 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Listen first',
-                            'Data over opinions',
-                            'Prototype',
-                            'Disagree and commit',
-                            'Respect',
-                            'ADR',
+                            '1. Different opinions.',
+                            '2. Explain your approach.',
+                            '3. Listen to others.',
+                            '4. Agree on the best solution.',
                         ],
                     },
                 ],
@@ -169,6 +185,23 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                             'Explain your reasoning and listen to theirs.',
                             'Use team standards and facts to decide.',
                             'Talk in a call if comments are going back and forth.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Code review-la different opinions irundha, first reviewer enna concern raise pannirukanga nu understand pannuven.',
+                            'Adhukapparam, enoda implementation yen choose pannen nu technical reasons-oda explain pannuven.',
+                            'Reviewer suggestion better-ah irundha, accept panni code update pannuven.',
+                            'Rendu perukkum different opinions irundha, team discussion moolama best solution decide pannuven.',
+                            'Enoda main focus personal opinion illa, code quality and maintainability.',
                         ],
                     },
                 ],
@@ -237,10 +270,11 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I treat review as collaboration: focus on the code, explain the why, and distinguish must-fix issues from optional suggestions.',
-                            'I automate style with Prettier and ESLint so we never debate formatting.',
-                            'If a thread goes back and forth, I move to a quick call, rely on team guidelines or evidence, and summarize the decision in the PR.',
-                            'If still unresolved, we ask the tech lead and update guidelines.',
+                            'I handle code review disagreements through open communication.',
+                            "First, I understand the reviewer's feedback and explain my approach with technical reasons.",
+                            'If their suggestion is better, I am happy to make the changes.',
+                            'If we have different opinions, we discuss the options and choose the best solution for code quality and maintainability.',
+                            'I always focus on improving the code rather than defending my approach.',
                         ],
                     },
                 ],
@@ -286,7 +320,12 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Respectful', 'Must-fix vs nit', 'Guidelines', 'Automation', 'Quick call', 'Small PRs'],
+                        items: [
+                            '1. Understand feedback.',
+                            '2. Explain my approach.',
+                            '3. Accept suggestions.',
+                            '4. Focus on code quality.',
+                        ],
                     },
                 ],
             },
@@ -311,6 +350,23 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                             'Give them small tasks that grow step by step.',
                             'Review their code kindly and explain improvements.',
                             'Make it safe for them to ask questions.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Junior developers-ku mentor pannumbodhu, first avangalukku task and requirements clear-ah explain pannuven.',
+                            'Doubt irundha direct-ah answer sollama, avangale understand panni solve panna guide pannuven.',
+                            'Code review-la mistakes irundha, adha explain panni better approach suggest pannuven.',
+                            'New concepts and best practices share pannuven.',
+                            'Enoda goal avanga confidence and technical skills improve aaganum.',
                         ],
                     },
                 ],
@@ -379,10 +435,10 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I start by understanding their level and goals, set expectations and give small tasks with increasing scope.',
-                            'I use pair programming and guiding questions so they learn to solve problems themselves, and I use code reviews to teach principles.',
-                            'I keep it safe to ask questions and hold regular 1:1s with specific feedback.',
-                            'Success for me is when they work independently and eventually help others.',
+                            'I mentor junior developers by explaining technical concepts, guiding them through tasks, and sharing best practices.',
+                            'I encourage them to solve problems independently and support them whenever they need help.',
+                            'I also review their code and suggest improvements.',
+                            'My goal is to help them improve their technical skills and become more confident and independent developers.',
                         ],
                     },
                 ],
@@ -429,12 +485,10 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Pairing',
-                            'Guiding questions',
-                            'Gradual autonomy',
-                            'Feedback',
-                            'Psychological safety',
-                            'Growth plan',
+                            '1. Technical guidance',
+                            '2. Knowledge sharing',
+                            '3. Code review',
+                            '4. Independent problem-solving',
                         ],
                     },
                 ],
@@ -445,7 +499,7 @@ export const leadershipQuestionsSet2: IQuestion[] = [
     createQuestion({
         id: 'lead-9',
         topicId: 'leadership',
-        title: "How do you review senior developers' code?",
+        title: "How do you review senior developer's code?",
         difficulty: 'Advanced',
         status: 'in-progress',
         priority: 'medium',
@@ -460,6 +514,23 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                             'I ask questions to understand their decisions.',
                             'I focus on design, edge cases and tests.',
                             'I stay respectful and learn from their approach.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Senior developers-oda code review pannumbodhu, avanga experience-ah respect pannuven.',
+                            'Aana code review pannumbodhu developer senior-ah junior-ah nu paakama, code quality and project standards base panni review pannuven.',
+                            'Readability, performance, reusability, accessibility, and possible bugs check pannuven.',
+                            'Edhavadhu improvement irundha, proper technical reason-oda suggestion kuduppen.',
+                            'Final-ah, personal opinion vida best solution-ku importance kuduppen.',
                         ],
                     },
                 ],
@@ -526,10 +597,11 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I review senior code with the same standards: correctness, edge cases, tests, accessibility, performance and maintainability.',
-                            'I ask questions to understand their decisions rather than assuming, and I focus on design-level feedback with evidence.',
-                            'I never rubber-stamp, and I am respectful, specific and open to learning from their patterns.',
-                            'If we disagree, we discuss trade-offs and involve the team if needed.',
+                            'When reviewing code from senior developers, I focus on code quality rather than experience level.',
+                            'I check readability, performance, reusability, and possible issues.',
+                            'If I find any improvements, I share my suggestions with proper technical reasons.',
+                            'I also respect their experience and stay open to their feedback.',
+                            'My goal is to maintain code quality and follow project standards.',
                         ],
                     },
                 ],
@@ -575,14 +647,7 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: [
-                            'Same standards',
-                            'Ask questions',
-                            'Design-level review',
-                            'Evidence',
-                            'Respect',
-                            'No rubber-stamping',
-                        ],
+                        items: ['1. Code quality', '2. Performance', '3. Technical suggestions', '4. Mutual respect'],
                     },
                 ],
             },
@@ -607,6 +672,23 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                             'If it blocks the new feature, refactor the part you need.',
                             'Do small refactors step by step with tests.',
                             'Avoid big rewrites unless there is no other option.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Refactor pannalama illa existing development continue pannalama nu decide pannumbodhu, first current code condition check pannuven.',
+                            'Existing code maintain panna difficult-ah irukka, duplicate code irukka, performance issues irukka nu evaluate pannuven.',
+                            'Small improvement-na development-oda serthu refactor pannuven.',
+                            'Major refactoring thevai na, business priority and timeline discuss panni separate task-ah plan pannuven.',
+                            'Enoda main goal code quality maintain pannuradhum, project delivery delay aagama paathukkuradhum.',
                         ],
                     },
                 ],
@@ -672,10 +754,11 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I evaluate how often the code changes, how many bugs it causes, whether it blocks the feature, and the deadline and risk.',
-                            "If it is on the feature's path or a hot spot, I refactor incrementally with tests first, in small separate PRs.",
-                            'If it is stable or the deadline is critical, I defer it and log tracked debt.',
-                            'I avoid big-bang rewrites and communicate benefits to product in terms of speed and quality.',
+                            'I decide based on code quality, business priority, and project timelines.',
+                            'If the existing code is difficult to maintain or has performance issues, I consider refactoring.',
+                            'For small improvements, I refactor while developing new features.',
+                            'For major changes, I discuss with the team and plan them separately to avoid delaying delivery.',
+                            'My goal is to balance code quality and timely delivery.',
                         ],
                     },
                 ],
@@ -722,12 +805,10 @@ export const leadershipQuestionsSet2: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Cost-benefit',
-                            'Incremental refactoring',
-                            'Boy-scout rule',
-                            'Tests first',
-                            'Strangler fig',
-                            'Hot spot',
+                            '1. Code quality',
+                            '2. Business priority',
+                            '3. Project timeline',
+                            '4. Balance refactoring and delivery',
                         ],
                     },
                 ],

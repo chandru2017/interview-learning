@@ -26,6 +26,23 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Technical debt handle pannumbodhu, first code-la irukkura issues identify pannuven.',
+                            'For example, duplicate code, outdated code, poor performance, and difficult-to-maintain components.',
+                            'Small issues-na regular development time-la fix pannuven.',
+                            'Major issues-na priority and business impact base panni team-kooda discuss panni separate-ah plan pannuven.',
+                            'Enoda main goal application maintainability and code quality improve pannuradhu.',
+                        ],
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -89,10 +106,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I make debt visible in a backlog with impact and effort, and prioritize by pain and frequency of change.',
-                            'We reserve capacity every sprint and fix incrementally, often together with feature work in the same area.',
-                            'I prevent new debt with review standards, definition of done and CI gates, and I explain debt to stakeholders in terms of speed and risk.',
-                            'I track metrics to show progress.',
+                            'I handle technical debt by regularly identifying and prioritizing code issues.',
+                            'I focus on areas like duplicate code, poor performance, and difficult-to-maintain components.',
+                            'I fix small issues during regular development and plan major improvements based on business priorities.',
+                            'My goal is to reduce technical debt gradually while maintaining code quality and delivery timelines.',
                         ],
                     },
                 ],
@@ -139,12 +156,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Debt register',
-                            'Prioritize',
-                            'Capacity allocation',
-                            'Hot spots',
-                            'Metrics',
-                            'Prevention',
+                            '1. Identify issues.',
+                            '2. Prioritize tasks.',
+                            '3. Refactor code.',
+                            '4. Maintain code quality.',
                         ],
                     },
                 ],
@@ -170,6 +185,23 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                             'Show data, not only opinions.',
                             'Propose a small first step with clear benefits.',
                             'Report results after.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Management-kitta technical improvements suggest pannumbodhu, technical details mattum explain panna maaten.',
+                            'Adhu project-ku eppadi benefit aagum nu explain pannuven.',
+                            'For example, performance improve aagum, development time reduce aagum, bugs kammi aagum, and future maintenance easy aagum nu explain pannuven.',
+                            'Possible impact and benefits-oda examples kuduthu, improvement-ku time allocate panna suggest pannuven.',
+                            'Enoda goal technical improvement business-ku useful-ah irukkum nu demonstrate pannuradhu.',
                         ],
                     },
                 ],
@@ -236,9 +268,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I frame the problem in business terms with data, like conversion, incidents, delivery speed or cost.',
-                            'I present options including the cost of doing nothing, and propose a small pilot with clear success metrics.',
-                            'I address risk and roadmap impact, and then report results to build trust for the next investment.',
+                            'I convince management by explaining the business benefits of technical improvements.',
+                            'I show how improvements can reduce bugs, improve performance, save development time, and make maintenance easier.',
+                            'I also provide practical examples and explain the long-term impact.',
+                            'This helps management understand the value of investing in technical improvements.',
                         ],
                     },
                 ],
@@ -284,7 +317,12 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Business impact', 'Data', 'ROI', 'Pilot', 'Cost of inaction', 'Success metrics'],
+                        items: [
+                            '1. Business benefits',
+                            '2. Reduce bugs',
+                            '3. Save development time',
+                            '4. Long-term value',
+                        ],
                     },
                 ],
             },
@@ -309,6 +347,23 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                             'Include design, API integration, testing and review time.',
                             'Give a range instead of one exact number.',
                             'Update the estimate when you learn more.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Frontend work estimate pannumbodhu, first requirements and design understand pannuven.',
+                            'Adhukapparam task-ah small parts-ah divide pannuven.',
+                            'For example, UI development, responsive design, API integration, validation, testing, and bug fixing.',
+                            'Each task-ku required time estimate pannuven. Any dependencies or technical challenges irundha adhaiyum consider pannuven.',
+                            'Finally, testing and unexpected changes-ku konjam buffer time include pannuven.',
                         ],
                     },
                 ],
@@ -380,9 +435,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I clarify scope, break the work into tasks including states, responsiveness, accessibility, tests, reviews and deployment, and give a range with assumptions and risks.',
-                            'For unknowns I do a time-boxed spike, and I compare with past similar work.',
-                            'I communicate dependencies like API and design readiness and re-estimate when things change.',
+                            'I estimate frontend work by first understanding the requirements and design.',
+                            'Then, I break the work into smaller tasks like UI development, responsive design, API integration, and testing.',
+                            'I estimate the time for each task and consider technical dependencies and possible challenges.',
+                            'I also include some buffer time for testing and unexpected changes to provide a realistic estimate.',
                         ],
                     },
                 ],
@@ -428,7 +484,13 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Breakdown', 'Ranges', 'Assumptions', 'Spike', 'Hidden work', 'Re-estimate'],
+                        items: [
+                            '1. Understand requirements.',
+                            '2. Break down tasks.',
+                            '3. Estimate development time.',
+                            '4. Consider dependencies.',
+                            '5. Include buffer time.',
+                        ],
                     },
                 ],
             },
@@ -453,6 +515,22 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                             'Reduce the scope to a smaller first version.',
                             'Communicate risks early.',
                             'Keep quality: do not skip tests for critical parts.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Tight deadline irukkumbodhu, first requirements and priorities understand pannuven.',
+                            'Important tasks-ku first priority kuduppen. Big tasks-ah smaller tasks-ah divide panni, timeline plan pannuven.',
+                            'Any blockers or risks irundha, team and manager-kitta early-ah communicate pannuven.',
+                            'Deadline meet pannuradhukaga code quality compromise panna maaten. Proper testing-um ensure pannuven.',
                         ],
                     },
                 ],
@@ -519,10 +597,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I first clarify the real priorities and negotiate scope into an MVP instead of cutting quality.',
-                            'I identify risks early, work on the riskiest parts first, and communicate progress and blockers openly.',
-                            'I protect critical-path quality with tests, reviews and feature flags, and I log any shortcuts as debt with a follow-up.',
-                            'Afterwards I review what caused the pressure to improve planning.',
+                            'When handling tight deadlines, I first understand the priorities and focus on the most important tasks.',
+                            'I break the work into smaller tasks and plan my time effectively.',
+                            'If I face any blockers or risks, I communicate them early with the team.',
+                            'I always try to deliver on time without compromising code quality and testing.',
                         ],
                     },
                 ],
@@ -569,12 +647,10 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'MVP',
-                            'Scope negotiation',
-                            'Risks',
-                            'Communication',
-                            'Feature flag',
-                            'No hidden shortcuts',
+                            '1. Prioritize tasks.',
+                            '2. Plan the timeline.',
+                            '3. Communicate blockers.',
+                            '4. Maintain code quality.',
                         ],
                     },
                 ],
@@ -600,6 +676,23 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                             'Check how serious the bug is and how many users it affects.',
                             'Small bugs can wait if a feature is more valuable.',
                             'Discuss priorities with the product manager.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Bugs and new features prioritize pannumbodhu, first bug-oda severity and user impact check pannuven.',
+                            'Critical bugs, especially application functionality affect pannina, first fix pannuven.',
+                            'Minor bugs-na business priority and development timeline base panni plan pannuven.',
+                            'New features-um business requirements and deadlines base panni prioritize pannuven.',
+                            'Enoda main goal user experience affect aagama, important features-um timely-ah deliver pannuradhu.',
                         ],
                     },
                 ],
@@ -666,10 +759,11 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I prioritize by severity, number of users affected, frequency, workarounds and business risk, in discussion with product.',
-                            'Security, data loss and blocking issues go first, while minor bugs are batched and scheduled.',
-                            'We reserve sprint capacity for bugs and run regular triage so quality does not erode.',
-                            'I communicate trade-offs clearly to stakeholders.',
+                            'I prioritize bugs and new features based on business impact and user experience.',
+                            'I fix critical bugs first, especially those affecting application functionality or users.',
+                            'For minor bugs, I consider their priority and plan them accordingly.',
+                            'I also balance new feature development based on business requirements and deadlines.',
+                            'My goal is to maintain application stability while delivering new features on time.',
                         ],
                     },
                 ],
@@ -715,7 +809,12 @@ export const leadershipQuestionsSet3: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Severity', 'Impact', 'Triage', 'RICE', 'Capacity reservation', 'SLA'],
+                        items: [
+                            '1. Business impact.',
+                            '2. User experience.',
+                            '3. Critical bugs first.',
+                            '4. Application stability.',
+                        ],
                     },
                 ],
             },

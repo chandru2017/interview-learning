@@ -26,6 +26,23 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru developer repeated-ah bugs introduce pannina, first avanga kitta privately discuss pannuven.',
+                            'Bugs yen repeated-ah varudhu nu understand pannuven.',
+                            'Avangalukku proper guidance kuduthu, coding standards, testing practices, and code review process follow panna encourage pannuven.',
+                            'Thevai pattal, complex tasks-la support pannuven.',
+                            'Enoda goal mistakes point out pannuradhu mattum illa, avanga improve aagi quality code deliver panna help pannuradhu.',
+                        ],
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -87,10 +104,10 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I start by understanding the root cause: skills, unclear requirements, workload or process gaps, using specific examples.',
-                            'I talk to them privately and respectfully, then agree on support like pairing, smaller PRs, test checklists and review focus, with clear goals and a timeline.',
-                            'I also strengthen the system with types, CI and tests so quality does not depend on one person.',
-                            'If there is no improvement, I involve the manager openly.',
+                            'If a developer repeatedly introduces bugs, I first try to understand the root cause.',
+                            'I discuss the issue with them privately and provide guidance on coding standards and testing practices.',
+                            'I also review their code and encourage better testing before submitting changes.',
+                            'My goal is to help them improve their skills and maintain overall code quality.',
                         ],
                     },
                 ],
@@ -137,12 +154,10 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Root cause',
-                            'Private feedback',
-                            'Pairing',
-                            'Safeguards',
-                            'Clear expectations',
-                            'Escalation',
+                            '1. Identify root cause.',
+                            '2. Private discussion.',
+                            '3. Provide guidance.',
+                            '4. Improve code quality.',
                         ],
                     },
                 ],
@@ -168,6 +183,23 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                             'Share ESLint, TypeScript and formatting configs.',
                             'Write guidelines and architecture decisions.',
                             'Hold regular sync meetings between teams.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple frontend teams work pannumbodhu, consistency maintain panna common coding standards and guidelines follow panna ensure pannuven.',
+                            'Reusable components, common design system, and shared UI patterns create panna encourage pannuven.',
+                            'ESLint, Prettier, and code review process use panni coding standards maintain pannuven.',
+                            'Teams-kulla regular communication and knowledge sharing encourage pannuven.',
+                            'Enoda goal all teams-um consistent-ah and maintainable-ah frontend applications develop pannuradhu.',
                         ],
                     },
                 ],
@@ -242,10 +274,11 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I combine a shared, versioned design system, common tooling and configs, documented architecture decisions and a recommended golden path.',
-                            'I enforce standards through automation in CI rather than manual policing, and use a frontend guild and RFC process for decisions.',
-                            'Teams can contribute to shared libraries, and exceptions are allowed with justification.',
-                            'I measure adoption and developer experience.',
+                            'I ensure consistency across frontend teams by establishing common coding standards and guidelines.',
+                            'I encourage reusable components, shared design systems, and consistent UI patterns.',
+                            'I also use tools like ESLint and Prettier, along with regular code reviews.',
+                            'Regular communication and knowledge sharing help all teams follow the same practices.',
+                            'My goal is to maintain consistent, scalable, and maintainable frontend applications.',
                         ],
                     },
                 ],
@@ -292,13 +325,11 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Design system',
-                            'Shared tooling',
-                            'Golden path',
-                            'RFC/ADR',
-                            'Guild',
-                            'Automation',
-                            'Inner-source',
+                            '1. Coding standards',
+                            '2. Reusable components',
+                            '3. Design system',
+                            '4. Code reviews',
+                            '5. Knowledge sharing',
                         ],
                     },
                 ],
@@ -324,6 +355,23 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                             'Explain what happened and take responsibility.',
                             'Describe how you fixed or recovered.',
                             'Show what you learned and changed.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru project-la, initial-ah responsive UI develop pannumbodhu, different screen sizes-la proper-ah test pannama development complete panniten.',
+                            'Later, mobile screen-la layout issue identify pannanga.',
+                            'Naan immediately issue fix panni, different screen sizes-la test pannen.',
+                            'Indha experience moolama, development complete pannuradhu mattum illa, proper testing-um important nu learn panninen.',
+                            'Ippo responsive UI develop pannumbodhu different screen sizes-la test pannuradhukku importance kudukkuren.',
                         ],
                     },
                 ],
@@ -388,10 +436,11 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'One failure I learned from was [situation], where I [what I did] and it caused [impact].',
-                            'I took responsibility, fixed the immediate problem and communicated openly.',
-                            'The root cause was [my gap], so I changed [habit/process].',
-                            'Since then, [example of improved outcome].',
+                            'One mistake I made was not testing a responsive UI properly across different screen sizes.',
+                            'After development, we identified a layout issue on mobile devices.',
+                            'I took responsibility, fixed the issue, and tested it across different screen sizes.',
+                            'This experience taught me the importance of thorough testing.',
+                            'Since then, I have been more careful about responsive testing and quality checks before completing a feature.',
                         ],
                     },
                 ],
@@ -436,7 +485,7 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Ownership', 'Root cause', 'Recovery', 'Learning', 'Behavior change', 'Honesty'],
+                        items: ['1. Mistake', '2. Take responsibility', '3. Fix the issue', '4. Learn and improve'],
                     },
                 ],
             },
@@ -461,6 +510,22 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                             'Explain how you found the problem.',
                             'Describe what you changed.',
                             'Share the numbers and impact.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Archer Review project-la, repeated UI elements multiple pages-la use aaguradha notice pannen.',
+                            'Adhanala reusable components create panni, common UI logic and styles centralize pannen.',
+                            'Idhanala code duplication reduce aachu, UI consistency improve aachu, and future changes implement pannuradhu easier aachu.',
+                            'Indha improvement moolama application maintainability and development efficiency improve aachu.',
                         ],
                     },
                 ],
@@ -525,10 +590,11 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I improved [area]: it was [baseline] and affected [users/team].',
-                            'I measured and diagnosed the root causes, then made targeted changes and rolled them out safely.',
-                            'The result was [before to after metrics], confirmed with real-user data.',
-                            'I also added guardrails like CI budgets and monitoring so it stays improved.',
+                            'One significant improvement I made was improving code reusability in the Archer Review project.',
+                            'I identified repeated UI elements across multiple pages and introduced reusable components.',
+                            'This reduced code duplication, improved UI consistency, and made future changes easier to maintain.',
+                            'It also helped the team develop new features more efficiently.',
+                            'I believe reusable and maintainable code is important for long-term project success.',
                         ],
                     },
                 ],
@@ -572,7 +638,12 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Baseline', 'Measurement', 'Impact', 'Root cause', 'Guardrails', 'Before/After'],
+                        items: [
+                            '1. Identify repetition.',
+                            '2. Create reusable components.',
+                            '3. Reduce code duplication.',
+                            '4. Improve maintainability.',
+                        ],
                     },
                 ],
             },
@@ -597,6 +668,23 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                             'I take ownership from design to production.',
                             'I care about quality, performance and accessibility.',
                             'I help the team by mentoring and reviewing code.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Enakku 10+ years software development experience irukku, and 6+ years React.js experience irukku.',
+                            'React.js, JavaScript, Next.js, and frontend architecture-la strong experience irukku.',
+                            'Naan scalable applications develop pannuradhu, reusable components create pannuradhu, performance and accessibility improve pannuradhu-la contribute panniruken.',
+                            'Technical decisions edukkuradhu, code quality maintain pannuradhu, and junior developers-ku guidance kudukkuradhu-la confident-ah irukken.',
+                            'Enoda experience and technical skills use panni team-ku immediate-ah value add panna mudiyum.',
                         ],
                     },
                 ],
@@ -662,10 +750,11 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I match well with what you need: strong React, TypeScript and Next.js skills with a focus on performance, accessibility and quality.',
-                            'I own features from design to production, for example [achievement with metric].',
-                            "I also raise the team's level through code reviews, mentoring and clear communication.",
-                            'I am excited about [company challenge] and I can contribute quickly.',
+                            'You should hire me because I bring strong frontend experience, technical knowledge, and a problem-solving mindset.',
+                            'I have over 10 years of software development experience, including more than 6 years of hands-on experience with React.js.',
+                            'I have experience building scalable applications, developing reusable components, and improving performance and accessibility.',
+                            'I can also contribute to frontend architecture, code quality, and mentoring junior developers.',
+                            'I am confident that I can contribute to the team and deliver high-quality frontend solutions.',
                         ],
                     },
                 ],
@@ -711,7 +800,13 @@ export const leadershipQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Ownership', 'Technical depth', 'Impact', 'Quality', 'Mentoring', 'Fit'],
+                        items: [
+                            '1. Experience',
+                            '2. Technical expertise',
+                            '3. Problem-solving',
+                            '4. Ownership',
+                            '5. Team contribution',
+                        ],
                     },
                 ],
             },

@@ -199,6 +199,26 @@ export const oneIndiaQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Array data handle panna indha three methods romba useful.',
+                            'map() – every item-ai process panni new array return pannum.',
+                            'filter() – condition satisfy panra items mattum new array-la return pannum.',
+                            'reduce() – array items-ai combine panni single result create pannum.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example-ah products list irundha, map use panni product names edukkalam. Filter use panni expensive products select pannalam. Reduce use panni total price calculate pannalam.',
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -282,6 +302,25 @@ export const oneIndiaQuestionsSet2: IQuestion[] = [
                         items: [
                             'Promise represents a future result of an asynchronous operation.',
                             'Async/await provides a cleaner way to work with Promises.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Promise-na asynchronous operation oda future result represent pannum.',
+                            'Promise-ku three states irukkum: `Pending, Fulfilled, Rejected`',
+                            'Promise handle panna `.then(), .catch()` use pannalam.',
+                            '`async/await` Promise handle panna easy-ah readable syntax kudukkum.',
+                            '`async` function always Promise return pannum.',
+                            '`await` use pannumbodhu Promise result varum varaikkum andha async function execution pause aagum. Entire JavaScript thread block aagaadhu.',
+                            'Error handle panna `try/catch` use pannuvom.',
                         ],
                     },
                 ],

@@ -26,6 +26,23 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Enakku 10+ years software development experience irukku, and 6+ years React.js experience irukku.',
+                            'Frontend Architect role-ku required technical knowledge and architectural thinking enakku irukku.',
+                            'Naan scalable frontend architecture design pannuradhu, reusable component libraries create pannuradhu, performance and accessibility improve pannuradhu-la contribute panniruken.',
+                            'Technical decisions edukkuradhu, coding standards establish pannuradhu, and developers-ku technical guidance kudukkuradhu-la confident-ah irukken.',
+                            'Enoda goal maintainable, scalable, and high-quality frontend applications build pannuradhum, team technical growth-ku contribute pannuradhum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -88,10 +105,11 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I think in systems: rendering strategy, data and state architecture, design system, performance, security, accessibility and delivery.',
-                            'I make decisions with clear criteria and document trade-offs in ADRs, like [example], and I build platform tools and standards that help teams move faster.',
-                            'I align stakeholders and mentor engineers, while staying hands-on through prototypes and reviews.',
-                            'In the first 90 days I would assess the current state, find quick wins and define a roadmap.',
+                            'You should hire me as a Frontend Architect because I bring strong frontend experience and architectural thinking.',
+                            'I have over 10 years of software development experience, including more than 6 years of hands-on experience with React.js.',
+                            'I have experience building scalable frontend applications, developing reusable component libraries, and improving performance and accessibility.',
+                            'I can also contribute to architectural decisions, establish coding standards, and guide developers technically.',
+                            "I am confident that I can help build maintainable frontend architecture and support the team's long-term technical growth.",
                         ],
                     },
                 ],
@@ -153,13 +171,11 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Systems thinking',
-                            'ADR/RFC',
-                            'Trade-offs',
-                            'Platform',
-                            'Influence',
-                            'Hands-on',
-                            'Business alignment',
+                            '1. Architectural thinking',
+                            '2. Scalability',
+                            '3. Maintainability',
+                            '4. Technical leadership',
+                            '5. Team growth',
                         ],
                     },
                 ],
@@ -185,6 +201,21 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                             'Do not speak badly about your current company.',
                             'Connect your reason to this new role.',
                             'Be honest and calm.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Naan job change thedura main reason career growth and new technical challenges.',
+                            'Current company-la valuable experience gain panniruken. Ippo frontend architecture, advanced React development, and scalable application development-la innum deeper-ah work panna opportunity theduren.',
+                            'Enoda technical skills improve pannuradhum, team-ku more value add pannuradhum enoda goal.',
                         ],
                     },
                 ],
@@ -249,9 +280,10 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'I have grown a lot in my current role, delivering [achievements].',
-                            'Now I am looking for more ownership of architecture and larger-scale challenges, which is what drew me to this role.',
-                            'I am attracted to [company/product/tech], and I believe I can contribute to [specific area] while continuing to grow.',
+                            'I am looking for a job change mainly for career growth and new technical challenges.',
+                            'I have gained valuable experience in my current organization, and I am grateful for the opportunities I have received.',
+                            'Now, I am looking for an opportunity where I can work on more challenging frontend projects, contribute to architecture and technical decisions, and continue improving my skills.',
+                            'I believe this role aligns well with my career goals and experience.',
                         ],
                     },
                 ],
@@ -298,12 +330,10 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Growth',
-                            'Positive',
-                            'Bigger scope',
-                            'Company fit',
-                            'No negativity',
-                            'Career direction',
+                            '1. Career growth',
+                            '2. New challenges',
+                            '3. Technical learning',
+                            '4. More contribution',
                         ],
                     },
                 ],
@@ -329,6 +359,22 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                             'Mention leading projects or architecture and mentoring others.',
                             'Connect it to what this company can offer.',
                             'Keep it realistic and honest.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Innum 5 years-la, naan strong Full-Stack Engineer-ah grow aaganum nu aim panren.',
+                            'Frontend mattum illaama, backend technologies like Node.js, Python, Java and cloud platforms like AWS and Azure learn panni practical experience gain pannanum nu virumburen.',
+                            'Frontend and backend rendu side-um strong knowledge develop panni, complete applications independently design and develop panna capable-ah aaganum.',
+                            'Enoda goal full-stack development-la strong technical expertise develop panni, end-to-end application development-la contribute pannuradhu.',
                         ],
                     },
                 ],
@@ -392,9 +438,10 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'In the next few years I want to deepen my expertise and take on bigger technical responsibility.',
-                            'In five years I see myself as an architect or staff-level engineer, guiding frontend direction, mentoring others and staying hands-on.',
-                            'This role fits because it offers [scope/challenges], and I plan to contribute by [specific value].',
+                            'In the next five years, I see myself growing into a strong Full-Stack Engineer.',
+                            'I want to expand my knowledge beyond frontend development by learning backend technologies like Node.js, Python, and Java, along with cloud platforms like AWS and Azure.',
+                            'I want to gain hands-on experience in building complete applications, from frontend to backend and cloud deployment.',
+                            'My goal is to become a well-rounded engineer with strong technical expertise and the ability to handle end-to-end application development.',
                         ],
                     },
                 ],
@@ -440,7 +487,13 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Growth path', 'Architect/Staff', 'Mentoring', 'Impact', 'Alignment', 'Hands-on'],
+                        items: [
+                            '1. Full-Stack Engineer',
+                            '2. Backend Development',
+                            '3. Node.js, Python, Java',
+                            '4. AWS and Azure',
+                            '5. End-to-end Application Development',
+                        ],
                     },
                 ],
             },
@@ -465,6 +518,23 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                             'They make decisions based on trade-offs.',
                             'They communicate well and help teams.',
                             'They stay practical and hands-on.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru good Frontend Architect-ku strong technical knowledge and problem-solving skills irukkanum.',
+                            'Scalable and maintainable frontend architecture design panna theriyanum.',
+                            'Reusable components, performance optimization, accessibility, and code quality maintain panna theriyanum.',
+                            'Adhe maadhiri, right technical decisions edukkuradhu, coding standards define pannuradhu, and developers-ku proper guidance kudukkuradhum important.',
+                            'Enna technology use panrom-ngiradha vida, project-ku edhu best solution-ngiradha decide panna theriyanum.',
                         ],
                     },
                 ],
@@ -535,10 +605,10 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'A good frontend architect has technical breadth across rendering, performance, security, accessibility, state and tooling, and the judgment to weigh trade-offs for the context.',
-                            'They are pragmatic, communicate decisions clearly through ADRs, and influence teams without authority.',
-                            'They enable teams with standards and platforms, align with business goals and stay hands-on.',
-                            'They avoid ivory-tower decisions and over-engineering.',
+                            'A good Frontend Architect should have strong technical knowledge, problem-solving skills, and architectural thinking.',
+                            'They should be able to design scalable and maintainable applications, ensure code quality, and improve performance.',
+                            'They should also make the right technical decisions, establish coding standards, and guide development teams.',
+                            'Most importantly, a good Frontend Architect should choose the right solutions based on project requirements and long-term business goals.',
                         ],
                     },
                 ],
@@ -585,13 +655,11 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Breadth',
-                            'Trade-offs',
-                            'Pragmatism',
-                            'Communication',
-                            'Enablement',
-                            'Hands-on',
-                            'Business alignment',
+                            '1. Technical knowledge',
+                            '2. Scalable architecture',
+                            '3. Code quality',
+                            '4. Technical decision-making',
+                            '5. Team leadership',
                         ],
                     },
                 ],
@@ -617,6 +685,23 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                             'Help the team understand direction and priorities.',
                             'Support and grow other developers.',
                             'Communicate clearly and remove blockers.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Enoda technical leadership approach team-ku proper guidance kudukkuradhum, technical decisions edukkuradhum.',
+                            'First, project requirements understand panni, team-ku suitable technical approach suggest pannuven.',
+                            'Coding standards, reusable components, and best practices follow panna encourage pannuven.',
+                            'Junior developers-ku mentor pannuven, code reviews conduct pannuven, and technical challenges solve panna support pannuven.',
+                            'Enoda main goal strong team build pannuradhum, quality and scalable applications deliver pannuradhum.',
                         ],
                     },
                 ],
@@ -686,9 +771,10 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            "My approach to technical leadership is to multiply the team's impact: I give context and direction, make transparent decisions with ADRs and team input, and lead by example in code and reviews.",
-                            'I mentor and delegate with clear ownership, build a quality culture with CI, reviews and blameless postmortems, and remove blockers.',
-                            'I measure outcomes like delivery speed, quality and team health, and I communicate clearly to stakeholders.',
+                            'My approach to technical leadership is to guide the team, make the right technical decisions, and maintain code quality.',
+                            'I encourage coding standards, reusable components, and best practices.',
+                            'I also mentor junior developers, conduct code reviews, and help the team solve technical challenges.',
+                            'My goal is to build a strong team and deliver scalable, maintainable, and high-quality applications.',
                         ],
                     },
                 ],
@@ -751,13 +837,11 @@ export const leadershipQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: [
-                            'Direction',
-                            'Multiplier',
-                            'ADR/RFC',
-                            'Lead by example',
-                            'Delegation',
-                            'Psychological safety',
-                            'DORA',
+                            '1. Technical guidance',
+                            '2. Decision-making',
+                            '3. Coding standards',
+                            '4. Mentoring',
+                            '5. Team growth',
                         ],
                     },
                 ],

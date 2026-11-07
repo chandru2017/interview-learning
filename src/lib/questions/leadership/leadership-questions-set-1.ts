@@ -1,306 +1,11 @@
 import type { IQuestion } from '@/types';
 
 import { createQuestion } from '@/lib/questions/create-question';
+import { createSelfIntroductionQuestion, createRoleAndResponsibility } from '../shared/features';
 
 export const leadershipQuestionsSet1: IQuestion[] = [
-    createQuestion({
-        id: 'lead-1',
-        topicId: 'leadership',
-        title: 'Tell me about yourself.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'medium',
-        simpleExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'This is a short introduction, not your life story.',
-                            'Say who you are, what you do and what you are good at.',
-                            'Mention one or two achievements.',
-                            'End with why you want this role.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Interviewers use it to judge **communication, focus and relevance** in the first 90 seconds.',
-                            '**Structure: Present - Past - Future.**',
-                            '**Present** - current role, years of experience, main stack, type of products/scale.',
-                            '**Past** - 2 or 3 relevant highlights that show growth (performance, architecture, leading a feature, mentoring).',
-                            '**Future** - what you want next and why this company/role fits.',
-                            '**Tailor it** - match the job description (senior/architect: ownership, design decisions, leadership).',
-                            '**Keep it** 60-90 seconds, no personal/irrelevant details, no resume reading.',
-                            '**Include numbers** where possible and end with a hook that invites follow-up questions.',
-                            'Practice until it sounds natural, but not memorized.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `Template (fill with your real details, 60-90 seconds):
-    
-    PRESENT: I am a Frontend Engineer with [X] years of experience, mainly with React,
-         TypeScript and Next.js. Currently I work on [product] used by [users/scale].
-    PAST:    Earlier I [achievement 1: e.g. improved LCP from X to Y],
-         [achievement 2: e.g. led migration / built design system / mentored N devs].
-    FUTURE:  I am now looking for a role where I can [own architecture / lead frontend / solve
-         larger scale problems], and this role at [company] fits because [specific reason].`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: 'Present, past, future in under 90 seconds keeps the answer focused and relevant to the role.',
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Sample (customize with your real details): "I am a frontend engineer with [X] years of experience in React, TypeScript and Next.js. At Archer Review I built and owned the student-facing application, including the forms, exam flows and performance work, and I improved [metric] by [Y]. I also helped teammates with code reviews and standards. I am now looking for a senior/architect role where I can own frontend architecture and mentor a team, which is why this role interests me."',
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'I am a frontend engineer with [X] years of experience, mainly in React, TypeScript and Next.js.',
-                            'Currently I work on [product], where I own [area] and recently improved [metric/result].',
-                            'Earlier I worked on [relevant highlight], and I enjoy mentoring and improving how teams build UI.',
-                            'I am looking for a role with more ownership of architecture and impact, and your product and challenges match that.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        scenarioQuestions: [
-            {
-                label: 'Scenario 1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**Interviewer: "That was a lot about tech. Tell me about you as a person."**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Add one short, relevant personal point (how you work, what motivates you, a hobby that shows traits like curiosity).',
-                            'Keep it brief and return to professional strengths.',
-                        ],
-                    },
-                ],
-            },
-            {
-                label: 'Scenario 2',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**You have gaps or frequent job changes in your resume. How do you handle it in the introduction?**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Briefly and honestly frame them with a positive learning or growth reason, then move on.',
-                            'Focus on outcomes and the direction of your career.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        speakingPractice: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'keywords',
-                        items: ['Present-Past-Future', 'Relevant', 'Impact', 'Concise', 'Role fit'],
-                    },
-                ],
-            },
-        ],
-    }),
-
-    createQuestion({
-        id: 'lead-2',
-        topicId: 'leadership',
-        title: 'Walk me through your current project.',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'medium',
-        simpleExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Explain what the product does and who uses it.',
-                            'Describe your role and your main responsibilities.',
-                            'Explain the tech stack and how the frontend is structured.',
-                            'Share one challenge and its result.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        seniorExplanation: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'The goal is to show **depth, ownership and architectural understanding**. Expect deep follow-up questions on anything you mention.',
-                            '**1. Context** - product, users, scale, team size, your role.',
-                            '**2. Architecture** - rendering (SPA/SSR/Next.js), routing, state management (server vs client state), data fetching, API layer, design system, styling, forms, auth.',
-                            '**3. Quality and delivery** - testing strategy, CI/CD, code review, monitoring, performance and accessibility practices.',
-                            '**4. Your contribution** - features you owned, decisions you drove, improvements and mentoring.',
-                            '**5. Challenges and trade-offs** - one or two hard problems and why you chose a solution.',
-                            '**6. Impact and learning** - measurable outcomes and what you would improve now.',
-                            'Draw a simple architecture diagram mentally (browser, Next.js/CDN, API, DB, third-party). Be ready to go deeper on any box.',
-                            'Only mention technologies you can discuss in depth.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        simpleExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'code',
-                        text: `Walkthrough outline (3-4 minutes):
-    
-    1. What: [Product] helps [users] to [goal]. Scale: [users/traffic], team: [size].
-    2. My role: [owner of X / feature lead / frontend lead].
-    3. Architecture: Next.js (App Router) + TypeScript, Server Components for data,
-    client components for interaction, [TanStack Query/Zustand] for state, [REST/GraphQL] API layer.
-    4. Quality: ESLint/Prettier, Jest/Vitest + Playwright, CI with preview deploys, Sentry + Web Vitals.
-    5. Key work: [feature/performance/migration] -> result [metric].
-    6. Challenge: [problem] -> solution [approach] -> trade-off [what I gave up].
-    7. Next: what I would improve [debt/scaling/design system].`,
-                    },
-                    {
-                        type: 'highlight',
-                        text: 'A fixed outline keeps the walkthrough structured and gives the interviewer clear places to ask deeper questions.',
-                    },
-                ],
-            },
-        ],
-        realProjectExample: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Sample (customize with your real details): "Archer Review is [a learning/exam platform] used by [students]. I own the frontend built with React/Next.js and TypeScript. We use server components for data-heavy pages, client components for interactive forms and exam flows, and a typed API layer with validation. We have CI with lint, type check, tests and preview deployments. My main contributions were [feature/performance/standards], which led to [result]. If I did it again, I would [improvement]."',
-                    },
-                ],
-            },
-        ],
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'The product is [X] used by [Y], and I own [area] of the frontend.',
-                            'Architecture-wise we use [framework, rendering approach, state and data fetching strategy, design system].',
-                            'We maintain quality with typed code, tests, CI/CD, and monitoring.',
-                            'My key contributions were [A and B] with results [metrics], and the toughest challenge was [C], which we solved by [approach] with [trade-off].',
-                        ],
-                    },
-                ],
-            },
-        ],
-        scenarioQuestions: [
-            {
-                label: 'Scenario 1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**Interviewer: "Why did you choose that state management approach?"**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Explain the problem (server state vs UI state), the options considered, and why this fit (team size, complexity, performance).',
-                            'Mention trade-offs and when you would revisit it.',
-                        ],
-                    },
-                ],
-            },
-            {
-                label: 'Scenario 2',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**Interviewer: "What would you change in the architecture if you started again?"**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Give an honest, specific improvement (e.g., earlier design system, better typing at the API boundary, clearer folder boundaries).',
-                            'Show learning without criticizing the team.',
-                        ],
-                    },
-                ],
-            },
-            {
-                label: 'Scenario 3',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**Your project is small or not very technical. How do you present it as senior-level?**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Focus on decisions, quality and impact: performance, accessibility, maintainability, mentoring.',
-                            'Show ownership and how you handled complexity, not just the size of the app.',
-                        ],
-                    },
-                ],
-            },
-        ],
-        speakingPractice: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'keywords',
-                        items: ['Context', 'Architecture', 'Ownership', 'Trade-offs', 'Impact', 'Tech stack'],
-                    },
-                ],
-            },
-        ],
-    }),
-
+    createSelfIntroductionQuestion({ id: 'lead-1', topicId: 'leadership' }),
+    createRoleAndResponsibility({ id: 'lead-2', topicId: 'leadership' }),
     createQuestion({
         id: 'lead-3',
         topicId: 'leadership',
@@ -319,6 +24,23 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                             'Explain why it was hard.',
                             'Describe how you solved it step by step.',
                             'Share the result and what you learned.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Enoda most technically challenging project Archer Review.',
+                            'Indha project-la multiple pages and reusable components develop panniruken. Different screens-ku responsive UI create panniruken.',
+                            'Main challenge enna na, application consistent-ah irukkanum, performance improve pannanum, and accessibility standards follow pannanum.',
+                            'Adhukaga reusable components, responsive layouts, and accessibility improvements implement panniruken.',
+                            'Indha project moolama complex requirements-ah understand panni, maintainable and scalable frontend solutions create panna kathukitten.',
                         ],
                     },
                 ],
@@ -385,10 +107,11 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'The most challenging project was [X], where [problem and constraint].',
-                            'I started by measuring and understanding the root cause, evaluated a few options, and chose [approach] because of [reasons], accepting [trade-off].',
-                            'I implemented it incrementally with tests and a safe rollout.',
-                            'The result was [metrics], and the lesson was [learning].',
+                            'The most technically challenging project I worked on was Archer Review.',
+                            'I worked on developing responsive user interfaces, reusable components, and improving frontend performance.',
+                            'One of the main challenges was maintaining consistency across multiple pages while meeting accessibility and responsive design requirements.',
+                            'I handled these challenges by creating reusable components and following frontend best practices.',
+                            'This project helped me improve my problem-solving skills and build maintainable and scalable frontend applications.',
                         ],
                     },
                 ],
@@ -434,13 +157,16 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['STAR', 'Root cause', 'Trade-offs', 'Constraints', 'Metrics', 'Ownership'],
+                        items: [
+                            'Keep your answer around 30–40 seconds.',
+                            'Speak confidently.',
+                            `Don't explain too many technical details unless they ask follow-up questions.`,
+                        ],
                     },
                 ],
             },
         ],
     }),
-
     createQuestion({
         id: 'lead-4',
         topicId: 'leadership',
@@ -459,6 +185,21 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                             'Explain the problem and the options you compared.',
                             'Say why you chose one option.',
                             'Share the result and trade-offs.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Archer Review project-la naan edutha oru important architectural decision reusable component architecture.',
+                            'Multiple pages-la same UI elements repeat aagitu irundhuchu. So, ovvoru page-layum separate-ah code write panrathuku badhila, common reusable components create panna decide pannen.',
+                            'Idhanala code duplication reduce aachu, maintenance easy aachu, and UI consistency improve aachu.',
                         ],
                     },
                 ],
@@ -526,10 +267,10 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'The problem was [X] with constraints [Y].',
-                            'I compared [options] against criteria like performance, complexity, team skills and long-term maintenance, and validated with a prototype or benchmark.',
-                            'I chose [decision] and documented it in an ADR, consciously accepting [trade-off].',
-                            'We adopted it incrementally and the outcome was [metrics]; I would revisit it if [condition].',
+                            'One important architectural decision I made was introducing reusable components in the Archer Review project.',
+                            'Instead of writing the same UI code on multiple pages, I decided to create common components.',
+                            'This reduced code duplication, improved consistency, and made the application easier to maintain.',
+                            'It also helped the team develop new features faster.',
                         ],
                     },
                 ],
@@ -574,13 +315,12 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['ADR', 'Trade-offs', 'Options', 'Criteria', 'Prototype', 'Incremental adoption'],
+                        items: ['Reusable components', 'Code duplication', 'Consistency', 'Maintainability'],
                     },
                 ],
             },
         ],
     }),
-
     createQuestion({
         id: 'lead-5',
         topicId: 'leadership',
@@ -599,6 +339,22 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                             'Explain how you found the cause.',
                             'Say how you fixed it quickly and safely.',
                             'Explain what you did to prevent it again.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Archer Review project-la production issue face pannumbodhu, first issue enga irukku nu identify panna browser DevTools use pannuven.',
+                            'Console errors, network requests, and affected UI screen check pannuven.',
+                            'Root cause identify pannitu, fix implement panni different scenarios-la test pannuven.',
+                            'Finally, fix production-la deploy aana piragu issue resolve aagirukka nu verify pannuven.',
                         ],
                     },
                 ],
@@ -667,10 +423,10 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'We had a production issue where [impact], detected by [alert/report].',
-                            'First I mitigated by [rollback/flag], restoring service in [time], and kept stakeholders informed.',
-                            'Then I found the root cause using logs, error tracking and recent changes, fixed it with a test and a safe deploy.',
-                            'In the blameless postmortem we added [tests, alerts, process], so it would not happen again.',
+                            'In the Archer Review project, I handled production issues related to UI functionality and responsiveness.',
+                            'First, I used browser DevTools to identify the root cause by checking console errors and network requests.',
+                            'Then, I fixed the issue, tested the affected scenarios, and verified the fix after deployment.',
+                            'My main focus was resolving the issue quickly without affecting existing functionality.',
                         ],
                     },
                 ],
@@ -715,7 +471,12 @@ export const leadershipQuestionsSet1: IQuestion[] = [
                 blocks: [
                     {
                         type: 'keywords',
-                        items: ['Mitigation', 'Rollback', 'Root cause', 'Postmortem', 'Monitoring', 'Blameless'],
+                        items: [
+                            '1. Identify the issue.',
+                            '2. Find the root cause.',
+                            '3. Fix and test.',
+                            '4. Verify after deployment.',
+                        ],
                     },
                 ],
             },

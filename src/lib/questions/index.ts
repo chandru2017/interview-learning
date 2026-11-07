@@ -19,9 +19,11 @@ import { top30Questions } from './top-30';
 import { srmInfoTechQuestions } from './srm-info-tech';
 import { tanStackQueryQuestions } from './tanstack/tanstack-query';
 import { oneIndiaQuestions } from './one-data';
+import { hrQuestions } from './hr';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
+    ...hrQuestions,
     ...htmlCssUiQuestions,
     ...javascriptQuestions,
     ...typescriptQuestions,
@@ -44,6 +46,7 @@ export const QUESTIONS: IQuestion[] = [
 
 export {
     aboutExperienceQuestions,
+    hrQuestions,
     htmlCssUiQuestions,
     javascriptQuestions,
     typescriptQuestions,

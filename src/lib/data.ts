@@ -14,6 +14,14 @@ export const TOPICS: ITopic[] = [
         completedCount: 0,
     },
     {
+        id: 'hr',
+        name: 'HR',
+        section: 'ABOUT',
+        icon: 'BookOpen',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
         id: 'html-css-ui',
         name: 'HTML / CSS / UI',
         section: 'CORE',

@@ -1,65 +1,11 @@
 import type { IQuestion } from '@/types';
 
 import { createQuestion } from '../create-question';
+import { createSelfIntroductionQuestion, createRoleAndResponsibility } from '../shared/features';
 
 export const oneIndiaQuestionsSet1: IQuestion[] = [
-    createQuestion({
-        id: 'one-india-1',
-        topicId: 'one-india',
-        title: 'Tell me about yourself?',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'high',
-        keyTopic: 'self-introduction',
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Hello, my name is Chandrasekaran.',
-                            'I have over 10 years of experience in software development, including more than 6 years of hands-on experience with React.js.',
-                            'Currently, I am working as a Senior Frontend Engineer and Frontend Lead at Tartlabs.',
-                            'My main technical skills are React.js, Next.js, JavaScript, TypeScript, and Tailwind CSS.',
-                            'I have experience in building scalable web applications, developing reusable components, integrating REST APIs, and improving application performance.',
-                            'I have also worked on frontend architecture, technical SEO, and WCAG accessibility.',
-                            'One of my major projects is Archer Review, where I worked as a Frontend Team Lead.',
-                            'I enjoy solving technical problems, improving application performance, and building maintainable frontend applications.',
-                            'I am looking forward to contributing my experience and technical skills to your team.',
-                        ],
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 'one-india-2',
-        topicId: 'one-india',
-        title: 'Can you explain your current role and responsibilities?',
-        difficulty: 'Advanced',
-        status: 'in-progress',
-        priority: 'high',
-
-        interviewAnswer: [
-            {
-                label: '',
-                blocks: [
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Currently, I work as a Senior Frontend Engineer and Frontend Lead at Tartlabs.',
-                            'My main responsibility is to design and develop scalable frontend applications using React.js, Next.js, TypeScript and Tailwind CSS.',
-                            'I work on reusable component development, API integration, frontend architecture, and performance optimization.',
-                            'I also review code, mentor junior developers, and coordinate with backend developers and designers.',
-                            'Apart from development, I focus on accessibility, SEO, responsive design, and maintaining code quality.',
-                            'I also participate in Agile meetings and support the team in delivering features on time.',
-                        ],
-                    },
-                ],
-            },
-        ],
-    }),
+    createSelfIntroductionQuestion({ id: 'one-india-1', topicId: 'one-india' }),
+    createRoleAndResponsibility({ id: 'one-india-2', topicId: 'one-india' }),
     createQuestion({
         id: 'one-india-3',
         topicId: 'one-india',
@@ -222,6 +168,23 @@ export const oneIndiaQuestionsSet1: IQuestion[] = [
                         items: [
                             'Hoisting means JavaScript processes variable and function declarations before executing the code.',
                             'Think of it like this: JavaScript prepares declarations first, then executes the code.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hoisting na JavaScript behavior. Idhula variable and function declarations, code execution aagurathukku munnaadi process pannappadum.',
+                            'var use panni declare panna variables, undefined value-oda initialize aagum.',
+                            'let and const kooda hoisted aagum. Aana declaration-ku munnaadi access panna mudiyadhu. Idhuku reason Temporal Dead Zone (TDZ).',
+                            'Function declarations-ah declaration-ku munnaadiye call panna mudiyum.',
+                            'Hoisting-ah understand pannuradhu JavaScript applications-la unexpected errors avoid panna help pannum.',
                         ],
                     },
                 ],
