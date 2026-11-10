@@ -1,4 +1,8 @@
 import type { IQuestion } from '@/types';
-import { tenStackQueryQuestionsSet1 } from './tanstack-query-questions-set-1';
+import { tenStackQueryQuestionsSet3 } from './tanstack-query-questions-set-3';
 
-export const tanStackQueryQuestions: IQuestion[] = [...tenStackQueryQuestionsSet1];
+export const tanStackQueryQuestions: IQuestion[] = [
+    // ...tenStackQueryQuestionsSet1,
+    // ...tenStackQueryQuestionsSet2,
+    ...tenStackQueryQuestionsSet3,
+];

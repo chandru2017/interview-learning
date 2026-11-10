@@ -2,7 +2,7 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '../../create-question';
 
-export const tenStackQueryQuestionsSet1: IQuestion[] = [
+export const tenStackQueryQuestionsSet2: IQuestion[] = [
     createQuestion({
         id: 'tsq-6',
         topicId: 'react-query',

@@ -26,11 +26,13 @@ type SectionId =
     | 'example'
     | 'project'
     | 'interview'
+    | 'interview-1'
     | 'tamil'
     | 'speaking'
     | 'story'
     | 'scenario'
-    | 'thanglish';
+    | 'thanglish'
+    | 'memory';
 
 const SECTION_ORDER: {
     id: SectionId;
@@ -41,11 +43,13 @@ const SECTION_ORDER: {
         | 'simpleExample'
         | 'realProjectExample'
         | 'interviewAnswer'
+        | 'interviewAnswer1'
         | 'interviewAnswerTamil'
         | 'speakingPractice'
         | 'conceptAsStory'
         | 'scenarioQuestions'
         | 'thanglishExplanation'
+        | 'memoryTrick'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
@@ -53,11 +57,13 @@ const SECTION_ORDER: {
     { id: 'example', key: 'simpleExample' },
     { id: 'project', key: 'realProjectExample' },
     { id: 'interview', key: 'interviewAnswer' },
+    { id: 'interview-1', key: 'interviewAnswer1' },
     { id: 'tamil', key: 'interviewAnswerTamil' },
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
     { id: 'thanglish', key: 'thanglishExplanation' },
+    { id: 'memory', key: 'memoryTrick' },
 ];
 
 const getAvailableSections = (question: IQuestion): SectionId[] => {
@@ -105,6 +111,7 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
               : 'Not Started';
 
     const toggleSection = (id: SectionId) => {
+        console.log('id', id);
         setOpenSection((current) => (current === id ? null : id));
     };
 
@@ -233,6 +240,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                     </Section>
                 )}
 
+                {question?.interviewAnswer1 && question.interviewAnswer1.length > 0 && (
+                    <Section
+                        id="interview-1"
+                        title="Interview Answer 1"
+                        description="Polished, interview-ready response"
+                        open={openSection === 'interview-1'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.interviewAnswer1} />
+                    </Section>
+                )}
+
                 {question?.interviewAnswerTamil && question.interviewAnswerTamil.length > 0 && (
                     <Section
                         id="tamil"
@@ -266,6 +285,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.speakingPractice} />
+                    </Section>
+                )}
+
+                {question?.memoryTrick?.length && question.memoryTrick.length > 0 && (
+                    <Section
+                        id="memory"
+                        title="Memory Trick"
+                        description="Shop memory trick"
+                        open={openSection === 'memory'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.memoryTrick} />
                     </Section>
                 )}
             </div>

@@ -26,6 +26,93 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Core Web Vitals - Overview',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Namma website user-ku evlo fast-ah load aaguthu, user interact pannumbothu evlo quickly respond aaguthu, page load aagumbothu layout stable-ah irukka nu measure panra Google performance metrics.',
+                            'Simple-ah sonna, oru website use panra user-ku nalla experience irukka illaya nu measure panrathuthan Core Web Vitals.',
+                            'Idhula 3 main metrics irukku.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'LCP – Largest Contentful Paint',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Page-la irukkura main content (large image or heading) evlo fast-ah load aaguthu nu measure pannum.',
+                            'Good: 2.5 seconds or less.',
+                            'Example: Website open pannumbothu main banner image quickly display aaganum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'INP – Interaction to Next Paint',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User button click pannumbothu, dropdown open pannumbothu, oru action perform pannumbothu website evlo quickly respond aaguthu nu measure pannum.',
+                            'Good: 200 milliseconds or less.',
+                            'Example: Login button click pannuna delay illama response varanum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'CLS – Cumulative Layout Shift',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Website load aagumbothu elements unexpected-ah move aagutha nu measure pannum.',
+                            'Good: 0.1 or less.',
+                            'Example: User button click panna poranga, but image load aagi button position move aagiduchuna adhu bad experience.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Quick Summary Table',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'LCP: Loading speed (Good: <= 2.5s)',
+                            'INP: Interaction speed (Good: <= 200ms)',
+                            'CLS: Layout stability (Good: <= 0.1)',
+                        ],
+                    },
+                ],
+            },
+        ],
         seniorExplanation: [
             {
                 label: '',
@@ -69,7 +156,32 @@ export const fpQuestionsSet1: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'In Archer Review, I would monitor LCP for important landing pages, INP for interactive student screens, and CLS for pages containing images, banners, and dynamic content.',
+                        text: 'Imagine student website open panranga.',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**LCP:** Student dashboard open pannumbothu main dashboard content and banner quickly load aaganum.',
+                            '**INP:** Student course button click pannumbothu quickly respond aaganum.',
+                            '**CLS:** Dashboard-la images, banners load aagumbothu buttons and content position change aaga koodathu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'As a Frontend Developer, how can we improve these metrics?',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**LCP:** Optimize images, reduce unnecessary JavaScript, improve server response time.',
+                            '**INP** Avoid long JavaScript tasks, optimize event handlers, reduce unnecessary rendering.',
+                            '**CLS** Set image width and height, reserve space for ads and banners, avoid inserting content unexpectedly.',
+                        ],
                     },
                 ],
             },
@@ -85,6 +197,33 @@ export const fpQuestionsSet1: IQuestion[] = [
                             'The three main metrics are LCP for loading, INP for responsiveness, and CLS for visual stability.',
                             'I use Lighthouse, DevTools, and real-user data to identify and fix performance issues.',
                         ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Core Web Vitals are Google performance metrics used to measure the user experience of a website. There are three main metrics:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**LCP (Largest Contentful Paint):** It measures how quickly the main content of a page loads. A good score is 2.5 seconds or less.',
+                            '**INP (Interaction to Next Paint):** It measures how quickly a website responds to user interactions. A good score is 200 milliseconds or less.',
+                            '**CLS (Cumulative Layout Shift):** It measures unexpected layout changes while the page loads. A good score is 0.1 or less.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'In my projects, I focus on optimizing images, reducing unnecessary JavaScript, improving interactions, and maintaining layout stability.',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'This helps improve website performance and user experience.',
                     },
                 ],
             },
@@ -136,8 +275,26 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        memoryTrick: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Just remember these three questions:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '**LCP:** How fast does the page load?',
+                            '**INP:** How fast does the page respond?',
+                            '**CLS:** Does the page layout remain stable?',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
-
     createQuestion({
         id: 'fp-2',
         topicId: 'frontend-performance',
@@ -264,7 +421,6 @@ export const fpQuestionsSet1: IQuestion[] = [
             },
         ],
     }),
-
     createQuestion({
         id: 'fp-3',
         topicId: 'frontend-performance',
@@ -392,7 +548,6 @@ export const fpQuestionsSet1: IQuestion[] = [
             },
         ],
     }),
-
     createQuestion({
         id: 'fp-4',
         topicId: 'frontend-performance',
@@ -520,7 +675,6 @@ export const fpQuestionsSet1: IQuestion[] = [
             },
         ],
     }),
-
     createQuestion({
         id: 'fp-5',
         topicId: 'frontend-performance',
@@ -541,6 +695,129 @@ export const fpQuestionsSet1: IQuestion[] = [
                             'Improve server response time.',
                             'Load critical resources earlier.',
                         ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'LCP improve panrathuku main goal enna na, website-la largest content element user-ku fast-ah display aaganum.',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: Archer Review website-la main banner image 5 seconds-la load aaguthu na, atha 2.5 seconds-kulla load panna optimize panrathuthan LCP improvement. LCP improve panna 5 important techniques irukku.',
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Optimize Images',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Large images compress pannanum.',
+                            'WebP or AVIF format use pannalam.',
+                            'Image size reduce pannanum.',
+                            'Responsive images use pannanum.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: 2MB banner image-ah 200KB WebP image-ah convert pannina loading faster aagum.',
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Prioritize Important Images',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Main banner image important-ah load aaganum.',
+                            'Hero image-ku `fetchPriority="high"` use pannalam.',
+                            'Important LCP image-ku lazy loading avoid pannanum.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: Main banner image first load aaganum; below-the-fold images later load aagalam.',
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Reduce Unnecessary JavaScript',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Unnecessary JavaScript remove pannanum.',
+                            'Code splitting use pannanum.',
+                            'Large JavaScript bundles reduce pannanum.',
+                            '- Unnecessary client-side rendering avoid pannanum.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: Dashboard-la thevai illatha components initial loading time-la load aaga koodathu.',
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Improve Server Response Time',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Backend API response time improve pannanum.',
+                            'Server-side rendering use pannalam.',
+                            'Caching implement pannalam.',
+                            '- CDN use pannalam.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: Server response late-ah varuthu na, page content display aagurathum late aagum.',
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Avoid Render-Blocking Resources',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Critical CSS prioritize pannanum.',
+                            'Unnecessary CSS remove pannanum.',
+                            'Render-blocking scripts reduce pannanum.',
+                        ],
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Example: Main content display aagurathuku unnecessary CSS or JavaScript block panna koodathu.',
                     },
                 ],
             },
@@ -605,6 +882,25 @@ export const fpQuestionsSet1: IQuestion[] = [
                             'First I identify the LCP element.',
                             'Then I optimize its image or content, improve server response time, remove render-blocking resources, and prioritize critical resources.',
                             'I verify the improvement using Lighthouse and real-user data.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'I would improve LCP by focusing on loading the largest content element as quickly as possible.',
+                            'First, I optimize images by using WebP or AVIF formats and reducing image sizes.',
+                            'Second, I prioritize important images using fetchPriority="high" and avoid lazy loading the main LCP image.',
+                            'Third, I reduce unnecessary JavaScript and optimize CSS to avoid render-blocking resources.',
+                            'I also improve server response time using caching, CDN, and server-side rendering when needed.',
+                            'Finally, I monitor LCP using Lighthouse and Chrome DevTools to identify performance issues and verify improvements.',
+                            'My goal is to achieve a good LCP score of 2.5 seconds or less.',
                         ],
                     },
                 ],

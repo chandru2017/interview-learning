@@ -63,7 +63,7 @@ export const TOPICS: ITopic[] = [
     },
     {
         id: 'react-query',
-        name: 'TanStack Query / React Query',
+        name: 'TanStack Query',
         section: 'TANSTACk',
         icon: 'ShipWheel',
         questionCount: 0,
@@ -71,7 +71,7 @@ export const TOPICS: ITopic[] = [
     },
     {
         id: 'tanstack-table',
-        name: 'TanStack Table / React Table',
+        name: 'TanStack Table',
         section: 'TANSTACk',
         icon: 'ShipWheel',
         questionCount: 0,

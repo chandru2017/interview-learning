@@ -45,11 +45,13 @@ export interface IQuestion {
     simpleExample: AnswerContent;
     realProjectExample: AnswerContent;
     interviewAnswer: AnswerContent;
+    interviewAnswer1?: AnswerContent;
     interviewAnswerTamil?: AnswerContent;
     conceptAsStory?: AnswerContent;
     speakingPractice?: AnswerContent;
     scenarioQuestions?: AnswerContent;
     thanglishExplanation?: AnswerContent;
+    memoryTrick?: AnswerContent;
 }
 
 export interface ITopic {
