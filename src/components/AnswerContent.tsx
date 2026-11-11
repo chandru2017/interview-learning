@@ -3,6 +3,9 @@
 import { InlineMarkup } from '@/components/InlineMarkup';
 import { formatCode } from '@/components/FormatCode';
 import type { AnswerContent as AnswerContentType, ContentBlock, IAnswerPoint } from '@/types';
+import Image from 'next/image';
+import React from 'react';
+import { MoveDown } from 'lucide-react';
 
 interface IAnswerContentProps {
     content: AnswerContentType;
@@ -127,8 +130,37 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
         );
     }
 
+    if (block.type === 'image') {
+        return (
+            <Image
+                src={block.url}
+                alt="Answer illustration"
+                className="max-w-full rounded-xl mt-3"
+                loading={block.loading}
+            />
+        );
+    }
+
+    if (block.type === 'markdown') {
+        return (
+            <ul className="flex flex-col gap-2 items-center">
+                {block.items.map((list, index) => (
+                    <React.Fragment key={list.title}>
+                        <li className="rounded-xl flex flex-col text-center border border-primary/15 bg-primary/10 px-12 py-2 gap-1 dark:text-white">
+                            <span className="font-bold text-base">{list.title}</span>
+                            <span className="font-medium text-sm italic">{list.description}</span>
+                        </li>
+                        {index < block.items.length - 1 && <MoveDown />}
+                    </React.Fragment>
+                ))}
+            </ul>
+        );
+    }
+
     return (
-        <ul className={`list-disc space-y-1.5 marker:text-primary/50 ${contentLength > 1 ? 'ml-5 pl-4' : 'pl-3'}`}>
+        <ul
+            className={`${block.type === 'sub-items' ? 'list-decimal pl-10' : 'list-disc marker:text-primary/50'} space-y-1.5  ${contentLength > 1 ? 'ml-5 pl-4' : 'pl-3'}`}
+        >
             {block.items.map((item) => (
                 <li key={item} className="text-foreground/90">
                     <InlineMarkup text={item} />

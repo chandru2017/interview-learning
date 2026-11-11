@@ -1,6 +1,15 @@
+import type { StaticImageData } from 'next/image';
+
 export type QuestionDifficulty = 'Beginner' | 'Intermediate' | 'Advanced';
 
 export type QuestionStatus = 'not-started' | 'in-progress' | 'completed';
+
+export type ViewType = 'question' | 'concept';
+
+export interface IMarkdown {
+    title: string;
+    description: string;
+}
 
 export type TopicSection =
     | 'ABOUT'
@@ -13,16 +22,20 @@ export type TopicSection =
     | 'ENGINEERING'
     | 'CODING'
     | 'FINAL REVISION'
-    | 'COMPANY SPECIFIC';
+    | 'COMPANY SPECIFIC'
+    | 'CONCEPT';
 
 export type ContentBlock =
     | { type: 'paragraph'; text: string }
     | { type: 'heading'; text: string }
     | { type: 'bullets'; items: string[] }
+    | { type: 'sub-items'; items: string[] }
     | { type: 'code'; text: string }
     | { type: 'highlight'; text: string }
     | { type: 'keywords'; items: string[] }
-    | { type: 'link'; text: string };
+    | { type: 'markdown'; items: IMarkdown[] }
+    | { type: 'link'; text: string }
+    | { type: 'image'; url: StaticImageData; loading?: 'eager' | 'lazy' };
 
 export interface IAnswerPoint {
     /** Optional letter label such as "a", "b", "c". */
@@ -40,6 +53,7 @@ export interface IQuestion {
     status: QuestionStatus;
     priority?: string;
     keyTopic?: string;
+    viewType?: ViewType;
     simpleExplanation: AnswerContent;
     seniorExplanation: AnswerContent;
     simpleExample: AnswerContent;
@@ -52,6 +66,9 @@ export interface IQuestion {
     scenarioQuestions?: AnswerContent;
     thanglishExplanation?: AnswerContent;
     memoryTrick?: AnswerContent;
+    what?: AnswerContent;
+    why?: AnswerContent;
+    how?: AnswerContent;
 }
 
 export interface ITopic {

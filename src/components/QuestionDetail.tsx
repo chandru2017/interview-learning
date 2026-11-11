@@ -22,6 +22,10 @@ const DIFFICULTY_CLASS: Record<string, string> = {
 
 type SectionId =
     | 'simple'
+    | 'thanglish'
+    | 'what'
+    | 'why'
+    | 'how'
     | 'senior'
     | 'example'
     | 'project'
@@ -31,7 +35,6 @@ type SectionId =
     | 'speaking'
     | 'story'
     | 'scenario'
-    | 'thanglish'
     | 'memory';
 
 const SECTION_ORDER: {
@@ -39,6 +42,10 @@ const SECTION_ORDER: {
     key: keyof Pick<
         IQuestion,
         | 'simpleExplanation'
+        | 'thanglishExplanation'
+        | 'what'
+        | 'why'
+        | 'how'
         | 'seniorExplanation'
         | 'simpleExample'
         | 'realProjectExample'
@@ -48,11 +55,14 @@ const SECTION_ORDER: {
         | 'speakingPractice'
         | 'conceptAsStory'
         | 'scenarioQuestions'
-        | 'thanglishExplanation'
         | 'memoryTrick'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
+    { id: 'thanglish', key: 'thanglishExplanation' },
+    { id: 'what', key: 'what' },
+    { id: 'why', key: 'why' },
+    { id: 'how', key: 'how' },
     { id: 'senior', key: 'seniorExplanation' },
     { id: 'example', key: 'simpleExample' },
     { id: 'project', key: 'realProjectExample' },
@@ -62,7 +72,6 @@ const SECTION_ORDER: {
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
-    { id: 'thanglish', key: 'thanglishExplanation' },
     { id: 'memory', key: 'memoryTrick' },
 ];
 
@@ -111,7 +120,6 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
               : 'Not Started';
 
     const toggleSection = (id: SectionId) => {
-        console.log('id', id);
         setOpenSection((current) => (current === id ? null : id));
     };
 
@@ -177,6 +185,42 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.thanglishExplanation} />
+                    </Section>
+                )}
+
+                {question.what && question.what.length > 0 && (
+                    <Section
+                        id="what"
+                        title="What is this?"
+                        description="what is this?"
+                        open={openSection === 'what'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.what} />
+                    </Section>
+                )}
+
+                {question.why && question.why.length > 0 && (
+                    <Section
+                        id="why"
+                        title="Why do we use this?"
+                        description="Why do we use this?"
+                        open={openSection === 'why'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.why} />
+                    </Section>
+                )}
+
+                {question.how && question.how.length > 0 && (
+                    <Section
+                        id="how"
+                        title="How does it work"
+                        description="how does it work"
+                        open={openSection === 'how'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.how} />
                     </Section>
                 )}
 

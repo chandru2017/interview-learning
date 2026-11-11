@@ -20,6 +20,7 @@ import { srmInfoTechQuestions } from './srm-info-tech';
 import { tanStackQueryQuestions } from './tanstack/tanstack-query';
 import { oneIndiaQuestions } from './one-data';
 import { hrQuestions } from './hr';
+import { CONCEPT } from '../concepts';
 
 export const QUESTIONS: IQuestion[] = [
     ...aboutExperienceQuestions,
@@ -42,6 +43,7 @@ export const QUESTIONS: IQuestion[] = [
     ...srmInfoTechQuestions,
     ...tanStackQueryQuestions,
     ...oneIndiaQuestions,
+    ...CONCEPT,
 ];
 
 export {
@@ -65,4 +67,5 @@ export {
     srmInfoTechQuestions,
     tanStackQueryQuestions,
     oneIndiaQuestions,
+    CONCEPT,
 };

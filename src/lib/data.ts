@@ -1,8 +1,9 @@
 import type { IQuestion, ITopic, ITopicSectionGroup, TopicSection } from '@/types';
 
 import { QUESTIONS } from '@/lib/questions';
+import { CONCEPT } from '@/lib/concepts';
 
-export { QUESTIONS };
+export { QUESTIONS, CONCEPT };
 
 export const TOPICS: ITopic[] = [
     {
@@ -173,6 +174,14 @@ export const TOPICS: ITopic[] = [
         questionCount: 0,
         completedCount: 0,
     },
+    {
+        id: 'redux',
+        name: 'Redux',
+        section: 'CONCEPT',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
 ];
 
 const SECTION_ORDER: TopicSection[] = [
@@ -187,6 +196,7 @@ const SECTION_ORDER: TopicSection[] = [
     'CODING',
     'FINAL REVISION',
     'COMPANY SPECIFIC',
+    'CONCEPT',
 ];
 
 export const getTopicById = (topicId: string): ITopic | undefined => {
@@ -199,6 +209,10 @@ export const getQuestionsByTopic = (topicId: string): IQuestion[] => {
 
 export const getQuestionById = (topicId: string, questionId: string): IQuestion | undefined => {
     return QUESTIONS.find((question) => question.topicId === topicId && question.id === questionId);
+};
+
+export const getConceptById = (topicId: string, questionId: string): IQuestion | undefined => {
+    return CONCEPT.find((concept) => concept.topicId === topicId && concept.id === questionId);
 };
 
 export const getAdjacentQuestionIds = (
