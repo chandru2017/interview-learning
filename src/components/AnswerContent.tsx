@@ -3,6 +3,7 @@
 import { InlineMarkup } from '@/components/InlineMarkup';
 import { formatCode } from '@/components/FormatCode';
 import type { AnswerContent as AnswerContentType, ContentBlock, IAnswerPoint } from '@/types';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import Image from 'next/image';
 import React from 'react';
 import { MoveDown } from 'lucide-react';
@@ -154,6 +155,32 @@ const ContentBlockView = ({ block, contentLength }: { block: ContentBlock; conte
                     </React.Fragment>
                 ))}
             </ul>
+        );
+    }
+
+    if (block.type === 'table') {
+        return (
+            <section className="flex flex-col gap-4 mt-2">
+                <h3 className="px-1 text-base font-bold">{block.content.title}:</h3>
+                <div className="overflow-hidden rounded-sm border border-border/70 bg-surface-elevated">
+                    <Table className="min-w-[32rem]" aria-label={block.content.title}>
+                        <TableHeader>
+                            <TableRow className="bg-muted/50 hover:bg-muted/50">
+                                <TableHead scope="col">{block.content.toolA}</TableHead>
+                                <TableHead scope="col">{block.content.toolB}</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {block.content.comparison.map((row, index) => (
+                                <TableRow key={`${row.toolA}-${row.toolB}-${index}`}>
+                                    <TableCell>{row.toolA}</TableCell>
+                                    <TableCell>{row.toolB}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+            </section>
         );
     }
 

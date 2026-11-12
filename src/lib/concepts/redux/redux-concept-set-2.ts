@@ -643,30 +643,6 @@ export const reduxConceptSet2: IQuestion[] = [
                             'useSelector() / useDispatch() – Component-ல் state read மற்றும் action dispatch பண்ணும்.',
                         ],
                     },
-                    {
-                        type: 'image',
-                        url: reduxToolkitImg,
-                        loading: 'eager',
-                    },
-                    {
-                        type: 'paragraph',
-                        text: '**Redux Toolkit use pannumbodhu:**',
-                    },
-                    {
-                        type: 'sub-items',
-                        items: [
-                            'Less boilerplate code.',
-                            'Easy Store configuration.',
-                            'Simple Reducer creation.',
-                            'Built-in Immer support.',
-                            'Better developer experience.',
-                            'Redux DevTools integration.',
-                        ],
-                    },
-                    {
-                        type: 'paragraph',
-                        text: `**Important:** Redux Toolkit is not a replacement for Redux. It's the recommended way to write Redux applications.`,
-                    },
                 ],
             },
         ],
@@ -676,15 +652,15 @@ export const reduxConceptSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: '**Why – Ethukku Redux Toolkit use pannuvom?**',
+                        text: '**Why – Ethukku use panrom?**',
                     },
                     {
                         type: 'bullets',
                         items: [
-                            'Traditional Redux-la state update panna Actions, Action Types, Action Creators, Reducers separate-ah create panna vendiyirukkum.',
-                            'Redux Toolkit-la `createSlice()` use pannina indha code ellam simplify pannalaam.',
-                            '**Traditional Redux:** More boilerplate code, Manual action creators, Manual action types, Immutable updates manually, Manual Store setup',
-                            '**Redux Toolkit:** Less boilerplate, Automatically generated, Automatically generated, Immer support, configureStore()',
+                            'Application state centralized-ஆ maintain பண்ணலாம்.',
+                            'Multiple components shared state access பண்ணலாம்.',
+                            'State update logic organized-ஆ இருக்கும்.',
+                            'Redux boilerplate குறையும்.',
                         ],
                     },
                 ],
@@ -696,72 +672,31 @@ export const reduxConceptSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: '**How – Redux Toolkit eppadi work aaguthu?**',
+                        text: '**How – eppadi work aaguthu?**',
                     },
                     {
                         type: 'paragraph',
-                        text: 'Redux Toolkit-la main-ah 2 important functions understand pannuvom:',
+                        text: '**Redux Toolkit flow:**',
                     },
                     {
-                        type: 'bullets',
+                        type: 'markdown',
                         items: [
-                            '`configureStore()` – Redux Store create and configure pannum.',
-                            '`createSlice()` – State, Reducers, Actions ellathayum oru place-la define pannum.',
-                        ],
-                    },
-                    {
-                        type: 'image',
-                        url: reduxToolkitImg1,
-                        loading: 'lazy',
-                    },
-                    {
-                        type: 'paragraph',
-                        text: '**Basic workflow:**',
-                    },
-                    {
-                        type: 'code',
-                        text: `React Component
-                                ↓
-                            useDispatch()
-                                ↓
-                            Slice Action
-                                ↓
-                            Reducer
-                                ↓
-                            Redux Store
-                                ↓
-                            useSelector()
-                                ↓
-                            Updated UI
-                        `,
-                    },
-                ],
-            },
-            {
-                label: '2',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Important concept: Immer',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Traditional Redux-la existing state-a direct-ah modify panna koodadhu.',
-                            'Redux Toolkit-la createSlice() use pannumbodhu:',
-                        ],
-                    },
-                    {
-                        type: 'code',
-                        text: `state.count += 1;`,
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Indha madhiri write pannalaam.',
-                            'Redux Toolkit-la createSlice() use pannumbodhu:',
-                            'Idhu direct mutation madhiri therinjaalum, Redux Toolkit internally Immer use panni immutable state update handle pannum.',
-                            '**Note:** Immer support createSlice and createReducer-la irukkum. Ordinary JavaScript objects or traditional Redux reducers-la automatic-ah apply aagadhu.',
+                            {
+                                title: 'React Component',
+                                description: 'useDispatch() → Action dispatch',
+                            },
+                            {
+                                title: 'Reducer (createSlice)',
+                                description: 'State update logic',
+                            },
+                            {
+                                title: 'Redux Store',
+                                description: 'Updated state',
+                            },
+                            {
+                                title: 'Re-React Component',
+                                description: 'useSelector() → Read state → UI update',
+                            },
                         ],
                     },
                 ],
@@ -773,7 +708,11 @@ export const reduxConceptSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Ippo traditional Redux vs Redux Toolkit code difference paarkkalaam.',
+                        text: '**Step 1: Install packages**',
+                    },
+                    {
+                        type: 'code',
+                        text: `npm install @reduxjs/toolkit react-redux`,
                     },
                 ],
             },
@@ -782,30 +721,49 @@ export const reduxConceptSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Traditional Redux',
-                    },
-                    {
-                        type: 'code',
-                        text: `const initialState = {
-                            count: 0,
-                            };
-
-                            function counterReducer(state = initialState, action) {
-                            switch (action.type) {
-                                case "INCREMENT":
-                                return {
-                                    ...state,
-                                    count: state.count + 1,
-                                };
-
-                                default:
-                                return state;
-                            }
-                        }`,
+                        text: '**Step 2: Create Counter Slice**',
                     },
                     {
                         type: 'paragraph',
-                        text: 'Indha code-la manual-ah action type and reducer logic write pannirukkom.',
+                        text: `src/features/counter/counterSlice.ts`,
+                    },
+                    {
+                        type: 'code',
+                        text: `import { createSlice } from "@reduxjs/toolkit";
+
+                            const counterSlice = createSlice({
+                            name: "counter",
+                            initialState: {
+                                value: 0,
+                            },
+                            reducers: {
+                                increment: (state) => {
+                                state.value += 1;
+                                },
+                                decrement: (state) => {
+                                state.value -= 1;
+                                },
+                            },
+                            });
+
+                            export const { increment, decrement } =
+                            counterSlice.actions;
+
+                            export default counterSlice.reducer;`,
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Explanation:',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`name` → Slice name.',
+                            '`initialState` → Starting state.',
+                            '`reducers` → State update functions.',
+                            '`increment, decrement` → Automatically generated action creators.',
+                            '`state.value += 1` → Redux Toolkit Immer மூலம் immutable update handle பண்ணும்.',
+                        ],
                     },
                 ],
             },
@@ -814,88 +772,105 @@ export const reduxConceptSet2: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Redux Toolkit',
+                        text: '**Step 3: Create Store**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'src/app/store.ts',
                     },
                     {
                         type: 'code',
-                        text: `import { createSlice } from "@reduxjs/toolkit";
+                        text: `import { configureStore } from "@reduxjs/toolkit";
+                            import counterReducer from "../features/counter/counterSlice";
 
-                            const counterSlice = createSlice({
-                            name: "counter",
-                            initialState: { count: 0 },
-
-                            reducers: {
-                                increment: (state) => {
-                                state.count += 1;
-                                },
+                            export const store = configureStore({
+                            reducer: {
+                                counter: counterReducer,
                             },
-                            });
-
-                            export const { increment } = counterSlice.actions;
-
-                            export default counterSlice.reducer;`,
+                        });`,
                     },
                     {
                         type: 'paragraph',
-                        text: '**Difference understand pannikko:**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            '`createSlice()` state and reducers define pannum.',
-                            '`increment` action automatically generate aagum.',
-                            '`counterSlice.actions` action creators provide pannum.',
-                            '`counterSlice.reducer` reducer function provide pannum.',
-                            'Immer state update handle pannum.',
-                        ],
+                        text: 'இங்கே counter என்பது Store-ல் state access பண்ண பயன்படுத்தும் key.',
                     },
                 ],
             },
-        ],
-        realProjectExample: [
             {
-                label: '',
+                label: '4',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Student Portal-la student dashboard state manage pannuradhukku Redux Toolkit use pannalaam.',
+                        text: 'Step 4: Add Provider',
                     },
                     {
-                        type: 'heading',
-                        text: 'Example:',
+                        type: 'paragraph',
+                        text: 'src/main.tsx',
+                    },
+                    {
+                        type: 'code',
+                        text: `import { Provider } from "react-redux";
+                            import { store } from "./app/store";
+
+                            <Provider store={store}>
+                            <App />
+                            </Provider>`,
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Provider application முழுவதும் Redux Store access கிடைக்க உதவும்.',
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: 'Step 5: Use Redux in Component',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Counter.tsx',
+                    },
+                    {
+                        type: 'code',
+                        text: `import { useSelector, useDispatch } from "react-redux";
+                            import { increment, decrement } from "./counterSlice";
+
+                            export const Counter = () => {
+                            const count = useSelector(
+                                (state: any) => state.counter.value
+                            );
+
+                            const dispatch = useDispatch();
+
+                            return (
+                                <>
+                                <h2>{count}</h2>
+
+                                <button onClick={() => dispatch(increment())}>
+                                    +
+                                </button>
+
+                                <button onClick={() => dispatch(decrement())}>
+                                    -
+                                </button>
+                                </>
+                            );
+                            };`,
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'இதில் என்ன நடக்குது?',
                     },
                     {
                         type: 'sub-items',
                         items: [
-                            'User login state.',
-                            'Selected filters.',
-                            'Sidebar open/close.',
-                            'Cart items.',
-                            'Selected course.',
-                            'Shared application preferences.',
+                            '`useSelector()` → Store-லிருந்து count read பண்ணும்.',
+                            '`useDispatch()` → Action dispatch பண்ணும்.',
+                            '`dispatch(increment())` → Reducer execute ஆகும்.',
+                            'State update ஆனதும் UI automatically update ஆகும்.',
                         ],
-                    },
-                    {
-                        type: 'paragraph',
-                        text: 'Redux Toolkit use pannina feature-wise state and reducers organize pannalaam.',
-                    },
-                    {
-                        type: 'code',
-                        text: `src/
-                            ├── app/
-                            │    └── store.ts
-                            │
-                            ├── features/
-                            │    ├── auth/
-                            │    │    └── authSlice.ts
-                            │    │
-                            │    ├── cart/
-                            │    │    └── cartSlice.ts
-                            │    │
-                            │    └── dashboard/
-                            │         └── dashboardSlice.ts
-                            │
-                            └── components/`,
                     },
                 ],
             },
@@ -907,10 +882,10 @@ export const reduxConceptSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Redux Toolkit is the official recommended way to write Redux logic.',
-                            'It simplifies Redux development by reducing boilerplate code.',
-                            'It provides functions like configureStore and createSlice, automatically generates action creators, and uses Immer to simplify immutable state updates.',
-                            'It makes Redux applications easier to maintain and develop.',
+                            'To implement Redux Toolkit in React, I create slices using createSlice() and configure the store using configureStore().',
+                            'I provide the store to the application using React Redux Provider.',
+                            'In components, I use useSelector() to access state and useDispatch() to dispatch actions.',
+                            'Redux Toolkit simplifies state management and reduces boilerplate.',
                         ],
                     },
                 ],
@@ -923,11 +898,10 @@ export const reduxConceptSet2: IQuestion[] = [
                     {
                         type: 'bullets',
                         items: [
-                            'Redux Toolkit na Redux logic write panna official-ah recommend pannura approach.',
-                            'Idhu boilerplate code-a reduce panni Redux development-a easy-ah pannum.',
-                            'configureStore and createSlice madhiri functions provide pannum. Action creators automatically generate pannum.',
-                            'Immer use panni immutable state updates-a easy-ah handle pannum.',
-                            'Idhanala Redux application develop pannuradhum maintain pannuradhum easier-ah irukkum.',
+                            'React application-ல் Redux Toolkit implement panna, createSlice() use panni slices create pannuvom.',
+                            'configureStore() use panni store configure pannuvom. Provider moolama store-ah application-ku connect pannuvom.',
+                            'Components-la useSelector() use panni state access pannuvom, useDispatch() use panni actions dispatch pannuvom.',
+                            'Redux Toolkit state management-ah simple-ah maintain panna help pannum.',
                         ],
                     },
                 ],

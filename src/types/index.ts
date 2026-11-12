@@ -11,6 +11,20 @@ export interface IMarkdown {
     description: string;
 }
 
+export interface ITableContentCompare {
+    toolA: string;
+    toolB: string;
+    toolC?: string;
+}
+
+export interface ITableContent {
+    title: string;
+    toolA: string;
+    toolB: string;
+    toolC?: string;
+    comparison: ITableContentCompare[];
+}
+
 export type TopicSection =
     | 'ABOUT'
     | 'CORE'
@@ -35,6 +49,7 @@ export type ContentBlock =
     | { type: 'keywords'; items: string[] }
     | { type: 'markdown'; items: IMarkdown[] }
     | { type: 'link'; text: string }
+    | { type: 'table'; content: ITableContent }
     | { type: 'image'; url: StaticImageData; loading?: 'eager' | 'lazy' };
 
 export interface IAnswerPoint {

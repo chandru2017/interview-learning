@@ -182,6 +182,38 @@ export const TOPICS: ITopic[] = [
         questionCount: 0,
         completedCount: 0,
     },
+    {
+        id: 'zustand',
+        name: 'Zustand',
+        section: 'CONCEPT',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
+        id: 'tanstack-query',
+        name: 'TanStack Query',
+        section: 'CONCEPT',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
+        id: 'rest-api',
+        name: 'REST API Integration',
+        section: 'CONCEPT',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
+        id: 'graph-ql',
+        name: 'GraphQl',
+        section: 'CONCEPT',
+        icon: 'Info',
+        questionCount: 0,
+        completedCount: 0,
+    },
 ];
 
 const SECTION_ORDER: TopicSection[] = [
