@@ -110,6 +110,100 @@ export const reactQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component re-render aaguradhukku main reasons state change, props change, or parent re-render.',
+                            'Context change or external store update na, consuming componentsum re-render aagalam.',
+                            'Re-render na function call and Virtual DOM update. Real DOM la change thaanun na mattum browser DOM update aagum.',
+                            'Unnecessary renders avoid panna React.memo, useMemo, and useCallback use pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When does re-render happen?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Own state change aana.',
+                            'Parent pass panna props change aana.',
+                            'Parent re-render aana, normal childrenum re-render aagalam.',
+                            'Context or external store value change aana.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple flow**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function Parent() {
+  const [count, setCount] = useState(0);
+  return <Child count={count} />;
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Count change aana Parent re-render aagum.',
+                            'Count prop change aana Childum re-render aagum.',
+                            'React old and new UI compare panni change ah actual DOM la apply pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Re-render and DOM update are different**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Re-render means React component function call aaguradhu.',
+                            'DOM update means browser screen la visible-a change.',
+                            'Props or UI same-a irundha re-render nadandhaalum screen change nadakkala.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How to reduce unnecessary renders**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`React.memo` props same-a irundha child re-render stop pannum.',
+                            '`useMemo` repeated calculation ah avoid pannum.',
+                            '`useCallback` function identity stable-a maintain pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -242,6 +336,98 @@ export const reactQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Props parent pass panna data. Child props ah change panna mudiyathu.',
+                            'State component oda own data. Component state ah change panna mudiyum.',
+                            'Props eppavume parent irundhu child kku data flow aagum.',
+                            'Niraiya components same state use panna, state ah common parent la lift pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Props is like data from outside**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Parent pass panna name, user data, or callback props.',
+                            'Child props read panna mudiyum, but direct-a change panna mudiyathu.',
+                            'Props function parameters madhiri irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**State is data inside a component**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useState` use panni component state maintain pannum.',
+                            'State change panna component re-render aagum.',
+                            'State local variables madhiri irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function Child({ name }) {
+  const [count, setCount] = useState(0);
+  return <p>{name}: {count}</p>;
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`name` parent pass pannadhu, so it is a prop.',
+                            '`count` component own data, so it is state.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Which one should I use?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Data parent pass pannadho, props use pannalam.',
+                            'Data component ukku mattum venum na, state use pannalam.',
+                            'Niraiya children share panna, state ah common parent la maintain pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -354,6 +540,80 @@ export const reactQuestionsSet2: IQuestion[] = [
                             'Use unique, stable identifiers as keys - typically an ID from your data.',
                             'Never use array index as key for dynamic lists.',
                             'Keys enable proper state management for list items and prevent state from appearing on wrong items.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Keys use panni React list items ah correct-a identify pannum.',
+                            'List reorder, add, or remove aana React correct item ah find pannum.',
+                            'Data oda unique ID ah key-a use pannanum.',
+                            'Dynamic list la array index ah key-a avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why keys are needed**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React list items compare panni enna add or remove aachu nu find pannum.',
+                            'Key irundha, items reorder aanaalum identity maintain aagum.',
+                            'Key illaina, wrong position state attach aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Good key example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `{users.map((user) => (
+  <UserCard key={user.id} name={user.name} />
+))}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`user.id` unique and stable.',
+                            'User position change aanaalum React same item ah identify pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What happens when keys are wrong**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Input value wrong item kku move aagalam.',
+                            'Wrong item component state retain aagalam.',
+                            'React unnecessary-a component ah remove panni create pannalam.',
                         ],
                     },
                 ],
@@ -479,6 +739,81 @@ export const reactQuestionsSet2: IQuestion[] = [
                             'Use unique, stable identifiers from your data instead.',
                             'For new items without IDs, generate unique IDs with uuid or similar.',
                             'Index keys are only acceptable for static lists that never change order.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Array index list order maari irundha change aagum.',
+                            'Adhanaala React wrong item oda state ah attach pannalam.',
+                            'Index key use panna components unnecessary-a recreate aagalam.',
+                            'Data oda unique ID irundha adhai key-a use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What is the problem with index?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Index position based key: first item key 0, second item key 1.',
+                            'Item remove or reorder aana, key um position oda maari pogum.',
+                            'React key verify panni item identity maari irukkum nu ninaikkalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `{todos.map((todo) => (
+  <Todo key={todo.id} todo={todo} />
+))}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`todo.id` item oda same identity.',
+                            'List reorder aanaalum state correct item kku irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When index key is acceptable**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'List static-a irundha.',
+                            'Items add, remove, sort, or reorder panna maataanga.',
+                            'Items kku separate state illaina.',
+                            'Even then, unique ID irundha adhai use panna nalladhu.',
                         ],
                     },
                 ],
@@ -612,6 +947,102 @@ export const reactQuestionsSet2: IQuestion[] = [
                             'Uncontrolled components manage their own value - you access it via useRef.',
                             "Most forms should be controlled for consistency with React's patterns.",
                             'File inputs are usually uncontrolled because they cannot be set by JavaScript.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Controlled component la input value React state la irukkum.',
+                            '`onChange` state ah update pannum.',
+                            'Uncontrolled component la DOM input oda value maintain pannum.',
+                            'Value read panna `useRef` use pannuvom.',
+                            'Most forms controlled-a irukka nalladhu. File inputs uncontrolled-a irukkalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Controlled component**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React state input value ah hold pannum.',
+                            'Type panna `onChange` state ah update pannum.',
+                            'Validation, disable button, clear input ellam easy.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Controlled example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const [name, setName] = useState('');
+
+<input
+  value={name}
+  onChange={(event) => setName(event.target.value)}
+/>`,
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Uncontrolled component**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Input value DOM la maintain aagum.',
+                            '`useRef` use panni submit pannumbothu value read pannuvom.',
+                            'Simple forms or legacy code integration la useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Uncontrolled example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const inputRef = useRef(null);
+
+<input ref={inputRef} />
+<button onClick={() => console.log(inputRef.current.value)}>
+  Submit
+</button>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'File input JavaScript state la normally control panna mudiyathu.',
+                            'Adhanaala file input uncontrolled-a use panna mudiyum.',
                         ],
                     },
                 ],

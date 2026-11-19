@@ -123,6 +123,76 @@ export const reactQuestionsSet9: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Theme or auth madhiri simple app state kku Context use pannuvom.',
+                            'Complex feature state kku Zustand or Redux use pannuvom.',
+                            'API data kku React Query use pannuvom.',
+                            'Oru store-la ellame podama feature base panni split pannuvom.',
+                            'Local state kku local state hooks pothum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Use simple state locally**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Modal open, input text, or selected tab component local state-a irukkalam.',
+                            'Adhu vera places share panna vendam na mattum lift pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Choose one tool by purpose**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Context: theme, language, auth.',
+                            'Redux or Zustand: complex shared app logic.',
+                            'React Query: API server data.',
+                            'Feature store: feature-specific state.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Keep the store organized**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature folder la state irukkalam.',
+                            'DevTools use panni state updates monitor pannuvom.',
+                            'Global store large-aaguradha avoid panna split pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -253,6 +323,76 @@ export const reactQuestionsSet9: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server state API data. Async, shared, and stale-aagalam.',
+                            'React Query server state cache and refresh pannum.',
+                            'Client state UI state. Modal, tab, or input value madhiri local work.',
+                            'Client state kku useState or Zustand useful.',
+                            'API data ah normal global client store-la maintain panna vendam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server state**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API user list, posts, or form data server state.',
+                            'Loading, error, cache, and refetch handle panna vendum.',
+                            'React Query server state kku best fit.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Client state**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Modal open or selected tab UI state.',
+                            'Input type panna temporary text client state.',
+                            'useState immediate local value kku useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple example**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API user data React Query la irukkum.',
+                            'Edit mode or form draft useState la irukkum.',
+                            'Save panna draft API mutation use panni server kku submit pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -370,6 +510,75 @@ export const reactQuestionsSet9: IQuestion[] = [
                             'Optimistic updates improve UX by showing results immediately.',
                             'Update UI right away, send request, keep update if successful or rollback if failed.',
                             'React Query handles this with onMutate, onSuccess, onError callbacks.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server response varadhukku munnaadi UI la change show pannuvom.',
+                            'API success aana change maintain pannuvom.',
+                            'API fail aana previous state kku rollback pannuvom.',
+                            'React Query mutation callbacks optimistic update easy-aakkum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Three steps**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Old server state save pannuvom.',
+                            'New state immediate-a UI la show pannuvom.',
+                            'API result base panni keep or rollback pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**React Query flow**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`onMutate` old data save panni new UI set pannum.',
+                            '`onError` old data restore pannum.',
+                            '`onSuccess` server update confirm aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When to use**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Like button, todo complete, or simple delete kku useful.',
+                            'Payment madhiri risky action kku optimistic update avoid panna mudiyum.',
+                            'Rollback and loading state clearly handle pannuvom.',
                         ],
                     },
                 ],
@@ -510,6 +719,76 @@ export const reactQuestionsSet9: IQuestion[] = [
                             'Use Error Boundaries for component errors, Context for global error display, React Query error callbacks for API errors, and error logging service for monitoring.',
                             'Show user-friendly messages, not technical errors.',
                             'Implement retry logic for network errors.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Render error kku Error Boundary use pannuvom.',
+                            'API error kku try/catch or React Query callbacks use pannuvom.',
+                            'Common error alert UI reuse pannuvom.',
+                            'Technical error place-a simple user message show pannuvom.',
+                            'Error service use panni production issue log pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Separate error types**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component render error Error Boundary handle pannum.',
+                            'API and mutation error React Query or try/catch handle pannum.',
+                            'Network error retry panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Show consistent UI**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Reusable alert or toast component use pannuvom.',
+                            'Field error inline show pannuvom.',
+                            'Technical server text direct-a user kku show panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Log and monitor**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Sentry madhiri service-la error log pannuvom.',
+                            'User action, route, and error details useful.',
+                            'Repeated network error kku retry and fallback UI use pannuvom.',
                         ],
                     },
                 ],
@@ -661,6 +940,75 @@ export const reactQuestionsSet9: IQuestion[] = [
                             'Design form system with useForm Hook for state management, field components for consistent UI, schema-based validation, error display, and submission handling.',
                             'Support conditional fields, multi-step forms, and auto-save.',
                             'Extract into reusable library for team use.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Central form state kku useForm Hook use pannuvom.',
+                            'Text, select, checkbox madhiri reusable field components create pannuvom.',
+                            'Zod or Yup schema use panni validation pannuvom.',
+                            'Submit, loading, error, and reset behavior consistent-a maintain pannuvom.',
+                            'Conditional and dynamic fields support pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Form state**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'useForm Hook values, touched fields, errors, and submitting state maintain pannum.',
+                            'Field components controlled or library-based state use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Validation and errors**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Zod or Yup schema la rules irukkum.',
+                            'Field error same UI component la display pannuvom.',
+                            'Submit munnaadi form-level validation run pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reusable features**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Conditional fields and multi-step forms support pannuvom.',
+                            'Reset, loading, and success states consistent-a maintain pannuvom.',
+                            'Keyboard, labels, and accessibility rules follow pannuvom.',
                         ],
                     },
                 ],

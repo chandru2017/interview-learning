@@ -118,6 +118,75 @@ export const reactQuestionsSet7: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Context API built-in React feature. Theme or auth madhiri simple global value kku useful.',
+                            'Redux external library. Complex state and strict update flow kku useful.',
+                            'Context frequent updates irundha consumers unnecessary-a re-render aagalam.',
+                            'App complexity base panni choose pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Context API**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React kku default-ah irukku.',
+                            'Theme, language, or logged-in user madhiri simple shared values kku nalla option.',
+                            'Setup simple.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Redux**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Complex app state and predictable updates kku useful.',
+                            'Actions, reducers, middleware, and DevTools support.',
+                            'Setup and boilerplate adhigam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple choice**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Small app or simple shared config na Context.',
+                            'Big app la many modules same state manage panna Redux or Zustand.',
+                            'Default-ah heavyweight state library podanum nu illa.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -236,6 +305,75 @@ export const reactQuestionsSet7: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Redux mature library. Boilerplate adhigam, but large team kku strong structure kudukkum.',
+                            'Zustand setup simple, less code, quick use panna mudiyum.',
+                            'Both global state manage pannum.',
+                            'Project size and team convention base panni choose pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Redux**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Actions and reducers separate-a irukkum.',
+                            'Debugging kku DevTools strong.',
+                            'Large team kku clear conventions useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Zustand**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Store create panni state and update function direct-a maintain pannalam.',
+                            'Boilerplate kammi.',
+                            'Small or medium app kku fast setup.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Which one should I pick?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Enterprise rules and strict structure venum na Redux.',
+                            'Simple global store venum na Zustand.',
+                            'Library name than performance decide panna vendam.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -345,6 +483,74 @@ export const reactQuestionsSet7: IQuestion[] = [
                             'Modern apps use both.',
                             'React Query handles caching, refetching, mutations for API data.',
                             'Redux handles business logic and local state.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Redux app state and business logic manage panna useful.',
+                            'React Query API data, cache, and server updates manage pannum.',
+                            'Both different work panna create pannirukku.',
+                            'Modern app la local state kku Redux or Zustand and API data kku React Query use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Redux**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Theme, cart, form workflow madhiri app state maintain pannum.',
+                            'App logic and synchronous updates kku useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**React Query**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API response caching and background refresh pannum.',
+                            'Loading, error, mutation, and pagination handle pannum.',
+                            'Server data stale or async irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple choice**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API data store panna Redux use panna vendam.',
+                            'React Query server state kku nalla.',
+                            'Local app state kku Redux or Zustand use panna mudiyum.',
                         ],
                     },
                 ],
@@ -468,6 +674,73 @@ export const reactQuestionsSet7: IQuestion[] = [
                             'React Query handles server state complexity automatically.',
                             'It caches data to avoid duplicate requests, refetches in background, handles mutations with optimistic updates, provides DevTools for debugging.',
                             "Solves many problems you'd solve manually with Redux.",
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React Query API data cache, refresh, and update handle pannum.',
+                            'Same data niraiya components ketta request duplicate aagala.',
+                            'Loading, error, pagination, and optimistic update support.',
+                            'Manual Redux API logic vida code kammi.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Caching**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API data first time fetch pannuvom.',
+                            'Same data again venum na cache use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Refresh and deduplication**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Data stale aana background-la update panna mudiyum.',
+                            'Niraiya components same request kettal one call pothum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Mutations and errors**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Create or update API call-a mutations handle pannum.',
+                            'Server response varadhukku munnaadi optimistic UI update panna mudiyum.',
+                            'Error na old value restore or error show panna mudiyum.',
                         ],
                     },
                 ],
@@ -599,6 +872,75 @@ export const reactQuestionsSet7: IQuestion[] = [
                             'Prevent unnecessary re-renders by splitting state into smaller pieces, using React.memo for prop comparison, memoizing expensive computations with useMemo, and stabilizing functions with useCallback.',
                             'Profile first to identify actual bottlenecks.',
                             "Most apps don't need heavy optimization.",
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React DevTools use panni slow-a irukkuradhu component enna nu identify pannuvom.',
+                            'State ah small pieces-a split pannina relevant components mattum update aagum.',
+                            '`React.memo`, `useMemo`, and `useCallback` actual problem irukkumbothu mattum use pannuvom.',
+                            'Large list irundha visible items mattum render panna virtualization useful.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Profile first**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React DevTools Profiler use panni slow-a irukkuradhu component enna nu check pannuvom.',
+                            'No problem irundha unnecessary optimization add panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**State structure**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'State ah one large object-a maintain pannama small parts-a maintain pannuvom.',
+                            'State use panna component kitta state ah move pannuvom.',
+                            'Unrelated components re-render aaguradhai kammi pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Memoization and lists**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`React.memo` props same-a irundha child re-render stop pannum.',
+                            '`useMemo` heavy calculation avoid pannum.',
+                            '`useCallback` function props stable-a maintain pannum.',
+                            'Large list kku visible items mattum render panna virtualization use pannuvom.',
                         ],
                     },
                 ],

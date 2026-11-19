@@ -114,6 +114,83 @@ export const reactQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks use panni function components-la state and other React features use panna mudiyum.',
+                            'Before Hooks, state and lifecycle class components-la mattum irukkum.',
+                            '`useState` state maintain pannum, `useEffect` API call madhiri side effects handle pannum.',
+                            'Custom Hooks use panni repeated logic ah reuse panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What are Hooks?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks special functions.',
+                            'Function components-la state, context, and lifecycle features use panna help pannum.',
+                            'Hooks name `use` la start aagum: `useState`, `useEffect`.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  );
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['`count` current value.', '`setCount` value ah change panna use pannuvom.'],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why Hooks are useful**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Function component code simple and short.',
+                            'Related logic separate Custom Hooks-la organize panna mudiyum.',
+                            'Hooks use panna rules follow panna vendum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -248,6 +325,82 @@ export const reactQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks ah function components or Custom Hooks mela mattum top level la call panna vendum.',
+                            '`if`, `for`, or nested function kulla Hook call panna koodadhu.',
+                            'React Hooks call order use panni state ah track pannum.',
+                            'Order change aana wrong state attach aagalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Rule 1: Top level only**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks ah component function oda top la call pannuvom.',
+                            '`if`, loop, or nested function kulla call panna koodadhu.',
+                            'Condition true irundha mattum Hook call aana, next render la call order maari pogum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Wrong example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function Profile({ isActive }) {
+  if (isActive) {
+    const [name, setName] = useState('');
+  }
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hook condition kulla irukku.',
+                            'Next render la condition change aana React state ah correct-a identify panna mudiyala.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Rule 2: Call Hooks only in React functions**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Function component or Custom Hook la mattum call pannuvom.',
+                            'Normal JavaScript function or event handler la call panna koodadhu.',
+                            'React Hooks ESLint plugin rules ah catch panna help pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -361,6 +514,93 @@ export const reactQuestionsSet3: IQuestion[] = [
                             'State with objects/arrays requires new references (spread operator).',
                             'Multiple useState calls each have their own state.',
                             'Batching in React 18 means multiple setState calls trigger one re-render.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useState` function components-la state maintain panna use pannuvom.',
+                            'Adhu current value and value change panna function render pannum.',
+                            'State change aana component re-render aagum.',
+                            'Old state base-a new state calculate panna updater function use pannuvom.',
+                            'Object or array update panna new copy create panna vendum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple useState syntax**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const [count, setCount] = useState(0);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`count` current state value.',
+                            '`setCount` state ah change panna function.',
+                            '`0` initial value.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**State update example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `setCount(count + 1);
+
+setCount((previousCount) => previousCount + 1);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Simple update kku direct value use pannalam.',
+                            'Previous state base-a calculate panna updater function nalladhu.',
+                            'Same component la multiple `useState` calls use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Objects and arrays**',
+                    },
+                    {
+                        type: 'code',
+                        text: `setUser((previousUser) => ({
+  ...previousUser,
+  name: 'Bob'
+}));`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Object or array ah direct-a change panna vendam.',
+                            'New copy create panni state update pannuvom.',
+                            'React new reference compare panni re-render decide pannum.',
                         ],
                     },
                 ],
@@ -480,6 +720,84 @@ export const reactQuestionsSet3: IQuestion[] = [
                             'Return a cleanup function for cleanup.',
                             "Dependencies control when the effect runs - empty array means run once, array of values means run when those change. useEffect is asynchronous - it doesn't block rendering.",
                             'Common mistake: missing dependencies causing stale closures.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useEffect` API call, subscription, or timer madhiri side effects run panna use pannuvom.',
+                            'Effect component render aana apram execute aagum.',
+                            'Effect kku cleanup function return panna subscription or timer stop panna mudiyum.',
+                            'Dependency array effect eppothu run aagum nu control pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What is a side effect?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API call, event subscription, timer, or browser storage side effects.',
+                            'Component render logic-la irundhu veliyila nadakkura work.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple useEffect example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `useEffect(() => {
+  fetch('/api/user')
+    .then((response) => response.json());
+}, []);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['`[]` empty dependency array.', 'Effect component mount aana once run aagum.'],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Cleanup function**',
+                    },
+                    {
+                        type: 'code',
+                        text: `useEffect(() => {
+  const interval = setInterval(refreshData, 1000);
+
+  return () => clearInterval(interval);
+}, []);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Cleanup component unmount aana run aagum.',
+                            'Subscription, interval, or request ah stop panna use pannuvom.',
                         ],
                     },
                 ],
@@ -607,6 +925,88 @@ export const reactQuestionsSet3: IQuestion[] = [
                             'No array means run every render (usually not what you want).',
                             'Always include all external values used in the effect that can change.',
                             'Missing dependencies cause bugs where the effect has stale values.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Dependency array effect eppothu run aagum nu decide pannum.',
+                            '[] irundha effect mount la once run aagum.',
+                            '[userId] madhiri value irundha userId change aana effect run aagum.',
+                            'Array illa na effect ovvoru render layum run aagum.',
+                            'Effect use panna variables ah dependency array la include pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Three dependency cases**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'No array: ovvoru render layum run aagum.',
+                            '`[]`: mount la once mattum run aagum.',
+                            '`[value]`: value change aana mattum run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `useEffect(() => {
+  fetchUser(userId);
+}, [userId]);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Initial render la effect run aagum.',
+                            '`userId` change aana, effect thirumba run aagum.',
+                            '`userId` same-a irundha effect run aagala.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Missing dependency problem**',
+                    },
+                    {
+                        type: 'code',
+                        text: `useEffect(() => {
+  fetchUser(userId);
+}, []); // userId missing`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`userId` change aana effect thirumba run aagala.',
+                            'Old value use aagalam.',
+                            'ESLint exhaustive-deps rule missing dependencies ah warn pannum.',
                         ],
                     },
                 ],

@@ -110,6 +110,80 @@ export const reactQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Simple calculation kku `useMemo` use panna vendam.',
+                            'String, number, or array length madhiri cheap work kku memoization thevai illa.',
+                            'Dependency ovvoru render layum change aana benefit illa.',
+                            'Actual slow calculation irukku nu profile use panni confirm pannina thaan `useMemo` use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Do not memoize cheap work**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`count * 2` or `items.length` like work fast-a mudiyum.',
+                            'Adhukku `useMemo` use panna overhead mattum adhigam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Use it for expensive work**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const sortedUsers = useMemo(
+  () => users.sort(compareUsers),
+  [users]
+);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Sorting or filtering heavy data expensive irukkalam.',
+                            '`users` change aana mattum calculation thirumba nadakkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**General rule**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'First profile pannuvom.',
+                            'Real bottleneck irundha mattum optimize pannuvom.',
+                            'Every value kku `useMemo` podradhu maintain panna kashtam.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -229,6 +303,79 @@ export const reactQuestionsSet5: IQuestion[] = [
                             "Don't use useCallback for simple functions or functions not passed to memoized children. useCallback is useful when passing callbacks to React.memo components - it keeps props stable.",
                             'Without memoized children, useCallback adds overhead without benefit.',
                             'Profile first to identify actual bottlenecks.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Simple button handler kku `useCallback` thevai illa.',
+                            'Function memoized child kku prop-a pass aagaadhu na use panna vendam.',
+                            '`React.memo` child kku stable function prop venum na `useCallback` useful.',
+                            'Actual performance problem illaina normal function use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Normal useCallback no benefit**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button direct-a onClick function use panna mudiyum.',
+                            'Function child kku pass pannalana same function reference thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Useful case**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const handleDelete = useCallback((id) => {
+  deleteItem(id);
+}, []);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`MemoizedList` `handleDelete` prop receive pannum.',
+                            'Stable function prop React.memo child re-render kammi panna help pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple rule**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Memoized child irundha mattum useCallback consider pannuvom.',
+                            'Child props change aana every render layum useCallback benefit illa.',
+                            'Profile use panni real problem confirm pannuvom.',
                         ],
                     },
                 ],
@@ -368,6 +515,76 @@ export const reactQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React rendering render and commit phases la nadakkum.',
+                            'Render phase la React enna change venum nu calculate pannum.',
+                            'Commit phase la React changes ah actual DOM la apply pannum.',
+                            'Commit apram browser paint pannum.',
+                            '`useLayoutEffect` paint munnaadi run aagum. `useEffect` paint apram run aagum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Render phase**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React component call panni UI enna irukkanum nu calculate pannum.',
+                            'Old UI and new UI compare pannum.',
+                            'This phase pausing or cancelling possible.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Commit phase**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Calculated DOM changes actual browser DOM la apply pannum.',
+                            'Refs, layout effects, and cleanup work nadakkum.',
+                            'Commit phase immediate-a run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**After commit**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useLayoutEffect` browser paint aaguradhukku munnaadi run aagum.',
+                            '`useEffect` browser paint aana apram run aagum.',
+                            'Mount, update, and unmount work time identify panna lifecycle useful.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -493,6 +710,80 @@ export const reactQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Batching na multiple state updates ah group panni one re-render nadathuradhu.',
+                            'React 18 event, timeout, and Promise updates ellathaiyum batch pannum.',
+                            'Unnecessary multiple renders kammi aagum.',
+                            'Immediate DOM update venum na mattum `flushSync` use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What batching means**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru function la two state updates irundha React avatra same group la process pannum.',
+                            'Instead of two renders, final state kku one render aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `setCount((count) => count + 1);
+setName('Alice');
+
+// React normally renders once`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Count and name updates final state kku one UI update aagum.',
+                            'React 18 Promises and timers kulla updatesum batch pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why batching is useful**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Re-renders kammi.',
+                            'Intermediate wrong UI state screen-la visible aagala.',
+                            'Normal cases la extra configuration thevai illa.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -608,6 +899,83 @@ export const reactQuestionsSet5: IQuestion[] = [
                             'This keeps input responsive during heavy computations. useTransition marks updates as non-urgent. useDeferredValue defers value updates.',
                             'This is foundation for Suspense.',
                             "Most apps don't need concurrent features, but they're available for performance-critical UI.",
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Concurrent rendering heavy work nadakkumbothum React input response-ah maintain panna use pannum.',
+                            'React render work ah pause panni urgent work first handle pannum.',
+                            '`useTransition` low-priority update ah mark pannum.',
+                            '`useDeferredValue` slow value update ah delay pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What is concurrent rendering?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React heavy render work ah small parts-a process pannum.',
+                            'Typing madhiri urgent work varumbothu low-priority work pause panna mudiyum.',
+                            'Work apram resume aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useTransition example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const [isPending, startTransition] = useTransition();
+
+startTransition(() => {
+  setResults(expensiveSearch(query));
+});`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Input update urgent-a irukkum.',
+                            'Search result update low-priority-a irukkum.',
+                            'isPending use panni loading state show panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useDeferredValue**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Heavy work use panna value update ah konjam delay pannum.',
+                            'Fast typing response maintain panna useful.',
+                            'Performance issue irundha mattum concurrent feature use pannuvom.',
                         ],
                     },
                 ],

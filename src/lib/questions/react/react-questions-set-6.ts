@@ -117,6 +117,76 @@ export const reactQuestionsSet6: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Suspense async work load aagum pothu fallback UI show pannum.',
+                            'Data ready aana actual component show aagum.',
+                            'React Query madhiri Suspense support panna library use panna vendum.',
+                            'Periya screen la different sections kku separate Suspense boundaries use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What is a fallback?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Fallback temporary UI.', 'Loading spinner or "Loading..." message madhiri irukkalam.'],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `<Suspense fallback={<p>Loading posts...</p>}>
+  <Posts />
+</Suspense>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Posts data load aagum pothu fallback visible.',
+                            'Data ready aana Posts component visible.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Important point**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Ordinary fetch call automatic-a Suspense work panna mudiyathu.',
+                            'Promise throw panna data library or framework support venum.',
+                            'Suspense loading state declarative-a handle pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -234,6 +304,73 @@ export const reactQuestionsSet6: IQuestion[] = [
                             'Show a fallback UI instead of crashing.',
                             "They don't catch event handler errors or async errors - use try/catch for those.",
                             'Place Error Boundaries strategically to isolate failures.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Error Boundary child components render aagum pothu varra error ah catch pannum.',
+                            'Error aana app full crash aagama fallback UI show pannum.',
+                            'Normally class component use pannuvom.',
+                            'Event handler or async errors kku try/catch use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What it protects**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Render or lifecycle pothu error varadhu.',
+                            'One section error aana entire app crash aagala.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Two main methods**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`getDerivedStateFromError` fallback UI state set pannum.',
+                            '`componentDidCatch` error log panna use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What it does not catch**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button click handler error catch panna mudiyathu.',
+                            'API Promise error or server error kku separate try/catch venum.',
+                            'Major app sections kku separate boundaries vachha failure isolate panna easy.',
                         ],
                     },
                 ],
@@ -381,6 +518,81 @@ export const reactQuestionsSet6: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Custom Hook built-in Hooks combine panni reusable logic create panna function.',
+                            'Name `use` la start aaganum.',
+                            'Different components same logic use panna custom Hook useful.',
+                            'Hooks rules follow panna vendum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple custom Hook**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function useCounter() {
+  const [count, setCount] = useState(0);
+  const increment = () => setCount(count + 1);
+  return { count, increment };
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Name `useCounter`.', 'State and update function reuse panna return pannuvom.'],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Use it in a component**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function Counter() {
+  const { count, increment } = useCounter();
+  return <button onClick={increment}>{count}</button>;
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Multiple components same Custom Hook use panna mudiyum.', 'Logic duplicate aagathu.'],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When to create one**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Same state or side-effect logic multiple components la repeat aana create pannuvom.',
+                            'API fetch, form, and window size madhiri work kku useful.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -498,6 +710,82 @@ export const reactQuestionsSet6: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'HOC oru component receive panni enhanced component return panna function.',
+                            'Auth or theme madhiri common logic reuse panna use pannuvom.',
+                            'Modern React la Custom Hooks HOC vida simple.',
+                            'HOC prop flow understand panna kashtam and debugging difficult-aagalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**HOC structure**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function withTitle(Component) {
+  return function EnhancedComponent(props) {
+    return <Component {...props} title="Dashboard" />;
+  };
+}`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Input component.',
+                            'Additional prop or logic add panna wrapper component return pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple use**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const Dashboard = withTitle(DashboardPage);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['DashboardPage wrapper kulla irukkum.', 'Wrapper extra title prop pass pannum.'],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why Hooks are preferred**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks use panna component structure simple.',
+                            'HOC multiple layers irundha props trace panna difficult.',
+                            'Legacy code la HOC irukkalam, pudhiya code la Custom Hooks nalladhu.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -610,6 +898,82 @@ export const reactQuestionsSet6: IQuestion[] = [
                             'The component provides shared logic/state to this function.',
                             'Explicit data flow makes it easy to understand.',
                             'Modern Hooks are often preferred for simplicity.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Render Props la component function prop receive panni adhuvaala JSX render pannum.',
+                            'Shared state or logic function kku argument-a pass pannuvom.',
+                            'Data flow HOC vida explicit-ah theriyum.',
+                            'Modern code la Custom Hooks simple option.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple structure**',
+                    },
+                    {
+                        type: 'code',
+                        text: `<Mouse>
+  {(position) => (
+    <p>{position.x}, {position.y}</p>
+  )}
+</Mouse>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Mouse shared position logic maintain pannum.',
+                            'Function kku position pass panni UI create pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why it was used**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'One component shared behavior provide pannalam.',
+                            'Consumer enna render venum nu decide panna mudiyum.',
+                            'HOC wrapper create panna thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Drawback and modern alternative**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Niraiya nested functions irundha code difficult-aagum.',
+                            'Function ovvoru render layum create aagalam.',
+                            'Most cases la Custom Hooks simple and readable.',
                         ],
                     },
                 ],

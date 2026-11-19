@@ -122,6 +122,97 @@ export const reactQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Common problem ellam missing dependency, cleanup missing, and infinite loop.',
+                            'Dependency la value miss panna effect old value use pannalam.',
+                            'Effect la state update panni adha dependency la vachha infinite loop varalam.',
+                            'Subscription or timer remove panna cleanup function return pannuvom.',
+                            'ESLint exhaustive-deps rule most mistakes ah catch pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Missing dependency**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Effect use panna external value dependency la irukka illaina old value use aagalam.',
+                            'Adhu stale value problem.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Infinite loop**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Effect state update pannum.',
+                            'Andha state dependency la irundha state change aana effect thirumba run aagum.',
+                            'Ithu continues-a nadandha infinite loop.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Memory leak**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Timer or subscription component unmount aana stop panna vendum.',
+                            'Cleanup function return panna memory leak avoid pannalam.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `useEffect(() => {
+  const interval = setInterval(updateData, 1000);
+  return () => clearInterval(interval);
+}, []);`,
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Race condition**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple API requests different order la finish aagalam.',
+                            'Old response new response-a replace panna cleanup or ignore logic use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -237,6 +328,75 @@ export const reactQuestionsSet4: IQuestion[] = [
                             'useEffect runs after React updates and after the browser paints - non-blocking. useLayoutEffect runs after React updates but before the browser paints - blocks painting.',
                             'Use useEffect for most cases like data fetching.',
                             'Use useLayoutEffect only when you need DOM measurements or updates that must happen before paint. useLayoutEffect blocks the browser, so use sparingly.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useEffect` browser paint aana apram run aagum.',
+                            '`useLayoutEffect` browser paint aaguradhukku munnaadi run aagum.',
+                            'API call madhiri normal work kku `useEffect` use pannuvom.',
+                            'DOM size measure or screen flicker avoid panna `useLayoutEffect` use pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useEffect**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Browser UI ah first render panni apram effect run aagum.',
+                            'It does not block the browser paint.',
+                            'API call, subscription, or timer kku suitable.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useLayoutEffect**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'DOM update complete aana apram, screen paint aaguradhukku munnaadi run aagum.',
+                            'Element size or position measure panna useful.',
+                            'Paint block aagum, so unnecessary-a use panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple rule**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Default-ah `useEffect` use pannuvom.',
+                            'Screen flicker or layout shift visible aagum na `useLayoutEffect` consider pannuvom.',
+                            'Data fetch kku `useLayoutEffect` use panna thevai illa.',
                         ],
                     },
                 ],
@@ -379,6 +539,67 @@ export const reactQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useRef` `.current` property irukkuradhu object ah return pannum.',
+                            'Value re-render-kku naduvula maintain aagum.',
+                            'Ref change panna component re-render aagala.',
+                            'DOM element access, timer store, or previous value maintain panna use pannuvom.',
+                            'Screen la display aagura value kku state use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**DOM element access**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const inputRef = useRef(null);
+
+<input ref={inputRef} />
+<button onClick={() => inputRef.current.focus()}>
+  Focus
+</button>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Ref input element ah point pannum.',
+                            'Button click panna input ah focus panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Store value without re-render**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Timer ID, previous value, or mutable value store panna useful.',
+                            'Ref value change panna UI re-render aagala.',
+                            'UI update venum na state use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -494,6 +715,83 @@ export const reactQuestionsSet4: IQuestion[] = [
                             'Use when computation is expensive or when passing dependencies to memoized children.',
                             "Don't overuse - profiling first.",
                             'They have overhead. useCallback is often used with React.memo to prevent child re-renders.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`useMemo` expensive calculation oda result ah store pannum.',
+                            '`useCallback` function reference ah store pannum.',
+                            'Dependencies change aana mattum new value or function create aagum.',
+                            'Actual performance problem irundha mattum use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useMemo**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const total = useMemo(
+  () => calculateTotal(items),
+  [items]
+);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Items same-a irundha calculation repeat aagala.', 'Heavy calculation kku useful.'],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**useCallback**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const handleDelete = useCallback(() => {
+  deleteUser(userId);
+}, [userId]);`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Dependencies same-a irundha same function reference irukkum.',
+                            'Memoized child kku function prop pass panna useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When should I use them?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Heavy calculation or actual re-render problem irundha use pannuvom.',
+                            'Simple work kku Hooks ah use panna vendam.',
+                            'Profiling pani necessary-na optimize pannuvom.',
                         ],
                     },
                 ],
@@ -621,6 +919,81 @@ export const reactQuestionsSet4: IQuestion[] = [
                             'Pair with useCallback to keep function props stable.',
                             'Without memoized dependencies, React.memo is ineffective.',
                             'Remember it only prevents re-render if props are truly unchanged.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`React.memo` props same-a irundha child re-render ah stop pannum.',
+                            'Heavy component or frequent parent re-render irundha useful.',
+                            'Function prop new-a create aana memo ineffective-a irukkalam.',
+                            'Adhanaala function props kku `useCallback` use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How React.memo works**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const UserCard = React.memo(function UserCard({ name }) {
+  return <h2>{name}</h2>;
+});`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Parent re-render aana React props compare pannum.',
+                            '`name` same-a irundha UserCard re-render aagala.',
+                            '`name` change aana mattum re-render aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Stable function props**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Function props ovvoru render layum new-a create aagalam.',
+                            '`useCallback` same function reference maintain panna help pannum.',
+                            'Stable props irundha React.memo correct-a work pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When not to use**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Props ovvoru render layum change aana memo benefit kammi.',
+                            'Simple component kku unnecessary optimization avoid pannuvom.',
+                            'Actual performance problem base panni use pannuvom.',
                         ],
                     },
                 ],

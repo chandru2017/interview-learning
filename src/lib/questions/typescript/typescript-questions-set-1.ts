@@ -142,6 +142,311 @@ export const typescriptQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'TypeScript na JavaScript oda superset, adhavadhu valid JavaScript code ellam valid TypeScript dhaan. Adhula static types add pannalam. Code run aagradhukku munnadi, TypeScript compiler types check pannitu, JavaScript ah convert pannum.',
+                            'Main reason: errors ah runtime la illa, development time la dhaan catch pannalam. Example: number expect panra function ku string pass panna, code run panna munnadiye error kaattum. JavaScript la idhu runtime la dhaan theriyum.',
+                            'Other benefits: better autocomplete and IntelliSense, safe refactoring, code self-documenting ah irukkum, and large team la work panna easy. Interfaces, enums, generics maari features um irukku.',
+                            'Trade-offs: extra setup and build step venum, learning curve irukku, and types ezhudha extra time aagum. Small projects or quick prototypes ku JavaScript podhum. Large and long-term projects ku TypeScript better.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What is TypeScript**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'TypeScript Microsoft create pannina language. JavaScript oda superset.',
+                            'Browser ku TypeScript directly understand aagaadhu. So compile panni, plain JavaScript ah maathanum.',
+                            'Types compile time la mattum irukkum. Final JavaScript la types remove aagidum, so runtime performance la difference illa.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `// TypeScript
+        function add(a: number, b: number): number {
+        return a + b;
+        }
+
+        add(2, 3);     // 5
+        // add(2, "3"); // Error: Argument of type 'string' is not assignable to type 'number'
+
+        // Compile aana apram JavaScript
+        // function add(a, b) {
+        //   return a + b;
+        // }`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`a: number` na `a` number ah dhaan irukkanum.',
+                            '`add(2, "3")` ku editor la udane red line varum, code run pannama.',
+                            'Compile aana apram types remove aagidum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reason 1: Catch errors early**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'JavaScript la type errors runtime la dhaan theriyum, sometimes production la user ku theriyum.',
+                            'TypeScript la development time la, editor and compiler la errors theriyum.',
+                            'Common bugs: `undefined` property access, wrong argument type, typo in property name, missing function arguments.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `// JavaScript: runtime la error
+        const user = { name: "Ravi" };
+        console.log(user.nme.toUpperCase()); // TypeError at runtime (typo)
+
+        // TypeScript: compile time la error
+        interface User {
+        name: string;
+        }
+
+        const user2: User = { name: "Ravi" };
+        // console.log(user2.nme); // Error: Property 'nme' does not exist. Did you mean 'name'?`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'JavaScript la typo irundha, code run aana apram dhaan error varum.',
+                            'TypeScript typo ah udane catch pannum, correct name suggest um pannum.',
+                            'Idhunaala production bugs kammi aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reason 2: Better developer experience**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Autocomplete: Object la entha properties and methods irukku nu editor kaattum.',
+                            'Go to definition, find all references, and rename symbol romba accurate ah work aagum.',
+                            'Safe refactoring: Function signature change panna, use pannura ellaa places la um error kaattum. Ethuvum miss aagaadhu.',
+                            'Documentation: Types dhaan documentation. Function ku enna input venum, enna return aagum nu code la theriyum.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `interface Product {
+        id: number;
+        name: string;
+        price: number;
+        inStock: boolean;
+        }
+
+        function showProduct(product: Product): string {
+        return product.name + " - " + product.price;
+        // product. nu type panna, id, name, price, inStock suggest aagum
+        }`,
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reason 3: Powerful type features**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Interface and type: Object shape define pannalam.',
+                            'Union types: Value multiple types la oru type ah irukkalam (`string | number`).',
+                            'Generics: Reusable code type safe ah ezhudhalam.',
+                            'Enums: Named constants create pannalam.',
+                            'Optional properties (`?`) and `readonly`.',
+                            'Type inference: Types ah everywhere ezhudha thevai illa. TypeScript automatically guess pannum.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `// Union type
+        function format(id: string | number) {
+        if (typeof id === "string") {
+            return id.toUpperCase();
+        }
+        return id.toFixed(2);
+        }
+
+        // Generic
+        function first<T>(arr: T[]): T {
+        return arr[0];
+        }
+        const n = first([1, 2, 3]);     // type: number
+        const s = first(["a", "b"]);    // type: string
+
+        // Optional and readonly
+        interface Config {
+        readonly apiUrl: string;
+        timeout?: number;
+        }
+
+        // Type inference
+        let count = 5; // TypeScript knows: number
+        // count = "five"; // Error`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Union type la, `typeof` check pannina, TypeScript automatically type narrow pannum.',
+                            'Generic `first<T>` array type ah paathu, correct return type kudukkum.',
+                            '`readonly` property ah change panna error varum.',
+                            'Type inference naala, simple code la types ezhudha thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reason 4: Large projects and teams**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Many developers same codebase la work pannumbodhu, types oru contract maari work pannum.',
+                            'Other developer oda code use panna, source code padikka thevai illa. Types paathu use pannalam.',
+                            'New developer join panna, code purinjukka easy.',
+                            'API response types define panna, frontend and backend mismatch bugs kammi aagum.',
+                            'React, Angular, Node.js, Vue ellaa major frameworks um TypeScript support pannum. Angular default ah TypeScript.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `// React component with TypeScript
+        interface ButtonProps {
+        label: string;
+        onClick: () => void;
+        disabled?: boolean;
+        }
+
+        function Button({ label, onClick, disabled = false }: ButtonProps) {
+        return <button onClick={onClick} disabled={disabled}>{label}</button>;
+        }
+
+        <Button label="Save" onClick={() => console.log("Saved")} />
+        // <Button label={123} /> // Error: number is not assignable to string
+        // <Button />             // Error: Property 'label' is missing`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`ButtonProps` component ku enna props venum nu clear ah solludhu.',
+                            'Wrong prop type or missing required prop irundha, udane error varum.',
+                            'Idhu team la bugs and miscommunication kammi pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Trade-offs (disadvantages)**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Extra setup: Compiler (`tsc`) or build tool venum, `tsconfig.json` configure pannanum.',
+                            'Learning curve: Types, generics, utility types purinjukka time aagum.',
+                            'More code: Types ezhudha extra time aagum.',
+                            'Compile time: Large project la build time adhigam aagalam.',
+                            'Types runtime la irukkaadhu. API la irundhu varra data wrong type ah irundha, TypeScript catch pannaadhu. Runtime validation (Zod, Yup) venum.',
+                            '`any` type overuse panna, TypeScript oda benefit pogidum.',
+                        ],
+                    },
+                    {
+                        type: 'code',
+                        text: `// Runtime la types illa
+        interface User {
+        name: string;
+        }
+
+        async function getUser(): Promise<User> {
+        const res = await fetch("/api/user");
+        return res.json(); // TypeScript trust pannum, API wrong data kudutha catch pannaadhu
+        }
+
+        // any overuse (bad)
+        let data: any = "hello";
+        data.foo.bar(); // TypeScript error kaattaadhu, runtime la crash`,
+                    },
+                ],
+            },
+            {
+                label: '7',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When to use which?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'TypeScript use pannunga: Large projects, long-term maintenance, team work, shared libraries, complex business logic.',
+                            'JavaScript podhum: Small scripts, quick prototypes, learning projects, very small apps.',
+                            'Existing JavaScript project ah gradually migrate pannalam. `allowJs` enable panni, file by file TypeScript ku maathalam.',
+                            'Most modern companies TypeScript use pannuvaanga, so job market la um important skill.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '8',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: what is TypeScript, main reasons, example, trade-offs, when to use.',
+                            '“TypeScript la static types irukku. Errors ah runtime la illa, development time la catch pannalam. Adhunaala large projects la bugs kammi aagum” nu kandippa sollunga. Idhu dhaan core point.',
+                            'Typo or wrong type example kaattunga: `add(2, "3")` error. Interview la idha romba ketpaanga.',
+                            'Types compile time la mattum irukkum, runtime la irukkaadhu nu clear ah sollunga. Idhula many per confuse aaguvaanga.',
+                            'Trade-offs um mention pannunga: setup, learning curve, `any` overuse. Idhu balanced and senior level answer.',
+                            'Runtime validation (Zod) venum nu sollunga, because API data ah TypeScript check pannaadhu.',
+                            'Idhu type coercion, ES6 features, and React props oda connect aagum, so adhayum sollunga.',
+                            'Memory trick: “Catch errors early, code self-documents”.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({

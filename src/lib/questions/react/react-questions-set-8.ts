@@ -107,6 +107,77 @@ export const reactQuestionsSet8: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React DevTools Profiler use panni which components repeat-a render aagudhu nu check pannuvom.',
+                            'Slow component props, state, parent, or Context change base panni render aagudhu nu analyze pannuvom.',
+                            '`why-did-you-render` or simple render log useful.',
+                            'Production build profile pannuvom.',
+                            'Real reason identify pannina appropriate optimization pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Profile first**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React DevTools Profiler open panni app interact pannuvom.',
+                            'Niraiya times render aagura components flame chart la theriyum.',
+                            'Slow or repeated component enna nu identify pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Check why it rendered**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Own state change aachaa.',
+                            'Parent props change aachaa.',
+                            'Context value change aachaa.',
+                            'Props reference every render la new-a create aagudha.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Fix the real cause**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Unstable props na `useCallback` or memoized object use pannalam.',
+                            'Heavy child na `React.memo` consider pannuvom.',
+                            'State local kku move panna or split panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -233,6 +304,76 @@ export const reactQuestionsSet8: IQuestion[] = [
                         items: [
                             'For large apps: code split by routes and features, use lazy loading for heavy components, virtualize large lists, analyze bundle size, optimize images, manage state efficiently.',
                             'Profiling is key - measure before optimizing.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Route and feature base panni code splitting pannuvom.',
+                            'Heavy component kku lazy loading use pannuvom.',
+                            'Large list kku virtualization use pannuvom.',
+                            'Bundle analyzer and React Profiler use panni real slow part ah identify pannuvom.',
+                            'State and API logic organized-a irukka structure plan pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reduce initial load**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React app open panna thevai illa pages ellam load panna vendam.',
+                            'Route base panni `React.lazy` use pannuvom.',
+                            'Heavy modal or chart component use panna pothu mattum load panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Reduce work in the browser**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Large list la visible items mattum render pannuvom.',
+                            'Images lazy load pannuvom.',
+                            'Unnecessary re-renders and heavy calculations avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Measure before optimizing**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React Profiler slow components identify pannum.',
+                            'Bundle analyzer large packages identify pannum.',
+                            'Real bottleneck irukkuradhu base panni optimization panna nalladhu.',
                         ],
                     },
                 ],
@@ -365,6 +506,82 @@ export const reactQuestionsSet8: IQuestion[] = [
                             'Move business logic to Hooks, keep components focused on rendering.',
                             'Consider state management if state is complex.',
                         ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Periya component ah logical sections-a pirippom.',
+                            'State and side-effect logic custom Hooks kku move pannuvom.',
+                            'Small UI components create panni composition use pannuvom.',
+                            'Simple utility functions separate files-la vachiruvom.',
+                            'State complex irundha common state solution consider pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Split by responsibility**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Header, form fields, validation, and footer separate components-a mudiyum.',
+                            'Oru component UI render panna focus pannum.',
+                            'Logic and data separate place la irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Move logic to a custom Hook**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'State, effects, and API logic custom Hook la irukkum.',
+                            'Component Hook return panna values use panni UI render pannum.',
+                            'Logic test panna easy-aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Compose the pieces**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function FormPage() {
+  const form = useFormLogic();
+
+  return (
+    <>
+      <FormHeader />
+      <FormFields form={form} />
+      <FormFooter />
+    </>
+  );
+}`,
                     },
                 ],
             },
@@ -514,6 +731,76 @@ export const reactQuestionsSet8: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature folder base panni users, posts, and settings organize pannuvom.',
+                            'Oru feature oda components, Hooks, pages, and API calls same place la irukkum.',
+                            'Reusable components and utilities shared folder la irukkum.',
+                            'State and routes clear structure la maintain pannuvom.',
+                            'Circular dependencies avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature-based folders**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Users feature la UserCard, useUser, user API, and user page irukkum.',
+                            'Posts feature oda files separate folder la irukkum.',
+                            'Feature develop panna related files easy-a find panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared folders**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button, Modal, layout, and common utility shared folder la irukkum.',
+                            'Feature folder shared folder ah use panna mudiyum.',
+                            'Shared folder feature folder ah import panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Other simple rules**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Routes and app state clear place la maintain pannuvom.',
+                            'API calls service or feature API folder la irukkum.',
+                            'Oru feature vera feature internals depend panna avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         speakingPractice: [
             {
                 label: '',
@@ -648,6 +935,77 @@ export const reactQuestionsSet8: IQuestion[] = [
                             'Design reusable components with clear props interface, flexibility through variants and composition, sensible defaults, TypeScript types, Storybook documentation, unit and visual tests.',
                             'Allow customization through className and style props.',
                             'Follow design system.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component props clear and typed-a irukkanum.',
+                            'Variants, children, and className use panni teams customize panna mudiyum.',
+                            'Storybook la examples and states document pannuvom.',
+                            'Unit and visual tests component quality maintain pannum.',
+                            'Specific app API or business logic base panna avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Clear API**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Props name and types clear-a irukkanum.',
+                            'Required and optional props team kku easy-a theriyanum.',
+                            'TypeScript props misuse avoid pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Flexible component**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`children` use panni custom content pass panna mudiyum.',
+                            'Variants size, color, and state control panna useful.',
+                            'className use panni team own styling apply panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Documentation and testing**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Storybook la examples and edge states show pannuvom.',
+                            'Unit tests behavior verify pannum.',
+                            'Visual tests layout and design consistency verify pannum.',
+                            'Component business data direct-a fetch panna vendam.',
                         ],
                     },
                 ],
