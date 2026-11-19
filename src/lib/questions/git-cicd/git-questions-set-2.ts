@@ -112,6 +112,73 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ESLint shared config use pannuvom.',
+                            'Editor, pre-commit, and CI la lint run pannuvom.',
+                            'CI required check-a irukkanum.',
+                            'Legacy code la strict rules gradual-a add pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Three places**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Editor la instant feedback.',
+                            'Pre-commit la staged files check.',
+                            'CI la whole project check.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared rules**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'TypeScript, React Hooks, and accessibility plugins use pannalam.',
+                            'Shared config team project ellame same rules follow pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Final gate**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CI lint fail aana merge block.',
+                            'Pre-commit skip panna mudiyum, but CI catch pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
 
         scenarioQuestions: [
             {
@@ -258,6 +325,75 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                             'I use Prettier with one shared config, format on save, format staged files in pre-commit, and a prettier --check required in CI.',
                             'ESLint handles quality and Prettier handles style, with eslint-config-prettier to avoid conflicts.',
                             'When introducing it I do one separate formatting commit and add it to the blame ignore file.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Prettier shared config use pannuvom.',
+                            'Save, pre-commit, and CI la formatting apply/check pannuvom.',
+                            'ESLint logic check pannum.',
+                            'Prettier style check pannum.',
+                            'New formatting commit separate-a maintain pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Automatic formatting**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shared Prettier config team ellarum use pannuvom.',
+                            'Format on save developer speed increase pannum.',
+                            'lint-staged only changed files format pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CI final check**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`prettier --check` unformatted code catch pannum.',
+                            'Required CI check aana merge block.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Avoid tool conflict**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ESLint quality rules mattum handle pannum.',
+                            'Prettier style format pannum.',
+                            'eslint-config-prettier conflict rules remove pannum.',
                         ],
                     },
                 ],
@@ -423,6 +559,76 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Branch protection and required checks broken code merge aagama protect pannum.',
+                            'Lint, typecheck, tests, build, and E2E run pannuvom.',
+                            'Preview or staging environment la verify pannuvom.',
+                            'Feature flag and gradual rollout blast area kammi pannum.',
+                            'Rollback and monitoring ready-a irukkanum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Before merge**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Branch protection direct push and force push block pannum.',
+                            'Lint, tests, build, and review required.',
+                            'Small PR issue root identify panna easy.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Before production**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Preview and staging deploy verify pannuvom.',
+                            'Critical E2E and smoke test run pannuvom.',
+                            'API contract tests cross-team change catch pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**After deploy**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature flag or gradual rollout blast area kammi pannum.',
+                            'Error, latency, and business metric monitor pannuvom.',
+                            'Bug varum pothu rollback or flag disable immediate-a panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -579,6 +785,70 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                             'Static assets are hashed and uploaded first with long caching and HTML last with no-cache, and old assets are kept to avoid chunk errors.',
                             'Secrets and config come from the CI store per environment.',
                             'I monitor after deploy and have one-step rollback and feature flags.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Every PR check and preview deploy run pannuvom.',
+                            'Main merge aana build once create panni same artifact promote pannuvom.',
+                            'Staging la smoke and E2E verify pannuvom.',
+                            'Production gradual rollout, monitor, and rollback ready-a irukkanum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Pull request stage**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Lint, tests, build, and preview deploy run.', 'Required check pass aana main merge.'],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Build once and promote**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Staging and production kku same artifact promote pannuvom.',
+                            'Environment config deployment time inject pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Deploy safely**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Production smoke test and monitor run.',
+                            'Error threshold aana rollback immediate.',
+                            'Feature flag or gradual rollout blast area kammi pannum.',
                         ],
                     },
                 ],
@@ -748,6 +1018,75 @@ export const gitCiCdQuestionsSet2: IQuestion[] = [
                             'Blue-green runs two identical environments and switches all traffic at once, giving instant rollback but costing double infrastructure and exposing everyone at the same time.',
                             'Canary sends the new version to a small share of users first and expands gradually while monitoring metrics, reducing risk but needing more routing and observability and version compatibility.',
                             'I pick blue-green for simple, reversible releases and canary for high-risk changes, and often combine them with feature flags.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Blue-green two environments use pannum. Traffic sudden-a new version kku switch pannuvom.',
+                            'Canary small user group kku new version deploy panni gradually expand pannum.',
+                            'Blue-green rollback fast, but extra infrastructure venum.',
+                            'Canary blast area kammi, but routing and monitoring venum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Blue-green**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Old version and new version separate environments la irukkum.',
+                            'Test apram traffic full-a new environment kku switch.',
+                            'Problem irundha traffic old environment kku switch panni rollback.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Canary**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'New version 5% or 10% users kku mattum deploy.',
+                            'Errors and metrics normal-a irundha traffic increase.',
+                            'Problem irundha rollout stop or rollback.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Which one to use**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Simple reversible release kku blue-green useful.',
+                            'High-risk or performance-sensitive release kku canary useful.',
+                            'Feature flags use panna both strategies flexible-aagum.',
                         ],
                     },
                 ],

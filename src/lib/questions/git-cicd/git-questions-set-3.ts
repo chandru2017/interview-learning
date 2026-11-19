@@ -42,5 +42,74 @@ export const gitCiCdQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CI code push pannumbothu automatically lint, test, and build run pannum.',
+                            'CD tested code ah staging or production kku deploy pannum.',
+                            'GitHub Actions CI checks run panna and Vercel deployment automate panna use pannalam.',
+                            'Manual mistakes kammi, and release fast and reliable-a irukkum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Continuous Integration**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pull Request or push varumbothu pipeline start aagum.',
+                            'Lint, type check, tests, and build run pannuvom.',
+                            'Check fail aana merge or release block aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Continuous Delivery**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Tested build staging kku deploy aagum.',
+                            'Production deployment manual approval oda nadakkalam.',
+                            'Same tested artifact use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Continuous Deployment**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'All checks pass aana production automatically deploy aagum.',
+                            'Smoke test, rollback, and monitoring follow pannuvom.',
+                            'GitHub Actions and Vercel madhiri tools pipeline automate pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 ];

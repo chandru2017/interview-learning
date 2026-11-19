@@ -103,6 +103,75 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Merge branch history preserve pannum.',
+                            'Rebase own commits ah latest main mela replay pannum.',
+                            'Rebase linear history kudukkum, but shared branch la avoid pannuvom.',
+                            'Pushed personal branch rebase panna `--force-with-lease` use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Merge**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Two branch changes ah combine pannum.',
+                            'Full history preserve aagum.',
+                            'Merge commit create aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Rebase**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Own commits ah latest base mela replay pannum.',
+                            'History linear-a irukkum.',
+                            'Commit hashes change aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe rule**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shared branch rebase panna kudathu.',
+                            'Own feature branch update panna rebase use pannalam.',
+                            'Team policy main branch merge approach decide pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
 
         scenarioQuestions: [
             {
@@ -263,6 +332,76 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                             'I resolve file by file, regenerate generated files like lockfiles, and use a merge tool for complex ones.',
                             'I run build, lint and tests because semantic conflicts can still break behavior.',
                             'I use abort, reflog and rerere as safety nets and prevent conflicts with small PRs and frequent updates from main.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Both changes enna intend pannanga nu first understand pannuvom.',
+                            'Conflict file ah open panni correct logic combine pannuvom.',
+                            'Lockfile madhiri generated file regen panna nalladhu.',
+                            'Tests and build run panni semantic conflict illa nu check pannuvom.',
+                            'Mess aana merge or rebase abort panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**First understand**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`git status` conflict files list pannum.',
+                            'PR, commit log, or blame use panni both intent paapom.',
+                            'Guess panni file choose panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Resolve safely**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Conflict markers remove panni correct code keep pannuvom.',
+                            'Complex file kku merge tool use pannalam.',
+                            'Lockfile hand edit panna thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Verify**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Build, lint, typecheck, and tests run pannuvom.',
+                            'Need na other developer oda logic confirm pannuvom.',
+                            'Conflict mess aana abort panni fresh-a try pannalam.',
                         ],
                     },
                 ],
@@ -439,6 +578,76 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Cherry-pick one commit changes ah innorru branch la apply pannum.',
+                            'Hotfix or backport kku useful.',
+                            'New commit hash create aagum.',
+                            'Full branch changes venumna merge or rebase better.',
+                            '-x use panna original commit trace panna easy.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What cherry-pick does**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Specific commit change ah copy panni current branch la apply pannum.',
+                            'Source commit hash and target commit hash differ.',
+                            'Whole branch merge panna thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common use**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Production hotfix ah release branch kku backport pannuvom.',
+                            'Wrong branch la commit panna correct branch kku move pannuvom.',
+                            '-x use panni original commit reference maintain pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When not to use**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Niraiya related commits venumna cherry-pick avoid pannuvom.',
+                            'Merge or rebase whole branch kku better.',
+                            'Dependency missing irundha conflict or broken code varalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -587,6 +796,76 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                             'Before merging I tidy local history with interactive rebase and fixup, and the team uses squash or rebase merge to keep main linear.',
                             'I protect main with required reviews and checks, and enforce message format with commitlint and Husky.',
                             'On shared branches I use revert instead of rewriting history.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Commit small and clear-a irukkanum.',
+                            'PR one purpose mattum irukkanum.',
+                            'Conventional Commit format use pannuvom.',
+                            'Merge munnaadi noisy commits squash or fixup pannuvom.',
+                            'Shared branch history rewrite panna vendam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Good commits**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Each commit one logical change irukkanum.',
+                            'Message short and clear-a irukkanum.',
+                            'Conventional format feat, fix, docs madhiri useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Clean before merge**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Interactive rebase typo or WIP commits combine pannum.',
+                            'Fixup commits specific commit kku attach pannalam.',
+                            'Team squash or rebase merge policy follow pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Protect main**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Branch protection and required checks use pannuvom.',
+                            'Commitlint and Husky message format enforce pannum.',
+                            'Main wrong commit aana revert pannuvom.',
                         ],
                     },
                 ],
@@ -778,6 +1057,76 @@ export const gitCiCdQuestionsSet1: IQuestion[] = [
                             'On every PR I install with a locked, cached install, then run lint, format check, type check, unit tests and a production build, with bundle size checks.',
                             'Then e2e, accessibility and optionally Lighthouse and visual regression, plus security scans.',
                             'I publish a preview deployment, enforce results via required status checks, and keep the pipeline fast with parallel jobs, caching and fail-fast ordering.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Every PR la dependencies lockfile la install pannuvom.',
+                            'Lint, format, typecheck, and unit tests run pannuvom.',
+                            'Production build and bundle size check pannuvom.',
+                            'E2E, accessibility, security, and preview deploy follow pannalam.',
+                            'Any fail aana merge block pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Fast checks first**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Locked dependency install pannuvom.',
+                            'Lint, format, and typecheck run pannuvom.',
+                            'Unit tests and production build verify pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Full verification**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'E2E critical flows test pannuvom.',
+                            'Accessibility and bundle size check pannalam.',
+                            'Security and dependency scan follow pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Gate merging**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Preview deploy create panna mudiyum.',
+                            'Required status checks pass aana apram merge allow pannuvom.',
+                            'Caching and parallel jobs pipeline speed maintain pannum.',
                         ],
                     },
                 ],
