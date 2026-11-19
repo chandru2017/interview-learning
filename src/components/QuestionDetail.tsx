@@ -176,18 +176,6 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                     </Section>
                 )}
 
-                {question.thanglishExplanation && question.thanglishExplanation.length > 0 && (
-                    <Section
-                        id="thanglish"
-                        title="Thanglish Explanation"
-                        description="Tamil-English hybrid explanation"
-                        open={openSection === 'thanglish'}
-                        onToggle={toggleSection}
-                    >
-                        <AnswerContent content={question.thanglishExplanation} />
-                    </Section>
-                )}
-
                 {question.what && question.what.length > 0 && (
                     <Section
                         id="what"
@@ -221,6 +209,42 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.how} />
+                    </Section>
+                )}
+
+                {question.interviewAnswer.length > 0 && (
+                    <Section
+                        id="interview"
+                        title="Interview Answer"
+                        description="Polished, interview-ready response"
+                        open={openSection === 'interview'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.interviewAnswer} />
+                    </Section>
+                )}
+
+                {question?.interviewAnswer1 && question.interviewAnswer1.length > 0 && (
+                    <Section
+                        id="interview-1"
+                        title="Interview Answer 1"
+                        description="Polished, interview-ready response"
+                        open={openSection === 'interview-1'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.interviewAnswer1} />
+                    </Section>
+                )}
+                {question.thanglishExplanation && question.thanglishExplanation.length > 0 && (
+                    <Section
+                        id="thanglish"
+                        title="Thanglish Explanation"
+                        description="Detail explanation"
+                        open={openSection === 'thanglish'}
+                        onToggle={toggleSection}
+                        showDescription={true}
+                    >
+                        <AnswerContent content={question.thanglishExplanation} />
                     </Section>
                 )}
 
@@ -269,30 +293,6 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.conceptAsStory} />
-                    </Section>
-                )}
-
-                {question.interviewAnswer.length > 0 && (
-                    <Section
-                        id="interview"
-                        title="Interview Answer"
-                        description="Polished, interview-ready response"
-                        open={openSection === 'interview'}
-                        onToggle={toggleSection}
-                    >
-                        <AnswerContent content={question.interviewAnswer} />
-                    </Section>
-                )}
-
-                {question?.interviewAnswer1 && question.interviewAnswer1.length > 0 && (
-                    <Section
-                        id="interview-1"
-                        title="Interview Answer 1"
-                        description="Polished, interview-ready response"
-                        open={openSection === 'interview-1'}
-                        onToggle={toggleSection}
-                    >
-                        <AnswerContent content={question.interviewAnswer1} />
                     </Section>
                 )}
 
@@ -381,9 +381,10 @@ interface ISectionProps {
     open: boolean;
     onToggle: (id: SectionId) => void;
     children: ReactNode;
+    showDescription?: boolean;
 }
 
-const Section = ({ id, title, description, open, onToggle, children }: ISectionProps) => {
+const Section = ({ id, title, description, open, onToggle, children, showDescription = false }: ISectionProps) => {
     const panelId = useId();
     const headerId = useId();
 
@@ -409,7 +410,9 @@ const Section = ({ id, title, description, open, onToggle, children }: ISectionP
                         <CardTitle>
                             <h2 className="text-lg font-medium tracking-tight text-foreground">{title}</h2>
                         </CardTitle>
-                        <CardDescription className="mt-1.5 hidden text-[14px] leading-relaxed">
+                        <CardDescription
+                            className={`mt-1.5 text-[14px] leading-relaxed ${showDescription ? 'block' : 'hidden'}`}
+                        >
                             {description}
                         </CardDescription>
                     </div>

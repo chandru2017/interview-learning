@@ -195,6 +195,184 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event delegation na ovvoru child element ku separate event listener add pannaama, oru parent element ku mattum oru listener add panni, ellaa child elements oda events ah handle panra technique.',
+                            'Idhu event bubbling naala work aagum. Child element la oru event nadandha, adhu mela mela parent ku bubble aagum. Parent la irukkura listener andha event ah catch pannum.',
+                            'Entha child click aachu nu therinjukka, event.target use pannuvom.',
+                            'Idhunaala memory save aagum, and dynamic ah add aagura pudhu elements ku um listener thaniya add panna thevai illa.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Event bubbling (base concept)**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru element la event nadandha, adhu mudhalla andha element la run aagum.',
+                            'Apram adhoda parent ku, apram parent oda parent ku, appadiye document vara mela pogum. Idhu dhaan bubbling.',
+                            'Event delegation idha use panni dhaan work aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How it works**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Child elements ku badhila, common parent ku oru listener add pannuvom.',
+                            'Child click aanadhum, event bubble aagi parent ku varum.',
+                            'Parent listener la `event.target` check panni, entha child click aachu nu therinjukkalam.',
+                            'Venum na `event.target.matches()` or `event.target.closest()` use panni, specific element ku mattum handle pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why it is useful**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Memory save aagum. 100 items ku 100 listeners ku badhila, oru listener podhum.',
+                            'Dynamic elements: Later add aagura pudhu elements ku um automatic ah work aagum.',
+                            'Code simple ah irukkum, listeners add and remove panna thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Small Example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `<ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        </ul>
+
+        <script>
+        // Without delegation (every li ku separate listener)
+        document.querySelectorAll("#list li").forEach((li) => {
+            li.addEventListener("click", () => {
+            console.log("Clicked:", li.textContent);
+            });
+        });
+
+        // With delegation (parent ku mattum oru listener)
+        document.getElementById("list").addEventListener("click", (event) => {
+            if (event.target.tagName === "LI") {
+            console.log("Clicked:", event.target.textContent);
+            }
+        });
+        </script>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Mudhalla example la 3 li ku 3 listeners add aagum.',
+                            'Rendavadhu example la `ul` ku mattum oru listener dhaan.',
+                            'Li click panna, event `ul` ku bubble aagum. `event.target` la entha li click aachu nu theriyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Real-world example: Todo list (dynamic items)**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Todo app la user pudhu tasks add pannuvaanga, delete button um click pannuvaanga. Pudhu task add aagumbodhu ovvoru dhadavayum listener add panna venam. Parent ku oru listener irundha podhum.',
+                    },
+                    {
+                        type: 'code',
+                        text: `<ul id="todoList"></ul>
+        <button id="addBtn">Add Task</button>
+
+        <script>
+        const todoList = document.getElementById("todoList");
+        let count = 0;
+
+        document.getElementById("addBtn").addEventListener("click", () => {
+            count++;
+            const li = document.createElement("li");
+            li.innerHTML = "Task " + count + ' <button class="delete">Delete</button>';
+            todoList.appendChild(li);
+        });
+
+        // Oru listener, ellaa delete buttons ku (existing and future)
+        todoList.addEventListener("click", (event) => {
+            if (event.target.matches(".delete")) {
+            event.target.closest("li").remove();
+            }
+        });
+        </script>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pudhu task add aagumbodhu, adhukku thaniya listener add panna thevai illa.',
+                            '`event.target.matches(".delete")` use panni, delete button click aana mattum handle pannum.',
+                            '`closest("li")` use panni, andha button oda parent `li` ah edutthu remove pannalam.',
+                            'Delegation illama, ovvoru pudhu task kum listener add pannanum. Idhu dhaan problem.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: definition, event bubbling, how it works, why useful, example.',
+                            '“Child ku badhila parent ku oru listener add pannuvom, event bubbling naala child events um parent ku varum” nu kandippa sollunga. Idhu dhaan core point.',
+                            '`event.target` vs `event.currentTarget` difference sollunga. target na actual click aana element, currentTarget na listener add pannina element.',
+                            'Dynamic elements ku um work aagum nu mention pannunga. Idhu dhaan main advantage.',
+                            'Limitation: `focus`, `blur` maari events bubble aagaadhu. `stopPropagation()` use panna delegation break aagum.',
+                            'Idhu event bubbling and event capturing oda connect aagum, so adhayum sollunga.',
+                            'Memory trick: “One parent listener, many children handled”.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
     createQuestion({
         id: 'js-17',
@@ -304,24 +482,48 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
-        interviewAnswerTamil: [
+        speakingPractice: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'keywords',
+                        items: ['event bubbling', 'stopPropagation', 'event capturing', 'phases', 'target element'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event bubbling and capturing na oru element la event nadakkumbodhu, andha event DOM tree la eppadi travel aagum nu sollura rendu phases.',
+                            'Capturing phase la event document la irundhu start aagi, keezha target element vara pogum (top to bottom). Bubbling phase la event target element la irundhu start aagi, mela document vara pogum (bottom to top).',
+                            'Default ah event listeners bubbling phase la dhaan run aagum. Capturing phase la run panna venum na, addEventListener oda moonavadhu argument ah true kudukkanum.',
+                            'Event travel aagurathai stopPropagation() use panni stop pannalam. Event delegation idha base ah vechu dhaan work aagum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Interview Answer',
+                        text: '**Three phases of an event**',
                     },
                     {
                         type: 'bullets',
                         items: [
-                            'Event Propagation என்பது ஒரு element-ல் ஏற்படும் event, மற்ற element-களுக்கு எவ்வாறு பரவுகிறது என்பதைக் குறிக்கிறது. இதில் மூன்று நிலைகள் உள்ளன.',
-                            'Capturing: Event, மேலே உள்ள parent element-லிருந்து கீழே உள்ள target element-ஐ நோக்கிப் பயணிக்கும்.',
-                            'Target: Event ஏற்படுத்தப்பட்ட element-ஐ event அடையும் நிலை.',
-                            'Bubbling: Target element-லிருந்து மேலே உள்ள parent elements வழியாக event பயணிக்கும்.',
-                            'பெரும்பாலான events Bubbling முறையில் செயல்படுகின்றன. Event Delegation இந்த Bubbling முறையைப் பயன்படுத்துகிறது.',
-                            'stopPropagation() என்பது event மேலும் மற்ற elements-க்குப் பரவுவதைத் தடுக்கிறது.',
-                            'எல்லா events-ம் bubble ஆகாது. உதாரணமாக, focus, load மற்றும் scroll events பொதுவாக bubble ஆகாது.',
+                            'Phase 1, Capturing: Event document la irundhu start aagi, target element ku keezha pogum.',
+                            'Phase 2, Target: Event actual target element ku vandhu serum.',
+                            'Phase 3, Bubbling: Event target element la irundhu start aagi, mela document vara pogum.',
+                            'Oru event ku indha moonu phases um nadakkum. Namma listener ah entha phase la add pannurom nu dhaan difference.',
                         ],
                     },
                 ],
@@ -331,29 +533,16 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Simple Understanding',
+                        text: '**Event bubbling**',
                     },
                     {
-                        type: 'paragraph',
-                        text: 'ஒரு button element, div-க்குள் இருந்து, அந்த div ஒரு body-க்குள் இருப்பதாக நினைத்துக்கொள்ளுங்கள்.',
-                    },
-                    {
-                        type: 'code',
-                        text: `1. Capturing
-
-                            body → div → button
-
-                            மேலிருந்து கீழே
-
-                            2. Target
-
-                            button-ல் event ஏற்படுகிறது
-
-                            3. Bubbling
-
-                            button → div → body
-
-                            கீழிருந்து மேலே`,
+                        type: 'bullets',
+                        items: [
+                            'Child element la event nadandha, adhu mudhalla child listener ah run pannum.',
+                            'Apram parent listener, apram parent oda parent listener, appadiye document vara mela pogum.',
+                            'Idhu default behavior. `addEventListener("click", fn)` nu potta, bubbling phase la dhaan run aagum.',
+                            'Event delegation idha use panni dhaan work aagum.',
+                        ],
                     },
                 ],
             },
@@ -362,27 +551,131 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'நினைவில் வைத்துக்கொள்ளுங்கள்',
+                        text: '**Event capturing**',
                     },
                     {
                         type: 'bullets',
                         items: [
-                            'Capturing → மேலிருந்து கீழே.',
-                            'Target → Event ஏற்படும் element.',
-                            'Bubbling → கீழிருந்து மேலே.',
-                            'stopPropagation() → Event பரவுவதைத் தடுக்கும்.',
+                            'Event document la irundhu start aagi, target element ku keezha pogum. Bubbling ku opposite direction.',
+                            'Capturing phase la listener run panna, moonavadhu argument ah `true` or `{ capture: true }` kudukkanum.',
+                            'Idhu rarely use pannuvom. Event ah target ku reach aagurathukku munnadiye intercept panna venum na use aagum.',
                         ],
                     },
                 ],
             },
-        ],
-        speakingPractice: [
             {
-                label: '',
+                label: '4',
                 blocks: [
                     {
-                        type: 'keywords',
-                        items: ['event bubbling', 'stopPropagation', 'event capturing', 'phases', 'target element'],
+                        type: 'paragraph',
+                        text: '**Small Example**',
+                    },
+                    {
+                        type: 'code',
+                        text: `<div id="grandparent">
+        <div id="parent">
+            <button id="child">Click</button>
+        </div>
+        </div>
+
+        <script>
+        const grandparent = document.getElementById("grandparent");
+        const parent = document.getElementById("parent");
+        const child = document.getElementById("child");
+
+        // Bubbling (default)
+        grandparent.addEventListener("click", () => console.log("grandparent bubbling"));
+        parent.addEventListener("click", () => console.log("parent bubbling"));
+        child.addEventListener("click", () => console.log("child bubbling"));
+
+        // Capturing (third argument true)
+        grandparent.addEventListener("click", () => console.log("grandparent capturing"), true);
+        parent.addEventListener("click", () => console.log("parent capturing"), true);
+        child.addEventListener("click", () => console.log("child capturing"), true);
+
+        // Button click panna output:
+        // grandparent capturing
+        // parent capturing
+        // child capturing
+        // child bubbling
+        // parent bubbling
+        // grandparent bubbling
+        </script>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button click panna, mudhalla capturing phase run aagum: grandparent, parent, child (top to bottom).',
+                            'Apram bubbling phase run aagum: child, parent, grandparent (bottom to top).',
+                            'Target element la capturing and bubbling listeners rendum irundha, adhu register pannina order la run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Real-world example: Modal close on outside click**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Modal la user content ah click panna modal close aaga koodadhu. Aana overlay (modal veliya irukkura area) click panna close aaganum. Idhuku bubbling and stopPropagation() use pannalam.',
+                    },
+                    {
+                        type: 'code',
+                        text: `<div id="overlay">
+        <div id="modal">
+            <p>Modal content</p>
+            <button id="closeBtn">Close</button>
+        </div>
+        </div>
+
+        <script>
+        const overlay = document.getElementById("overlay");
+        const modal = document.getElementById("modal");
+
+        // Overlay click panna modal close aagum
+        overlay.addEventListener("click", () => {
+            overlay.style.display = "none";
+        });
+
+        // Modal kulla click panna, event overlay ku bubble aagama stop pannrom
+        modal.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+        </script>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Modal kulla click panna, event bubble aagi overlay ku pogum, so modal close aagidum. Idhu problem.',
+                            '`event.stopPropagation()` use panna, event modal la stop aagum, overlay ku pogaadhu.',
+                            'Idhu work aaga reason, event bubbling dhaan.',
+                            'Better approach: overlay listener la `event.target === overlay` check pannalam. Appo stopPropagation thevai illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: three phases, bubbling, capturing, example.',
+                            '“Capturing top to bottom, bubbling bottom to top, default ah listeners bubbling phase la run aagum” nu kandippa sollunga. Idhu dhaan core point.',
+                            'Output order example (capturing first, apram bubbling) interview la romba ketpaanga. Idha practice pannunga.',
+                            '`stopPropagation()` vs `preventDefault()` difference sollunga. stopPropagation event travel ah stop pannum, preventDefault browser oda default action ah stop pannum.',
+                            '`event.target` vs `event.currentTarget` difference mention pannunga.',
+                            'Idhu event delegation oda connect aagum, so adhayum sollunga.',
+                            'Memory trick: “Capture down, Bubble up”.',
+                        ],
                     },
                 ],
             },
@@ -514,6 +807,190 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Debouncing na oru function ah, last event nadandhu konjam time wait pannina apram dhaan run panra technique. Andha time kulla thirumba event vandha, timer reset aagidum.',
+                            'Idhu frequently nadakkura events (typing, resize, scroll) ku function ah thirumba thirumba run aagama thadukka use aagum.',
+                            'Idhu setTimeout and clearTimeout use panni implement pannuvom. Ovvoru dhadava event vandhaalum, munnadi irukkura timer ah clear pannitu, pudhu timer start pannuvom.',
+                            'Use cases: search box la type pannumbodhu API call, window resize handling, form validation.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Problem (debouncing illama)**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Search box la user "hello" nu type panna, 5 letters ku 5 API calls pogum.',
+                            'Idhu unnecessary requests, server load adhigam, performance kammi.',
+                            'Namma ku user type panni mudikkura varaikkum wait pannitu, oru dhadava mattum API call panna podhum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How it works**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Event vandha, oru timer start pannuvom (example 500ms).',
+                            'Andha 500ms kulla thirumba event vandha, munnadi irukkura timer ah clear pannitu, pudhu timer start pannuvom.',
+                            'Event varaama 500ms mudinjaa dhaan, function run aagum.',
+                            'So user type pannitte irundha function run aagaadhu, nirutthina apram dhaan run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Small Example (debounce function)**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function debounce(fn, delay) {
+        let timer;
+
+        return function (...args) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+            fn.apply(this, args);
+            }, delay);
+        };
+        }
+
+        function sayHi() {
+        console.log("Function called");
+        }
+
+        const debouncedHi = debounce(sayHi, 500);
+
+        debouncedHi();
+        debouncedHi();
+        debouncedHi();
+        // 500ms apram oru dhadava mattum "Function called" print aagum`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`debounce` oru function ah receive panni, pudhu function return pannum.',
+                            '`timer` variable closure naala remember aagum. Ovvoru call kum same `timer` dhaan use aagum.',
+                            'Ovvoru call la `clearTimeout(timer)` munnadi irukkura timer ah cancel pannum.',
+                            'Moonu dhadava call pannaalum, kadaisi call oda timer mattum dhaan complete aagum, so oru dhadava dhaan run aagum.',
+                            '`fn.apply(this, args)` use panni, original function ku `this` and arguments ah pass pannrom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Real-world example: Search box API call**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Search box la user type pannumbodhu, ovvoru letter kum API call pogaama, user type panradhu nirutthina 500ms apram dhaan API call pogum.',
+                    },
+                    {
+                        type: 'code',
+                        text: `<input id="search" placeholder="Search..." />
+
+        <script>
+        function debounce(fn, delay) {
+            let timer;
+            return function (...args) {
+            clearTimeout(timer);
+            timer = setTimeout(() => fn.apply(this, args), delay);
+            };
+        }
+
+        function searchAPI(query) {
+            console.log("API call for:", query);
+        }
+
+        const debouncedSearch = debounce((event) => {
+            searchAPI(event.target.value);
+        }, 500);
+
+        document.getElementById("search").addEventListener("input", debouncedSearch);
+
+        // "hello" nu type panna, 5 API calls illa.
+        // Type panradhu nirutthina 500ms apram, oru dhadava mattum: "API call for: hello"
+        </script>`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User ovvoru letter type pannumbodhum `input` event fire aagum.',
+                            'Debounce function munnadi irukkura timer ah clear pannitu, pudhu timer start pannum.',
+                            'User type panradhu nirutthina 500ms apram dhaan `searchAPI` run aagum.',
+                            'Result: 5 API calls ku badhila, oru API call dhaan.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Debouncing vs Throttling**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Debouncing: Event nadakkurathu nindra apram, wait pannitu oru dhadava run aagum. Example: search box.',
+                            'Throttling: Event continuous ah nadandhaalum, oru fixed time interval la oru dhadava dhaan run aagum. Example: scroll event, 1 second ku oru dhadava.',
+                            'Simple ah: Debounce = "nirutthu, apram run". Throttle = "run, aana oru time ku oru dhadava dhaan".',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: definition, problem, how it works, example, debounce vs throttle.',
+                            '“Last event nadandhu delay mudinja apram dhaan function run aagum, naduvula event vandha timer reset aagum” nu kandippa sollunga. Idhu dhaan core point.',
+                            'Debounce function ah whiteboard la ezhudhi, `clearTimeout` and `setTimeout` explain pannunga. Interview la idha romba ketpaanga.',
+                            '`timer` variable closure naala remember aagum nu mention pannunga. Idhu deep understanding kaattum.',
+                            'Debouncing vs Throttling difference clear ah sollunga. Idhula neraya per confuse aaguvaanga.',
+                            'Use cases: search box, window resize, form validation, auto-save.',
+                            'Idhu closure and setTimeout oda connect aagum, so adhayum sollunga.',
+                            'Memory trick: “Wait for silence, then run”.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
     createQuestion({
         id: 'js-19',
@@ -622,22 +1099,47 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
-        interviewAnswerTamil: [
+        speakingPractice: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'keywords',
+                        items: ['throttle', 'interval', 'frequent events', 'scroll', 'performance'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Throttling na oru function ah, event continuous ah nadandhaalum, oru fixed time interval la oru dhadava mattum run panra technique. Example: 1 second ku oru dhadava dhaan run aagum.',
+                            'Idhu frequently nadakkura events (scroll, resize, mouse move) ku function ah thirumba thirumba run aagama thadukka use aagum.',
+                            'Idhu timestamp or setTimeout use panni implement pannuvom. Last run aana time ah remember pannitu, delay mudiyura varaikkum next call ah ignore pannuvom.',
+                            'Use cases: scroll event handling, window resize, button spam click thadukka, game la key press.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
             {
                 label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Interview Answer',
+                        text: '**Problem (throttling illama)**',
                     },
                     {
                         type: 'bullets',
                         items: [
-                            'Throttling என்பது ஒரு function எவ்வளவு அடிக்கடி செயல்பட வேண்டும் என்பதைக் கட்டுப்படுத்தும் முறை. அதாவது, குறிப்பிட்ட X milliseconds-க்கு ஒருமுறை மட்டுமே function செயல்படும்.',
-                            'Scrolling போன்ற events அடிக்கடி நிகழும்போது, Throttling பயன்படுத்துவதால் application-ன் performance சீராக இருக்கும்.',
-                            'கடைசியாக function செயல்பட்ட நேரத்தை நாம் கண்காணிப்போம். குறிப்பிட்ட நேர இடைவெளி முடிந்திருந்தால் மட்டுமே function-ஐ மீண்டும் செயல்படுத்துவோம்.',
-                            'Throttling, function-ஐ குறிப்பிட்ட நேர இடைவெளியில் தொடர்ந்து செயல்பட அனுமதிக்கிறது. ஆனால் Debouncing, event ஏற்படுவது நின்று அமைதியான பிறகுதான் function-ஐ செயல்படுத்தும்.',
-                            'Scroll, mouse move, resize போன்ற events-க்கு Throttling பயன்படுத்தலாம்.',
+                            'User page scroll pannumbodhu, scroll event oru second la nooru dhadava fire aagum.',
+                            'Ovvoru dhadavayum heavy function run aana, page slow aagidum.',
+                            'Namma ku scroll nadandhukittu irundhaalum, oru fixed interval la oru dhadava run aana podhum.',
                         ],
                     },
                 ],
@@ -647,28 +1149,144 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                 blocks: [
                     {
                         type: 'paragraph',
-                        text: 'Simple Understanding',
+                        text: '**How it works**',
                     },
                     {
                         type: 'bullets',
                         items: [
-                            'நீங்கள் ஒரு webpage-ஐ வேகமாக scroll செய்கிறீர்கள் என்று வைத்துக்கொள்ளுங்கள்.',
-                            'Throttling இல்லையென்றால், ஒவ்வொரு scroll event-க்கும் function செயல்படலாம். இதனால் performance பாதிக்கப்படலாம்.',
-                            'Throttling பயன்படுத்தினால், உதாரணமாக ஒவ்வொரு 200 milliseconds-க்கும் ஒருமுறை மட்டுமே function செயல்படும். இதனால் தேவையற்ற function calls குறையும்.',
-                            '`Throttling →` குறிப்பிட்ட நேர இடைவெளியில் function செயல்படும்.',
-                            '`Debouncing →` Event ஏற்படுவது நின்ற பிறகு, குறிப்பிட்ட நேரம் கழித்து function செயல்படும்.',
+                            'Function run aana time ah `lastRun` nu oru variable la store pannuvom.',
+                            'Pudhu event vandha, ippo irukkura time and `lastRun` difference check pannuvom.',
+                            'Difference delay vida adhigam na, function run pannuvom, `lastRun` update pannuvom.',
+                            'Difference delay vida kammi na, andha event ah ignore pannuvom.',
                         ],
                     },
                 ],
             },
-        ],
-        speakingPractice: [
             {
-                label: '',
+                label: '3',
                 blocks: [
                     {
-                        type: 'keywords',
-                        items: ['throttle', 'interval', 'frequent events', 'scroll', 'performance'],
+                        type: 'paragraph',
+                        text: '**Small Example (throttle function)**',
+                    },
+                    {
+                        type: 'code',
+                        text: `function throttle(fn, delay) {
+        let lastRun = 0;
+
+        return function (...args) {
+            const now = Date.now();
+
+            if (now - lastRun >= delay) {
+            lastRun = now;
+            fn.apply(this, args);
+            }
+        };
+        }
+
+        function sayHi() {
+        console.log("Function called");
+        }
+
+        const throttledHi = throttle(sayHi, 1000);
+
+        throttledHi(); // run aagum
+        throttledHi(); // ignore (1 second kulla)
+        throttledHi(); // ignore (1 second kulla)
+
+        setTimeout(throttledHi, 1100); // run aagum (1 second mudinjiduchu)`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`throttle` oru function ah receive panni, pudhu function return pannum.',
+                            '`lastRun` variable closure naala remember aagum.',
+                            'Mudhal call la `now - lastRun` periya number, so function run aagum.',
+                            'Adutha rendu calls 1 second kulla vandhadhunaala ignore aagum.',
+                            '1100ms apram call pannina, delay mudinjiduchu, so thirumba run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Real-world example: Scroll event**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'User scroll pannumbodhu, scroll position track pannanum (example: infinite scroll, "back to top" button). Throttle use panna, ovvoru 1 second ku oru dhadava dhaan check pannum.',
+                    },
+                    {
+                        type: 'code',
+                        text: `function throttle(fn, delay) {
+        let lastRun = 0;
+        return function (...args) {
+            const now = Date.now();
+            if (now - lastRun >= delay) {
+            lastRun = now;
+            fn.apply(this, args);
+            }
+        };
+        }
+
+        function handleScroll() {
+        console.log("Scroll position:", window.scrollY);
+        }
+
+        window.addEventListener("scroll", throttle(handleScroll, 1000));
+
+        // Continuous ah scroll pannaalum, 1 second ku oru dhadava dhaan log aagum.`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Throttle illama, scroll pannumbodhu `handleScroll` nooru dhadava run aagum.',
+                            'Throttle use panna, 1 second ku oru dhadava dhaan run aagum.',
+                            'Idhunaala page smooth ah irukkum, performance um nalla irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Throttling vs Debouncing**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Throttling: Event continuous ah nadandhaalum, oru fixed interval la oru dhadava run aagum. Example: scroll event.',
+                            'Debouncing: Event nadakkurathu nindra apram, wait pannitu oru dhadava run aagum. Example: search box.',
+                            'Simple ah: Throttle = "run, aana oru time ku oru dhadava dhaan". Debounce = "nirutthu, apram run".',
+                            'Example: User 10 seconds continuous ah scroll panna, throttle (1 second) 10 dhadava run aagum. Debounce (1 second) scroll nirutthina apram oru dhadava dhaan run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: definition, problem, how it works, example, throttle vs debounce.',
+                            '“Event continuous ah nadandhaalum, oru fixed time interval la oru dhadava dhaan function run aagum” nu kandippa sollunga. Idhu dhaan core point.',
+                            'Throttle function ah whiteboard la ezhudhi, `lastRun` and `Date.now()` explain pannunga. Interview la idha romba ketpaanga.',
+                            '`lastRun` variable closure naala remember aagum nu mention pannunga. Idhu deep understanding kaattum.',
+                            'Throttling vs Debouncing difference clear ah sollunga. Idhula neraya per confuse aaguvaanga.',
+                            'Use cases: scroll, resize, mouse move, button spam click.',
+                            'Idhu closure and debouncing oda connect aagum, so adhayum sollunga.',
+                            'Memory trick: “Run once per interval, ignore the rest”.',
+                        ],
                     },
                 ],
             },
@@ -794,6 +1412,239 @@ export const javascriptQuestionsSet4: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['debounce function', 'setTimeout', 'clearTimeout', 'search input', 'closure', 'delay'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Debounce from scratch na, oru function ah receive panni, pudhu debounced function return panra utility function ah namma ezhudhanum. Last call nadandhu delay mudinja apram dhaan original function run aagum.',
+                            'Idhuku moonu things venum: oru closure variable (timer), clearTimeout, and setTimeout. Ovvoru call la munnadi irukkura timer ah clear pannitu, pudhu timer start pannuvom.',
+                            'Arrow function ku own this illa. Adhunaala debounced function ku caller oda this kedaikkaadhu. Ana event handlers la namma event.target use pannuvom, so idhu most cases la problem illa.',
+                            'Caller oda this venum na (example: object method), regular function use pannitu fn.apply(this, args) use pannanum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Step 1: Basic debounce (arrow function)**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const debounce = (fn, delay) => {
+        let timer;
+
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+            fn(...args);
+            }, delay);
+        };
+        };`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`debounce` oru arrow function, `fn` and `delay` receive pannum.',
+                            '`timer` variable outer function la irukku, so closure naala ovvoru call kum same `timer` dhaan use aagum.',
+                            'Return aagura arrow function dhaan actual debounced function. `...args` use panni ellaa arguments um capture pannrom.',
+                            '`clearTimeout(timer)` munnadi schedule aana call ah cancel pannum.',
+                            '`setTimeout` use panni, delay apram `fn(...args)` run aagura mari schedule pannrom.',
+                            '`fn.apply(this, args)` thevai illa. Arrow function ku own `this` illa, so `fn(...args)` nu direct ah call pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Step 2: Test pannunga**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const log = debounce((msg) => {
+        console.log("Called with:", msg);
+        }, 500);
+
+        log("a");
+        log("b");
+        log("c");
+
+        // 500ms apram oru dhadava mattum: "Called with: c"`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Moonu dhadava call pannaalum, ovvoru call um munnadi timer ah cancel pannidum.',
+                            'Kadaisi call (`"c"`) oda timer mattum complete aagum.',
+                            'So output: `"Called with: c"`, oru dhadava mattum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Step 3: Leading edge option**',
+                    },
+                    {
+                        type: 'paragraph',
+                        text: 'Sila time la first call la udane run aaganum, apram delay kulla vara calls ah ignore pannanum. Example: button click, double submit thadukka.',
+                    },
+                    {
+                        type: 'code',
+                        text: `const debounce = (fn, delay, immediate = false) => {
+        let timer;
+
+        return (...args) => {
+            const callNow = immediate && !timer;
+
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+            timer = null;
+            if (!immediate) {
+                fn(...args);
+            }
+            }, delay);
+
+            if (callNow) {
+            fn(...args);
+            }
+        };
+        };`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`immediate` true na, first call la udane function run aagum.',
+                            '`callNow` check pannum: immediate true and timer illa na dhaan run pannanum.',
+                            'Timer mudinjadhum `timer = null` set pannrom, so adutha call ku thirumba udane run aagum.',
+                            'Delay kulla vara calls ellaam timer reset pannum, but function run aagaadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '4',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Step 4: Cancel method add pannalam**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const debounce = (fn, delay) => {
+        let timer;
+
+        const debounced = (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+            fn(...args);
+            }, delay);
+        };
+
+        debounced.cancel = () => {
+            clearTimeout(timer);
+            timer = null;
+        };
+
+        return debounced;
+        };
+
+        const save = debounce(() => console.log("Saved"), 1000);
+
+        save();
+        save.cancel(); // pending call cancel aachu, "Saved" print aagaadhu`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Function um oru object dhaan, so `debounced.cancel` nu property add pannalam.',
+                            '`cancel()` pending timer ah clear pannum.',
+                            'Use case: React component unmount aagumbodhu, pending debounced call ah cancel pannanum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '5',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Arrow function limitation (this)**',
+                    },
+                    {
+                        type: 'code',
+                        text: `const user = {
+        name: "Ravi",
+        greet: debounce(function () {
+            console.log(this.name);
+        }, 500),
+        };
+
+        user.greet(); // undefined (arrow debounce la this lose aachu)`,
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Arrow function ku own `this` illa, so `user.greet()` call pannumbodhu `this = user` nu pass aagaadhu.',
+                            'Object method ku debounce use panna venum na, regular function version use pannanum (`fn.apply(this, args)` kooda).',
+                            'Event handlers, API calls, and normal functions ku arrow version podhum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '6',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common mistakes**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`timer` ah inner function kulla declare panna, ovvoru call kum pudhu `timer` create aagum, so debounce work aagaadhu. Timer eppavum outer function la irukkanum.',
+                            '`clearTimeout` marandha, ovvoru call um delay apram run aagum, debounce work aagaadhu.',
+                            '`...args` marandha, original function ku arguments pass aagaadhu.',
+                            'Arrow function la `this` expect pannina, adhu work aagaadhu. Idhu dhaan arrow vs regular main difference.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '7',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Interview tips**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Idha order la sollunga: approach explain pannunga, basic code ezhudhunga, test pannunga, apram leading edge and cancel mention pannunga.',
+                            '“Timer ah closure la vechu, ovvoru call la clearTimeout pannitu, pudhu setTimeout start pannuvom” nu kandippa sollunga. Idhu dhaan core point.',
+                            'Arrow function version la `this` kedaikkaadhu nu mention pannunga. Interviewer idha kekka chance irukku.',
+                            'Caller oda `this` venum na, regular function and `fn.apply(this, args)` use pannuvom nu sollunga. Idhu senior level answer.',
+                            'Closure and arrow function oda connect panni sollunga.',
+                            'Throttle from scratch um idhe maari kekkalaam, so adhayum practice pannunga.',
+                            'Memory trick: “Clear the old timer, set a new one”.',
+                        ],
                     },
                 ],
             },

@@ -701,7 +701,7 @@ export const fpQuestionsSet1: IQuestion[] = [
         ],
         thanglishExplanation: [
             {
-                label: '',
+                label: '1',
                 blocks: [
                     {
                         type: 'paragraph',
@@ -736,7 +736,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
             {
-                label: '2',
+                label: '3',
                 blocks: [
                     {
                         type: 'paragraph',
@@ -757,7 +757,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
             {
-                label: '3',
+                label: '4',
                 blocks: [
                     {
                         type: 'paragraph',
@@ -769,7 +769,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                             'Unnecessary JavaScript remove pannanum.',
                             'Code splitting use pannanum.',
                             'Large JavaScript bundles reduce pannanum.',
-                            '- Unnecessary client-side rendering avoid pannanum.',
+                            'Unnecessary client-side rendering avoid pannanum.',
                         ],
                     },
                     {
@@ -779,7 +779,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
             {
-                label: '4',
+                label: '5',
                 blocks: [
                     {
                         type: 'paragraph',
@@ -791,7 +791,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                             'Backend API response time improve pannanum.',
                             'Server-side rendering use pannalam.',
                             'Caching implement pannalam.',
-                            '- CDN use pannalam.',
+                            'CDN use pannalam.',
                         ],
                     },
                     {
@@ -801,7 +801,7 @@ export const fpQuestionsSet1: IQuestion[] = [
                 ],
             },
             {
-                label: '5',
+                label: '6',
                 blocks: [
                     {
                         type: 'paragraph',

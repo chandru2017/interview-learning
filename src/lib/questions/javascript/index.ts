@@ -6,6 +6,7 @@ import { javascriptQuestionsSet4 } from './javascript-questions-set-4';
 import { javascriptQuestionsSet5 } from './javascript-questions-set-5';
 import { javascriptQuestionsSet6 } from './javascript-questions-set-6';
 import { javascriptQuestionsSet7 } from './javascript-questions-set-7';
+import { javascriptQuestionsSet8 } from './javascript-questions-set-8';
 
 export const javascriptQuestions: IQuestion[] = [
     ...javascriptQuestionsSet1,
@@ -15,4 +16,5 @@ export const javascriptQuestions: IQuestion[] = [
     ...javascriptQuestionsSet5,
     ...javascriptQuestionsSet6,
     ...javascriptQuestionsSet7,
+    ...javascriptQuestionsSet8,
 ];
