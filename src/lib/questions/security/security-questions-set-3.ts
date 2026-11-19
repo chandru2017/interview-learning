@@ -106,6 +106,76 @@ export const securityQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server side la authentication and authorization check pannuvom.',
+                            'Middleware only redirect kku use panni server page and API kulla permission check pannuvom.',
+                            'Secrets Next.js server la mattum vachiruvom.',
+                            'Input validate, XSS and CSRF prevent, security headers add pannuvom.',
+                            'Next.js and dependencies regularly update pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server security**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server Components, Server Actions, and Route Handlers access control need pannum.',
+                            'Session and permission server la check pannuvom.',
+                            'UI button hide panna permission security illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Secrets and input**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '`NEXT_PUBLIC_` use panna value browser kku visible.',
+                            'API key and private secret server env la vachiruvom.',
+                            'Zod madhiri schema use panni request input validate pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Browser and maintenance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSP and security headers browser attacks reduce pannum.',
+                            'ORM or parameterized query SQL injection prevent pannum.',
+                            'Patch updates, rate limiting, logging, and monitoring keep pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -280,6 +350,77 @@ export const securityQuestionsSet3: IQuestion[] = [
                             'I avoid storing sensitive data in localStorage, use HttpOnly cookies, HTTPS and no-store caching for sensitive responses.',
                             'I keep sensitive data out of URLs, logs and analytics, and mask it in the UI.',
                             'Access control is enforced on the server, and I reduce XSS and third-party risk with CSP.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Browser kku minimum required data mattum anuppuvom.',
+                            'Secret key and sensitive logic server la irukkanum.',
+                            'Sensitive data localStorage la vachukalam nu avoid pannuvom.',
+                            'HTTPS and HttpOnly cookie use pannuvom.',
+                            'URL, logs, analytics, and client bundle la sensitive value expose panna vendam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Send minimum data**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API response la password hash, SSN, or secret fields anuppa vendam.',
+                            'UI display panna required fields mattum DTO la send pannuvom.',
+                            'Card number full-a podama last four digits show pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Keep secrets server-side**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Private API key browser env variable la irukkakoodadhu.',
+                            'Sensitive API call server route or BFF la nadakkum.',
+                            'Public key only browser safe key kku use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Storage, logs, and cache**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'localStorage sensitive data avoid pannuvom.',
+                            'Sensitive response kku no-store cache use pannuvom.',
+                            'Token and PII logs, analytics, and monitoring la leak aagatha paapom.',
+                            'Server authorization UI hiding replace panna vendam.',
                         ],
                     },
                 ],

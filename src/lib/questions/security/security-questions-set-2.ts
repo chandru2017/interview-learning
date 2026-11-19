@@ -95,6 +95,74 @@ export const securityQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CORS server response read panna permission control pannum.',
+                            'CSRF logged-in browser unwanted action perform panna vaikkum attack.',
+                            'CORS strict irundhaalum CSRF protection separate venum.',
+                            'CORS allowlist and CSRF token read/write both safe-a maintain pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CORS**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Vera origin response read panna browser permission kodukkura mechanism.',
+                            'Server Access-Control-Allow-Origin allow panna browser JavaScript response read panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CSRF**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User login irukkumbothu attacker browser unwanted request anuppuvom.',
+                            'Session cookie automatic-a pogum.',
+                            'Delete, update, or transfer madhiri action nadakkalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Key difference**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CORS read permission.',
+                            'CSRF unwanted write action prevention.',
+                            'CORS strict irundhaalum CSRF protection matom separate.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -239,6 +307,75 @@ export const securityQuestionsSet2: IQuestion[] = [
                             'It mainly mitigates XSS by blocking inline and unauthorized scripts, using nonces or hashes for approved inline code.',
                             'I roll it out in report-only mode first, avoid unsafe-inline and broad allowlists, and use frame-ancestors against clickjacking.',
                             'It is defense in depth and does not replace fixing the vulnerability.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSP browser kku allowed script, style, image, and connection sources sollum.',
+                            'Untrusted inline script browser run panna allow pannathu.',
+                            'Nonce or hash approved script mattum allow pannum.',
+                            'Report-only la test panni then enforce pannuvom.',
+                            'CSP XSS defense, vulnerable code fix replacement illa.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What CSP controls**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Script, style, image, font, frame, and API connection sources control pannum.',
+                            'Allowed source vittu vera origin browser block pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Nonce and hash**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Nonce each response kku random value.',
+                            'Adhu match pannura inline script mattum run aagum.',
+                            'Hash approved script content base panni match pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe rollout**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Report-only la violations collect pannuvom.',
+                            'Inline scripts and unsafe third-party sources remove pannuvom.',
+                            'Frame-ancestors use panni clickjacking avoid pannuvom.',
                         ],
                     },
                 ],
@@ -411,6 +548,77 @@ export const securityQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Most web app kku HttpOnly, Secure, SameSite cookie preferred.',
+                            'JavaScript cookie read panna mudiyathu.',
+                            'localStorage XSS script read panna mudiyum.',
+                            'Short-lived token memory la, refresh token HttpOnly cookie la vachukalam.',
+                            'HTTPS, short expiry, and revocation necessary.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Recommended option**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server HttpOnly cookie set pannum.',
+                            'JavaScript cookie value ah read panna mudiyathu.',
+                            'XSS direct token theft risk kammi aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Why localStorage is risky**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Any injected JavaScript localStorage read panna mudiyum.',
+                            'Session token attacker kku kelambaralam.',
+                            'Sensitive token kku localStorage avoid panna nalladhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common secure pattern**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Access token short life with memory.',
+                            'Refresh token HttpOnly cookie la store pannuvom.',
+                            'BFF use panna browser kku token expose panna vendam.',
+                            'Always HTTPS use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -552,6 +760,79 @@ export const securityQuestionsSet2: IQuestion[] = [
                             'JWTs are stateless signed tokens that scale well across services, but revocation is hard, so I keep them short-lived with refresh tokens.',
                             'JWT pitfalls include weak secrets, algorithm confusion, no expiry, sensitive data in the payload and localStorage storage.',
                             'I choose sessions for typical web apps and JWT for APIs and service-to-service auth, sometimes combined.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Session auth la server session state store pannum.',
+                            'Browser opaque session ID cookie la irukkum.',
+                            'Session immediate-a revoke panna mudiyum.',
+                            'JWT signed token. Service scaling easy, but revoke panna hard.',
+                            'JWT short expiry, correct issuer/audience, and secure storage venum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Session authentication**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server user session store pannum.',
+                            'Browser cookie la random session ID irukkum.',
+                            'Logout aana server session delete pannum.',
+                            'Role or ban change immediate-a apply aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**JWT authentication**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'JWT payload user claims contain pannum.',
+                            'Server signature verify panni request accept pannum.',
+                            'Multiple services or APIs kku useful.',
+                            'Expiry aana apram revoke hard, so token life short.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**When to use each**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Normal web app kku session safer and easier.',
+                            'API and service-to-service auth kku JWT useful.',
+                            'Browser kku server session cookie plus BFF approach common.',
+                            'JWT payload sensitive data podadhinga.',
                         ],
                     },
                 ],
@@ -771,6 +1052,78 @@ export const securityQuestionsSet2: IQuestion[] = [
                             'I use Authorization Code flow with PKCE, with state, exact redirect URIs and short-lived access tokens with refresh rotation.',
                             'OpenID Connect builds on OAuth to provide authentication through an ID token.',
                             'I avoid the implicit flow and never put client secrets in frontend code.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'OAuth app kku user resource access permission kudukkura framework.',
+                            'User password third-party app kitta share aagala.',
+                            'Browser app kku Authorization Code with PKCE flow use pannuvom.',
+                            'State and exact redirect URI security kku needed.',
+                            'OIDC OAuth mela login identity provide pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**OAuth meaning**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Login with Google madhiri app permissions ask pannum.',
+                            'App scoped access token receive pannum.',
+                            'Password app kitta share aagala.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe browser flow**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Authorization Code with PKCE use pannuvom.',
+                            'State request mix aaguradha prevent pannum.',
+                            'Redirect URI exact-a match aaganum.',
+                            'Implicit flow avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**OAuth vs OIDC**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'OAuth resource access permission.',
+                            'OIDC user identity authentication.',
+                            'Login feature kku OIDC ID token useful.',
+                            'Client secret browser code la podadhinga.',
                         ],
                     },
                 ],

@@ -99,6 +99,75 @@ export const securityQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'XSS means attacker JavaScript victim browser la run aaguradhu.',
+                            'Untrusted input ah HTML or script madhiri treat panna adhu possible.',
+                            'Stored, reflected, and DOM-based nu three main types irukku.',
+                            'Tokens theft, unwanted actions, or page change madhiri impact irukkalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple meaning**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User or attacker anuppura data safe-a check pannama page la add panna React or browser HTML madhiri execute aagalam.',
+                            'Script browser la website permission oda run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Three types**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Stored XSS: harmful code database la save aagi vera users kitta run aagum.',
+                            'Reflected XSS: URL or request input response la direct-a reflect aagum.',
+                            'DOM-based XSS: browser JavaScript unsafe-a DOM update panna run aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How it is prevented**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Output context base panni safe-a encode pannuvom.',
+                            '`innerHTML` and `eval` madhiri risky places avoid pannuvom.',
+                            'Rich HTML venumna DOMPurify sanitize pannuvom.',
+                            'CSP script execution restrict pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         interviewAnswerTamil: [
             {
                 label: '1',
@@ -322,6 +391,75 @@ export const securityQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User input ah HTML-a treat panna vendam.',
+                            'React default escaping use pannuvom.',
+                            'Rich HTML venumna allowlist based sanitizer use pannuvom.',
+                            'CSP, HttpOnly cookies, and safe URL handling extra protection kudukkum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe output**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React la normal text automatic-a escaped aagum.',
+                            '`textContent` plain text kku safe.',
+                            '`innerHTML`, `eval`, and `document.write` avoid panna nalladhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Rich HTML**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'DOMPurify madhiri sanitizer use pannuvom.',
+                            'Allow panna tags and attributes clear-a define pannuvom.',
+                            'Sanitize pannama stored HTML direct-a render panna vendam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Extra protection**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSP script origins and execution restrict pannum.',
+                            'User URL http or https allowed-a irukkanu check pannuvom.',
+                            'HttpOnly and SameSite cookies token theft risk kammi pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
         interviewAnswerTamil: [
             {
                 label: '1',
@@ -492,6 +630,75 @@ export const securityQuestionsSet1: IQuestion[] = [
                             'It targets state-changing actions and the attacker cannot read the response.',
                             'It is different from XSS because it does not run code in my site.',
                             'I protect with SameSite cookies, CSRF tokens, Origin checks and no state changes via GET.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSRF la user browser unwanted request anuppum.',
+                            'Logged-in session cookie automatic-a request kku attach aagum.',
+                            'Attacker code site la run panna thevai illa.',
+                            'SameSite cookies, CSRF token, and Origin check use panni protect pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**How the attack happens**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User bank or app la login iruppaan.',
+                            'Attacker page hidden form or request create pannum.',
+                            'Browser user session cookie automatic-a attach pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**What CSRF changes**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Password, email, transfer, or delete madhiri action nadakkalam.',
+                            'Attacker response read panna mudiyadhu.',
+                            'Action browser cookies base panni server user-a accept pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Protection**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'SameSite cookie cross-site request cookies kammi pannum.',
+                            'CSRF token request owner app site la irukkum nu verify pannum.',
+                            'GET request la state change panna vendam.',
                         ],
                     },
                 ],
@@ -699,6 +906,76 @@ export const securityQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'State change request app site-la irundhu vandadhu nu verify pannuvom.',
+                            'SameSite cookies first protection.',
+                            'CSRF token or Origin check second protection.',
+                            'GET la delete or update panna vendam.',
+                            'Sensitive action kku re-authentication useful.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SameSite cookies**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Cross-site request la session cookie automatic-a pogadhu.',
+                            'Strict or Lax use pannuvom.',
+                            'Idhu baseline protection.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CSRF token**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server random secret token create pannum.',
+                            'Request kku token form or header la varanum.',
+                            'Token miss or wrong aana server reject pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Origin and safe methods**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Origin header allowed site-la irukkudha nu check pannuvom.',
+                            'GET read only work kku use pannuvom.',
+                            'POST, PUT, PATCH, or DELETE kku CSRF protection pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -848,6 +1125,75 @@ export const securityQuestionsSet1: IQuestion[] = [
                             'It relaxes the Same-Origin Policy, is enforced only by browsers, and non-simple requests use an OPTIONS preflight.',
                             'A dangerous misconfiguration is reflecting any origin with credentials enabled.',
                             'I use a strict allowlist and still enforce authentication on the server.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CORS browser rule. Vera website server response read panna permission kudukkum.',
+                            'Server Access-Control-Allow-Origin header use pannum.',
+                            'Browser request kaaga OPTIONS preflight anuppalam.',
+                            'CORS server security illa. Authentication and authorization server la venum.',
+                            'Explicit origin allowlist use pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simple meaning**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Front-end app and API origin differ pannum pothu browser CORS check pannum.',
+                            'Server allowed origin ah mention panna browser response expose pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Preflight**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'JSON, Authorization header, or PUT request preflight need pannalam.',
+                            'Browser OPTIONS request anuppi server permission check pannum.',
+                            'Permission irundha actual request anuppum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe setup**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Known front-end origins mattum allow pannuvom.',
+                            'Credentials irundha wildcard origin use panna vendam.',
+                            'CORS bypass pannanum nu sonna server authorization weak-a irukkum.',
                         ],
                     },
                 ],
