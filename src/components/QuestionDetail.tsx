@@ -51,7 +51,6 @@ const SECTION_ORDER: {
         | 'realProjectExample'
         | 'interviewAnswer'
         | 'interviewAnswer1'
-        | 'interviewAnswerTamil'
         | 'speakingPractice'
         | 'conceptAsStory'
         | 'scenarioQuestions'
@@ -68,7 +67,6 @@ const SECTION_ORDER: {
     { id: 'project', key: 'realProjectExample' },
     { id: 'interview', key: 'interviewAnswer' },
     { id: 'interview-1', key: 'interviewAnswer1' },
-    { id: 'tamil', key: 'interviewAnswerTamil' },
     { id: 'speaking', key: 'speakingPractice' },
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
@@ -293,18 +291,6 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.conceptAsStory} />
-                    </Section>
-                )}
-
-                {question?.interviewAnswerTamil && question.interviewAnswerTamil.length > 0 && (
-                    <Section
-                        id="tamil"
-                        title="Interview Answer in Tamil"
-                        description="Polished, interview-ready response"
-                        open={openSection === 'tamil'}
-                        onToggle={toggleSection}
-                    >
-                        <AnswerContent content={question.interviewAnswerTamil} />
                     </Section>
                 )}
 

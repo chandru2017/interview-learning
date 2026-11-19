@@ -75,7 +75,6 @@ export interface IQuestion {
     realProjectExample: AnswerContent;
     interviewAnswer: AnswerContent;
     interviewAnswer1?: AnswerContent;
-    interviewAnswerTamil?: AnswerContent;
     conceptAsStory?: AnswerContent;
     speakingPractice?: AnswerContent;
     scenarioQuestions?: AnswerContent;
