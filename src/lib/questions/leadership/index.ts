@@ -4,6 +4,7 @@ import { leadershipQuestionsSet2 } from './leadership-questions-set-2';
 import { leadershipQuestionsSet3 } from './leadership-questions-set-3';
 import { leadershipQuestionsSet4 } from './leadership-questions-set-4';
 import { leadershipQuestionsSet5 } from './leadership-questions-set-5';
+import { leadershipQuestionsSet6 } from './leadership-questions-set-6';
 
 export const leadershipQuestions: IQuestion[] = [
     ...leadershipQuestionsSet1,
@@ -11,4 +12,5 @@ export const leadershipQuestions: IQuestion[] = [
     ...leadershipQuestionsSet3,
     ...leadershipQuestionsSet4,
     ...leadershipQuestionsSet5,
+    ...leadershipQuestionsSet6,
 ];

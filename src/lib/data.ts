@@ -144,7 +144,15 @@ export const TOPICS: ITopic[] = [
     },
     {
         id: 'coding-task',
-        name: 'Coding Tasks',
+        name: 'Common Coding',
+        section: 'CODING',
+        icon: 'Code',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
+        id: 'array-task',
+        name: 'Arrays / Two Pointers',
         section: 'CODING',
         icon: 'Code',
         questionCount: 0,

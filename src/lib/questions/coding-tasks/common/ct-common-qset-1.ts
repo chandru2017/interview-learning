@@ -2,7 +2,7 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '@/lib/questions/create-question';
 
-export const codingTaskQuestionsSet1: IQuestion[] = [
+export const codingTaskCommonQuestionsSet1: IQuestion[] = [
     createQuestion({
         id: 'ct-1',
         topicId: 'coding-task',

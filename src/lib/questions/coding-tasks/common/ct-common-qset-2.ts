@@ -2,7 +2,7 @@ import type { IQuestion } from '@/types';
 
 import { createQuestion } from '@/lib/questions/create-question';
 
-export const codingTaskQuestionsSet2: IQuestion[] = [
+export const codingTaskCommonQuestionsSet2: IQuestion[] = [
     createQuestion({
         id: 'ct-6',
         topicId: 'coding-task',
@@ -91,7 +91,6 @@ export const codingTaskQuestionsSet2: IQuestion[] = [
             },
         ],
     }),
-
     createQuestion({
         id: 'ct-7',
         topicId: 'coding-task',
@@ -166,9 +165,8 @@ export const codingTaskQuestionsSet2: IQuestion[] = [
             },
         ],
     }),
-
     createQuestion({
-        id: 'ct-6',
+        id: 'ct-8',
         topicId: 'coding-task',
         title: 'Group Objects by Property',
         difficulty: 'Advanced',

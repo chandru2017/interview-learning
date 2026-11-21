@@ -5,7 +5,17 @@ interface ISelfIntroductionQuestionOptions {
     topicId: string;
 }
 
+const getCompletedYearsSince = (startYear: number, startMonth: number) => {
+    const now = new Date();
+    const years = now.getFullYear() - startYear;
+
+    return now.getMonth() + 1 < startMonth ? years - 1 : years;
+};
+
 export const createSelfIntroductionQuestion = ({ id, topicId }: ISelfIntroductionQuestionOptions) => {
+    const softwareExperienceYears = getCompletedYearsSince(2015, 3);
+    const handsOnExperienceYears = getCompletedYearsSince(2020, 9);
+
     return createQuestion({
         id,
         topicId,
@@ -22,7 +32,7 @@ export const createSelfIntroductionQuestion = ({ id, topicId }: ISelfIntroductio
                         type: 'bullets',
                         items: [
                             'Hello, my name is Chandrasekaran.',
-                            'I have over 10 years of experience in software development, including more than 6 years of hands-on experience with React.js.',
+                            `I have over ${softwareExperienceYears} years of experience in software development, including more than ${handsOnExperienceYears} years of hands-on experience with React.js.`,
                             'Currently, I am working as a Senior Frontend Engineer and Frontend Lead at Tartlabs.',
                             'My main technical skills are React.js, Next.js, JavaScript, TypeScript, and Tailwind CSS.',
                             'I have experience in building scalable web applications, developing reusable components, integrating REST APIs, and improving application performance.',
