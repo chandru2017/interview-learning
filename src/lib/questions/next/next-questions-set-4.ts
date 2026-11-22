@@ -149,6 +149,74 @@ export const nextQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Route Handler-na app/ folder-la route.ts file create panni HTTP methods export pannura server endpoint.',
+                            'Webhook, public API, and third-party integrations-ku use pannuven; UI data-ku direct Server Component fetch or Server Action prefer pannuven.',
+                            'Input validate panni, auth check seithu, correct status code return pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Route Handler enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'App Router-la app/api/.../route.ts file create pannina server endpoint define pannalam.',
+                            'GET, POST, PUT, PATCH, DELETE madhiri HTTP method names-la functions export pannuvom.',
+                            'Standard Request and Response APIs use pannalam; NextResponse helper-um irukku.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppo use pannalam?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Payment webhook, OAuth callback, public API, or third-party integration-ku Route Handler useful.',
+                            'Unga own page data-ku Server Component-la direct-a fetch pannina extra network hop avoid aagum.',
+                            'Unga own form mutation-ku Server Action simpler-a irukkalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Security and response handling**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Request body validate panni, endpoint-ku authentication and authorization check pannunga.',
+                            'Success and failure-ku appropriate HTTP status codes return pannunga.',
+                            'External webhook-na signature verify panni duplicate event processing avoid pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -290,6 +358,74 @@ export const nextQuestionsSet4: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Middleware', 'proxy.ts', 'Matcher', 'Redirect', 'Rewrite', 'Optimistic auth check'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Middleware request complete aaguradhukku munnaadi run aagi redirect, rewrite, or headers/cookies modify pannum.',
+                            'Next.js 16-la idhu proxy.ts nu rename aagirukku; matcher use panni relevant routes-ku mattum run pannalam.',
+                            'Lightweight routing and optimistic auth checks-ku use pannuven; authorization-ah data layer-la marubadiyum verify pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Middleware / Proxy enna seyyum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Request page or route handler reach aaguradhukku munnaadi code run aagum.',
+                            'Request-ah redirect pannalam, rewrite pannalam, headers/cookies modify pannalam, illa response early-a return pannalam.',
+                            'Next.js 16-la middleware.ts naming-ku badhila proxy.ts use pannuvanga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common use cases**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Session cookie irukka nu quick-a check panni login page-ku redirect pannalam.',
+                            'Locale routing, feature flags, and A/B testing-ku use pannalam.',
+                            'config.matcher use panni static files and unrelated routes skip pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Security limit**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Middleware check mattum authorization-ku podhaadhu; matcher or request path mistakes irukkalam.',
+                            'Sensitive data read/write panna munnaadi DAL, Server Action, or Route Handler-la session and permission verify pannunga.',
+                            'Ovvoru request-layum run aagalam; adhanaala slow database work avoid pannunga.',
+                        ],
                     },
                 ],
             },
@@ -460,6 +596,74 @@ export const nextQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Authentication-na user yaaru nu verify pannradhu; Auth.js or Clerk madhiri maintained solution prefer pannuven.',
+                            'Session-ah secure httpOnly cookie-la store panni, protected data access-ku server-la verify pannuven.',
+                            'Proxy redirect UX-ku mattum; Server Actions, Route Handlers, and DAL-la session check repeat panni rate limiting and secure password handling add pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Authentication-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User yaaru nu verify pannradhu authentication.',
+                            'Auth.js, Clerk, Better Auth madhiri maintained provider use pannina session and OAuth flow safe-a manage panna help kidaikkum.',
+                            'Custom crypto or session logic build pannradha vida established solution use pannradhu safer.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Session handling**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Login success aana session create panni secure cookie-la store pannuvom.',
+                            'Cookie-ku httpOnly, secure, and suitable sameSite settings set pannunga.',
+                            'Token-ah localStorage-la store panna avoid pannunga; JavaScript access panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Protected data access**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Page render-ku munnaadi server-la session verify panni unauthenticated user-ah login-ku redirect pannalam.',
+                            'Proxy check quick redirect-ku useful; aana DAL, Server Action, and Route Handler-layum session verify pannunga.',
+                            'Rate limiting, secure password hashing, and MFA madhiri safeguards requirement base panni add pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -603,6 +807,74 @@ export const nextQuestionsSet4: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['RBAC', 'ABAC', 'Permissions', 'IDOR', 'Data Access Layer', 'Server Actions'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Authorization-na authenticated user enna action panna allowed nu decide pannradhu.',
+                            'Role or permission checks-ah server-side-la DAL, Server Actions, and Route Handlers-la enforce pannuven.',
+                            'Resource query-la userId/tenantId ownership filter add panni, UI hiding or middleware mattum security-nu rely panna maatten.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Authentication vs authorization**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Authentication user yaaru nu identify pannum.',
+                            'Authorization andha user enna resource access panna or enna action seiya mudiyum nu decide pannum.',
+                            'Role-based permissions (admin/editor) or resource ownership base panni rule set pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server-la enforce pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Data access layer-la permission check pannina data source pakkathula enforcement irukkum.',
+                            'Ovvoru Server Action and Route Handler-um public endpoint madhiri treat panni input and permissions check pannunga.',
+                            'UI-la button hide pannradhu user experience-ku mattum; direct request-ah adhu block pannaadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Ownership and multi-tenant data**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Record fetch pannumbodhu id mattum check pannaama userId or tenantId-um query filter-la include pannunga.',
+                            'Layout or middleware check mattum nambi irukka koodadhu; actual data/action path-layum authorize pannunga.',
+                            'Allow/deny cases-ku automated tests ezhuthi access control verify pannunga.',
+                        ],
                     },
                 ],
             },
@@ -772,6 +1044,73 @@ export const nextQuestionsSet4: IQuestion[] = [
                             'Streaming',
                             'Caching',
                             'Web Vitals',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'First Lighthouse, Web Vitals, bundle analyzer, and server traces use panni bottleneck measure pannuven.',
+                            'Client JavaScript reduce panni, static/ISR and cache use pannuven; independent requests parallel-a fetch panni slow sections stream pannuven.',
+                            'Images, fonts, third-party scripts, and database queries optimize panni CI-la performance budget and production monitoring set pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Measure first**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Guess panni optimize pannaama Lighthouse, Web Vitals, bundle analyzer, and server traces-la actual bottleneck identify pannunga.',
+                            'Large JavaScript bundle, slow database call, image size, or build time nu problem enga irukku nu measure pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Runtime performance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server Components default-a use panni client JavaScript reduce pannunga; heavy chart/editor-ai dynamic import-la load pannalam.',
+                            'Shared content-ku static or ISR and caching use pannunga; independent data requests-ah parallel-a run pannunga.',
+                            'Slow page sections-ah Suspense moolama stream pannunga; images/fonts-ku Next.js optimizations use pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Scale and prevent regressions**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Slow DB queries profile panni index and cache improve pannunga; multi-instance deployment-ku shared cache consider pannunga.',
+                            'Build time adhigama irundha pre-render panna vendiya pages-ah limit panni incremental build/cache use pannunga.',
+                            'CI-la performance budget set panni production Web Vitals monitor pannunga.',
                         ],
                     },
                 ],

@@ -151,6 +151,73 @@ export const nextQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'App Router-na app/ folder use pannura Next.js routing system; folders URL paths define pannum.',
+                            'page.tsx, layout.tsx, loading.tsx, and error.tsx madhiri special files route behavior-ah define pannum.',
+                            'Server Components default-a irukkum; nested layouts, streaming, and Route Handlers support pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Route structure**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'app/ folder-kulla folders create pannina URL route structure form aagum.',
+                            'Oru route-ku page.tsx file irundha adhu browser-la display aagura page-ah define pannum.',
+                            'layout.tsx shared UI-ah child routes kooda persist panna use aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Special files and rendering**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'loading.tsx loading UI, error.tsx error boundary, and not-found.tsx not-found UI provide pannum.',
+                            'Server Components default-a irukkaradhaal data server-la fetch pannalam; interaction-ku mattum Client Component add pannalam.',
+                            'Suspense use panni page parts-ah stream pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Additional capabilities**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Route groups and dynamic segments use panni routes organize pannalam.',
+                            'route.ts file use panni API endpoints-ku Route Handler create pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -298,6 +365,74 @@ export const nextQuestionsSet2: IQuestion[] = [
                             'Server Components',
                             'Nested layouts',
                             'Incremental migration',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pages Router pages/ folder use pannum; App Router app/ folder use pannum.',
+                            'App Router Server Components, nested layouts, and streaming support pannum; Pages Router getServerSideProps/getStaticProps patterns use pannum.',
+                            'Pudhu routes-ku App Router choose pannuven; existing Pages Router app-ah thevai irundha gradual-a migrate pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Pages Router**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'pages/ folder-la files create pannina routes form aagum.',
+                            'Server-side data-ku getServerSideProps, static data-ku getStaticProps and getStaticPaths use pannalam.',
+                            'Shared layout-ku _app.tsx and _document.tsx madhiri files use pannuvanga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**App Router**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'app/ folder-la page.tsx and layout.tsx use panni routes and nested layouts define pannalam.',
+                            'Server Components default-a irukkum; data fetching component-kulle async-a pannalam.',
+                            'loading.tsx, error.tsx, Route Handlers, and streaming built-in conventions-a irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Migration choice**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'App Router-ku learning curve konjam adhigam, especially server/client boundary and caching concepts.',
+                            'Pudhu project-ku App Router use pannalam; existing stable app-ah udane migrate panna thevai illa.',
+                            'Rendu routers-um coexist aagum, so route-by-route migrate pannalam.',
                         ],
                     },
                 ],
@@ -454,6 +589,74 @@ export const nextQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server Components server-la mattum render aagum; avanga component JavaScript browser bundle-ku pogadhu.',
+                            'Server-la data source access pannalam, secrets safe-a vechukkalam, client JavaScript reduce pannalam.',
+                            'State, effects, and browser events thevai na andha interactive part-ah Client Component-la vaippen.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server Component-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server Component server side-la render aagura React component.',
+                            'App Router-la component default-a Server Component; "use client" boundary illa na server side-la run aagum.',
+                            'Adhoda component JavaScript browser-ku ship aagadhu; rendered output mattum client-ku varum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Enna panna mudiyum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Database, file system, or server API-la irundhu direct-a data fetch pannalam.',
+                            'Server-only secrets browser bundle-la expose aagama protect pannalam.',
+                            'Component-la useState, useEffect, event handlers, or browser APIs use panna mudiyadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Client Component-oda serthu use pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button click or form state madhiri interaction thevai na small Client Component use pannalam.',
+                            'Server Component-la irundhu Client Component-ku pass panna props serializable-a irukkanum.',
+                            'Interactive component mattum client-ku anuppina bundle size kammiya irukkum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -597,6 +800,73 @@ export const nextQuestionsSet2: IQuestion[] = [
                             'useState',
                             'Event handlers',
                             'Browser APIs',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Client Component file top-la "use client" add pannina client boundary create aagum.',
+                            'State, effects, event handlers, and browser APIs use panna mudiyum; initial HTML server-la pre-render aagi browser-la hydrate aagum.',
+                            'Boundary imports-um client bundle-la include aagalam, so interactivity thevaiyana small components-ku mattum use pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Client Component-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'File top-la "use client" directive add pannina andha file client boundary aagum.',
+                            'State, effects, click handlers, and browser APIs use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Render and hydration**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Client Component initial HTML server-la pre-render aagalam.',
+                            'Browser JavaScript load pannitu event handlers attach panni component-ah hydrate pannum.',
+                            'Adhanaala "use client" na browser-la mattum render aagum-nu artham illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Enga use pannanum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Search dropdown, modal, form state, or theme toggle madhiri interactive UI-ku use pannalam.',
+                            'Directive andha module imports-ku apply aaguradhaal client component-ah small-a and leaf level-la vechukkalam.',
+                            'Server Component-lendhu data props-a pass panni page-oda rest-ah server-la maintain pannalam.',
                         ],
                     },
                 ],
@@ -751,6 +1021,74 @@ export const nextQuestionsSet2: IQuestion[] = [
                             'Security',
                             'LCP',
                             'Server-side data fetching',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server Components client JavaScript bundle-ah kammi pannum, data source pakkathula fetch pannum, and server secrets-ah protect pannum.',
+                            'Async/await and streaming use pannitu client-side fetch waterfalls and loading logic-ah reduce pannalam.',
+                            'Interactivity thevaiyana parts-ku Client Components use panni, performance and user experience rendu balance pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Client bundle and performance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Interactive illaadha page parts-oda JavaScript browser-ku anuppa thevai illa.',
+                            'Server Component JavaScript client bundle-la illaadhadhaal download and hydration work kammi aagum.',
+                            'Idhu first page display and performance-ku help pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Data fetching and security**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server component-la direct-a database or data source call pannalam; browser-lendhu extra API round trip avoid aagum.',
+                            'API keys and private business logic server-la irukkum; client bundle-la expose aagadhu.',
+                            'Independent data requests-ah parallel-a start panni waterfall delay reduce pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Streaming and trade-offs**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Suspense use panni ready-aana UI-ah first send panni, slow sections-ah later stream pannalam.',
+                            'Server/client boundary and server runtime concepts purinjukkanum; interactive behavior-ku Client Components thevai.',
+                            'Adhanaala static content and data-heavy parts server-la, interactive controls mattum client-la vechukkalam.',
                         ],
                     },
                 ],

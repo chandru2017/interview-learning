@@ -151,6 +151,73 @@ export const nextQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'State, effects, event handlers, browser APIs, or client-only libraries thevai irundha "use client" use pannuven.',
+                            'Indha directive oru client boundary create pannum; adhoda imports-um client bundle-la pogalam.',
+                            'Boundary-ah small interactive component-kitta vechuttu, data fetching and page structure-ah Server Component-la maintain pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppo "use client" thevai?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'useState, useEffect madhiri hooks use panna vendiyirundha Client Component thevai.',
+                            'onClick, onChange madhiri event handlers or interactive behavior irundhaalum use pannalam.',
+                            'window, document, localStorage madhiri browser APIs server-la available illa.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Client boundary enga veppadhu?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            '"use client" add panna file-um adhu import pannura modules-um client bundle-oda part aagalam.',
+                            'Oru button mattum interactive na full page-ah client aakkaama button-ku separate component create pannalam.',
+                            'Data fetching and layout Server Component-la irundhu, interactive component-ku props pass pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common use cases**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Form inputs, dropdowns, theme toggle, and chart libraries madhiri client behavior thevai padura places-la use pannalam.',
+                            'Provider client component-a irukkalam; adhu server-rendered children-ah wrap pannavum mudiyum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -293,6 +360,74 @@ export const nextQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Bundle size', 'Hydration', 'INP', 'Client boundary', 'Bundle analyzer', 'server-only'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            '"use client" tree-la romba mela add panna, adhoda subtree and imports client JavaScript bundle-la pogum.',
+                            'Bundle size and hydration work adhigamaagi performance affect aagalam; server-only data access-um use panna mudiyadhu.',
+                            'Interactive pieces mattum Client Component-a extract panni bundle analyzer-la impact verify pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Bundle size and hydration impact**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Page-level-la "use client" add panna andha module import pannura code-um client bundle-la seralam.',
+                            'Browser adhigamaana JavaScript download and hydrate panna vendiyirukkum.',
+                            'Main thread work increase aagi page response and interaction performance slow aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server benefits and security**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Client boundary-kulla database, file system, or server-only secrets direct-a use panna mudiyadhu.',
+                            'Data fetch-ku browser-side request and loading state add panna vendiyirukkalam.',
+                            'Server-only code client-ku move aana private logic expose aagum risk irukku.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppadi sari pannradhu?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Interactive portion-ah small Client Component-a separate pannunga; parent and data fetching server-la irukkattum.',
+                            'Heavy dependencies client bundle-la varudha nu bundle analyzer use panni check pannunga.',
+                            'Necessary-aana interaction irukkura idathula mattum client boundary veinga.',
+                        ],
                     },
                 ],
             },
@@ -446,6 +581,74 @@ export const nextQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Async components', 'Promise.all', 'Suspense', 'Server Actions', 'Memoization', 'DAL'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'App Router-la async Server Components-kulla fetch, ORM, or SDK use panni server side-la data fetch pannalam.',
+                            'Independent requests-ah Promise.all-la parallel-a run panni, slow sections-ku Suspense use pannuven.',
+                            'Mutations-ku Server Actions or Route Handlers; live client-side data-ku thevai irundha SWR or TanStack Query use pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Server-side data fetching**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'App Router-la Server Component async function-a irukkalam.',
+                            'Adhukkulla fetch call pannalam illa server-la irukkura database/ORM-ai direct-a access pannalam.',
+                            'Data server-la fetch aaguradhaal client-lendhu extra API call avoid aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Requests and loading UI**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru request innoru request-ku depend aagala na Promise.all use panni parallel-a fetch pannalam.',
+                            'Oru data-kku innoru data depend aana mattum sequential-a fetch pannunga.',
+                            'Suspense boundary or loading.tsx use panni ready-aana UI-ah first show panni slow section-ah later stream pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Mutations and client data**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Form submission madhiri server mutation-ku Server Action; external client request-ku Route Handler use pannalam.',
+                            'Mutation apragu relevant cache-ah revalidate pannalam.',
+                            'Polling or user-driven live updates thevai na Client Component-la SWR or TanStack Query use pannalam.',
+                        ],
                     },
                 ],
             },
@@ -621,6 +824,75 @@ export const nextQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Next.js-la request memoization, data cache, full route cache, and browser router cache nu multiple layers irukku.',
+                            'Caching defaults version-ku version maarum; Next.js 16-la Cache Components use panni "use cache", cacheLife, and cacheTag moolama explicit-a configure pannalam.',
+                            'Shared data mattum cache panni, tag/path revalidation use pannuven; user-specific data accidental-a share aagama paathukkoven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Caching-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru data or page result-ah save panni, adhe work-ah thirumba seyyama reuse pannradhu caching.',
+                            'Repeated data fetch and render work kammi aagi response faster-aagalam.',
+                            'Next.js version base panni caching defaults and APIs maaralaam; project version docs check pannradhu mukkiyam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Common cache layers**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Request memoization same render request-la repeated fetch/cache calls-ah deduplicate pannum.',
+                            'Data Cache fetch or server function result-ah requests-kku idaiyil store pannum.',
+                            'Full Route Cache static route HTML and RSC payload-ah store pannum.',
+                            'Router Cache browser-la visited or prefetched route data-ah temporary-a store pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Cache control and safety**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Next.js 16 Cache Components-la "use cache" cache enable pannum; cacheLife duration define pannum; cacheTag invalidation-ku label kudukkum.',
+                            'Revalidate time-based-a or tag/path moolama on-demand-a pannalam.',
+                            'User-specific data shared cache-la leak aagama cache key and user context carefully handle pannanum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -762,6 +1034,73 @@ export const nextQuestionsSet3: IQuestion[] = [
                             'Stale-while-revalidate',
                             'Webhook',
                             'updateTag',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Revalidation cached data or page-ah update panna trigger pannum.',
+                            'Time-based revalidation set interval-ku apragu refresh pannum; on-demand revalidation mutation or CMS webhook-la call pannalam.',
+                            'Related data-ku tags use panni, webhook authenticate pannitu shared cache entries mattum invalidate pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Revalidation enna seyyum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Cache-la irukkura data stale aagumbodhu fresh content generate panna Next.js-kku signal kudukkuradhu revalidation.',
+                            'Static page-ah full site rebuild pannaama update panna idhu help pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Time-based and on-demand methods**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Time-based-ku revalidate interval or cacheLife configure pannalam.',
+                            'Specific page-ku revalidatePath call pannalam; shared data use pannura pages-ku tag add panni revalidateTag call pannalam.',
+                            'CMS publish webhook or Server Action-la mutation mudinja udane on-demand revalidation trigger pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Best practices**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Tag use panna ore data use pannura pala pages-um serthu refresh pannalam.',
+                            'Webhook endpoint secret/signature verify pannitu thaan revalidation trigger pannanum.',
+                            'Stale content acceptable-a illaya nu decide panni right revalidation approach choose pannunga.',
                         ],
                     },
                 ],

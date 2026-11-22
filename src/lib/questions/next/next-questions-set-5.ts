@@ -149,6 +149,74 @@ export const nextQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'SEO-ku server-rendered content, Metadata API, canonical/Open Graph tags, sitemap, and robots rules set pannuven.',
+                            'Semantic HTML, accessible alt text, clean URLs, and JSON-LD structured data use pannuven.',
+                            'Core Web Vitals optimize panni Search Console and Lighthouse-la verify pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Metadata and crawlable content**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Page title, description, canonical URL, and Open Graph tags-ku Next.js Metadata API use pannunga.',
+                            'SSR, SSG, or ISR use pannina crawler-ku ready HTML kidaikkum; client-side fetch mudiyum varaikkum content blank-a irukka koodadhu.',
+                            'Dynamic content-ku page-specific metadata generate pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Discoverability and structure**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'sitemap.ts and robots.ts create panni search engines-ku pages and crawl rules provide pannunga.',
+                            'Heading hierarchy, descriptive links, and image alt text use pannunga.',
+                            'Relevant pages-ku JSON-LD structured data add pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Performance and verification**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Images, fonts, and client JavaScript optimize panni Core Web Vitals improve pannunga.',
+                            'Duplicate URLs-ku canonical set pannunga; missing pages-ku correct 404 status return pannunga.',
+                            'Search Console, Lighthouse, and rich result tools use panni results verify pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -303,6 +371,74 @@ export const nextQuestionsSet5: IQuestion[] = [
                             'Open Graph',
                             'notFound',
                             'ImageResponse',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Route params or fetched content base panni metadata change aana page.tsx-la async generateMetadata export pannuven.',
+                            'Title, description, canonical, and Open Graph values return panni, missing record-ku notFound() call pannuven.',
+                            'Page and metadata same data fetch panna fetch memoization or React cache() use panni duplicate query avoid pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Dynamic metadata eppo thevai?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Blog post, product, or profile madhiri ovvoru route-kum title and description maarina dynamic metadata use pannalam.',
+                            'App Router-la page.tsx or layout.tsx-la generateMetadata function export pannuvom.',
+                            'Function route params and data fetch panni Metadata object return pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Data and metadata fields**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Recent Next.js versions-la params Promise-a irukkalam; adhai await panni slug/id edukkanum.',
+                            'Title, description, canonical, Open Graph image madhiri fields content-lendhu populate pannalam.',
+                            'Record kidaikkalana notFound() call panni correct 404 response return pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Duplicate fetch avoid pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'generateMetadata-um page-um same fetch arguments use pannina fetch memoization query deduplicate pannum.',
+                            'ORM call-ku React cache() wrap panni same request-la result reuse pannalam.',
+                            'Layout metadata-oda merge behavior consider panni parent metadata extend pannalam.',
                         ],
                     },
                 ],
@@ -467,6 +603,74 @@ export const nextQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'next/image use panni responsive sizes, optimized format, and lazy loading configure pannuven.',
+                            'Width/height or fill with sized parent set panni layout shift avoid pannuven; hero LCP image-ku priority/preload use pannuven.',
+                            'External image host-ah remotePatterns-la allow panni, source size and CDN behavior-um verify pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**next/image use pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'next/image browser-ku suitable-aana image size and format serve panna help pannum.',
+                            'sizes prop set panna responsive layout-ku thevaiyana image width browser select pannum.',
+                            'Below-the-fold image lazy load aagum; above-the-fold hero image-ku priority/preload use pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Layout shift and accessibility**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'width/height set pannunga illa fill use pannumbodhu parent-ku dimensions kudunga; image load aaguradhukku munnaadi space reserve aagum.',
+                            'Idhu CLS reduce pannum; placeholder="blur" perceived loading improve pannalam.',
+                            'Image-ku meaningful alt text kudunga; decorative image-na empty alt use pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Remote images and source quality**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'External image domains-ah next.config image remotePatterns-la allow pannunga.',
+                            'Periya original files reduce panni, icon-ku SVG use pannunga; image CDN use pannina caching and delivery check pannunga.',
+                            'LCP improve aagudha nu Lighthouse or field Web Vitals-la measure pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -620,6 +824,74 @@ export const nextQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['LCP', 'INP', 'CLS', 'TTFB', 'next/font', 'next/script', 'Field data'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'First field Web Vitals and Lighthouse-la measure panni LCP, INP, CLS-la edhu bottleneck nu identify pannuven.',
+                            'LCP-ku fast/cached response and optimized hero image; INP-ku less JavaScript and shorter main-thread work; CLS-ku reserved dimensions use pannuven.',
+                            'Real-user monitoring and CI performance budgets use panni changes result-ah verify pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Measure and choose the metric**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Core Web Vitals-la LCP loading, INP interaction response, CLS visual stability measure pannum.',
+                            'Field data and Lighthouse use panni slow metric and affected route/device identify pannunga.',
+                            'Metric therinja piragu adhukku relevant fix prioritize pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**LCP and INP improve pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'LCP-ku TTFB reduce pannunga, static/cache use pannunga, hero image optimize panni preload pannunga.',
+                            'INP-ku client JavaScript reduce panni, long tasks and heavy re-renders avoid pannunga.',
+                            'Third-party scripts defer pannunga; heavy updates-ku useTransition or useDeferredValue consider pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CLS and ongoing monitoring**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Images, embeds, ads-ku width/height or aspect ratio set panni space reserve pannunga.',
+                            'Fonts and dynamic banners load aagumbodhu content jump aagama next/font and stable layout use pannunga.',
+                            'Web Vitals reporting and CI performance budgets use panni regression monitor pannunga.',
+                        ],
                     },
                 ],
             },
@@ -795,6 +1067,74 @@ export const nextQuestionsSet5: IQuestion[] = [
                             'Server Components',
                             'next/navigation',
                             'generateStaticParams',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Migration-ah incremental-a pannuven; pages/ and app/ coexist pannalaam, aana same URL rendu router-layum define panna koodadhu.',
+                            'Simple low-risk routes-la start panni, data fetching, layouts, navigation, and metadata APIs-ah App Router patterns-ku migrate pannuven.',
+                            'Critical flows-ku e2e tests, SEO/performance checks, and gradual rollout use panni behavior compare pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Plan and prepare**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Full app-ah ore shot-la rewrite pannaama pages/ and app/ coexist aagura incremental migration plan pannunga.',
+                            'Critical user flows-ku e2e tests add panni current behavior baseline record pannunga.',
+                            'Simple, low-risk routes-lendhu start panni migration progress-ah track pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Router APIs update pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Root layout-la _app.tsx and _document.tsx responsibilities move pannunga; client providers-ah small "use client" component-la veinga.',
+                            'getServerSideProps/getStaticProps-ku badhila async Server Components-la data fetch pannunga; getStaticPaths-ku generateStaticParams use pannunga.',
+                            'next/router-ah next/navigation-ku, next/head-ah Metadata API-ku migrate pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Verify and roll out**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Hooks or browser APIs use pannura components-ku mattum Client Component boundary add pannunga.',
+                            'Cache defaults and async params madhiri Next.js version differences check pannunga.',
+                            'Route-by-route e2e, SEO, and performance compare panni gradual-a release pannunga.',
                         ],
                     },
                 ],

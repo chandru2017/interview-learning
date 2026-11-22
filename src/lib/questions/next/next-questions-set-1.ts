@@ -144,6 +144,72 @@ export const nextQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Next.js React mela build aana framework; routing, server rendering, data fetching patterns, and optimization features built-in-a varum.',
+                            'SEO and first-page load important-a irukkura apps-ku Next.js useful.',
+                            'Simple internal SPA-ku React mattum podhum; Next.js extra conventions and complexity add pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**React mattum enna provide pannum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'React UI build panna oru library. Components and state management kudukkum.',
+                            'Routing, server rendering, SEO setup madhiri features-ku separate tools configure panna vendiyirukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Next.js enna extra kudukkum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'File-based routing, server-side rendering, static generation, and server-side features built-in-a irukkum.',
+                            'Images, fonts, code splitting, and page metadata optimize panna framework support irukku.',
+                            'Adhanaala SEO and initial page load improve panna easier-a irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppo edhai choose pannalam?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Public pages-ku SEO, fast first load, or full-stack features thevai na Next.js choose pannalam.',
+                            'SEO thevai illaadha simple internal app-ku plain React SPA simpler-a irukkalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -312,6 +378,72 @@ export const nextQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'CSR browser-la render aagum; SSR ovvoru request-kum server-la render aagum.',
+                            'SSG build time-la pages create pannum; ISR static page-ah serve panni time-based illa on-demand-a refresh pannum.',
+                            'Freshness, personalization, SEO, and performance requirement base panni route-ku suitable strategy choose pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**CSR - Client-Side Rendering**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Browser JavaScript load pannitu UI and data render pannum.',
+                            'Highly interactive, login-required pages-ku useful; initial HTML and SEO weaker-a irukkalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSR - Server-Side Rendering**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Ovvoru request varumbodhum server fresh HTML generate pannum.',
+                            'User-specific data, frequently changing content, and SEO thevai na use pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSG and ISR**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'SSG build time-la HTML create panni CDN-la serve pannum; same content ellarukkum irukkura pages-ku fast-a irukkum.',
+                            'ISR static page-ah serve pannum; time interval mudinja piragu illa on-demand trigger-la regenerate pannum.',
+                            'Content freshness and page count base panni SSG or ISR choose pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -448,6 +580,70 @@ export const nextQuestionsSet1: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['SSR', 'Dynamic rendering', 'Personalization', 'TTFB', 'Streaming', 'cookies()'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Request-ku request data fresh-a irukkanum, user-specific-a irukkanum, illa query/cookie base panni maaranum na SSR choose pannuven.',
+                            'Server HTML generate pannuvadhaala SEO and initial content display-ku help aagum.',
+                            'Same content ellarukkum irundha SSG or ISR faster and lower-cost; SSR-ku TTFB and server compute cost adhigam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSR eppo useful?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Page content ovvoru request-kum fresh-a venum na SSR use pannalam.',
+                            'Cookies, session, location, or search params base panni content maarumbodhum SSR helpful.',
+                            'Search results, personalized account pages, live price/stock pages examples.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSR-oda benefits and trade-offs**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Server ready-made HTML anupparadhaal first content display and SEO improve aagalam.',
+                            'Ovvoru request-kum server work pannum; adhanaala TTFB and compute cost increase aagalam.',
+                            'Streaming, parallel data fetching, and stable data caching use panni delay reduce pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSR thevai illaadha case**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: ['Content same-a irundhu rarely change aana build-time SSG or ISR faster and cheaper.'],
                     },
                 ],
             },
@@ -590,6 +786,72 @@ export const nextQuestionsSet1: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['SSG', 'generateStaticParams', 'Build time', 'CDN', 'Static', 'Pre-render'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Content ellarukkum same-a irundhu frequently change aagala na SSG choose pannuven.',
+                            'Build time-la HTML generate aagi CDN-la serve aaguradhaal performance nalla irukkum and server cost kammi.',
+                            'Dynamic routes-ku generateStaticParams use pannalam; content refresh thevai na ISR use pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**SSG eppadi work aagum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Build nadakkumbodhe Next.js page HTML create pannum.',
+                            'Request varumbodhu server-la pudhusa render pannaama, ready-a irukkura page CDN-la irundhu serve aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppodhu SSG choose pannalam?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Blogs, documentation, landing pages madhiri content same-a irukkura pages-ku SSG nalla choice.',
+                            'Fast load, low server cost, and SEO benefits kidaikkum.',
+                            'Dynamic route pages build time-la create panna generateStaticParams use pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Limitations and refresh**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Build mudinja piragu content stale-a irukkalam; update panna rebuild or revalidation thevai.',
+                            'Regular refresh venumna ISR use pannalam; user-specific data-va client component-la load pannalam.',
+                        ],
                     },
                 ],
             },
@@ -738,6 +1000,73 @@ export const nextQuestionsSet1: IQuestion[] = [
                             'revalidateTag',
                             'On-demand',
                             'generateStaticParams',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ISR-na static page serve pannitu, configured time interval-ku apragu background-la regenerate pannura approach.',
+                            'Time-based revalidate use pannalam; content publish aagumbodhu revalidatePath or revalidateTag moolama on-demand refresh pannalam.',
+                            'Static speed kidaikkum, full rebuild thevai illa; revalidation nadakkura varaikkum sila users stale content paarkkalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**ISR-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Incremental Static Regeneration-nu full form.',
+                            'Page static-a serve aagum; configured time-ku apragu Next.js background-la page-ah regenerate pannum.',
+                            'Full site rebuild pannaama selected pages mattum update aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Time-based and on-demand refresh**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'export const revalidate = 3600 madhiri set panna page oru time interval base panni update aagum.',
+                            'CMS-la pudhu content publish aana webhook moolama revalidatePath or revalidateTag call panni refresh trigger pannalam.',
+                            'Time-based refresh regular update-ku; on-demand refresh immediate update-ku useful.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Trade-off**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ISR CDN speed and fresh-enough content kudukkum; regenerate aagura varaikkum visitor-ku previous version theriyalaam.',
+                            'Multiple server instances self-host pannina shared cache use pannradhu important.',
                         ],
                     },
                 ],
