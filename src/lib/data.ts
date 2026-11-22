@@ -159,6 +159,14 @@ export const TOPICS: ITopic[] = [
         completedCount: 0,
     },
     {
+        id: 'react-task',
+        name: 'React',
+        section: 'CODING',
+        icon: 'Code',
+        questionCount: 0,
+        completedCount: 0,
+    },
+    {
         id: 'top-30',
         name: 'Top 30 Questions',
         section: 'FINAL REVISION',

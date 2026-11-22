@@ -35,6 +35,7 @@ type SectionId =
     | 'speaking'
     | 'story'
     | 'scenario'
+    | 'requirements'
     | 'memory';
 
 const SECTION_ORDER: {
@@ -55,6 +56,7 @@ const SECTION_ORDER: {
         | 'conceptAsStory'
         | 'scenarioQuestions'
         | 'memoryTrick'
+        | 'requirements'
     >;
 }[] = [
     { id: 'simple', key: 'simpleExplanation' },
@@ -71,6 +73,7 @@ const SECTION_ORDER: {
     { id: 'story', key: 'conceptAsStory' },
     { id: 'scenario', key: 'scenarioQuestions' },
     { id: 'memory', key: 'memoryTrick' },
+    { id: 'requirements', key: 'requirements' },
 ];
 
 const getAvailableSections = (question: IQuestion): SectionId[] => {
@@ -171,6 +174,18 @@ export const QuestionDetail = ({ topic, question: baseQuestion }: IQuestionDetai
                         onToggle={toggleSection}
                     >
                         <AnswerContent content={question.simpleExplanation} />
+                    </Section>
+                )}
+
+                {question.requirements && question.requirements.length > 0 && (
+                    <Section
+                        id="requirements"
+                        title="What is requirements?"
+                        description="what is requirements?"
+                        open={openSection === 'requirements'}
+                        onToggle={toggleSection}
+                    >
+                        <AnswerContent content={question.requirements} />
                     </Section>
                 )}
 

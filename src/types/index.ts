@@ -83,6 +83,7 @@ export interface IQuestion {
     what?: AnswerContent;
     why?: AnswerContent;
     how?: AnswerContent;
+    requirements?: AnswerContent;
 }
 
 export interface ITopic {
