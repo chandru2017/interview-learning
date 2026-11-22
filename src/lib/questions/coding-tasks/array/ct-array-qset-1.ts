@@ -74,11 +74,12 @@ console.log(twoSum(nums, target));`,
                     {
                         type: 'bullets',
                         items: [
-                            'Use the built-in some() method to scan the array and stop as soon as a matching pair is found.',
+                            'Use some() to scan the array and stop once a matching pair is found.',
                             'For each number, calculate the complement needed to reach the target.',
-                            'Store each number and its index in a Map. When the complement is already stored, save and return both indices.',
-                            'Inside some(), return false to keep searching and true to stop. After the scan, return the saved result.',
-                            'For [2, 7, 11, 15] with target 9, when we reach 7, its complement 2 is already stored, so we return [0, 1].',
+                            'Store each number and its index in a Map. When the complement is already in the Map, save both indices.',
+                            'Return true from some() to stop searching when a pair is found; otherwise return false to continue.',
+                            'For [2, 7, 11, 15] with target 9, the matching values are 2 and 7, so the result is [0, 1].',
+                            'If no pair is found, return an empty array.',
                             'Time complexity: O(n). Space complexity: O(n).',
                         ],
                     },
@@ -109,12 +110,12 @@ console.log(twoSum(nums, target));`,
                     {
                         type: 'bullets',
                         items: [
-                            'indicesByValue Map-la already check pannina numbers-um avanga indexes-um store aagum. result starting-la empty array-ah irukkum.',
-                            'some() array-la ovvoru number-aiyum check pannum. num current number; index adhu irukkura position.',
-                            'Ovvoru number-kum complement = target - num nu calculate pannum. 2-ku complement 7.',
-                            '2 check pannumbodhu 7 Map-la illa. Adhanaala Map-la 2: 0 nu store panni false return pannum; some() next number-ku pogum.',
-                            'Next number 7. Adhoda complement 2 Map-la irukkaradhunaala result = [0, 1] nu save panni true return pannum.',
-                            'some() true vandhadhum searching stop aagum. Kadaisila result return aagum; pair kidaikkalana empty array return aagum.',
+                            'some() array-la ovvoru number-aiyum check pannum; pair kidaichadhum search-ai stop pannum.',
+                            'Target reach panna thevaiyana complement-ai calculate pannuvom.',
+                            'Check panna number-um index-um Map-la store aagum. Complement already Map-la irundha rendu indexes-um result-la save pannuvom.',
+                            'Pair kidaichadhum some()-la true return pannina search stop aagum; illana false return panni next number-ku pogum.',
+                            '[2, 7, 11, 15], target 9-na, 2-oda complement 7 array-la irukku. Adhanaala indexes [0, 1] return aagum.',
+                            'Pair kidaikkalana empty array return aagum.',
                             'Time complexity: O(n). Space complexity: O(n).',
                         ],
                     },
@@ -323,18 +324,19 @@ console.log(mergeSortedArrays(arr1, arr2));`,
                     },
                     {
                         type: 'code',
-                        text: `const maxSubarraySum = (nums) =>
-    nums.reduce(
-        (state, num) => {
-            const currentSum = Math.max(num, state.currentSum + num);
+                        text: `const maxSubarraySum = (nums) => {
+    let currentSum = nums[0];
+    let maxSum = nums[0];
 
-            return {
-                currentSum,
-                maxSum: Math.max(state.maxSum, currentSum),
-            };
-        },
-        { currentSum: -Infinity, maxSum: -Infinity },
-    ).maxSum;
+    nums.forEach((num, index) => {
+        if (index === 0) return;
+
+        currentSum = Math.max(num, currentSum + num);
+        maxSum = Math.max(maxSum, currentSum);
+    });
+
+    return maxSum;
+};
 
 console.log(maxSubarraySum(nums));`,
                     },
@@ -350,9 +352,10 @@ console.log(maxSubarraySum(nums));`,
                     {
                         type: 'bullets',
                         items: [
-                            'Use reduce() to process each number and keep track of the current subarray sum and the largest sum found so far.',
-                            'For each number, Math.max(num, currentSum + num) decides whether to start a new subarray or extend the previous one.',
-                            'Update maxSum whenever the current subarray has a larger sum.',
+                            'Start currentSum and maxSum at the first number.',
+                            'Use forEach() to visit each remaining number.',
+                            'Math.max(num, currentSum + num) chooses between starting a new subarray and extending the current one.',
+                            'Update maxSum whenever currentSum is larger.',
                             'For this input, the largest-sum contiguous subarray is [4, -1, 2, 1], which adds up to 6.',
                             'Time complexity: O(n). Space complexity: O(1).',
                         ],
@@ -384,13 +387,11 @@ console.log(maxSubarraySum(nums));`,
                     {
                         type: 'bullets',
                         items: [
-                            '`const maxSubarraySum = (nums) =>` - nums array-ai input-ah eduthu, maximum subarray sum-ai calculate panna function create pannudhu.',
-                            '`nums.reduce(...)` - array values-ai one-by-one process panni, ovvoru step-layum accumulator state-ai next step-ku pass pannudhu.',
-                            '`(state, num) => { ... }` - state-la previous step-oda currentSum and maxSum irukkum; num-na ippo process panra number.',
-                            '`Math.max(num, state.currentSum + num)` - current number-lendhu pudhu subarray start pannalama, illa previous subarray-oda continue pannalama nu compare pannudhu. Rendu values-la perusa irukkuradhu currentSum aagum.',
-                            '`return { currentSum, maxSum: Math.max(state.maxSum, currentSum) }` - currentSum-ai next step-ku save pannudhu. Adhe samayam, pazhaya maxSum-um currentSum-um compare panni periya value-ai maxSum-ah save pannudhu.',
-                            '`{ currentSum: -Infinity, maxSum: -Infinity }` - reduce-oda initial state. First number process aagumbodhu adhuve currentSum and maxSum aagum; array-la ellame negative-ah irundhaalum correct answer kidaikkum.',
-                            '`.maxSum` - reduce mudinja piragu final state-la irukkura maximum sum mattum eduthu return pannudhu.',
+                            '`let currentSum = nums[0]` and `let maxSum = nums[0]` - first number-ai current subarray sum and maximum sum-ah initialize pannudhu. Array-la ellame negative-a irundhaalum idhu correct-a work aagum.',
+                            '`nums.forEach((num, index) => { ... })` - array values-ai one-by-one visit pannum. First value already initial state-la use pannirukkom; adhanaala `index === 0` na skip pannuvom.',
+                            '`Math.max(num, currentSum + num)` - current number-la pudhu subarray start pannalama, illa previous subarray-oda continue pannalama nu compare pannum.',
+                            '`Math.max(maxSum, currentSum)` - idhu varaikkum kidaicha maximum sum-ai save pannum.',
+                            '`return maxSum` - array full-a check pannina piragu periya contiguous subarray sum-ai return pannum.',
                             '`console.log(maxSubarraySum(nums))` - function return panna answer-ai console-la print pannudhu.',
                         ],
                     },
@@ -401,17 +402,16 @@ console.log(maxSubarraySum(nums));`,
                     {
                         type: 'bullets',
                         items: [
-                            'Starting state: currentSum = -Infinity, maxSum = -Infinity.',
-                            'num = -2: currentSum = -2, maxSum = -2.',
-                            'num = 1: -2 + 1 vida 1 perusu; pudhu subarray start aagum. currentSum = 1, maxSum = 1.',
-                            'num = -3: previous subarray-oda continue pannina -2; adhu -3 vida perusu. currentSum = -2, maxSum = 1.',
-                            'num = 4: pudhu subarray start pannina 4; continue pannina 1. currentSum = 4, maxSum = 4.',
+                            'Starting state: currentSum = -2, maxSum = -2.',
+                            'num = 1: pudhu subarray start panna sum 1; pazhaiya subarray continue panna sum -1. currentSum = 1, maxSum = 1.',
+                            'num = -3: currentSum = -2, maxSum = 1.',
+                            'num = 4: pudhu subarray start pannradhu better. currentSum = 4, maxSum = 4.',
                             'num = -1: currentSum = 3, maxSum = 4.',
                             'num = 2: currentSum = 5, maxSum = 5.',
                             'num = 1: currentSum = 6, maxSum = 6.',
-                            'num = -5: currentSum = 1, maxSum = 6. Negative value currentSum-ai kuraikkum, aana maximum sum maaradhu.',
-                            'num = 4: currentSum = 5, maxSum = 6. Final answer 6; adhu [4, -1, 2, 1] subarray-lendhu varudhu.',
-                            'Time complexity: O(n), array-ai oru murai scan pannum. Space complexity: O(1), fixed-size state mattum use pannum.',
+                            'num = -5: currentSum = 1; maxSum 6-ah irukkum.',
+                            'num = 4: currentSum = 5; maxSum 6-ah irukkum. Final answer 6; adhu [4, -1, 2, 1] subarray-lendhu varudhu.',
+                            'Time complexity: O(n), array-ai oru murai scan pannum. Space complexity: O(1), rendu variables mattum use pannum.',
                         ],
                     },
                 ],
@@ -456,8 +456,15 @@ const n = 5;`,
                     },
                     {
                         type: 'code',
-                        text: `const findMissingNumber = (nums, n) =>
-    (n * (n + 1)) / 2 - nums.reduce((sum, num) => sum + num, 0);
+                        text: `const findMissingNumber = (nums, n) => {
+    const presentNumbers = new Set(nums);
+    const numbersFromOneToN = Array.from(
+        { length: n },
+        (_, index) => index + 1,
+    );
+
+    return numbersFromOneToN.find((num) => !presentNumbers.has(num));
+};
 
 console.log(findMissingNumber(nums, n));`,
                     },
@@ -473,11 +480,11 @@ console.log(findMissingNumber(nums, n));`,
                     {
                         type: 'bullets',
                         items: [
-                            'The sum of all numbers from 1 to n is n * (n + 1) / 2.',
-                            'Use reduce() to calculate the sum of the numbers present in the array.',
-                            'Subtract the array sum from the expected sum to get the missing number.',
-                            'For n = 5, the expected sum is 15. The array sum is 12, so the missing number is 3.',
-                            'Time complexity: O(n). Space complexity: O(1).',
+                            'Create a Set from the input so checking whether a number exists is simple.',
+                            'Array.from() creates the expected numbers from 1 to n.',
+                            'find() returns the first number that is not in the Set.',
+                            'For n = 5, the expected list is [1, 2, 3, 4, 5]. Since 3 is missing from the input, the answer is 3.',
+                            'Time complexity: O(n). Space complexity: O(n).',
                         ],
                     },
                 ],
@@ -492,104 +499,6 @@ console.log(findMissingNumber(nums, n));`,
                     {
                         type: 'link',
                         text: 'https://www.geeksforgeeks.org/problems/missing-number-in-array1416/1',
-                    },
-                ],
-            },
-        ],
-    }),
-    createQuestion({
-        id: 'ct-arr-6',
-        topicId: 'array-task',
-        title: 'Find the Second Largest Element',
-        difficulty: 'Intermediate',
-        status: 'in-progress',
-        priority: 'high',
-        simpleExplanation: [
-            {
-                label: '1',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: 'Given an array of numbers, find the second-largest distinct value. If there are fewer than two distinct values, return null.',
-                    },
-                    {
-                        type: 'paragraph',
-                        text: '**Expected Input**',
-                    },
-                    {
-                        type: 'code',
-                        text: 'const nums = [12, 35, 1, 10, 34, 1];',
-                    },
-                    {
-                        type: 'heading',
-                        text: '**Expected Output**',
-                    },
-                    {
-                        type: 'code',
-                        text: '34',
-                    },
-                    {
-                        type: 'heading',
-                        text: '**Simple ES6 Solution**',
-                    },
-                    {
-                        type: 'code',
-                        text: `const findSecondLargest = (nums) => {
-    const result = nums.reduce(
-        (state, num) => {
-            if (state.largest === null || num > state.largest) {
-                return { largest: num, secondLargest: state.largest };
-            }
-
-            if (
-                num < state.largest &&
-                (state.secondLargest === null || num > state.secondLargest)
-            ) {
-                return { largest: state.largest, secondLargest: num };
-            }
-
-            return state;
-        },
-        { largest: null, secondLargest: null },
-    );
-
-    return result.secondLargest;
-};
-
-console.log(findSecondLargest(nums));`,
-                    },
-                ],
-            },
-            {
-                label: '2',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**How it works:**',
-                    },
-                    {
-                        type: 'bullets',
-                        items: [
-                            'Use reduce() to scan the array once while tracking the largest and second-largest distinct values.',
-                            'When a number is larger than largest, move the previous largest into secondLargest.',
-                            'Otherwise, if it is smaller than largest but larger than secondLargest, update secondLargest.',
-                            'The num < state.largest check ignores duplicate copies of the largest value.',
-                            'If the array has fewer than two distinct values, secondLargest remains null.',
-                            'Time complexity: O(n). Space complexity: O(1).',
-                        ],
-                    },
-                ],
-            },
-            {
-                label: '3',
-                blocks: [
-                    {
-                        type: 'paragraph',
-                        text: '**Refer this link:**',
-                    },
-                    {
-                        type: 'link',
-                        text: 'https://www.geeksforgeeks.org/problems/second-largest3735/1',
                     },
                 ],
             },
