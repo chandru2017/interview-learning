@@ -129,6 +129,73 @@ export const frontendArchitectureQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple apps or packages code and shared libraries frequently change together na monorepo consider pannuven.',
+                            'Shared UI and tooling reuse, coordinated changes, and centralized standards benefit-a irukkum.',
+                            'Build caching, clear ownership, and CI setup maintain panna mudiyum na choose pannuven; small independent projects-ku separate repos simpler.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Monorepo eppo introduce pannalam?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple apps or packages same organization-la develop aagumbodhu monorepo consider pannalam.',
+                            'Apps shared UI, types, or utilities use pannina code and changes ore repository-la manage pannalam.',
+                            'Coordinated versioning and atomic changes useful-a irundha monorepo advantage irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Benefits and trade-offs**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shared package reuse and consistent lint/test/build tools easier-aagum.',
+                            'Aana repository perusa aagumbodhu build time, CI, permissions, and ownership complex aagalam.',
+                            'Task caching and affected-only builds setup pannina unnecessary work reduce aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Decision**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shared code and coordinated work benefit monorepo overhead-ah vida adhigama irukkanum.',
+                            'Projects independent-a release aagi share panna thevai illa na separate repos simpler-a irukkalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -257,6 +324,74 @@ export const frontendArchitectureQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Turborepo and Nx rendu perum monorepo tasks run panna and caching moolama repeated work reduce panna help pannum.',
+                            'Turborepo lightweight task orchestration and cache workflow-ku suit aagum; Nx project graph, generators, and extensible tooling provide pannum.',
+                            'Repo complexity, team workflow, plugins, and adoption cost base panni small PoC seithu choose pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Rendu tools-oda common purpose**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Turborepo-um Nx-um monorepo-la build, test, lint madhiri tasks coordinate panna use aagum.',
+                            'Task dependency and cache use panni already complete aana work-ah repeat pannaama speed improve pannum.',
+                            'Rendu tools-um affected project mattum run panna workflows support pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Main difference**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Turborepo straightforward task pipeline and caching use case-ku lighter setup-a irukkalam.',
+                            'Nx project graph, generators, plugins, and stronger workspace tooling provide pannum.',
+                            'Features and exact workflow project setup and tool version base-la verify pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Choose pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Simple repo and minimal setup na Turborepo fit aagalam.',
+                            'Complex workspace, project graph, and generators thevai na Nx consider pannalam.',
+                            'Team learning cost and existing CI workflow-um compare panni small PoC moolama decide pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -379,6 +514,73 @@ export const frontendArchitectureQuestionsSet4: IQuestion[] = [
                             'Independent deployment',
                             'Team autonomy',
                             'Integration',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Micro-frontends-na frontend-ah business domains base-la independently built and owned parts-a split pannradhu.',
+                            'Teams parts-ah separate-a develop/deploy panni, host application or runtime integration moolama combine pannalam.',
+                            'Team autonomy kidaikkum; aana integration, shared UI, performance, and deployment complexity-um varum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Micro-frontends-na enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Periya frontend application-ah business domains base-la smaller frontend parts-a split pannuvom.',
+                            'Ovvoru part-ai oru team own panni independent-a develop and release pannalam.',
+                            'Host shell or integration layer indha parts-ai ore user experience-a combine pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Benefits and costs**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Teams-ku ownership and deployment autonomy kidaikkum.',
+                            'Aana shared navigation, design consistency, authentication, and dependency versions coordinate pannanum.',
+                            'Network requests and multiple bundles nala performance and operations complexity increase aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Important boundary**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Business domain boundaries clear-a irundha split maintain panna easier.',
+                            'Deployment separation mattum goal-a vechuttu split pannaama, team and product needs solve aagudha nu check pannunga.',
                         ],
                     },
                 ],
@@ -511,6 +713,73 @@ export const frontendArchitectureQuestionsSet4: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Clear business boundaries-oda periya app irundhu, teams independent-a own and deploy panna vendiyirundha micro-frontends consider pannuven.',
+                            'Independent release schedule and team autonomy measurable benefit kudukkanum.',
+                            'First modular monolith and clear feature boundaries evaluate panni, microfrontend overhead justify aagumbodhu mattum choose pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Use panna suitable signals**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Application perusa irundhu, business domains natural-a separate-a irukkanum.',
+                            'Different teams-ku clear ownership and independent release schedule thevai irukkanum.',
+                            'Oru shared frontend release process team delivery-ah block pannudhu na microfrontend evaluate pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Benefits compare pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Team autonomy and independent deployment real problem-ah solve pannudha nu measure pannunga.',
+                            'Shared navigation, design system, testing, monitoring, and runtime integration manage panna team ready-a irukkanum.',
+                            'Expected benefit indha added complexity-ah vida perusa irundha use pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simpler option first**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature folders and modular monolith try pannitu actual limitation identify pannunga.',
+                            'Independent deploy or ownership need illana single well-structured app simpler-a maintain pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -638,6 +907,73 @@ export const frontendArchitectureQuestionsSet4: IQuestion[] = [
                             'Tightly coupled',
                             'Modular monolith',
                             'Independent deployment',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Small application/team-ku or features tightly coupled-a irundha micro-frontends avoid pannuven.',
+                            'Independent deployment or team ownership need illana architecture, testing, and operations overhead extra burden.',
+                            'Modular monolith use panni clear boundaries maintain pannradhu usually simpler.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Avoid panna vendiya situations**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Small product or small team-ku separate frontend apps unnecessary setup add pannum.',
+                            'Features tightly coupled-a irundha independent deployment practical-a work aagaadhu.',
+                            'Same team and same release cycle irundha monolith maintain panna easier.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Microfrontend overhead**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Integration, shared dependencies, routing, authentication, and design consistency coordinate panna vendiyirukkum.',
+                            'Multiple bundles and deployments testing, monitoring, and debugging-ah complex aakkum.',
+                            'Independent ownership or release benefit illa na indha cost justify aagaadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Simpler alternative**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Single application-kulle feature modules and clear APIs vechu modular monolith create pannalam.',
+                            'Actual organizational need irundha mattum micro-frontends-ku evolve pannunga.',
                         ],
                     },
                 ],

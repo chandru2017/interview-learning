@@ -128,6 +128,75 @@ export const frontendArchitectureQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component-ah small and single responsibility-oda design pannuven.',
+                            'Business logic and API calls-ah common UI component-kulla hardcode panna maatten.',
+                            'Different use cases-ku props and composition use panni, simple predictable API maintain pannuven.',
+                            'Genuine reuse irundha mattum shared component-a extract pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Component focus and responsibility**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru component-ku clear-aana oru main responsibility irukkanum.',
+                            'Common Card or Modal course API madhiri specific business logic-ah direct-a depend panna koodadhu.',
+                            'Data, callback, or children props-a receive pannina component different places-la reuse pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Props and composition**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Title, variant, or content madhiri clear props API define pannunga.',
+                            'Neraya boolean props add pannradhukku badhila children or composition use pannunga.',
+                            'Idhu component-ku unnecessary conditions varama flexible-a vechukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Eppo shared component create pannalam?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Repeated use cases and common behavior clear-a irundha shared component-a extract pannalam.',
+                            'Oru place-la mattum use aagura component-ah premature-a global shared folder-ku move panna vendam.',
+                            'API accessible-a, predictable-a, and document panna easy-a irukkanum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -253,6 +322,75 @@ export const frontendArchitectureQuestionsSet2: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Complexity', 'Props', 'Composition', 'Feature-specific', 'Single responsibility'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Too many props, boolean flags, and feature-specific conditions irukka nu first check pannuven.',
+                            'Common UI behavior and feature-specific logic-ah separate pannuven.',
+                            'Composition or compound components use panni, behavior romba different na separate components create pannuven.',
+                            'Shared component API grow aaguradha code review-la monitor pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Complexity signs identify pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component-la romba props or boolean flags irundha, pala responsibilities irukkalaam.',
+                            'Feature-specific conditions and deeply nested branches-um complexity signal.',
+                            'Actual usage examples collect panni common behavior enna nu identify pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Component simplify pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Shared component common UI behavior mattum handle pannattum; course/payment logic feature-kulle irukkattum.',
+                            'Boolean props adhigama add pannaama composition or compound component pattern consider pannunga.',
+                            'Rendu use cases behavior romba different na, ore component force pannaama separate components create pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Maintain panna**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Component responsibilities and API clear-a document pannunga.',
+                            'Code review-la new prop unmaiyave common-a nu check pannunga.',
+                            'Oru shared component ella business logic-um handle panna vendiya place illa.',
+                        ],
                     },
                 ],
             },
@@ -383,6 +521,75 @@ export const frontendArchitectureQuestionsSet2: IQuestion[] = [
                             'Public API',
                             'Shared module',
                             'Circular dependency',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Features independent-a irukka dependency direction and public API boundaries define pannuven.',
+                            'Oru feature innoru feature-oda internal files import panna vida maatten.',
+                            'Common business logic irundha shared domain service or module-ku extract pannuven.',
+                            'Dependency rules enforce pannina circular dependency and tight coupling avoid pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature boundaries**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Oru feature innoru feature-oda internal component or file-ah direct-a import panna koodadhu.',
+                            'Feature-ku thevaiyana functionality public API moolama expose pannunga.',
+                            'Idhu internal implementation change aana other feature break aaguradha reduce pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared functionality**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Rendu features same UI behavior use pannina shared UI module use pannalam.',
+                            'Business logic share aana adhu domain service or shared module-la belong aagudha nu check pannunga.',
+                            'Just duplicate code irukku nu udane extract pannaama, logic genuinely common-a nu confirm pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Dependency rules**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Dependency direction one-way-a irukka rules define pannunga.',
+                            'Linting or dependency tools use panni internal imports and circular dependencies detect pannalam.',
+                            'Clear boundaries maintain panna features loosely coupled-a irukkum.',
                         ],
                     },
                 ],
@@ -522,6 +729,74 @@ export const frontendArchitectureQuestionsSet2: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Common headers, authentication, and error handling-ku centralized HTTP client create pannuven.',
+                            'Feature-specific API services andha client use pannum; UI components endpoint details therinjukka thevai illa.',
+                            'Request cancellation and logging madhiri shared behavior add pannuven, aana HTTP details debug panna mudiyama hide panna maatten.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Central API client**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Ovvoru component-layum fetch or Axios setup repeat pannaama common HTTP client create pannuvom.',
+                            'Common headers, authentication, and consistent error handling anga manage pannalam.',
+                            'Request/response behavior common-a irundha mattum abstraction-la add pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature API services**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Course API madhiri feature-specific functions andha feature service-la irukkum.',
+                            'Feature service centralized client-ah call pannum; component feature function-ah mattum use pannum.',
+                            'Idhunaala UI transport details-lendhu separate-a irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Trade-offs and maintenance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Auth header change aana central client-la oru change podhum.',
+                            'Over-abstraction panna important HTTP status or error details marainjidalaam; debug easy-a irukkanum.',
+                            'Retries use pannumbodhu request type and failure reason base panni safe-a configure pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -647,6 +922,74 @@ export const frontendArchitectureQuestionsSet2: IQuestion[] = [
                             'Public values',
                             'Secrets',
                             'Server-side',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Application-wide config-ah centralize panni clear type define pannuven.',
+                            'Environment-specific values environment variables-lendhu varum; public values mattum client-ku expose pannuvom.',
+                            'Secrets server-la mattum vechuttu, ella features-um depend aagura huge global config object avoid pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Configuration separate pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'API base URL or app name madhiri values multiple places-la use aana central config file-la veikkalam.',
+                            'Environment-specific settings environment variables-lendhu load pannunga.',
+                            'Build-time config, runtime config, and business constants-ah distinguish pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Types and public values**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Config-ku typed interface define pannina missing or wrong value early-a identify pannalam.',
+                            'Browser-ku thevaiyana public values mattum expose pannunga.',
+                            'Frontend bundle-la pogura value ellam user inspect panna mudiyum; adhanaala adhai secret-nu treat panna koodadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Secrets and dependency control**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Credentials and private keys server-only environment variables-la irukkanum.',
+                            'Oru periya global config object create panni ella feature-um depend aaga vidaama, thevaiyana config-ah clear-a pass pannunga.',
+                            'Public config and server secrets separate-a maintain pannunga.',
                         ],
                     },
                 ],

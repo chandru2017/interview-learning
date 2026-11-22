@@ -133,6 +133,74 @@ export const frontendArchitectureQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Module Federation host app and remote apps-ku runtime-la modules share panna allow pannum.',
+                            'Remote independently build/deploy aagalam; host runtime-la adhai load pannum.',
+                            'Shared dependency versions, network failure, and compatibility carefully manage pannalana duplicate React or runtime issues varalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Host and remote concepts**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Module Federation multiple frontend builds-kku modules share panna use aagura mechanism.',
+                            'Host application remote app expose pannura module-ah runtime-la load pannalam.',
+                            'Remote separate-a deploy aanaalum host adhai consume pannura setup irukkalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Benefits and dependency sharing**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Teams independent-a features release panna flexibility kidaikkum.',
+                            'React madhiri dependency duplicate bundle aagama share panna configure pannalam.',
+                            'Aana compatible versions and shared dependency rules clear-a define pannanum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Risks to plan for**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Remote load aagala na host behavior enna nu fallback design pannunga.',
+                            'Version mismatch, multiple React copies, and runtime failure test pannunga.',
+                            'Independent deployment benefit deployment and debugging complexity-ah vida useful-a irukka nu evaluate pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -270,6 +338,74 @@ export const frontendArchitectureQuestionsSet5: IQuestion[] = [
                             'Strangler pattern',
                             'Risk',
                             'Milestones',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Current architecture, business-critical flows, and main pain points-ah first assess pannuven.',
+                            'Target state and measurable milestones define panni, strangler pattern madhiri incremental migration use pannuven.',
+                            'Tests, monitoring, and rollback plan-oda risk reduce panni; value prove aagama full rewrite start panna maatten.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Current state assess pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Legacy app-oda dependencies, build/deploy flow, and main user journeys map pannunga.',
+                            'Bugs, slow delivery, performance, and security madhiri actual pain points identify pannunga.',
+                            'Business-critical areas and migration risks-ah prioritize pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Incremental target architecture**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Target architecture and success measures clear-a define pannunga.',
+                            'Strangler approach-la pudhu capability-ah new structure-la build panni, old functionality-ah step-by-step replace pannalam.',
+                            'Small milestones and ownership assign pannina migration progress track panna easy.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Risk control**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Critical flow-ku automated tests and production monitoring add pannunga.',
+                            'Each step-ku rollback plan vechu, old and new behavior compare pannunga.',
+                            'Full rewrite cost and risk justify aagumbodhu mattum consider pannunga.',
                         ],
                     },
                 ],
@@ -417,6 +553,74 @@ export const frontendArchitectureQuestionsSet5: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Teams-ah business features base-la organize panni, ovvoru team-kum clear ownership and decision boundaries define pannuven.',
+                            'Shared design system, documentation, CI automation, and contribution standards provide pannuven.',
+                            'Team dependencies reduce panni, communication and onboarding processes scale aagura madhiri improve pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Team ownership define pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Developers increase aagumbodhu, business domain base-la small feature teams create pannalam.',
+                            'Ovvoru team-kum code ownership, responsibility, and decision scope clear-a irukkanum.',
+                            'Team boundaries feature boundaries-oda align aana cross-team dependency kammi aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared tools and standards**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Design System and shared libraries duplicate UI work reduce pannum.',
+                            'CI, testing, linting, and release automation consistent-a use pannunga.',
+                            'Documentation and onboarding materials pudhu developers-ku help pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Autonomy with coordination**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Teams independent-a deliver panna public APIs and contribution rules clear-a veinga.',
+                            'Shared platform decisions-ku communication channels and ownership establish pannunga.',
+                            'Too many approval layers add pannaama, standards and automation moolama quality maintain pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -543,6 +747,74 @@ export const frontendArchitectureQuestionsSet5: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['ESLint', 'Prettier', 'TypeScript', 'CI', 'Git hooks', 'Automation', 'Code review'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Coding standards-ah clear-a document panni shared ESLint, Prettier, and TypeScript config provide pannuven.',
+                            'Automated checks-ah local hooks and CI-la run panni violations early-a catch pannuven.',
+                            'Standards team-kku useful-a irukka feedback collect panni update pannuven; justified exception-ku documented process veppen.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Standards define and share pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Naming, formatting, TypeScript usage, and testing expectations document pannunga.',
+                            'Teams separate config create pannaama shared ESLint, Prettier, and tsconfig presets use pannalam.',
+                            'Rules easy-a find panna mudiyura docs and examples provide pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Automation moolama enforce pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Formatting and linting checks local Git hooks-la run pannina developer-ku early feedback kidaikkum.',
+                            'CI-la lint, type-check, and tests fail aana merge block pannalam.',
+                            'Manual review-la repeated-a check panna vendiya rules-ah automation handle pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Adoption and exceptions**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Rules team workflow-ku practical-a irukka feedback base-la improve pannunga.',
+                            'Valid exception irundha reason document panni consistent-a approve pannunga.',
+                            'Standards enforce pannradhu punishment illa; maintainable collaboration-ku support.',
+                        ],
                     },
                 ],
             },
@@ -700,6 +972,74 @@ export const frontendArchitectureQuestionsSet5: IQuestion[] = [
                             'Product-specific',
                             'Clear boundaries',
                             'Micro-frontends',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple products-ku shared platform and design system create panni, common UI and tooling reuse pannuven.',
+                            'Product-specific features, branding, and release needs-ah separate boundaries-la maintain pannuven.',
+                            'Monorepo or shared packages choose pannradhu team workflow base-la; common layer product-specific complexity-a absorb panna vida maatten.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared foundation**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Products-ku common-aana Button, forms, auth patterns, and tooling identify pannunga.',
+                            'Design System and shared packages moolama consistency and code reuse maintain pannalam.',
+                            'Shared platform components-ku ownership and release policy define pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Product-specific boundaries**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Product-specific business logic and workflows andha product-kulle irukkanum.',
+                            'Branding and configuration-ku clear extension points provide pannunga.',
+                            'Oru product-oda special case-ah every shared component-kulla conditional-a add panna avoid pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Repo and release strategy**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Products shared code and tooling use pannina monorepo or versioned shared packages consider pannalam.',
+                            'Independent deployment, ownership, and dependency updates-ku release boundaries clear-a irukkanum.',
+                            'Architecture product-specific work-ah slow pannaama reuse and autonomy balance pannanum.',
                         ],
                     },
                 ],

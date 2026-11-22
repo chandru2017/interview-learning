@@ -130,6 +130,73 @@ export const frontendArchitectureQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Development, staging, and production values-ah separate environment configuration-la manage pannuven.',
+                            'Browser-ku thevaiyana public values mattum expose pannuven; secrets server-side-la irukkum.',
+                            'Required values validate panni, config-ku clear type and documentation maintain pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Environment-specific values**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Local development, staging, production-ku different API URL or setting thevai padalam.',
+                            'Indha values-ah source code-la hardcode pannaama environment variables-la veppom.',
+                            'Build and deploy process correct environment values supply pannudhaa verify pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Public values and secrets**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Frontend bundle-la include aagura value browser-la user inspect panna mudiyum.',
+                            'NEXT_PUBLIC_ prefix use pannina value public-aagum; API key or password madhiri secret-ku use panna koodadhu.',
+                            'Credentials and private tokens server-side code-la mattum access aaganum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Validation and maintenance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Application start aagumbodhu required environment values irukka nu validate pannunga.',
+                            'Typed config and example env file maintain pannina setup errors kammi aagum.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -251,6 +318,57 @@ export const frontendArchitectureQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Feature flag', 'Gradual rollout', 'Kill switch', 'Experiment', 'Targeting', 'Cleanup'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature flag use panni code deploy pannitu feature-ah separate-a enable or disable pannalam.',
+                            'Gradual rollout, experiment, and emergency kill switch-ku targeting rules-oda manage pannuven.',
+                            'Flag owner and expiry set panni, rollout mudinja apragu stale flag and code path remove pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature flag use enna?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Code deploy pannina udane ellaa users-kum feature enable aaganum-nu illa; flag moolama control pannalam.',
+                            'Small user group-ku gradual rollout pannalam or A/B experiment run pannalam.',
+                            'Problem vandha feature-ah kill switch use panni quick-a off pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Safe rollout and cleanup**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User, region, or percentage base-la targeting rules define pannunga.',
+                            'Flag owner, purpose, and expiry date document pannunga.',
+                            'Rollout complete aana old condition and flag config remove pannunga; illana code paths accumulate aagum.',
+                        ],
                     },
                 ],
             },
@@ -394,6 +512,57 @@ export const frontendArchitectureQuestionsSet3: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Technical debt-ah identify panni business impact, risk, and future maintenance cost base-la prioritize pannuven.',
+                            'Feature delivery and refactoring-ku balance set panni, high-risk debt-ah incremental-a tests-oda reduce pannuven.',
+                            'Root cause solve panni, review and engineering standards moolama debt thirumba varama prevent pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Debt identify and prioritize pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Fragile code, repeated bugs, slow delivery, or unsupported dependencies technical debt signal-a irukkalam.',
+                            'Impact, likelihood of failure, and future change cost base-la debt-ah rank pannunga.',
+                            'Business-critical or security/performance risk irukkura debt-ku priority kudunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Incremental-a reduce and prevent**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Full rewrite-ku badhila small refactoring steps and tests-oda safer-a improve pannunga.',
+                            'Feature work-oda serthu relevant code area-la debt reduce panna plan pannunga.',
+                            'Debt-oda root cause address panni, tests and standards use panni pudhu debt prevent pannunga.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -524,6 +693,73 @@ export const frontendArchitectureQuestionsSet3: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Requirements', 'Constraints', 'Trade-offs', 'PoC', 'Team discussion', 'ADR'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'User, business, technical requirements and constraints-ah first clarify pannuven.',
+                            'Options compare panni trade-offs, cost, risk, team experience consider pannuven; uncertainty irundha small PoC seiven.',
+                            'Stakeholders-oda decision discuss panni, long-term impact irundha ADR-la context and consequences record pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Requirements and constraints purinjukkaradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Architecture decision edukkura munnaadi user needs, scale, timeline, team skills, and budget purinjukkanum.',
+                            'Existing system and technical constraints-um consider pannunga.',
+                            'Problem clear-a illa na options compare pannradhu useful-a irukkaadhu.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Options compare and decide**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Possible solutions-oda benefits, drawbacks, complexity, cost, and risks compare pannunga.',
+                            'Uncertainty or performance concern irundha small proof of concept run pannalam.',
+                            'Team and stakeholders kooda discuss panni project requirement-ku fit aana option choose pannunga.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Decision document pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Long-term impact irukkura decision-ku ADR create pannunga.',
+                            'Context, considered alternatives, selected option, and consequences record pannina future-la reason puriyum.',
+                        ],
                     },
                 ],
             },
@@ -662,6 +898,73 @@ export const frontendArchitectureQuestionsSet3: IQuestion[] = [
                             'Alternatives',
                             'Consequences',
                             'Documentation',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ADR-na important architecture decision and adhai edutha reason-ah record pannura short document.',
+                            'Adhula context, options considered, chosen decision, and consequences include pannuvom.',
+                            'Team members later decision history and trade-offs purinjukka ADR help pannum.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**ADR enna record pannum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Architecture Decision Record-na mukkiyamaana technical decision-oda reason and context-ai document pannura record.',
+                            'Problem/context, consider panna alternatives, selected decision, and consequences include pannuvom.',
+                            'Decision edutha date and current status-um add pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**ADR eppo useful?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Framework, data flow, deployment, or long-term dependency madhiri future work-ah affect pannura decisions-ku ADR useful.',
+                            'Small implementation detail ellathukkum ADR thevai illa.',
+                            'New team member decision history padichu context purinjukka mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Maintain pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'ADR concise-a and easy-a search panna mudiyura format-la veinga.',
+                            'Later decision change aana old ADR-ah delete pannaama superseded nu mark panni pudhu ADR link pannunga.',
                         ],
                     },
                 ],

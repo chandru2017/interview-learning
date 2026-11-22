@@ -10,7 +10,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
         difficulty: 'Advanced',
         status: 'in-progress',
         priority: 'high',
-
         simpleExplanation: [
             {
                 label: '',
@@ -27,7 +26,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         seniorExplanation: [
             {
                 label: '',
@@ -46,7 +44,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         simpleExample: [
             {
                 label: '',
@@ -71,7 +68,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         realProjectExample: [
             {
                 label: '',
@@ -83,7 +79,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         interviewAnswer: [
             {
                 label: '',
@@ -100,7 +95,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         scenarioQuestions: [
             {
                 label: 'Scenario 1',
@@ -122,7 +116,6 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
-
         speakingPractice: [
             {
                 label: '',
@@ -136,6 +129,75 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                             'Dependency boundaries',
                             'State management',
                             'Scalability',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Periya React app-ah business features base panni organize pannuven.',
+                            'Ovvoru feature-um components, hooks, API logic, state, and tests own pannum; shared UI and utilities separate-a irukkum.',
+                            'Clear dependency boundaries set panni, state type and team needs-ku suitable tools choose pannuven.',
+                            'Goal maintain panna easy-aana architecture; unnecessary complexity add panna maatten.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature base-la organize pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Application-ah Courses, Students, Payments madhiri business features-a divide pannuvom.',
+                            'Ovvoru feature-oda components, hooks, API logic, state, and tests andha feature-kulle irukkum.',
+                            'Related code ore idathula irukkaradhunaala change panna and find panna easy.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared code and boundaries**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pala features use pannura UI components and utilities shared folder-la irukkum.',
+                            'Oru feature innoru feature-oda internal files-ah direct-a depend pannaama clear boundaries define pannuvom.',
+                            'Idhu duplicate code and unexpected dependency-ah reduce pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Scale and maintain pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Local state, server state, global client state-ku thevai base panni suitable solution choose pannuvom.',
+                            'Testing, error handling, accessibility, and code ownership standards define pannuvom.',
+                            'Team and application grow aagumbodhu architecture puriyavum maintain pannavum easy-a irukkanum.',
                         ],
                     },
                 ],
@@ -277,6 +339,74 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Folder structure business features-ah reflect panna veppen; feature-specific code andha feature-kulle irukkum.',
+                            'Shared UI, utilities, API clients, and configuration-ku separate shared folders veppen.',
+                            'Ownership and dependency boundaries clear-a irundha developers-ku code kandupidikka and maintain panna easy.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature-specific folders**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'features/courses madhiri folder-la course-related components, hooks, services, types, and tests veikkalam.',
+                            'Oru feature-ku mattum use aagura component-ah global components folder-la podama andha feature-kulle veppom.',
+                            'Related files ore idathula irukkaradhu new developer-ku structure puriya help pannum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Shared and infrastructure code**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pala features share pannura Button madhiri UI components common UI folder-la irukkum.',
+                            'API clients and external integrations services/infrastructure-la; config and common utilities separate-a irukkum.',
+                            'Feature code shared code-ah use pannalam; aana feature-to-feature direct dependency avoid pannuvom.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Structure choose pannradhu**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Folder structure team ownership and dependency boundaries support panna vendum.',
+                            'Small app-ku simpler layout podhum; app grow aagumbodhu features clear-a separate pannalam.',
+                            'Over-abstraction pannaama, team-ku easy-a follow panna rules document pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -403,6 +533,73 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                     {
                         type: 'keywords',
                         items: ['Feature-based', 'Layer-based', 'Hybrid', 'Scalability', 'Boundaries', 'Team size'],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Layer-based structure components, hooks, services madhiri technical type base-la group pannum; small app-ku simple-a irukkum.',
+                            'Feature-based structure business area base-la related code-ah group pannum; periya app-la ownership and navigation easy.',
+                            'Usually feature-based or hybrid approach choose pannuven; app and team complexity base panni decide pannuvom.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Layer-based architecture**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'components, hooks, services madhiri technical role base-la files separate folders-la irukkum.',
+                            'Small application-la idhu easy-a setup and understand panna mudiyum.',
+                            'App perusa aagumbodhu oru feature-oda code pala folders-la spread aagalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Feature-based architecture**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Courses, Users, Payments madhiri business functionality base-la code group aagum.',
+                            'Oru feature-ku related components, hooks, and services same folder-la irukkum.',
+                            'Change impact and team ownership identify panna easier-a irukkum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Hybrid approach**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Feature code-ah business area base-la vechuttu, shared UI and infrastructure-ku common layers maintain pannalam.',
+                            'Feature-based approach ellaa app-kum compulsory illa; size, team, and complexity base panni choose pannunga.',
+                        ],
                     },
                 ],
             },
@@ -542,6 +739,74 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                 ],
             },
         ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Design System-na reusable UI components, design tokens, patterns, and guidelines-oda collection.',
+                            'Colors, typography, spacing, and interactions consistent-a irukka help pannum.',
+                            'Accessibility, documentation, and contribution rules include pannina teams consistent-a and faster-a build pannalam.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Design System-la enna irukkum?**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Button, Input, Modal madhiri reusable components irukkum.',
+                            'Colors, typography, spacing madhiri design tokens and visual rules define panniruppom.',
+                            'Interaction patterns and usage guidelines-um include aagum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Benefits**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Different pages and products-la UI consistent-a irukkum.',
+                            'Developers common components reuse pannuvadhaala duplicate work kammi aagum.',
+                            'Design and engineering teams-ku same terms and rules use panna mudiyum.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Quality and maintenance**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Accessibility and responsive behavior component design-laye include pannunga.',
+                            'Clear documentation, contribution process, and versioning rules maintain pannunga.',
+                            'Design System-na components mattum illa; consistent behavior and engineering standards-um serndhadhu.',
+                        ],
+                    },
+                ],
+            },
+        ],
     }),
 
     createQuestion({
@@ -674,6 +939,74 @@ export const frontendArchitectureQuestionsSet1: IQuestion[] = [
                             'Storybook',
                             'Versioning',
                             'Design tokens',
+                        ],
+                    },
+                ],
+            },
+        ],
+        interviewAnswer1: [
+            {
+                label: '',
+                blocks: [
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Common UI patterns and design tokens identify panni, consistent and accessible component APIs build pannuven.',
+                            'Components-ku tests, usage documentation, and visual examples add pannuven.',
+                            'Multiple apps use pannina library-ah versioned package-a publish panni release and breaking-change rules define pannuven.',
+                        ],
+                    },
+                ],
+            },
+        ],
+        thanglishExplanation: [
+            {
+                label: '1',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Requirements and component API**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Pala pages-la repeat aagura Button, Input, Modal madhiri UI patterns identify pannunga.',
+                            'Design tokens and component behavior define pannitu simple, predictable props API create pannunga.',
+                            'Unnecessary props add pannaama composition use panni variations handle pannalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '2',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Accessibility, tests, and docs**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Keyboard use, focus states, and screen reader behavior component-kulle support pannunga.',
+                            'Unit/component tests add panni main states and interactions verify pannunga.',
+                            'Storybook madhiri documentation-la examples and component variations kaattalam.',
+                        ],
+                    },
+                ],
+            },
+            {
+                label: '3',
+                blocks: [
+                    {
+                        type: 'paragraph',
+                        text: '**Publish and maintain**',
+                    },
+                    {
+                        type: 'bullets',
+                        items: [
+                            'Multiple apps consume panna package publish panni semantic versioning follow pannunga.',
+                            'Breaking changes-ku migration notes and release process define pannunga.',
+                            'Ownership and contribution rules irundha library consistent-a maintain panna mudiyum.',
                         ],
                     },
                 ],
